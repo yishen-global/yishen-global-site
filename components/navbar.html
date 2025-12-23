@@ -1,29 +1,26 @@
 <!-- =========================================================
      YISHEN GLOBAL — NAVBAR COMPONENT (V5.0)
      File: components/navbar.html
-     Role: Unified Sovereign Navigation Bar
+     Role: Unified Sovereign Navigation Core
 ========================================================= -->
 
-<nav id="yg-navbar">
+<nav id="yg-nav">
   <div class="yg-nav-inner">
 
-    <!-- LEFT BRAND -->
-    <a href="index.html" class="yg-brand">
-      <span class="yg-brand-title">Yishen Global</span>
-      <span class="yg-brand-sub">SOVEREIGN_MATRIX_V5</span>
+    <!-- LOGO -->
+    <a href="/index.html" class="yg-logo">
+      <span class="yg-logo-main">Yishen Global</span>
+      <span class="yg-logo-sub">INDUSTRIAL_SOVEREIGNTY_V5</span>
     </a>
 
-    <!-- CENTER NAV -->
+    <!-- LINKS -->
     <div class="yg-nav-links">
-      <a href="genesis.html">01_GENESIS</a>
-      <a href="sovereign-matrix.html">02_MATRIX</a>
-      <a href="clusters.html">03_CLUSTERS</a>
-      <a href="resources.html">04_RESOURCES</a>
-      <a href="site-architecture.html">05_ARCHITECT</a>
+      <a href="/genesis.html">01_GENESIS</a>
+      <a href="/sovereign-matrix.html">02_MATRIX</a>
+      <a href="/clusters.html">03_CLUSTERS</a>
+      <a href="/resources.html">04_RESOURCES</a>
+      <a href="/tactical-briefing.html" class="nav-cta">ACCESS_VAULT</a>
     </div>
-
-    <!-- RIGHT CTA -->
-    <a href="tactical-briefing.html" class="yg-nav-cta">ACCESS_VAULT</a>
 
   </div>
 </nav>
@@ -32,59 +29,59 @@
 :root{
   --yg-bg:#010409;
   --yg-border:rgba(255,255,255,.08);
-  --yg-blue:#0ea5e3;
   --yg-dim:#6e7681;
+  --yg-blue:#0ea5e3;
 }
 
-#yg-navbar{
+#yg-nav{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
+  inset:0 0 auto 0;
   height:80px;
-  background:rgba(1,4,9,.92);
+  background:rgba(1,4,9,.94);
   backdrop-filter:blur(24px);
   border-bottom:1px solid var(--yg-border);
-  z-index:9999;
+  z-index:10000;
+  display:flex;
+  align-items:center;
 }
 
 .yg-nav-inner{
   max-width:1440px;
-  height:100%;
+  width:100%;
   margin:0 auto;
   padding:0 32px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 
-.yg-brand{
+.yg-logo{
   display:flex;
   flex-direction:column;
-  text-transform:uppercase;
+  line-height:1;
 }
 
-.yg-brand-title{
+.yg-logo-main{
   font-weight:900;
-  font-style:italic;
-  letter-spacing:-.03em;
-  font-size:20px;
-  color:#fff;
+  font-size:18px;
+  text-transform:uppercase;
+  letter-spacing:-.04em;
 }
 
-.yg-brand-sub{
+.yg-logo-sub{
   font-family:'JetBrains Mono', monospace;
   font-size:8px;
-  letter-spacing:.32em;
+  letter-spacing:.28em;
   color:var(--yg-blue);
 }
 
 .yg-nav-links{
   display:flex;
-  gap:44px;
+  align-items:center;
+  gap:40px;
   font-family:'JetBrains Mono', monospace;
   font-size:11px;
-  letter-spacing:.22em;
+  letter-spacing:.18em;
 }
 
 .yg-nav-links a{
@@ -93,20 +90,15 @@
 }
 
 .yg-nav-links a:hover{
-  color:#fff;
+  color:var(--yg-blue);
 }
 
-.yg-nav-cta{
-  padding:12px 28px;
+.nav-cta{
   background:var(--yg-blue);
-  color:#000;
+  color:#000!important;
+  padding:10px 22px;
+  border-radius:2px;
   font-weight:900;
   font-style:italic;
-  font-size:11px;
-  border-radius:2px;
-}
-
-@media(max-width:900px){
-  .yg-nav-links{display:none;}
 }
 </style>

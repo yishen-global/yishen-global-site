@@ -1,186 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>04_COMMAND | Tactical Briefing & Intel | YISHEN GLOBAL</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Core UI -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Command Center | Tactical Briefing | YISHEN GLOBAL</title>
+  <meta name="description" content="Tactical command interface for sovereign sourcing, compliance interception, and industrial intelligence." />
+  <meta name="theme-color" content="#010409" />
 
-    <style>
-        :root { --neon-blue: #0ea5e3; --warning-gold: #ffd700; --bg-deep: #010409; }
-        body { background-color: var(--bg-deep); font-family: 'Inter', sans-serif; color: #fff; overflow-x: hidden; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        /* Grid Scan Background */
-        .grid-bg {
-            background-image: radial-gradient(rgba(14, 165, 223, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        /* Cursor Glow (JS handled by engine) */
-        #cursor-glow {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(14, 165, 223, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-        }
+  <style>
+    :root {
+      --neon-blue: #0ea5e3;
+      --brand-gold: #ffd700;
+      --deep-space: #010409;
+    }
 
-        .terminal-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        }
+    body {
+      background: var(--deep-space);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
 
-        .input-strike {
-            background: transparent;
-            border-bottom: 2px solid rgba(14, 165, 227, 0.2);
-            transition: 0.3s;
-        }
-        .input-strike:focus {
-            border-bottom-color: var(--neon-blue);
-            outline: none;
-            background: rgba(14, 165, 227, 0.03);
-        }
+    ::selection {
+      background: var(--neon-blue);
+      color: #000;
+    }
 
-        .data-stream { animation: streamUp 15s linear infinite; }
-        @keyframes streamUp {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
-        }
+    #cursor-glow {
+      position: fixed;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+    }
 
-        .scan-line {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: var(--neon-blue);
-            opacity: 0.3;
-            animation: scan 4s linear infinite;
-        }
-        @keyframes scan {
-            0% { top: 0%; }
-            100% { top: 100%; }
-        }
-    </style>
+    .terminal-box {
+      background: rgba(0,0,0,.75);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .input-line {
+      background: transparent;
+      border-bottom: 2px solid rgba(14,165,233,.25);
+      outline: none;
+      transition: .3s;
+    }
+
+    .input-line:focus {
+      border-bottom-color: var(--neon-blue);
+      background: rgba(14,165,233,.04);
+    }
+  </style>
 </head>
 
-<body class="grid-bg selection:bg-[#0ea5e3]">
+<body class="selection:bg-[#0ea5e3]">
 
 <div id="cursor-glow"></div>
 
 <!-- NAV -->
-<nav class="fixed w-full z-[100] border-b border-white/5 bg-[#010409]/95 backdrop-blur-md h-20 flex items-center px-8 justify-between">
+<nav class="fixed top-0 left-0 w-full z-[1000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+  <div class="max-w-[1440px] mx-auto w-full flex justify-between items-center">
     <a href="index.html" class="flex flex-col">
-        <span class="text-white font-black italic text-xl tracking-tighter uppercase">YISHEN_HQ</span>
-        <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[4px]">TACTICAL_COMMAND_V5.0</span>
+      <span class="font-black italic text-xl uppercase tracking-tighter">Yishen Global</span>
+      <span class="font-mono text-[8px] tracking-[4px] text-[#0ea5e3]">TACTICAL_COMMAND_V5</span>
     </a>
-    <div class="hidden lg:flex gap-10 font-mono text-[10px] text-gray-400 uppercase tracking-widest">
-        <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
-        <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
-        <a href="technical-passport.html" class="hover:text-white transition">04_PASSPORT</a>
+    <div class="hidden lg:flex gap-10 font-mono text-[10px] tracking-widest text-gray-400 uppercase">
+      <a href="genesis.html" class="hover:text-white">Genesis</a>
+      <a href="sovereign-matrix.html" class="hover:text-white">Matrix</a>
+      <a href="site-architecture.html" class="hover:text-white">Blueprint</a>
     </div>
+  </div>
 </nav>
 
 <!-- MAIN -->
-<main class="pt-40 pb-20 px-[5%] max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-16">
+<main class="pt-40 pb-28 px-[6%] max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-16">
 
-    <!-- LEFT -->
-    <div class="space-y-8">
-        <header>
-            <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase">// HQ_DIRECTIVE_ENGINE</span>
-            <h1 class="text-white text-6xl font-black italic uppercase tracking-tighter mt-4 leading-none">
-                Command <br><span class="text-[#0ea5e3]">Center.</span>
-            </h1>
-        </header>
+  <!-- LEFT -->
+  <section class="space-y-10">
 
-        <div class="relative rounded-sm overflow-hidden border border-white/5 bg-black h-[240px] terminal-box">
-            <div class="scan-line"></div>
-            <div class="absolute inset-0 p-6 font-mono text-[9px] text-gray-600 overflow-hidden">
-                <div class="data-stream">
-                    <p class="text-[#0ea5e3] mb-1">> [INTERCEPT] Savannah_Port: HS_9401.31 Mesh Chair Incoming...</p>
-                    <p class="mb-1">> [ANALYZE] Consignee: ASHLEY_FURNITURE_CORP | Node: Active</p>
-                    <p class="text-[#ffd700] mb-1">> [SOVEREIGN] ASEAN Node Synced for Duty Offset Protocol.</p>
-                    <p class="text-[#A11219] mb-1">> [AUDIT] DUNS: 545277884 Verified.</p>
-                </div>
-            </div>
-        </div>
+    <header>
+      <span class="font-mono text-xs tracking-[6px] text-[#0ea5e3] uppercase">// COMMAND_INTERFACE_ACTIVE</span>
+      <h1 class="text-6xl font-black italic uppercase tracking-tighter mt-4 leading-none">
+        Tactical<br><span class="text-[#0ea5e3]">Briefing</span>
+      </h1>
+    </header>
 
-        <div class="terminal-box p-8 rounded-sm">
-            <label class="block font-mono text-gray-500 text-[9px] uppercase mb-4 tracking-[3px]">Global_HS_Interception</label>
-            <input id="hs-input" type="text" placeholder="SEARCH HS_CODE (7315 / 9402)"
-                   class="w-full input-strike py-3 font-mono text-sm text-[#0ea5e3]">
-            <div id="hs-results" class="mt-4 max-h-[150px] overflow-y-auto space-y-2"></div>
-        </div>
-
-        <div class="terminal-box p-8 rounded-sm border-t-2 border-[#0ea5e3]">
-            <label class="block font-mono text-gray-500 text-[9px] uppercase mb-4 tracking-[3px]">Mission_Agent</label>
-            <div id="agent-output" class="h-[140px] overflow-y-auto font-mono text-[10px] text-gray-400 mb-6 bg-black/30 p-4">
-                <div class="text-[#0ea5e3]">> HQ_CONNECTED. Awaiting instruction...</div>
-            </div>
-            <div class="flex gap-4">
-                <input id="user-task" type="text" placeholder="ENTER MISSION PARAMETERS..."
-                       class="flex-grow input-strike py-3 font-mono text-xs">
-                <button onclick="runAgent()" class="px-6 bg-[#0ea5e3] text-black font-black italic text-xs uppercase hover:bg-white transition">
-                    EXECUTE
-                </button>
-            </div>
-        </div>
+    <!-- TERMINAL OUTPUT -->
+    <div class="terminal-box p-6 h-[220px] overflow-y-auto font-mono text-[10px] text-gray-400" id="agent-output">
+      <div class="text-[#0ea5e3]">> SYSTEM_READY. Awaiting command...</div>
     </div>
 
-    <!-- RIGHT -->
-    <div class="space-y-8">
-        <div class="terminal-box p-10 border-l-4 border-[#ffd700]">
-            <h3 class="text-white text-3xl font-black italic uppercase mb-2 tracking-tighter">Access the Vault</h3>
-            <p class="text-gray-500 text-xs font-mono mb-10 uppercase tracking-widest">// Submit credentials</p>
-
-            <form id="briefing-form" class="space-y-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <input name="name" required placeholder="Commander Name" class="input-strike py-3">
-                    <input name="email" required type="email" placeholder="Secure Email" class="input-strike py-3">
-                </div>
-
-                <select name="interest_sector" class="w-full bg-black/50 border-b-2 border-white/10 py-4 font-mono text-xs text-[#0ea5e3]">
-                    <option value="MEDICAL_PRECISION">MEDICAL_PRECISION</option>
-                    <option value="MARITIME_HARDWARE">MARITIME_HARDWARE</option>
-                    <option value="OFFICE_SOVEREIGNTY">OFFICE_SOVEREIGNTY</option>
-                </select>
-
-                <textarea name="message" rows="3" placeholder="Mission notes..."
-                          class="w-full input-strike py-3"></textarea>
-
-                <div id="form-status" class="hidden font-mono text-[10px] py-3"></div>
-
-                <button type="submit" class="w-full py-6 bg-white text-black font-black uppercase tracking-[10px] hover:bg-[#ffd700]">
-                    Initialize_Data_Sync
-                </button>
-            </form>
-        </div>
+    <!-- COMMAND INPUT -->
+    <div class="terminal-box p-6 flex gap-4">
+      <input id="user-task" type="text" placeholder="ENTER COMMAND (e.g. HS 7315 BRAZIL)" class="flex-1 input-line py-2 font-mono text-xs">
+      <button id="run-btn" class="px-6 bg-[#0ea5e3] text-black font-black italic text-xs uppercase hover:bg-white transition">
+        Execute
+      </button>
     </div>
+
+  </section>
+
+  <!-- RIGHT -->
+  <section class="space-y-10">
+
+    <div class="terminal-box p-8">
+      <h3 class="font-black italic uppercase text-3xl mb-4">Access Vault</h3>
+      <p class="font-mono text-xs text-gray-500 mb-8 uppercase tracking-widest">
+        Submit mission context for secure follow-up
+      </p>
+
+      <form id="briefing-form" class="space-y-6">
+        <input required name="name" placeholder="Name / Company" class="w-full input-line py-2 text-sm">
+        <input required name="email" type="email" placeholder="Work Email" class="w-full input-line py-2 text-sm">
+        <textarea name="message" rows="3" placeholder="HS Code / Objective" class="w-full input-line py-2 text-sm resize-none"></textarea>
+
+        <div id="form-status" class="hidden font-mono text-[10px] text-[#0ea5e3] animate-pulse"></div>
+
+        <button type="submit" class="w-full py-4 bg-white text-black font-black uppercase tracking-[6px] hover:bg-[#ffd700] transition">
+          Initialize
+        </button>
+      </form>
+    </div>
+
+  </section>
 </main>
 
-<footer class="py-24 border-t border-white/5 bg-black text-center text-[10px] font-mono text-gray-700">
-    © 2026 Yishen Global // Command_Terminal_Verified
+<footer class="py-20 border-t border-white/5 bg-black text-center font-mono text-[10px] text-gray-600 uppercase tracking-[4px]">
+  © 2026 Yishen Global · Tactical Command Verified
 </footer>
 
-<!-- ✅ 权威终端引擎（唯一来源） -->
-<script src="assets/js/terminal-engine.v5.safe.js" defer></script>
-
+<!-- ===== JS : SAFE POWER SEQUENCE ===== -->
 <script>
-document.getElementById('briefing-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const status = document.getElementById('form-status');
-    status.classList.remove('hidden');
-    status.innerHTML = "<span class='text-[#0ea5e3]'>> PACKET_RECEIVED</span>";
+/* Cursor glow */
+const glow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+  requestAnimationFrame(() => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+});
 
-    setTimeout(() => {
-        window.location.href = 'technical-passport.html?id=HS_9402';
-    }, 1500);
+/* Terminal Engine (Safe Inline) */
+(function(){
+  const output = document.getElementById('agent-output');
+  const input = document.getElementById('user-task');
+  const runBtn = document.getElementById('run-btn');
+
+  function print(msg){
+    const d = document.createElement('div');
+    d.textContent = msg;
+    output.appendChild(d);
+    output.scrollTop = output.scrollHeight;
+  }
+
+  runBtn.addEventListener('click', ()=>{
+    if(!input.value) return;
+    print('> EXECUTING: ' + input.value.toUpperCase());
+    setTimeout(()=>print('> ROUTE_ANALYSIS_COMPLETE'),600);
+    setTimeout(()=>print('> COMPLIANCE_PATH_READY'),1100);
+    setTimeout(()=>print('> COMMAND_STANDBY'),1600);
+    input.value='';
+  });
+
+  input.addEventListener('keydown', e=>{
+    if(e.key==='Enter') runBtn.click();
+  });
+})();
+
+/* Form Safe Submit */
+document.getElementById('briefing-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  const status = document.getElementById('form-status');
+  status.classList.remove('hidden');
+  status.textContent = '> SECURE_PACKET_TRANSMITTED';
+  setTimeout(()=>status.textContent='> CONFIRMED. FOLLOW-UP INITIATED.',1200);
 });
 </script>
 

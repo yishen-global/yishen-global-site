@@ -1,81 +1,36 @@
 {
-  "meta": {
-    "ledger_name": "YISHEN_GLOBAL_SOVEREIGN_LEDGER",
-    "version": "5.0.ULTIMATE",
-    "engine_status": "LIVE",
-    "currency_base": "USD",
-    "sovereign_owner": "YISHEN_GLOBAL",
-    "last_sync": "2026-01-01T00:00:00Z"
-  },
-
-  "asset_clusters": [
+  "version": "YISHEN_LEDGER_V5.0",
+  "updated": "2026-01-01",
+  "products": [
     {
-      "cluster_id": "OFFICE_ERGO",
-      "cluster_name": "Office Ergonomic Matrix",
-      "hs_root": "9401",
-      "sovereign_score": 98,
-      "asset_class": "MEGA_CATEGORY",
-      "assets": [
-        {
-          "sku": "YS-ERGOMESH-X9",
-          "product_name": "ErgoMesh X9 Chair",
-          "hs_code": "9401.31",
-          "certifications": ["BIFMA", "ISO9001", "ISTA"],
-          "moq": 50,
-          "lead_time_days": 15,
-          "sovereign_tags": ["FAST_DELIVERY", "OEM_READY", "CBM_OPTIMIZED"],
-          "base_cost_usd": 72,
-          "sovereign_value_index": 91,
-          "markets": ["USA", "CANADA", "EU"],
-          "status": "ACTIVE"
-        }
-      ]
+      "id": "OFFICE_MESH_V4",
+      "cluster": "NODE_01_OFFICE_ERGO",
+      "hs_code": "9401.31",
+      "name": "High Density Mesh Office Chair",
+      "certifications": ["BIFMA X5.1", "ISO9001", "ISTA6A"],
+      "sov_score": 98,
+      "markets": ["USA", "CANADA", "EU"],
+      "passport_url": "technical-passport.html?id=OFFICE_MESH_V4"
     },
-
     {
-      "cluster_id": "MEDICAL_PRECISION",
-      "cluster_name": "Medical Precision Systems",
-      "hs_root": "9402",
-      "sovereign_score": 88,
-      "asset_class": "CRITICAL_CATEGORY",
-      "assets": [
-        {
-          "sku": "YS-MEDICARE-A1",
-          "product_name": "Sterile Medical Chair A1",
-          "hs_code": "9402.10",
-          "certifications": ["ISO13485", "CE"],
-          "moq": 20,
-          "lead_time_days": 18,
-          "sovereign_tags": ["ANTI_BACTERIAL", "FORM_E_ZERO_TARIFF"],
-          "base_cost_usd": 128,
-          "sovereign_value_index": 89,
-          "markets": ["ASEAN", "EU"],
-          "status": "ACTIVE"
-        }
-      ]
+      "id": "MEDICAL_CHAIR",
+      "cluster": "NODE_14_MEDICAL_PRECISION",
+      "hs_code": "9402.10",
+      "name": "Sterile Medical Reclining Chair",
+      "certifications": ["ISO13485", "CE", "FDA"],
+      "sov_score": 88,
+      "markets": ["ASEAN", "EU"],
+      "passport_url": "technical-passport.html?id=MEDICAL_CHAIR"
     },
-
     {
-      "cluster_id": "MARINE_HARDWARE",
-      "cluster_name": "Marine Chains & Rigging",
-      "hs_root": "7315",
-      "sovereign_score": 94,
-      "asset_class": "HEAVY_DUTY_CATEGORY",
-      "assets": [
-        {
-          "sku": "YS-MARINE-G80",
-          "product_name": "Alloy Lifting Chain G80",
-          "hs_code": "7315.82",
-          "certifications": ["CE", "DNV"],
-          "moq": 100,
-          "lead_time_days": 22,
-          "sovereign_tags": ["ANTI_DUMPING_PATH", "BRAZIL_FREE"],
-          "base_cost_usd": 2.6,
-          "sovereign_value_index": 95,
-          "markets": ["BRAZIL", "LATAM", "MIDDLE_EAST"],
-          "status": "ACTIVE"
-        }
-      ]
+      "id": "MARINE_CHAIN",
+      "cluster": "NODE_07_MARITIME_HARDWARE",
+      "hs_code": "7315.82",
+      "name": "G80/G100 Marine Alloy Chain",
+      "certifications": ["DNV", "BV", "SGS"],
+      "sov_score": 94,
+      "markets": ["BRAZIL", "LATAM", "MENA"],
+      "passport_url": "technical-passport.html?id=MARINE_CHAIN"
     }
   ]
 }

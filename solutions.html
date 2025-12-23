@@ -8,20 +8,34 @@
 
 <meta name="description" content="Industrial-grade solutions integrating ergonomic furniture, ISO 13485 medical precision systems, and carbon-neutral materials with verified global compliance.">
 <meta name="theme-color" content="#010409">
-
 <link rel="canonical" href="https://yishenglobal.net/solutions.html">
 
-<!-- Favicon -->
 <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
-<!-- Tailwind -->
+<!-- Tailwind (LOCKED CONFIG) -->
+<script>
+  tailwind = {
+    theme: {
+      extend: {
+        colors: {
+          neon: '#0ea5e3',
+          deep: '#010409'
+        }
+      }
+    }
+  }
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -29,12 +43,13 @@ body {
   color: #e6edf3;
   overflow-x: hidden;
 }
-.font-mono { font-family: 'JetBrains Mono', monospace; }
 
+/* GPU-safe background */
 .bg-mesh {
+  background-color: #010409;
   background-image:
-    radial-gradient(at 0% 0%, rgba(14,165,227,.12) 0, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(255,215,0,.04) 0, transparent 50%);
+    radial-gradient(circle at 0% 0%, rgba(14,165,227,.10), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(255,215,0,.04), transparent 55%);
 }
 
 .card-glow {
@@ -55,36 +70,32 @@ body {
 </style>
 </head>
 
-<body class="bg-mesh min-h-screen">
+<body class="bg-mesh">
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+<nav class="fixed top-0 left-0 w-full z-[9999] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
   <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
-
     <a href="index.html" class="flex flex-col">
-      <span class="text-white font-black italic text-xl uppercase tracking-tighter">
-        Yishen Global
-      </span>
-      <span class="text-[#0ea5e3] font-mono text-[7px] tracking-[3px] uppercase">
-        Sovereign_System_V5
-      </span>
+      <span class="text-white font-black italic text-xl uppercase tracking-tighter">Yishen Global</span>
+      <span class="text-[#0ea5e3] font-mono text-[7px] tracking-[3px] uppercase">SOVEREIGN_SYSTEM_V5</span>
     </a>
-
     <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400 uppercase">
       <a href="genesis.html" class="hover:text-white">Genesis</a>
       <a href="sovereign-matrix.html" class="hover:text-white">Matrix</a>
       <a href="clusters.html" class="hover:text-white">Clusters</a>
       <a href="solutions.html" class="text-white border-b border-[#0ea5e3] pb-1">Solutions</a>
       <a href="resources.html" class="hover:text-white">Resources</a>
-      <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">
+      <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic uppercase">
         Access_Vault
       </a>
     </div>
-
   </div>
 </nav>
 
-<main class="pt-40 pb-24 px-8 max-w-[1440px] mx-auto">
+<!-- NAV SPACER (CRITICAL PATCH) -->
+<div class="h-20"></div>
+
+<main class="pt-20 pb-24 px-8 max-w-[1440px] mx-auto">
 
 <header class="mb-24">
   <h1 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter mb-6 leading-none">
@@ -97,7 +108,6 @@ body {
   </p>
 </header>
 
-<!-- SEO STRUCTURE (non-visual) -->
 <section class="sr-only">
   <h2>Ergonomic Furniture Solutions</h2>
   <h2>Medical Precision Systems</h2>
@@ -106,7 +116,6 @@ body {
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<!-- Ergo -->
 <div class="p-8 card-glow flex flex-col justify-between min-h-[400px]">
   <div>
     <span class="text-[10px] font-mono text-[#0ea5e3]">HS 9401.31</span>
@@ -115,13 +124,11 @@ body {
       BIFMA-certified seating systems with ISTA-6A survivability validation.
     </p>
   </div>
-  <a href="technical-passport.html?id=ERGO"
-     class="text-[9px] font-mono text-[#ffd700] uppercase tracking-widest mt-8">
+  <a href="technical-passport.html?id=ERGO" class="text-[9px] font-mono text-[#ffd700] uppercase tracking-widest mt-8">
     Evidence_Report →
   </a>
 </div>
 
-<!-- Medical -->
 <div class="p-8 card-glow flex flex-col justify-between min-h-[400px]">
   <div>
     <span class="text-[10px] font-mono text-[#0ea5e3]">ISO 13485</span>
@@ -130,13 +137,11 @@ body {
       Precision actuation systems with sterile-grade compliance governance.
     </p>
   </div>
-  <a href="technical-passport.html?id=MED_HUB"
-     class="text-[9px] font-mono text-[#ffd700] uppercase tracking-widest mt-8">
+  <a href="technical-passport.html?id=MED_HUB" class="text-[9px] font-mono text-[#ffd700] uppercase tracking-widest mt-8">
     Compliance_Docs →
   </a>
 </div>
 
-<!-- Carbon -->
 <div class="p-8 card-glow flex flex-col justify-between min-h-[400px] bg-[#0ea5e3]/5 border-[#0ea5e3]/20">
   <div>
     <span class="text-[10px] font-mono text-[#10b981]">CBAM READY</span>
@@ -147,8 +152,7 @@ body {
       Negative-carbon bamboo and WPC composite systems.
     </p>
   </div>
-  <a href="technical-passport.html?id=CARBON_ZERO"
-     class="text-[9px] font-mono text-[#ffd700] uppercase tracking-widest mt-8">
+  <a href="technical-passport.html?id=CARBON_ZERO" class="text-[9px] font-mono text-[#ffd700] uppercase tracking-widest mt-8">
     LCA_Report →
   </a>
 </div>
@@ -162,6 +166,14 @@ body {
     <span>DUNS 545277884</span>
   </div>
 </footer>
+
+<!-- MINIMAL HEARTBEAT (POWER ON PATCH) -->
+<script>
+  window.addEventListener('load', () => {
+    document.body.style.opacity = '0.999';
+    requestAnimationFrame(()=>document.body.style.opacity='1');
+  });
+</script>
 
 </body>
 </html>

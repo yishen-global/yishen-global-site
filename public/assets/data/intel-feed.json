@@ -1,72 +1,41 @@
 {
   "protocol": "YISHEN_GLOBAL_INTEL_FEED_V5",
-  "last_sync": "AUTO",
-  "heartbeat": 300,
-  "dimensions": [
-    "FURNITURE",
-    "MARITIME_HARDWARE",
-    "MEDICAL_PRECISION",
-    "INFRA_TOOLS",
-    "BIO_MATERIALS",
-    "AERO_MILITARY",
-    "ACTUATION_SYSTEMS"
-  ],
-  "intel_nodes": [
+  "last_update": "AUTO",
+  "signals": [
     {
-      "sku": "OFFICE_MESH_V4",
       "sector": "FURNITURE",
-      "hs": "9401.31",
-      "market_signal": "HIGH_DEMAND_US_CA_MX",
-      "status": "GROWTH_NODE",
-      "priority": 1,
-      "suggested_action": "EXPAND_CHANNELS",
-      "next_patch": "PACKING_OPTIMIZATION"
+      "sku": "OFFICE_MESH_V4",
+      "region": "NORTH_AMERICA",
+      "intel": "Bulk retail buyers increasing ergonomic chair replenishment",
+      "priority": "HIGH"
     },
     {
-      "sku": "CHAIN_G80_MASTER",
       "sector": "MARITIME_HARDWARE",
-      "hs": "7315.82",
-      "market_signal": "BRAZIL_AD_EXEMPT",
-      "status": "EXPORT_FAST_LANE",
-      "priority": 2,
-      "suggested_action": "SANTOS_NODE_ROUTING",
-      "next_patch": "FORM_E_CERT"
+      "sku": "CHAIN_G80_MASTER",
+      "region": "BRAZIL",
+      "intel": "Anti-dumping exemption confirmed for G80 chains",
+      "priority": "CRITICAL"
     },
     {
-      "sku": "MEDICAL_CHAIR_X9",
       "sector": "MEDICAL_PRECISION",
-      "hs": "9402.10",
-      "market_signal": "ASEAN_ZERO_TARIFF",
-      "status": "CLINIC_FAST_ENTRY",
-      "priority": 3,
-      "suggested_action": "STERILE_PACK_PATCH",
-      "next_patch": "ISO_13485"
+      "sku": "MEDICAL_CHAIR_X9",
+      "region": "ASEAN",
+      "intel": "Form E zero tariff medical device route activated",
+      "priority": "HIGH"
     },
     {
-      "sku": "INFRA_LADDER_PRO",
       "sector": "INFRA_TOOLS",
-      "hs": "7616.99",
-      "market_signal": "NA_INFRA_TARIFF_WALL",
-      "status": "TARIFF_DEFENSE",
-      "priority": 4,
-      "suggested_action": "ASEAN_BYPASS_NODE",
-      "next_patch": "EN131_UPGRADE"
+      "sku": "INFRA_LADDER_PRO",
+      "region": "USA",
+      "intel": "Infrastructure projects reopening seasonal procurement",
+      "priority": "HIGH"
     },
     {
-      "sku": "CARBON_PANEL_BIOX",
       "sector": "BIO_MATERIALS",
-      "hs": "6810.11",
-      "market_signal": "EU_GREEN_MANDATE",
-      "status": "CARBON_NEUTRAL_NODE",
-      "priority": 5,
-      "suggested_action": "ECO_CERT_STACK",
-      "next_patch": "EPD_DECLARATION"
+      "sku": "CARBON_PANEL_BIOX",
+      "region": "EU",
+      "intel": "EU carbon neutrality construction mandates expanding",
+      "priority": "CRITICAL"
     }
-  ],
-  "growth_directives": {
-    "auto_patch": true,
-    "auto_extend_sku": true,
-    "auto_write_sitemap": true,
-    "auto_expand_clusters": true
-  }
+  ]
 }

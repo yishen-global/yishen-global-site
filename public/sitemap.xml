@@ -1,58 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- CORE SYSTEM PAGES -->
-  <url>
-    <loc>https://yishenglobal.net/</loc>
-    <priority>1.00</priority>
-  </url>
+  <!-- Core Pages -->
+  <url><loc>https://yishenglobal.net/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://yishenglobal.net/genesis.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://yishenglobal.net/clusters.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://yishenglobal.net/resources.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yishenglobal.net/tactical-briefing.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://yishenglobal.net/genesis.html</loc>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/sovereign-matrix.html</loc>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/clusters.html</loc>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/resources.html</loc>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/tactical-briefing.html</loc>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- DYNAMIC SKU PASSPORT ZONE -->
-  <!-- Auto-fed by sku-database.json -->
-  
-  <url>
-    <loc>https://yishenglobal.net/passport/OFFICE_MESH_V4</loc>
-    <priority>0.98</priority>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/passport/MARINE_CHAIN</loc>
-    <priority>0.98</priority>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/passport/MEDICAL_CHAIR</loc>
-    <priority>0.96</priority>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/passport/INDUSTRIAL_LADDER</loc>
-    <priority>0.96</priority>
-  </url>
+  <!-- Sovereign SKU Nodes -->
+  <url><loc>https://yishenglobal.net/technical-passport.html?id=OFFICE_MESH_V4</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yishenglobal.net/technical-passport.html?id=CHAIN_G80_MASTER</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yishenglobal.net/technical-passport.html?id=MEDICAL_CHAIR_X9</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yishenglobal.net/technical-passport.html?id=INFRA_LADDER_PRO</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yishenglobal.net/technical-passport.html?id=CARBON_PANEL_BIOX</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
 </urlset>

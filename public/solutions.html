@@ -1,178 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sovereign Solutions | YiShen Global</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind CDN（稳定 / 不 404） -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>Global Solutions Matrix | YiShen Global</title>
+<meta name="description" content="Sovereign industrial solutions for Ergo Furniture, Medical Precision, and Carbon Neutral materials.">
+<meta name="theme-color" content="#010409">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
-  <style>
-    body { background:#010409; color:#e6edf3; font-family:Inter,system-ui; }
-    .mono { font-family:'JetBrains Mono', monospace; }
-    .card { border:1px solid rgba(14,165,233,.25); background:rgba(255,255,255,.02); }
-    .card:hover { border-color:#0ea5e3; }
-  </style>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #010409;
+  color: #e6edf3;
+  overflow-x: hidden;
+}
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Cyber Mesh */
+.bg-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, rgba(14,165,227,.12) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255,215,0,.04) 0, transparent 50%);
+}
+
+/* Industrial Interaction */
+.card-glow {
+  transition: all .4s cubic-bezier(.4,0,.2,1);
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.05);
+}
+.card-glow:hover {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(14,165,227,.4);
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.4),
+    0 0 20px rgba(14,165,227,.1);
+}
+
+/* Text Sovereignty */
+::selection { background:#0ea5e3; color:white; }
+</style>
 </head>
 
-<body>
+<body class="bg-mesh min-h-screen">
 
-<!-- ================= NAV ================= -->
-<nav class="fixed top-0 w-full h-20 bg-[#010409]/90 backdrop-blur border-b border-white/5 z-50">
-  <div class="max-w-[1440px] mx-auto h-full px-8 flex justify-between items-center">
-    <div>
-      <div class="text-white font-black italic text-xl uppercase">YiShen Global</div>
-      <div class="mono text-[9px] tracking-[4px] text-[#0ea5e3]">SOVEREIGN_SOLUTIONS</div>
-    </div>
-    <a href="/index.html" class="mono text-xs tracking-widest text-gray-400 hover:text-white">
-      RETURN_HOME
+<!-- NAV -->
+<nav id="master-nav"
+class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8 transition-all duration-500">
+  <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+
+    <a href="index.html" class="flex flex-col group">
+      <span class="text-white font-black italic text-xl uppercase tracking-tighter group-hover:text-[#0ea5e3] transition-colors">
+        Yishen Global
+      </span>
+      <div class="flex items-center mt-1">
+        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse mr-2 shadow-[0_0_8px_#10b981]"></span>
+        <span class="text-[#0ea5e3] font-mono text-[7px] tracking-[3px] uppercase">
+          Sovereign_V5_Active
+        </span>
+      </div>
     </a>
+
+    <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400 uppercase">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="solutions.html" class="text-white relative">
+        Solutions
+        <span class="absolute -bottom-1 left-0 w-full h-[1px] bg-[#0ea5e3]"></span>
+      </a>
+      <a href="resources.html" class="hover:text-white">Resources</a>
+      <a href="contact.html" class="hover:text-[#ffd700]">Intelligence</a>
+    </div>
+
+    <div class="flex items-center space-x-6">
+      <div class="hidden xl:flex items-center bg-white/5 border border-white/10 rounded-sm px-3 py-1.5 focus-within:border-[#0ea5e3] transition-all">
+        <i class="fas fa-search text-[10px] text-gray-600 mr-2"></i>
+        <input
+          type="text"
+          placeholder="Search HS_CODE..."
+          class="bg-transparent outline-none text-[9px] font-mono text-white w-28 placeholder:text-gray-700">
+      </div>
+
+      <button onclick="location.href='contact.html'"
+        class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm text-[10px] uppercase hover:bg-white transition-all shadow-[0_0_15px_rgba(14,165,227,.3)]">
+        Access_Vault
+      </button>
+    </div>
+
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
-<section class="pt-40 pb-24">
-  <div class="max-w-[1200px] mx-auto px-8">
-    <div class="mono text-xs tracking-[6px] text-[#0ea5e3] mb-6 uppercase">
-      Predictability Engineered
+<!-- MAIN -->
+<main class="pt-40 pb-24 px-8 max-w-[1440px] mx-auto">
+
+<header class="mb-24 relative">
+  <div class="absolute -left-12 top-0 w-1 h-32 bg-gradient-to-b from-[#0ea5e3] to-transparent opacity-50"></div>
+
+  <h2 class="text-[#0ea5e3] font-mono text-xs tracking-[.4em] mb-6 uppercase">
+    Predictability Engineered
+  </h2>
+
+  <h1 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter mb-6 leading-none">
+    Industrial <br>
+    <span class="text-white/10">Solutions</span>
+    <span class="text-white">Matrix</span>
+  </h1>
+
+  <p class="text-gray-500 font-mono text-xs max-w-2xl uppercase tracking-[.2em] leading-loose">
+    Integrating AI-driven compliance, multi-generational reliability,
+    and carbon-negative manufacturing nodes into a singular global delivery system.
+  </p>
+</header>
+
+<!-- GRID -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- CARD 1 -->
+<div class="p-8 card-glow flex flex-col justify-between min-h-[400px]">
+  <div>
+    <div class="flex justify-between items-center mb-12">
+      <span class="text-[10px] font-mono text-[#0ea5e3] border border-[#0ea5e3]/30 px-2 py-0.5">
+        HS: 9401.31
+      </span>
+      <i class="fas fa-chair text-xl text-gray-600"></i>
     </div>
-
-    <h1 class="text-5xl md:text-6xl font-black italic uppercase leading-tight mb-8">
-      Solutions Are Not Products.<br>
-      <span class="text-white/30">They Are Control Systems.</span>
-    </h1>
-
-    <p class="text-gray-400 max-w-3xl text-lg leading-relaxed">
-      YiShen does not sell SKUs.  
-      We build **deterministic supply-chain outcomes** for buyers who cannot afford uncertainty.
+    <h3 class="text-2xl font-black italic uppercase mb-4 tracking-tighter">
+      Ergo-Sovereignty
+    </h3>
+    <p class="text-gray-500 text-sm leading-relaxed font-light">
+      BIFMA-certified ergonomic seating with ISTA-6A packaging sovereignty,
+      eliminating trans-Pacific damage vectors.
     </p>
   </div>
-</section>
-
-<!-- ================= WHO THIS IS FOR ================= -->
-<section class="py-24 border-t border-white/5">
-  <div class="max-w-[1200px] mx-auto px-8">
-
-    <h2 class="mono text-xs tracking-[6px] text-[#0ea5e3] mb-16 uppercase">
-      Choose Your Battlefield
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <!-- DISTRIBUTOR -->
-      <div class="card p-8">
-        <div class="mono text-[10px] tracking-widest text-[#0ea5e3] mb-4">
-          BUYER_TYPE_01
-        </div>
-        <h3 class="text-2xl font-bold italic uppercase mb-4">
-          Distributor / Importer
-        </h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-          You win by margin control, delivery certainty, and SKU discipline —
-          not by chasing factories.
-        </p>
-        <ul class="mono text-[11px] space-y-2 text-gray-300">
-          <li>• Stable lead-time governance</li>
-          <li>• Packaging & damage liability logic</li>
-          <li>• Multi-market compliance shielding</li>
-        </ul>
-      </div>
-
-      <!-- BRAND -->
-      <div class="card p-8">
-        <div class="mono text-[10px] tracking-widest text-[#0ea5e3] mb-4">
-          BUYER_TYPE_02
-        </div>
-        <h3 class="text-2xl font-bold italic uppercase mb-4">
-          Brand / Private Label
-        </h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-          Your risk is not cost — it’s inconsistency between promise and delivery.
-        </p>
-        <ul class="mono text-[11px] space-y-2 text-gray-300">
-          <li>• Design-for-manufacture validation</li>
-          <li>• Brand damage containment logic</li>
-          <li>• Repeatability at scale</li>
-        </ul>
-      </div>
-
-      <!-- ECOM -->
-      <div class="card p-8">
-        <div class="mono text-[10px] tracking-widest text-[#0ea5e3] mb-4">
-          BUYER_TYPE_03
-        </div>
-        <h3 class="text-2xl font-bold italic uppercase mb-4">
-          E-Commerce / Amazon
-        </h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-          Platform penalties, returns, and reviews are system problems —
-          not marketing problems.
-        </p>
-        <ul class="mono text-[11px] space-y-2 text-gray-300">
-          <li>• Drop-test & return logic</li>
-          <li>• Listing-to-logistics alignment</li>
-          <li>• Damage-rate suppression</li>
-        </ul>
-      </div>
-
-    </div>
+  <div class="mt-8">
+    <a href="technical-passport.html?id=ERGO"
+       class="text-[9px] font-mono text-[#ffd700] uppercase tracking-[.2em] hover:text-white transition group">
+      Evidence_Report
+      <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+    </a>
   </div>
-</section>
+</div>
 
-<!-- ================= CORE PHILOSOPHY ================= -->
-<section class="py-24 border-t border-white/5">
-  <div class="max-w-[1000px] mx-auto px-8">
-    <div class="mono text-xs tracking-[6px] text-[#0ea5e3] mb-8 uppercase">
-      Rejection Is Part of Quality
+<!-- CARD 2 -->
+<div class="p-8 card-glow flex flex-col justify-between min-h-[400px]">
+  <div>
+    <div class="flex justify-between items-center mb-12">
+      <span class="text-[10px] font-mono text-[#0ea5e3] border border-[#0ea5e3]/30 px-2 py-0.5">
+        ISO 13485
+      </span>
+      <i class="fas fa-microscope text-xl text-gray-600"></i>
     </div>
-
-    <p class="text-gray-300 text-lg leading-relaxed mb-10">
-      YiShen has rejected large-volume orders when they violated
-      packaging physics, labor stability, or delivery certainty.
-    </p>
-
-    <p class="text-gray-500 text-sm leading-relaxed">
-      If your procurement logic depends on luck, discounts, or overtime miracles —
-      we are not a fit.
+    <h3 class="text-2xl font-black italic uppercase mb-4 tracking-tighter">
+      Medical Hub
+    </h3>
+    <p class="text-gray-400 text-sm leading-relaxed font-light">
+      Precision linear actuation, IP66 ingress protection,
+      and antimicrobial surface governance.
     </p>
   </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="py-24 border-t border-white/5">
-  <div class="max-w-[900px] mx-auto px-8 text-center">
-    <h2 class="text-4xl font-black italic uppercase mb-6">
-      Start With One Conversation
-    </h2>
-    <p class="text-gray-400 mb-10">
-      Not a quotation.  
-      Not a catalog.  
-      A system-level evaluation.
-    </p>
-
-    <div class="flex justify-center gap-6">
-      <a href="https://wa.me/8613XXXXXXXX"
-         class="px-8 py-4 bg-[#25D366] text-black font-bold rounded">
-        WhatsApp
-      </a>
-      <a href="https://www.linkedin.com/company/yishen-global"
-         class="px-8 py-4 bg-[#0077b5] text-white font-bold rounded">
-        LinkedIn
-      </a>
-    </div>
+  <div class="mt-8">
+    <a href="technical-passport.html?id=MED_HUB"
+       class="text-[9px] font-mono text-[#ffd700] uppercase tracking-[.2em] hover:text-white transition group">
+      Compliance_Docs
+      <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+    </a>
   </div>
-</section>
+</div>
 
-<!-- ================= FOOTER ================= -->
-<footer class="py-12 border-t border-white/5">
-  <div class="text-center mono text-[10px] tracking-[4px] text-gray-600">
-    © 2026 YISHEN GLOBAL · SOVEREIGN_ARCHITECTURE
+<!-- CARD 3 -->
+<div class="p-8 card-glow flex flex-col justify-between min-h-[400px] bg-[#0ea5e3]/5 border-[#0ea5e3]/20">
+  <div>
+    <div class="flex justify-between items-center mb-12">
+      <span class="text-[10px] font-mono text-[#10b981] border border-[#10b981]/30 px-2 py-0.5 uppercase">
+        CBAM_Compliant
+      </span>
+      <i class="fas fa-leaf text-xl text-[#10b981]"></i>
+    </div>
+    <h3 class="text-2xl font-black italic uppercase mb-4 tracking-tighter text-[#0ea5e3]">
+      Carbon Zero Node
+    </h3>
+    <p class="text-gray-400 text-sm leading-relaxed font-light italic">
+      Negative-carbon bamboo & WPC composites aligned
+      with EU Green Deal and CBAM offset pathways.
+    </p>
+  </div>
+  <div class="mt-8">
+    <a href="technical-passport.html?id=CARBON_ZERO"
+       class="text-[9px] font-mono text-[#ffd700] uppercase tracking-[.2em] hover:text-white transition group">
+      LCA_Sovereignty_Report
+      <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+    </a>
+  </div>
+</div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-12 px-8">
+  <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="opacity-30 font-mono text-[8px] uppercase tracking-[.3em]">
+      © 2026 YiShen Global Sovereignty | Systems Version: 2026.V5
+    </div>
+    <div class="flex items-center gap-8 opacity-40">
+      <span class="font-mono text-[8px] uppercase tracking-widest">DUNS: 545277884</span>
+      <span class="font-mono text-[8px] uppercase tracking-widest text-[#0ea5e3]">
+        Mapping_Gate_Active
+      </span>
+    </div>
   </div>
 </footer>
+
+<!-- System Boot Log (isolated) -->
+<script defer>
+(() => {
+  console.info("YiShen Global Solutions Matrix: ONLINE");
+  const params = new URLSearchParams(location.search);
+  if (params.has('status')) {
+    console.info("Recovery status:", params.get('status'));
+  }
+})();
+</script>
 
 </body>
 </html>

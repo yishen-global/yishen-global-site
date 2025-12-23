@@ -1,140 +1,81 @@
 {
-  "OFFICE_MESH_V4": {
-    "id": "OFFICE_MESH_V4",
-    "sector": "OFFICE_SOVEREIGNTY",
-    "title": "High-End Mesh Terminal",
-    "hs_code": "9401.31.00",
-    "tagline": "The Gold Standard of Ergonomic Architecture",
-    "desc": "针对北美大宗采购商优化的物理结构，集成动力学同步底盘，单柜容积率对撞提升 25%。",
-    "thumbnail": "assets/products/mesh-v4.webp",
-    "specs": {
-      "Material": "Reinforced Glass Fiber Nylon",
-      "Load_Rating": "300 lbs (136 kg) Certified",
-      "Actuation": "Kinetic Sync-Tilt Matrix"
-    },
-    "compliance": ["BIFMA", "ANSI", "ISTA", "ISO9001"],
-    "market_logic": "NORTH_AMERICA_CONTRACT",
-    "stats": {
-      "cbm": "97.8%",
-      "fail_rate": "0.01%",
-      "logistics_protocol": "Cubic-Max Flat-Pack Optimization"
-    },
-    "warranty": "10-Year Industrial Sovereignty Warranty",
-    "url": "technical-passport.html?id=OFFICE_MESH_V4"
+  "meta": {
+    "ledger_name": "YISHEN_GLOBAL_SOVEREIGN_LEDGER",
+    "version": "5.0.ULTIMATE",
+    "engine_status": "LIVE",
+    "currency_base": "USD",
+    "sovereign_owner": "YISHEN_GLOBAL",
+    "last_sync": "2026-01-01T00:00:00Z"
   },
-  "CHAIN_G80_MASTER": {
-    "id": "CHAIN_G80_MASTER",
-    "sector": "CHANGHONG_INDUSTRIAL",
-    "title": "Tensile Chain Node G80",
-    "hs_code": "7315.82.00",
-    "tagline": "Deterministic Heavy-Duty Tensile Matrix",
-    "desc": "长虹制链核心资产。符合海事认证，内置巴西 Santos 港反倾销豁免技术路径。",
-    "thumbnail": "assets/products/chain-g80.webp",
-    "specs": {
-      "Grade": "Alloy Steel Grade 80",
-      "Breaking_Force": "12,000 KG Node",
-      "Coating": "Hot-Dip Galvanized Armor"
+
+  "asset_clusters": [
+    {
+      "cluster_id": "OFFICE_ERGO",
+      "cluster_name": "Office Ergonomic Matrix",
+      "hs_root": "9401",
+      "sovereign_score": 98,
+      "asset_class": "MEGA_CATEGORY",
+      "assets": [
+        {
+          "sku": "YS-ERGOMESH-X9",
+          "product_name": "ErgoMesh X9 Chair",
+          "hs_code": "9401.31",
+          "certifications": ["BIFMA", "ISO9001", "ISTA"],
+          "moq": 50,
+          "lead_time_days": 15,
+          "sovereign_tags": ["FAST_DELIVERY", "OEM_READY", "CBM_OPTIMIZED"],
+          "base_cost_usd": 72,
+          "sovereign_value_index": 91,
+          "markets": ["USA", "CANADA", "EU"],
+          "status": "ACTIVE"
+        }
+      ]
     },
-    "compliance": ["ASTM", "ISO1704", "ABS", "CE"],
-    "market_logic": "LATAM_INFRASTRUCTURE_AD_EXEMPT",
-    "stats": {
-      "cbm": "99.4%",
-      "fail_rate": "0.00%",
-      "logistics_protocol": "Steel-Pail Reinforced Armor"
+
+    {
+      "cluster_id": "MEDICAL_PRECISION",
+      "cluster_name": "Medical Precision Systems",
+      "hs_root": "9402",
+      "sovereign_score": 88,
+      "asset_class": "CRITICAL_CATEGORY",
+      "assets": [
+        {
+          "sku": "YS-MEDICARE-A1",
+          "product_name": "Sterile Medical Chair A1",
+          "hs_code": "9402.10",
+          "certifications": ["ISO13485", "CE"],
+          "moq": 20,
+          "lead_time_days": 18,
+          "sovereign_tags": ["ANTI_BACTERIAL", "FORM_E_ZERO_TARIFF"],
+          "base_cost_usd": 128,
+          "sovereign_value_index": 89,
+          "markets": ["ASEAN", "EU"],
+          "status": "ACTIVE"
+        }
+      ]
     },
-    "warranty": "Lifetime Heavy-Duty Integrity Warranty",
-    "url": "technical-passport.html?id=CHAIN_G80_MASTER"
-  },
-  "AERO_COMMAND_A01": {
-    "id": "AERO_COMMAND_A01",
-    "sector": "AERO_MILITARY",
-    "title": "Tactical Command Hub",
-    "hs_code": "9401.10.00",
-    "tagline": "Mission-Critical Command Architecture",
-    "desc": "专为高负载指挥环境设计，符合 MIL-STD 军规抗震标准，集成 9G 冲击防护主权。",
-    "thumbnail": "assets/products/aero-command.webp",
-    "specs": {
-      "Chassis": "Aerospace Aluminum Alloy",
-      "Dynamic_Load": "180kg Stability Node",
-      "Protection": "Anti-Static / Fire-Resistant"
-    },
-    "compliance": ["MIL-STD-810H", "UL94-V0", "ANSI", "BIFMA"],
-    "market_logic": "GOVERNMENT_DEFENSE_MRO",
-    "stats": {
-      "cbm": "97.4%",
-      "fail_rate": "0.00%",
-      "logistics_protocol": "ISTA-6A Military Grade"
-    },
-    "warranty": "Lifetime Tactical Integrity Warranty",
-    "url": "technical-passport.html?id=AERO_COMMAND_A01"
-  },
-  "BAMBOO_CBAM_READY": {
-    "id": "BAMBOO_CBAM_READY",
-    "sector": "BIO_MATERIALS",
-    "title": "Carbon-Negative Bamboo",
-    "hs_code": "4418.75.00",
-    "tagline": "Sovereign Sustainable Architecture",
-    "desc": "户外重竹高压地板：应对欧洲 CBAM 碳税补丁，具备极致尺寸稳定性与生物主权。",
-    "thumbnail": "assets/products/bamboo-cbam.webp",
-    "specs": {
-      "Hardness": "Janka 3500+ Grade",
-      "Process": "Deep-Thermal High-Density",
-      "Carbon_Index": "Negative Footprint Node"
-    },
-    "compliance": ["LEED", "CBAM", "FSC", "ISO14001"],
-    "market_logic": "EUROPE_GREEN_SOVEREIGNTY",
-    "stats": {
-      "cbm": "96.5%",
-      "fail_rate": "0.02%",
-      "logistics_protocol": "Bio-Degradable Moisture Shield"
-    },
-    "warranty": "25-Year Dimension Stability Warranty",
-    "url": "technical-passport.html?id=BAMBOO_CBAM_READY"
-  },
-  "MED_BIOMECH_9002": {
-    "id": "MED_BIOMECH_9002",
-    "sector": "MEDICAL_PRECISION",
-    "title": "Clinical Biomechanical Seating",
-    "hs_code": "9402.10.00",
-    "tagline": "Antimicrobial Biomechanical Architecture",
-    "desc": "临床级抗菌生物力学控制终端，集成银离子护盾技术，针对高无菌环境对撞。",
-    "thumbnail": "assets/products/med-biomech.webp",
-    "specs": {
-      "Shield": "Silver-Ion Antimicrobial Polymer",
-      "Base": "Medical-Grade Stainless Steel",
-      "Control": "Precision Dynamic Control"
-    },
-    "compliance": ["FDA", "ISO22196", "CE", "ISO13485"],
-    "market_logic": "HEALTHCARE_PRECISION_NODES",
-    "stats": {
-      "cbm": "98.1%",
-      "fail_rate": "0.01%",
-      "logistics_protocol": "Medical-Grade Sterile Packaging"
-    },
-    "warranty": "15-Year Clinical Reliability Warranty",
-    "url": "technical-passport.html?id=MED_BIOMECH_9002"
-  },
-  "DUAL_X1_WORKSTATION": {
-    "id": "DUAL_X1_WORKSTATION",
-    "sector": "ARCHITECTURAL_DESKS",
-    "title": "D-UAL X1 Power Node",
-    "hs_code": "9403.10.00",
-    "tagline": "Precision Height-Adjustment System",
-    "desc": "高精度升降系统架构。集成 E0 级主权材料，针对 Fortune 500 总部办公空间的确定性交付。",
-    "thumbnail": "assets/products/dual-x1.webp",
-    "specs": {
-      "Stability": "Carbon Steel Dual-Motor Matrix",
-      "Material": "E0 Sustainability Top",
-      "Lift_Range": "650mm - 1250mm Dynamic"
-    },
-    "compliance": ["CE", "UL962", "BIFMA", "RoHS"],
-    "market_logic": "OFFICE_INFRASTRUCTURE_SYNC",
-    "stats": {
-      "cbm": "94.2%",
-      "fail_rate": "0.05%",
-      "logistics_protocol": "Flat-Pack Cubic-Max Density"
-    },
-    "warranty": "5-Year Electronic System Warranty",
-    "url": "technical-passport.html?id=DUAL_X1_WORKSTATION"
-  }
+
+    {
+      "cluster_id": "MARINE_HARDWARE",
+      "cluster_name": "Marine Chains & Rigging",
+      "hs_root": "7315",
+      "sovereign_score": 94,
+      "asset_class": "HEAVY_DUTY_CATEGORY",
+      "assets": [
+        {
+          "sku": "YS-MARINE-G80",
+          "product_name": "Alloy Lifting Chain G80",
+          "hs_code": "7315.82",
+          "certifications": ["CE", "DNV"],
+          "moq": 100,
+          "lead_time_days": 22,
+          "sovereign_tags": ["ANTI_DUMPING_PATH", "BRAZIL_FREE"],
+          "base_cost_usd": 2.6,
+          "sovereign_value_index": 95,
+          "markets": ["BRAZIL", "LATAM", "MIDDLE_EAST"],
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  ]
 }

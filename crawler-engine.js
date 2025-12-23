@@ -1,60 +1,51 @@
-/* ============================================================
-   YISHEN GLOBAL — CRAWLER ENGINE
-   Version: 5.0
-   Purpose: Market Trend / Keyword / Country / HS Intelligence Harvester
-============================================================ */
+/**
+ * YISHEN GLOBAL – CRAWLER ENGINE v5 FINAL
+ * Sovereign SKU Expansion & Index Mapping Core
+ */
 
-(function(){
+(async function () {
+  const BASE = "/public/assets/data";
+  const SKU_DB = `${BASE}/sku-database.json`;
+  const INTEL = `${BASE}/intel-feed.json`;
+  const MAP_API = "/api/sovereign-map";
 
-  const CFG = {
-    intelFeed: "/assets/data/intel-feed.json",
-    sources: [
-      { name:"google", url:"https://www.google.com/search?q=" },
-      { name:"bing",   url:"https://www.bing.com/search?q=" }
-    ],
-    keywords: [
-      "ergonomic chair", "gaming chair", "recliner chair",
-      "medical chair", "standing desk", "marine chain", "rigging hardware"
-    ]
-  };
+  const $ = (id) => document.getElementById(id);
 
-  const CRAWLER = {
-    intel: [],
+  async function loadJSON(url) {
+    const r = await fetch(url);
+    return r.ok ? r.json() : [];
+  }
 
-    async boot() {
-      console.log("🛰️ CRAWLER ENGINE BOOTING...");
-      await this.loadIntel();
-      await this.harvest();
-      await this.saveIntel();
-      console.log("%cMARKET INTEL UPDATED","color:#22d3ee;font-weight:bold");
-    },
+  const skuDB = await loadJSON(SKU_DB);
+  const intel = await loadJSON(INTEL);
 
-    async loadIntel(){
-      try{
-        const r = await fetch(CFG.intelFeed);
-        this.intel = (await r.json()).items || [];
-      }catch{
-        this.intel = [];
-      }
-    },
+  // ===== Build Sovereign Index =====
+  const sovereignIndex = skuDB.map(sku => ({
+    id: sku.id,
+    title: sku.title,
+    hs: sku.hs,
+    cluster: sku.cluster,
+    url: `/technical-passport.html?id=${sku.id}`
+  }));
 
-    async harvest(){
-      const now = new Date().toISOString();
-      CFG.keywords.forEach(k=>{
-        this.intel.push({
-          keyword: k,
-          region: navigator.language || "en-US",
-          score: Math.floor(Math.random()*100),
-          detected: now
-        });
-      });
-    },
+  // ===== Push To API (optional) =====
+  try {
+    await fetch(MAP_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sovereignIndex, intel })
+    });
+  } catch(e){}
 
-    async saveIntel(){
-      const payload = { items:this.intel.slice(-500) };
-      console.log("INTEL_PAYLOAD", payload);
-    }
-  };
+  // ===== Inject Hidden Index For Bots =====
+  const container = document.createElement("div");
+  container.id = "sovereign-index";
+  container.style.display = "none";
+  container.innerHTML = sovereignIndex.map(i =>
+    `<a href="${i.url}" data-hs="${i.hs}" data-cluster="${i.cluster}">${i.title}</a>`
+  ).join("");
 
-  document.addEventListener("DOMContentLoaded",()=>CRAWLER.boot());
+  document.body.appendChild(container);
+
+  console.log(">> CRAWLER_ENGINE_ACTIVE | INDEX SIZE:", sovereignIndex.length);
 })();

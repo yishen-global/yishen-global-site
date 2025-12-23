@@ -1,4 +1,21 @@
 {
+  // ======================================================
+  // VERCEL CONFIG (FROZEN PLACEHOLDER)
+  //
+  // Status: INACTIVE / DORMANT
+  // Purpose: Future API expansion (NOT active in Genesis)
+  // Policy:
+  // - Do NOT upgrade Node runtime
+  // - Do NOT add rewrites / redirects
+  // - Do NOT enable Edge Functions
+  // - Do NOT introduce build/output config
+  //
+  // Current Site Mode:
+  // - Pure static HTML
+  // - Zero backend dependency
+  // - Genesis authority baseline
+  // ======================================================
+
   "version": 2,
   "functions": {
     "api/*.js": {

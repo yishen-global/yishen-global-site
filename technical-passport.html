@@ -211,46 +211,259 @@ transition:opacity .8s ease;}
 
   function render(){
     const id=(new URLSearchParams(location.search).get('id')||'ERGO').toUpperCase();
-    const d=PASSPORT_DB[id]||PASSPORT_DB.ERGO;
+    <script>
+/* =========================================================
+   YISHEN GLOBAL — PASSPORT DATABASE (V5.0 FINAL)
+   Status: Production Ready / PDF Linked / Route-Safe
+   ========================================================= */
 
-    skuSectorTag.textContent=`[ SECTOR: ${d.sector} ]`;
-    skuMainTitle.textContent=d.title;
-    skuDesc.textContent=d.desc;
-    skuIdDisplay.textContent=id;
-    skuFail.textContent=d.metrics.fail;
-    skuCbm.textContent=d.metrics.cbm;
+const PASSPORT_DB = {
 
-    skuSpecTable.innerHTML=Object.entries(d.specs)
-      .map(([k,v])=>`<tr><td class="label-mono">${k}</td><td class="value-bold">${v}</td></tr>`).join('');
+  /* =========================
+     ERGONOMIC OFFICE CHAIR
+     ========================= */
+  ERGO: {
+    sector: "ERGO_FURNITURE",
+    title: "Ergo-Sovereignty Node",
+    desc: "BIFMA X5.1 certified ergonomic seating system. Integrated ISTA-6A packaging logic engineered to eliminate long-haul damage risk and procurement uncertainty.",
+    specs: {
+      HS_CODE: "9401.31",
+      STANDARD: "BIFMA X5.1",
+      PACKAGING: "ISTA-6A",
+      MARKETS: "US / EU / GCC",
+      OEM_ODM: "Supported"
+    },
+    metrics: {
+      fail: "99.9%",
+      cbm: "ANSI"
+    },
+    patch: "North America sourcing path calibrated. Packaging + documentation collision logic locked for predictable delivery.",
+    doc: "assets/docs/YISHEN_Ergo_Office_Chair_Technical_Passport.pdf"
+  },
 
-    if(d.patch){
-      dutyShield.classList.remove('hidden');
-      patchMsg.textContent=d.patch;
-    }
+  /* =========================
+     SMART GAMING CHAIR
+     ========================= */
+  GAMING: {
+    sector: "SMART_GAMING_SEATING",
+    title: "Smart Gaming Chair Node",
+    desc: "Reinforced frame gaming chair architecture optimized for e-commerce conversion, modular packaging and low-damage fulfillment.",
+    specs: {
+      HS_CODE: "9401.31",
+      STANDARD: "BIFMA X5.1",
+      COMPLIANCE: "REACH / RoHS",
+      PACKAGING: "Modular Carton",
+      CHANNEL: "B2C / B2B"
+    },
+    metrics: {
+      fail: "99.5%",
+      cbm: "Retail"
+    },
+    patch: "Gaming SKU packaging + logistics stability logic enabled for Amazon / DTC channels.",
+    doc: "assets/docs/YISHEN_Smart_Gaming_Chair_Specs.pdf"
+  },
 
-    downloadBtn.onclick=()=> d.doc
-      ? window.open(d.doc,'_blank')
-      : alert('Evidence packet unavailable.');
+  /* =========================
+     STANDING DESK
+     ========================= */
+  DESK: {
+    sector: "HEIGHT_ADJUSTABLE_DESK",
+    title: "Standing Desk Engineering Node",
+    desc: "Dual-motor height adjustable desk system with anti-collision logic, load redundancy and cycle-tested actuator control.",
+    specs: {
+      HS_CODE: "9403.20",
+      MOTOR: "Dual Motor",
+      NOISE: "<45dB",
+      CYCLES: "20,000+",
+      CERT: "CE / UL"
+    },
+    metrics: {
+      fail: "99.6%",
+      cbm: "Electrical"
+    },
+    patch: "Actuator sourcing + frame integration path stabilized for long-term lead-time control.",
+    doc: "assets/docs/YISHEN_Standing_Desk_Engineering_Whitepaper.pdf"
+  },
+
+  /* =========================
+     SMART SOFA
+     ========================= */
+  SOFA: {
+    sector: "SMART_FUNCTIONAL_SOFA",
+    title: "Smart Sofa System Node",
+    desc: "Functional sofa platform integrating recliner, lift and power modules with safety-first electrical architecture.",
+    specs: {
+      HS_CODE: "9401.61",
+      MODULES: "Recline / Lift / Power",
+      MOTOR_CERT: "CE / UL Ready",
+      OEM: "Yes"
+    },
+    metrics: {
+      fail: "99.4%",
+      cbm: "System"
+    },
+    patch: "Smart-home compatible SKU logic mapped for retailer onboarding.",
+    doc: "assets/docs/YISHEN_Smart_Sofa_System_Overview.pdf"
+  },
+
+  /* =========================
+     LOUNGER / LEISURE CHAIR
+     ========================= */
+  LOUNGER: {
+    sector: "LEISURE_LOUNGER",
+    title: "Lounger & Leisure Chair Node",
+    desc: "Leisure seating engineered for hospitality, resort and lifestyle markets with OEM/ODM flexibility.",
+    specs: {
+      HS_CODE: "9401.79",
+      USE: "Hotel / Resort / Residential",
+      MATERIAL: "Fabric / Leather / Mesh",
+      OEM: "Yes"
+    },
+    metrics: {
+      fail: "99.3%",
+      cbm: "Lifestyle"
+    },
+    patch: "Hospitality procurement narrative + packaging stability path aligned.",
+    doc: "assets/docs/YISHEN_Lounger_Leisure_Chair_Catalog.pdf"
+  },
+
+  /* =========================
+     SMART HOME SYSTEM
+     ========================= */
+  SMARTHOME: {
+    sector: "SMART_HOME_SYSTEM",
+    title: "Smart Home Modular System Node",
+    desc: "Furniture-as-a-system architecture combining seating, motion and power modules into scalable platforms.",
+    specs: {
+      SYSTEM: "Modular",
+      CHANNEL: "Integrator / Developer",
+      SKU_MODEL: "Scalable",
+      OEM: "Supported"
+    },
+    metrics: {
+      fail: "99.2%",
+      cbm: "Platform"
+    },
+    patch: "System-level packaging + documentation logic enabled for multi-SKU deployment.",
+    doc: "assets/docs/YISHEN_Smart_Home_Modular_System.pdf"
+  },
+
+  /* =========================
+     WPC FLOORING / CBAM
+     ========================= */
+  CARBON_ZERO: {
+    sector: "E_ZONE_COMPOSITE",
+    title: "Carbon Neutral WPC Flooring Node",
+    desc: "CBAM-aligned bamboo & WPC composite flooring with full LCA documentation for EU carbon cost hedging.",
+    specs: {
+      HS_CODE: "3918.90",
+      CBAM: "Compliant",
+      RECYCLED: "95%",
+      LCA: "Certified"
+    },
+    metrics: {
+      fail: "98.5%",
+      cbm: "CBAM"
+    },
+    patch: "EU CBAM evidence path integrated. Importer carbon tax exposure reduced.",
+    doc: "assets/docs/YISHEN_WPC_Flooring_CBAM_Report.pdf"
+  },
+
+  /* =========================
+     BAMBOO CRAFT
+     ========================= */
+  BAMBOO: {
+    sector: "BAMBOO_CRAFT",
+    title: "Bamboo Craft Sustainability Node",
+    desc: "Low-carbon bamboo craft products with documented sustainability narrative for global retail buyers.",
+    specs: {
+      MATERIAL: "Bamboo",
+      CARBON: "Low",
+      OEM: "Yes",
+      PACKAGING: "Retail Ready"
+    },
+    metrics: {
+      fail: "99.1%",
+      cbm: "Eco"
+    },
+    patch: "Sustainability evidence pack aligned for buyer storytelling.",
+    doc: "assets/docs/YISHEN_Bamboo_Craft_Sustainability_Whitepaper.pdf"
+  },
+
+  /* =========================
+     INDUSTRIAL ANCHOR CHAIN
+     ========================= */
+  ANCHOR: {
+    sector: "MARINE_ANCHOR_CHAIN",
+    title: "Industrial Anchor Chain Node",
+    desc: "Marine and offshore anchor chain with tensile-tested grades and material traceability.",
+    specs: {
+      HS_CODE: "7315.82",
+      GRADE: "G30 / G40 / G70",
+      FINISH: "Galvanized / Blackened",
+      TEST: "Tensile"
+    },
+    metrics: {
+      fail: "99.7%",
+      cbm: "Marine"
+    },
+    patch: "Marine procurement audit path aligned with full test evidence.",
+    doc: "assets/docs/YISHEN_Industrial_Anchor_Chain_Technical_Dossier.pdf"
+  },
+
+  /* =========================
+     WIRE ROPE
+     ========================= */
+  WIREROPE: {
+    sector: "WIRE_ROPE",
+    title: "Wire Rope Specification Node",
+    desc: "Industrial and marine wire rope specification with construction, fatigue and corrosion logic.",
+    specs: {
+      HS_CODE: "7312.10",
+      STRUCTURE: "6x19 / 6x36",
+      CORE: "IWRC / FC",
+      TEST: "Tensile / Fatigue"
+    },
+    metrics: {
+      fail: "99.6%",
+      cbm: "Industrial"
+    },
+    patch: "Port and buyer requirement mapping enabled.",
+    doc: "assets/docs/YISHEN_Wire_Rope_Marine_Specification.pdf"
+  }
+};
+
+/* =========================================================
+   PASSPORT RENDER ENGINE — DO NOT MODIFY
+   ========================================================= */
+
+function renderPassport() {
+  const params = new URLSearchParams(window.location.search);
+  const nodeID = (params.get("id") || "ERGO").toUpperCase();
+  const data = PASSPORT_DB[nodeID] || PASSPORT_DB.ERGO;
+
+  document.getElementById("sku-sector-tag").innerText = `[ SECTOR: ${data.sector} ]`;
+  document.getElementById("sku-main-title").innerText = data.title;
+  document.getElementById("sku-desc").innerText = data.desc;
+  document.getElementById("sku-id-display").innerText = nodeID;
+  document.getElementById("sku-fail").innerText = data.metrics.fail;
+  document.getElementById("sku-cbm").innerText = data.metrics.cbm;
+
+  document.getElementById("sku-spec-table").innerHTML =
+    Object.entries(data.specs)
+      .map(([k, v]) => `<tr><td class="label-mono">${k}</td><td class="value-bold">${v}</td></tr>`)
+      .join("");
+
+  if (data.patch) {
+    document.getElementById("duty-shield").classList.remove("hidden");
+    document.getElementById("patch-msg").innerText = data.patch;
   }
 
-  window.addEventListener('load',()=>{
-    render();
-    barFill.style.width='100%';
-    setTimeout(()=>{
-      loadingScreen.style.opacity='0';
-      setTimeout(()=>loadingScreen.remove(),800);
-    },1800);
-  });
+  document.getElementById("download-btn").onclick = () => {
+    if (!data.doc) return alert("No PDF mapped for this node.");
+    window.open(data.doc, "_blank");
+  };
+}
 
-  document.addEventListener('mousemove',e=>{
-    requestAnimationFrame(()=>{
-      cursorGlow.style.left=e.clientX+'px';
-      cursorGlow.style.top=e.clientY+'px';
-    });
-  });
-
-})();
+window.addEventListener("load", renderPassport);
 </script>
-
-</body>
-</html>

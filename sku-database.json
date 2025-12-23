@@ -1,0 +1,63 @@
+{
+  "version": "5.0",
+  "last_sync": "2026-01-01T00:00:00Z",
+  "authority": "YISHEN_GLOBAL_SOVEREIGN_ASSET_ENGINE",
+  "products": [
+    {
+      "id": "OFFICE_MESH_V4",
+      "category": "OFFICE_ERGO",
+      "name": "Mesh & Gaming Matrix Chair System",
+      "tagline": "CBM Optimized · BIFMA Certified · North America Ready",
+      "hs_code": "9401.31",
+      "image": "assets/products/office-mesh.webp",
+      "technical_data": {
+        "standard": "BIFMA X5.1",
+        "logistics": "ISTA-6A / 0.24 CBM",
+        "market_logic": "US_WAREHOUSE_FAST_REPLENISH",
+        "certifications": ["BIFMA", "ISO9001", "ISTA"]
+      }
+    },
+    {
+      "id": "MARINE_CHAIN",
+      "category": "MARITIME_HARDWARE",
+      "name": "G80 / G100 Alloy Marine Chain System",
+      "tagline": "Brazil Anti-Dumping Exempt Optimized",
+      "hs_code": "7315.82",
+      "image": "assets/products/marine-chain.webp",
+      "technical_data": {
+        "standard": "ABS G80",
+        "logistics": "Bulk Cargo · Santos Port Route",
+        "market_logic": "LATAM_PORT_OPTIMIZED",
+        "certifications": ["ABS", "ISO9001"]
+      }
+    },
+    {
+      "id": "MEDICAL_CHAIR",
+      "category": "MEDICAL_PRECISION",
+      "name": "Sterile Clinical Chair System",
+      "tagline": "ASEAN Form E · ISO13485 Medical Grade",
+      "hs_code": "9402.10",
+      "image": "assets/products/medical-chair.webp",
+      "technical_data": {
+        "standard": "ISO13485",
+        "logistics": "Clean Zone Shipping",
+        "market_logic": "ASEAN_ZERO_TARIFF",
+        "certifications": ["ISO13485", "CE", "SGS"]
+      }
+    },
+    {
+      "id": "INDUSTRIAL_LADDER",
+      "category": "INFRASTRUCTURE_MRO",
+      "name": "ANSI / EN131 Aluminum Ladder System",
+      "tagline": "Anti-Dumping Shielded Route",
+      "hs_code": "7616.99",
+      "image": "assets/products/industrial-ladder.webp",
+      "technical_data": {
+        "standard": "EN131",
+        "logistics": "ASEAN Reroute Channel",
+        "market_logic": "NORTH_AMERICA_TARIFF_SHIELD",
+        "certifications": ["EN131", "ISO9001"]
+      }
+    }
+  ]
+}

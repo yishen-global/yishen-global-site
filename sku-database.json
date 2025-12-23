@@ -1,75 +1,41 @@
 {
-  "protocol": "YISHEN_GLOBAL_SKU_DATABASE_V5",
-  "last_sync": "AUTO",
+  "meta": {
+    "protocol": "YISHEN_SOVEREIGN_SKU_MATRIX_V5",
+    "auto_growth": true,
+    "seo_farm_enabled": true
+  },
   "products": [
     {
       "id": "OFFICE_MESH_V4",
-      "name": "Ergonomic Mesh & Gaming Chair Matrix",
-      "category": "FURNITURE",
-      "hs_code": "9401.31",
-      "image": "assets/products/office_mesh_v4.webp",
-      "tagline": "North America Bulk Procurement Certainty Node",
-      "technical_data": {
-        "material": "High-density mesh + steel base",
-        "standard": "BIFMA X5.1",
-        "logistics": "ISTA-6A / 0.24 CBM",
-        "market_logic": "HIGH_TURNOVER_FAST_REPLENISH"
+      "category": "OFFICE_ERGONOMIC",
+      "name": "Sovereign Ergonomic Mesh Chair",
+      "hs": "940131",
+      "markets": ["US","CA","EU","UAE"],
+      "seo": {
+        "title": "Ergonomic Mesh Office Chair Manufacturer | OEM Factory",
+        "keywords": ["mesh office chair","ergonomic chair manufacturer","OEM office chair"]
       }
     },
     {
       "id": "CHAIN_G80_MASTER",
-      "name": "Marine Alloy Lifting Chain G80/G100",
       "category": "MARITIME_HARDWARE",
-      "hs_code": "7315.82",
-      "image": "assets/products/chain_g80.webp",
-      "tagline": "Brazil AD Exempt Maritime Rigging Node",
-      "technical_data": {
-        "material": "Alloy steel G80/G100",
-        "standard": "ABS / EN818",
-        "logistics": "ISTA-6A / 0.05 CBM",
-        "market_logic": "BRAZIL_FAST_LANE"
+      "name": "G80 Alloy Marine Chain",
+      "hs": "731582",
+      "markets": ["BR","CL","MX"],
+      "seo": {
+        "title": "G80 Marine Lifting Chain Manufacturer | Brazil Exempt",
+        "keywords": ["g80 chain","marine lifting chain","brazil exempt chain"]
       }
     },
     {
       "id": "MEDICAL_CHAIR_X9",
-      "name": "Sterile Clinical Chair System",
       "category": "MEDICAL_PRECISION",
-      "hs_code": "9402.10",
-      "image": "assets/products/medical_chair_x9.webp",
-      "tagline": "ASEAN Zero Tariff Medical Entry Node",
-      "technical_data": {
-        "material": "Antibacterial coated steel + PU leather",
-        "standard": "ISO 13485",
-        "logistics": "ISTA-6A / 0.38 CBM",
-        "market_logic": "ASEAN_MEDICAL_FAST_ENTRY"
-      }
-    },
-    {
-      "id": "INFRA_LADDER_PRO",
-      "name": "Industrial Aluminum Ladder System",
-      "category": "INFRA_TOOLS",
-      "hs_code": "7616.99",
-      "image": "assets/products/infra_ladder.webp",
-      "tagline": "North America Tariff Defense Node",
-      "technical_data": {
-        "material": "6061 Aluminum Alloy",
-        "standard": "ANSI / EN131",
-        "logistics": "ISTA-6A / 0.42 CBM",
-        "market_logic": "ASEAN_BYPASS_ROUTING"
-      }
-    },
-    {
-      "id": "CARBON_PANEL_BIOX",
-      "name": "Bio Carbon Neutral Composite Panel",
-      "category": "BIO_MATERIALS",
-      "hs_code": "6810.11",
-      "image": "assets/products/bio_panel.webp",
-      "tagline": "EU Green Construction Mandate Node",
-      "technical_data": {
-        "material": "Plant fiber composite",
-        "standard": "EPD / FSC",
-        "logistics": "ISTA-6A / 0.55 CBM",
-        "market_logic": "EU_CARBON_PRIORITY"
+      "name": "ISO13485 Medical Treatment Chair",
+      "hs": "940210",
+      "markets": ["ASEAN","EU"],
+      "seo": {
+        "title": "Medical Treatment Chair ISO13485 | Hospital Supplier",
+        "keywords": ["medical chair","treatment chair","hospital furniture"]
       }
     }
   ]

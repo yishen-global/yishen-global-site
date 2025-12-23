@@ -1,65 +1,60 @@
-import os, re
+import os
+import re
 
 # =========================================================
-# YISHEN GLOBAL — LINK_FIXER V5.0_PATCHED_PRODUCTION_SAFE
-# Mission: 全站链接主权校准 + iOS / Vercel 兼容修复
+# YISHEN GLOBAL - LINK_FIXER_V5.0.FINAL_POWER_PATCHED
+# 目标：只修电源层，不动任何业务内容
 # =========================================================
-
-TARGET_FILES = [
-    'index.html',
-    'genesis.html',
-    'site-architecture.html',
-    'clusters.html',
-    'resources.html',
-    'tactical-briefing.html',
-    'operational-systems.html'
-]
 
 class LinkFixer:
-
     def __init__(self):
+        self.target_files = [
+            'index.html', 'genesis.html', 'architectures.html', 
+            'clusters.html', 'resources.html', 'tactical-briefing.html',
+            'site-architecture.html', 'operational-systems.html'
+        ]
         self.patch_count = 0
 
     def boot(self):
-        print(">>> LINK_FIXER: STARTING PRODUCTION SAFE PATCH...")
-        for f in TARGET_FILES:
-            if os.path.isfile(f):
-                self.patch_file(f)
+        print(">>> [POWER_PATCH]: LINK_SYSTEM_POWER_ON...")
+        for filename in self.target_files:
+            if os.path.isfile(filename):
+                self.repair_file(filename)
             else:
-                print(f"! Missing: {f}")
-        print(f">>> DONE: {self.patch_count} files patched.")
+                print(f"! [WARNING]: {filename} not found.")
+        print(f">>> [OK]: {self.patch_count} power patches injected.")
 
-    def patch_file(self, filename):
+    def repair_file(self, filename):
         with open(filename,'r',encoding='utf-8') as f:
-            html = f.read()
+            content = f.read()
 
-        # PATCH 1: only lowercase internal html href, ignore http(s)
-        html = re.sub(
+        # ⚡ PATCH_01：只改内部 html，不碰 http/https CDN
+        content = re.sub(
             r'href="(?!https?:\/\/)([^"]+\.html)"',
             lambda m: f'href="{m.group(1).lower()}"',
-            html
+            content
         )
 
-        # PATCH 2: Safe preventDefault injection (only when function exists)
+        # ⚡ PATCH_02：只在函数已存在时加 preventDefault
         for fn in ['verifyCert','runAgent','previewResource']:
-            html = re.sub(
+            content = re.sub(
                 rf'onclick="{fn}\(',
                 f'onclick="event.preventDefault();{fn}(',
-                html
+                content
             )
 
-        # PATCH 3: Asset path normalization
-        html = html.replace('src="icons/', 'src="assets/icons/')
-        html = html.replace('src="products/', 'src="assets/products/')
-        html = html.replace('href="icons/', 'href="assets/icons/')
-        html = html.replace('href="products/', 'href="assets/products/')
+        # ⚡ PATCH_03：资产路径通电（不改任何业务结构）
+        content = content.replace('src="icons/', 'src="assets/icons/')
+        content = content.replace('src="products/', 'src="assets/products/')
+        content = content.replace('href="icons/', 'href="assets/icons/')
+        content = content.replace('href="products/', 'href="assets/products/')
 
-        # PATCH 4: Legacy SKU pages → technical-passport
-        html = html.replace('sku-detail.html', 'technical-passport.html')
+        # ⚡ PATCH_04：旧 SKU 页安全转向
+        content = content.replace('sku-detail.html', 'technical-passport.html')
 
-        # PATCH 5: iOS passive touch compatibility
-        if '</body>' in html and 'LINK_FIXER_MOBILE_PATCH' not in html:
-            html = html.replace('</body>', '''
+        # ⚡ PATCH_05：iOS / Safari 触摸通电（只插一次）
+        if '</body>' in content and 'LINK_FIXER_MOBILE_PATCH' not in content:
+            content = content.replace('</body>', '''
 <script id="LINK_FIXER_MOBILE_PATCH">
 document.querySelectorAll('a,button').forEach(el=>{
   el.addEventListener('touchstart',()=>{}, {passive:true});
@@ -68,10 +63,10 @@ document.querySelectorAll('a,button').forEach(el=>{
 </body>''')
 
         with open(filename,'w',encoding='utf-8') as f:
-            f.write(html)
+            f.write(content)
 
         self.patch_count += 1
-        print(f"✓ Patched: {filename}")
+        print(f"✓ POWER_PATCHED: {filename}")
 
 if __name__ == "__main__":
     LinkFixer().boot()

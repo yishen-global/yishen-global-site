@@ -1,224 +1,494 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Architectures | Sovereign System Blueprint | YISHEN GLOBAL</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>02_ARCHITECTURES | Sovereign System Blueprint | YISHEN GLOBAL</title>
 
-    <style>
-        :root { 
-            --neon-blue: #0ea5e3; 
-            --performance-red: #A11219; 
-            --brand-gold: #ffd700;
-            --deep-space: #010409; 
-        }
-        body { background-color: var(--deep-space); color: #e6edf3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+  <meta name="description" content="Yishen Global V5.0 system blueprint: UI hooks, lazy loader, terminal logic, intelligence harvester, link integrity, sitemap sovereignty — all wired into one non-invasive architecture." />
+  <meta name="theme-color" content="#010409" />
 
-        /* GPU 加速数字化微光 */
-        #cursor-glow {
-            position: fixed; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%);
-            will-change: transform; mix-blend-mode: screen;
-        }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-        /* 拓扑连线背景 */
-        .topology-bg {
-            background-image: radial-gradient(rgba(14, 165, 233, 0.08) 1.5px, transparent 1.5px);
-            background-size: 40px 40px;
-        }
+  <!-- Optional: global stylesheet (if you keep it) -->
+  <link rel="stylesheet" href="public/assets/css/styles.css" />
 
-        /* 架构节点样式：深度对位 V5.0 */
-        .arch-node {
-            background: rgba(13, 17, 23, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 35px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            height: 100%;
-        }
-        .arch-node:hover {
-            border-color: var(--neon-blue);
-            background: rgba(14, 165, 233, 0.04);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
+  <style>
+    :root{
+      --neon-blue:#0ea5e3;
+      --perf-red:#A11219;
+      --brand-gold:#ffd700;
+      --deep-space:#010409;
+      --spring:cubic-bezier(0.16, 1, 0.3, 1);
+      --panel: rgba(255,255,255,0.02);
+      --border: rgba(255,255,255,0.08);
+      --muted: #8b949e;
+      --dim: #6e7681;
+    }
+    body{ background:var(--deep-space); color:#fff; font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif; overflow-x:hidden; }
 
-        .layer-label { font-family: 'JetBrains Mono'; font-size: 0.65rem; letter-spacing: 4px; color: var(--neon-blue); text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
-        
-        /* 逻辑连接线补丁 */
-        .flow-line { height: 1px; background: linear-gradient(90deg, var(--neon-blue), transparent); width: 100%; margin: 20px 0; opacity: 0.2; }
+    /* Topography grid */
+    .grid-bg{
+      background-image: radial-gradient(rgba(14,165,233,0.09) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
 
-        .status-active { width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 10px #10b981; }
+    /* GPU cursor glow */
+    #cursor-glow{
+      position:fixed; width:600px; height:600px;
+      background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+      border-radius:50%; pointer-events:none; z-index:9999;
+      transform: translate(-50%,-50%);
+      will-change: transform; mix-blend-mode: screen;
+    }
 
-        #loading-screen { position: fixed; inset: 0; z-index: 100001; background: #010409; display: flex; flex-direction: column; items: center; justify-content: center; }
-        #bar-fill { height: 100%; background: var(--neon-blue); width: 0%; transition: 2s cubic-bezier(0.1, 0.5, 0.1, 1); }
-    </style>
+    /* Loading ritual */
+    #loading-screen{ position:fixed; inset:0; z-index:100001; background:#010409; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    #bar-fill{ height:100%; width:0%; background:var(--neon-blue); transition:2s cubic-bezier(0.1,0.5,0.1,1); }
+
+    /* Cards */
+    .blueprint-card{
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      transition: .35s var(--spring);
+      position:relative;
+      overflow:hidden;
+    }
+    .blueprint-card:hover{
+      border-color: rgba(14,165,233,0.55);
+      transform: translateY(-6px);
+      background: rgba(14,165,233,0.04);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+    }
+    .blueprint-card::before{
+      content:"";
+      position:absolute; top:0; left:0;
+      width:100%; height:2px;
+      background: var(--neon-blue);
+      transform: translateX(-100%);
+      transition: .65s var(--spring);
+      opacity:.8;
+    }
+    .blueprint-card:hover::before{ transform: translateX(0); }
+
+    .mono{ font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .muted{ color: var(--muted); }
+    .dim{ color: var(--dim); }
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+      padding: 8px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .scan-line{
+      position:absolute;
+      width:100%;
+      height:2px;
+      background: var(--neon-blue);
+      opacity:.25;
+      animation: scan 4s linear infinite;
+    }
+    @keyframes scan{ 0%{ top:0% } 100%{ top:100% } }
+
+    /* Terminal */
+    .terminal{
+      background:#000;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 14px;
+      height: 220px;
+      overflow:auto;
+    }
+    .terminal::-webkit-scrollbar{ width:4px; }
+    .terminal::-webkit-scrollbar-thumb{ background: var(--neon-blue); }
+    .terminal::-webkit-scrollbar-track{ background: rgba(255,255,255,0.02); }
+
+    /* Mobile */
+    @media (max-width: 1024px){
+      .nav-links{ display:none; }
+    }
+  </style>
 </head>
-<body class="selection:bg-[#0ea5e3] topology-bg">
 
-    <div id="loading-screen">
-        <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Blueprint_Vault_Sync</span>
-        <div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-        <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// AUTHORIZING_SYSTEM_AUDIT_V5...</span>
+<body class="grid-bg selection:bg-[#0ea5e3] selection:text-black">
+
+  <!-- Loading -->
+  <div id="loading-screen">
+    <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Blueprint_Sync_V5</span>
+    <div class="w-56 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
+    <span class="text-[#0ea5e3] mono text-[8px] mt-4 tracking-[4px] animate-pulse">// LINKING_SOVEREIGN_MODULES...</span>
+  </div>
+
+  <div id="cursor-glow"></div>
+
+  <!-- Nav -->
+  <nav id="master-nav" class="fixed top-0 left-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
+    <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+      <a href="index.html" class="flex flex-col">
+        <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
+        <span class="text-[#0ea5e3] mono text-[8px] tracking-[3px]">SYSTEM_BLUEPRINT_V5.0</span>
+      </a>
+
+      <div class="nav-links hidden lg:flex items-center space-x-10 mono text-[0.7rem] tracking-widest text-gray-400 uppercase">
+        <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
+        <a href="architectures.html" class="text-white border-b border-[#0ea5e3] pb-1">02_ARCHITECTURES</a>
+        <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
+        <a href="intelligence-intel.html" class="hover:text-white transition">04_INTEL</a>
+        <a href="resources.html" class="hover:text-white transition">05_RESOURCES</a>
+        <a href="tactical-briefing.html" class="px-5 py-2 bg-[#0ea5e3] text-black font-black italic rounded-sm uppercase">Access_Vault</a>
+      </div>
     </div>
+  </nav>
 
-    <div id="cursor-glow"></div>
+  <main class="pt-44 pb-28 px-[8%] max-w-[1440px] mx-auto">
 
-    <nav id="master-nav" class="fixed top-0 left-0 z-[100000] w-full bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
-        <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
-            <a href="index.html" class="flex flex-col">
-                <span class="text-white font-black italic text-xl tracking-tighter uppercase leading-none">Yishen Global</span>
-                <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">ARCHITECTURE_BLUEPRINT_V5.0</span>
+    <!-- Header -->
+    <header class="mb-16 border-l-4 border-[#A11219] pl-10">
+      <span class="mono text-[#0ea5e3] tracking-[10px] text-xs uppercase animate-pulse">// SOVEREIGN_SYSTEM_BLUEPRINT</span>
+      <h1 class="text-white text-[clamp(2.6rem,7vw,5.8rem)] font-[900] italic uppercase mt-4 leading-none">
+        Architecture<br><span class="text-[#0ea5e3]">Blueprint.</span>
+      </h1>
+      <p class="muted mono mt-8 text-sm max-w-4xl leading-relaxed italic">
+        “We do not ‘build pages’. We wire a living sovereignty system: link integrity, UI hooks, lazy visual loading,
+        terminal routing, intelligence harvesting, SKU ledger collision, and sitemap dominance — all non-invasive.”
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <span class="tag mono"><i class="fa-solid fa-shield-halved"></i> non-invasive</span>
+        <span class="tag mono"><i class="fa-solid fa-bolt"></i> low-friction</span>
+        <span class="tag mono"><i class="fa-solid fa-link"></i> link-integrity</span>
+        <span class="tag mono"><i class="fa-solid fa-terminal"></i> terminal-routing</span>
+        <span class="tag mono"><i class="fa-solid fa-sitemap"></i> sitemap-sovereignty</span>
+      </div>
+    </header>
+
+    <!-- System map -->
+    <section class="relative blueprint-card rounded-xl p-10 mb-12">
+      <div class="scan-line"></div>
+
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-[42%]">
+          <h2 class="text-white text-2xl font-black italic uppercase tracking-tighter">System Spine</h2>
+          <p class="muted mono text-[11px] mt-5 leading-relaxed">
+            This page is the “wiring diagram”. Nothing here overwrites your existing logic.
+            It only provides stable entry points + health checks + safe guards.
+          </p>
+
+          <div class="mt-8 grid grid-cols-2 gap-4">
+            <a class="blueprint-card rounded-lg p-5" href="clusters.html">
+              <div class="mono text-[9px] text-[#0ea5e3] tracking-[4px] uppercase">ROUTE</div>
+              <div class="mt-2 text-white font-bold italic uppercase">03_CLUSTERS</div>
+              <div class="mt-2 mono text-[10px] dim">Industrial nodes → technical passports</div>
             </a>
-            <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-                <a href="genesis.html" class="hover:text-white transition">01_GENESIS</a>
-                <a href="sovereign-matrix.html" class="hover:text-white transition">02_MATRIX</a>
-                <a href="clusters.html" class="hover:text-white transition">03_CLUSTERS</a>
-                <a href="architectures.html" class="text-white border-b border-[#0ea5e3] pb-1">BLUEPRINT</a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="pt-48 pb-32 px-[8%] max-w-[1440px] mx-auto">
-        <header class="mb-24 border-l-4 border-[#A11219] pl-10">
-            <span class="font-mono text-[#0ea5e3] tracking-[5px] text-xs uppercase animate-pulse">// SYSTEM_HIERARCHY_VISUALIZATION</span>
-            <h1 class="text-white text-[clamp(3rem,8vw,6.5rem)] font-[900] italic uppercase mt-4 leading-none">Master<br><span class="text-[#0ea5e3]">Blueprint.</span></h1>
-            <p class="text-gray-400 font-mono mt-8 text-sm max-w-4xl leading-relaxed italic">
-                "架构即主权。YiShen Global V5.0 的数字化蓝图是针对全球贸易流量的定向拦截场。每一层架构都为家具主权、医疗精密与海洋基建提供物理级的确定性支撑。"
-            </p>
-        </header>
-
-        
-
-        <div class="grid lg:grid-cols-3 gap-12">
-            
-            <div class="space-y-8">
-                <span class="layer-label">// Tier_01: Entrance & Routing</span>
-                
-                <div class="arch-node rounded-sm">
-                    <div class="flex items-center mb-4">
-                        <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Global Mapping Gate</h4>
-                    </div>
-                    <div class="flow-line"></div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">物理层探测：识别 IP Geolocation，自动分流至 [NORTH_AMERICA/ASEAN/LATAM] 战区逻辑。支持 RTL 阿拉伯语补丁。</p>
-                    <div class="text-[#0ea5e3] font-mono text-[9px]">SOURCE: global-mapping-gate.js</div>
-                </div>
-
-                <div class="arch-node rounded-sm">
-                    <div class="flex items-center mb-4">
-                        <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Vercel Edge Rewrites</h4>
-                    </div>
-                    <div class="flow-line"></div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">云端路径重映射：将 /passport/:id 物理映射至动态对撞机，确保 SEO 路径主权。</p>
-                    <div class="text-[#0ea5e3] font-mono text-[9px] mt-4">SOURCE: vercel.json</div>
-                </div>
-            </div>
-
-            <div class="space-y-8">
-                <span class="layer-label">// Tier_02: Engine & Intelligence</span>
-                
-                <div class="arch-node rounded-sm border-l-2 border-l-[#0ea5e3]">
-                    <div class="flex items-center mb-4">
-                        <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">HQ Core Logic</h4>
-                    </div>
-                    <div class="flow-line"></div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">母舰大脑：集成 GPU 微光渲染、RocketReach 身份核验接口及实时任务对撞终端。</p>
-                    <div class="text-[#0ea5e3] font-mono text-[9px]">SOURCE: hq-core-gate.js / terminal-logic.js</div>
-                </div>
-
-                <div class="arch-node rounded-sm">
-                    <div class="flex items-center mb-4">
-                        <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Marketing Intel Ledger</h4>
-                    </div>
-                    <div class="flow-line"></div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">进攻目标矩阵：定义针对 Ashley, ODP, Amazon Commercial 的“斩首”话术与 HS Code 拦截参数。</p>
-                    <div class="text-[#0ea5e3] font-mono text-[9px] mt-4">SOURCE: marketing-intel.json</div>
-                </div>
-            </div>
-
-            <div class="space-y-8">
-                <span class="layer-label">// Tier_03: Assets & Verification</span>
-                
-                <div class="arch-node rounded-sm border-l-2 border-l-[#ffd700]">
-                    <div class="flex items-center mb-4">
-                        <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Technical Passport</h4>
-                    </div>
-                    <div class="flow-line"></div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed mb-6">物理证据对撞机：动态加载 SKU 规格、BIFMA/ISO 测试报告及 Form E 原产地主权补丁。</p>
-                    <div class="text-[#brand-gold] font-mono text-[9px]">SOURCE: technical-passport.html</div>
-                </div>
-
-                <div class="arch-node rounded-sm">
-                    <div class="flex items-center mb-4">
-                        <span class="status-active"></span>
-                        <h4 class="text-white font-bold italic uppercase tracking-tighter">Cyber Loader V5</h4>
-                    </div>
-                    <div class="flow-line"></div>
-                    <p class="text-[11px] text-gray-500 font-mono leading-relaxed">视觉防御系统：赛博蓝扫描线动画 + 碎图防御占位逻辑，确保工业完成度。</p>
-                    <div class="text-[#0ea5e3] font-mono text-[9px] mt-4">SOURCE: img-lazy-loader.js</div>
-                </div>
-            </div>
-
+            <a class="blueprint-card rounded-lg p-5" href="intelligence-intel.html">
+              <div class="mono text-[9px] text-[#0ea5e3] tracking-[4px] uppercase">ROUTE</div>
+              <div class="mt-2 text-white font-bold italic uppercase">04_INTEL</div>
+              <div class="mt-2 mono text-[10px] dim">Signals → collision → strategy</div>
+            </a>
+            <a class="blueprint-card rounded-lg p-5" href="resources.html">
+              <div class="mono text-[9px] text-[#0ea5e3] tracking-[4px] uppercase">ROUTE</div>
+              <div class="mt-2 text-white font-bold italic uppercase">05_RESOURCES</div>
+              <div class="mt-2 mono text-[10px] dim">Vault → PDFs → matrices</div>
+            </a>
+            <a class="blueprint-card rounded-lg p-5" href="tactical-briefing.html">
+              <div class="mono text-[9px] text-[#0ea5e3] tracking-[4px] uppercase">INTAKE</div>
+              <div class="mt-2 text-white font-bold italic uppercase">BRIEFING</div>
+              <div class="mt-2 mono text-[10px] dim">Lead capture → routing</div>
+            </a>
+          </div>
         </div>
 
-        <section class="mt-32 p-12 bg-white/[0.01] border border-white/5 rounded-3xl flex flex-col items-center text-center">
-            <h4 class="font-mono text-[#ffd700] text-xs uppercase tracking-[8px] mb-6">// ARCHITECTURE_INTEGRITY_SHIELD</h4>
-            <p class="text-gray-500 text-sm max-w-3xl italic leading-relaxed">
-                母舰架构蓝图已通过 V5.0 指令全量校准。任何针对核心维度（家具、海洋、军工、医疗、基建、升降、碳中和）的逻辑变动将自动触发 Link_Fixer 链路校验。主权由 Strategic Architecture Group 物理锁定。
-            </p>
-        </section>
-    </main>
-
-    <footer class="bg-black py-24 border-t border-white/5 font-inter">
-        <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+        <!-- Terminal -->
+        <div class="lg:w-[58%]">
+          <div class="flex items-center justify-between">
             <div>
-                <div class="text-[10px] font-mono text-gray-700 uppercase tracking-[4px]">© 2026 Yishen Global // Architecture_Sovereignty_Verified</div>
-                <div class="flex gap-6 mt-4 text-[9px] font-mono text-gray-800 uppercase tracking-widest text-gray-500">
-                    <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> / 
-                    <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
-                </div>
+              <div class="mono text-[#0ea5e3] text-[10px] tracking-[5px] uppercase">// MODULE_HEALTH_TERMINAL</div>
+              <div class="mono text-[10px] dim mt-2 uppercase italic">Non-invasive diagnostics (no overwrite)</div>
             </div>
-            <div class="flex flex-wrap items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-                <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
-                <img src="assets/icons/en131-badge.webp" class="h-6" alt="EN131">
-                <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
-                <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
-            </div>
+            <button id="run-health" class="px-5 py-3 bg-[#0ea5e3] text-black font-black italic text-[11px] uppercase rounded-sm hover:bg-white transition-all">
+              Run_Health_Check
+            </button>
+          </div>
+
+          <div id="health-terminal" class="terminal mono text-[10px] text-green-500/80 mt-6">
+            <div class="text-gray-600">> Awaiting: RUN_HEALTH_CHECK</div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        // 加载进度
-        window.addEventListener('load', () => {
-            const fill = document.getElementById('bar-fill');
-            if (fill) fill.style.width = '100%';
-            setTimeout(() => {
-                const screen = document.getElementById('loading-screen');
-                if (screen) {
-                    screen.style.opacity = '0';
-                    setTimeout(() => { screen.style.display = 'none'; }, 700);
-                }
-            }, 2500);
-        });
+    <!-- Modules -->
+    <section class="mb-14">
+      <h2 class="text-white text-3xl font-black italic uppercase tracking-tighter mb-8">
+        Modules <span class="text-[#0ea5e3]">Wired.</span>
+      </h2>
 
-        // GPU 鼠标追踪
-        const glow = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            requestAnimationFrame(() => {
-                glow.style.left = e.clientX + 'px';
-                glow.style.top = e.clientY + 'px';
-            });
-        });
-    </script>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- UI Hooks -->
+        <div class="blueprint-card rounded-xl p-8">
+          <div class="mono text-[9px] tracking-[4px] text-[#0ea5e3] uppercase">// FRONTEND_NERVOUS_SYSTEM</div>
+          <h3 class="mt-3 text-white font-bold text-xl italic uppercase">UI Hooks</h3>
+          <p class="mt-4 mono text-[11px] muted leading-relaxed">
+            Scroll / viewport / interaction tracker / anchor protection / image fallback.
+            Adds observability without touching business logic.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tag mono"><i class="fa-solid fa-eye"></i> observe</span>
+            <span class="tag mono"><i class="fa-solid fa-lock"></i> safe</span>
+            <span class="tag mono"><i class="fa-solid fa-wand-magic-sparkles"></i> enhance</span>
+          </div>
+          <div class="mt-6 mono text-[10px] dim">
+            Path: <span class="text-white">public/ui-hooks.js</span>
+          </div>
+        </div>
+
+        <!-- Lazy Loader -->
+        <div class="blueprint-card rounded-xl p-8">
+          <div class="mono text-[9px] tracking-[4px] text-[#0ea5e3] uppercase">// VISUAL_SOVEREIGNTY</div>
+          <h3 class="mt-3 text-white font-bold text-xl italic uppercase">Image Lazy Loader</h3>
+          <p class="mt-4 mono text-[11px] muted leading-relaxed">
+            IntersectionObserver-based, cyber scan reveal, prevents white-screen assets.
+            Only applies to <span class="text-white">img[data-src]</span>.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tag mono"><i class="fa-solid fa-image"></i> lazy</span>
+            <span class="tag mono"><i class="fa-solid fa-gauge-high"></i> fast</span>
+            <span class="tag mono"><i class="fa-solid fa-shield"></i> 404 defense</span>
+          </div>
+          <div class="mt-6 mono text-[10px] dim">
+            Path: <span class="text-white">public/img-lazy-loader.js</span>
+          </div>
+        </div>
+
+        <!-- Terminal logic -->
+        <div class="blueprint-card rounded-xl p-8">
+          <div class="mono text-[9px] tracking-[4px] text-[#0ea5e3] uppercase">// TERMINAL_ROUTER</div>
+          <h3 class="mt-3 text-white font-bold text-xl italic uppercase">Terminal Logic</h3>
+          <p class="mt-4 mono text-[11px] muted leading-relaxed">
+            HS lookup + Agent execution + Briefing intake → API routes.
+            Uses <span class="text-white">escapeHtml</span> to prevent injection.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tag mono"><i class="fa-solid fa-terminal"></i> api</span>
+            <span class="tag mono"><i class="fa-solid fa-route"></i> routing</span>
+            <span class="tag mono"><i class="fa-solid fa-shield-halved"></i> safe</span>
+          </div>
+          <div class="mt-6 mono text-[10px] dim">
+            Path: <span class="text-white">public/terminal-logic.js</span>
+          </div>
+        </div>
+
+        <!-- Link fixer -->
+        <div class="blueprint-card rounded-xl p-8">
+          <div class="mono text-[9px] tracking-[4px] text-[#0ea5e3] uppercase">// LINK_INTEGRITY</div>
+          <h3 class="mt-3 text-white font-bold text-xl italic uppercase">Link Fixer</h3>
+          <p class="mt-4 mono text-[11px] muted leading-relaxed">
+            Batch normalize internal href casing, safe event.preventDefault injection,
+            asset path alignment, legacy SKU route unification.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tag mono"><i class="fa-solid fa-link"></i> normalize</span>
+            <span class="tag mono"><i class="fa-solid fa-bug-slash"></i> no-crash</span>
+            <span class="tag mono"><i class="fa-solid fa-server"></i> vercel-safe</span>
+          </div>
+          <div class="mt-6 mono text-[10px] dim">
+            File: <span class="text-white">link_fixer.py</span>
+          </div>
+        </div>
+
+        <!-- Harvester -->
+        <div class="blueprint-card rounded-xl p-8">
+          <div class="mono text-[9px] tracking-[4px] text-[#0ea5e3] uppercase">// INTEL_HARVESTER</div>
+          <h3 class="mt-3 text-white font-bold text-xl italic uppercase">Auto Data Harvester</h3>
+          <p class="mt-4 mono text-[11px] muted leading-relaxed">
+            Collect external payloads → collide with SKU ledger → update or manifest new nodes.
+            Keeps <span class="text-white">hs_code</span> pending for later verification.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tag mono"><i class="fa-solid fa-satellite-dish"></i> signals</span>
+            <span class="tag mono"><i class="fa-solid fa-database"></i> ledger</span>
+            <span class="tag mono"><i class="fa-solid fa-arrows-rotate"></i> sync</span>
+          </div>
+          <div class="mt-6 mono text-[10px] dim">
+            Path: <span class="text-white">scripts/auto_data_harvester.py</span>
+          </div>
+        </div>
+
+        <!-- Sitemap -->
+        <div class="blueprint-card rounded-xl p-8">
+          <div class="mono text-[9px] tracking-[4px] text-[#0ea5e3] uppercase">// SEO_SOVEREIGNTY</div>
+          <h3 class="mt-3 text-white font-bold text-xl italic uppercase">Sitemap Generator</h3>
+          <p class="mt-4 mono text-[11px] muted leading-relaxed">
+            Static HTML scan + dynamic SKU node harvesting + XML manifest.
+            Compatible with <span class="text-white">sku-database.json</span> and <span class="text-white">asset-ledger.json</span>.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tag mono"><i class="fa-solid fa-sitemap"></i> index</span>
+            <span class="tag mono"><i class="fa-solid fa-globe"></i> discover</span>
+            <span class="tag mono"><i class="fa-solid fa-check-double"></i> standards</span>
+          </div>
+          <div class="mt-6 mono text-[10px] dim">
+            Path: <span class="text-white">scripts/generate_sitemap.py</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployment -->
+    <section class="blueprint-card rounded-xl p-10">
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-10">
+        <div class="lg:w-[62%]">
+          <div class="mono text-[#ffd700] text-[9px] tracking-[5px] uppercase">// DEPLOYMENT_PROTOCOL</div>
+          <h2 class="mt-3 text-white text-2xl font-black italic uppercase tracking-tighter">Deploy Spine</h2>
+          <p class="mt-5 mono text-[11px] muted leading-relaxed">
+            Your deploy.sh is already a strong chain: harvest → audit → index → Vercel → physical mirror.
+            One critical alignment:
+            <span class="text-white">auto_data_harvester.py</span> writes to <span class="text-white">sku-database.json</span> in your current code,
+            but deploy.sh expects <span class="text-white">asset-ledger.json</span>.
+            Keep your content unchanged; just ensure both names exist or unify in one place.
+          </p>
+
+          <div class="mt-7 grid md:grid-cols-2 gap-4">
+            <div class="blueprint-card rounded-lg p-5">
+              <div class="mono text-[9px] text-[#0ea5e3] tracking-[4px] uppercase">SAFE FIX</div>
+              <div class="mt-2 text-white font-bold italic uppercase">Dual Ledger</div>
+              <div class="mt-2 mono text-[10px] dim">
+                Create a copy step: sku-database.json → asset-ledger.json
+              </div>
+            </div>
+            <div class="blueprint-card rounded-lg p-5">
+              <div class="mono text-[9px] text-[#0ea5e3] tracking-[4px] uppercase">SAFE FIX</div>
+              <div class="mt-2 text-white font-bold italic uppercase">One Ledger</div>
+              <div class="mt-2 mono text-[10px] dim">
+                Change deploy.sh required file to sku-database.json (optional)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-[38%]">
+          <div class="bg-black/50 border border-white/10 rounded-xl p-8">
+            <div class="mono text-[9px] uppercase tracking-[4px] text-gray-600">Critical Paths</div>
+            <div class="mt-5 space-y-3 mono text-[10px]">
+              <div class="text-gray-400">scripts/deploy.sh</div>
+              <div class="text-gray-400">scripts/auto_data_harvester.py</div>
+              <div class="text-gray-400">scripts/generate_sitemap.py</div>
+              <div class="text-gray-400">public/ui-hooks.js</div>
+              <div class="text-gray-400">public/terminal-logic.js</div>
+              <div class="text-gray-400">public/img-lazy-loader.js</div>
+            </div>
+            <div class="mt-6 text-[9px] mono text-gray-600 uppercase leading-relaxed">
+              Rule: No overwrite. Only align names, routes, and entry points.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-black py-20 border-t border-white/5">
+    <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div>
+        <div class="mono text-gray-700 uppercase tracking-[4px] text-[10px]">© 2026 Yishen Global // Blueprint_Sovereignty_Verified</div>
+        <div class="flex gap-6 mt-4 mono text-[9px] uppercase tracking-widest text-gray-500">
+          <a href="site-architecture.html" class="hover:text-white transition">Blueprint_Map</a> /
+          <a href="sovereign-index.xml" target="_blank" class="hover:text-white transition">XML_Index</a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+        <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
+        <img src="assets/icons/iso9001.webp" class="h-6" alt="ISO9001">
+        <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
+        <img src="assets/icons/logo-ul.webp" class="h-6" alt="UL">
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Loading ritual
+    window.addEventListener('load', () => {
+      const bar = document.getElementById('bar-fill');
+      bar.style.width = '100%';
+      setTimeout(() => {
+        const ls = document.getElementById('loading-screen');
+        ls.style.opacity = '0';
+        setTimeout(() => { ls.style.display = 'none'; }, 700);
+      }, 1200);
+    });
+
+    // Cursor glow (GPU safe)
+    const glow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+      requestAnimationFrame(() => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      });
+    });
+
+    // Health check (non-invasive)
+    const t = document.getElementById('health-terminal');
+    const btn = document.getElementById('run-health');
+
+    function log(line, color = "text-gray-400") {
+      const div = document.createElement("div");
+      div.className = `mono ${color}`;
+      div.textContent = line;
+      t.appendChild(div);
+      t.scrollTop = t.scrollHeight;
+    }
+
+    async function exists(url) {
+      try {
+        const r = await fetch(url, { method: "HEAD", cache: "no-store" });
+        return r.ok;
+      } catch {
+        return false;
+      }
+    }
+
+    btn?.addEventListener("click", async () => {
+      t.innerHTML = "";
+      log("> BOOT: BLUEPRINT_HEALTH_CHECK_V5", "text-[#0ea5e3]");
+      log("> NOTE: Non-invasive. No overwrite. Only pings.", "text-gray-500");
+
+      // These are best-effort checks. If hosted on GitHub Pages, HEAD may fail; fall back to GET.
+      const checks = [
+        { name: "UI_HOOKS", url: "public/ui-hooks.js" },
+        { name: "LAZY_LOADER", url: "public/img-lazy-loader.js" },
+        { name: "TERMINAL_LOGIC", url: "public/terminal-logic.js" },
+        { name: "SITEMAP", url: "sitemap.xml" },
+        { name: "SOVEREIGN_INDEX", url: "sovereign-index.xml" }
+      ];
+
+      for (const c of checks) {
+        log(`> PING: ${c.name} -> ${c.url}`);
+        let ok = await exists(c.url);
+        if (!ok) {
+          // fallback GET
+          try {
+            const r = await fetch(c.url, { method: "GET", cache: "no-store" });
+            ok = r.ok;
+          } catch { ok = false; }
+        }
+        log(ok ? `> OK: ${c.name}_ONLINE` : `> FAIL: ${c.name}_MISSING_OR_BLOCKED`, ok ? "text-green-400" : "text-[#A11219]");
+      }
+
+      log("> RESULT: HEALTH_CHECK_COMPLETE", "text-[#ffd700]");
+    });
+  </script>
+
+  <!-- Non-invasive UI layer (optional if present; safe to keep) -->
+  <script src="public/ui-hooks.js" defer></script>
 </body>
 </html>

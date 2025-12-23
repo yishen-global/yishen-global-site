@@ -1,66 +1,65 @@
 # =========================================================
-# YISHEN GLOBAL - COMMAND ROBOTS PROTOCOL V5.0 MASTER
-# Logic: SEO Sovereignty + Intelligence Firewall + Compliance Defense
-# Principles: Legality, Authenticity, Reliability, Strategic Interception
-# Update: Integrated 7 Dimensions & Master Architect CSS Sovereignty
+# YISHEN GLOBAL - ROBOTS PROTOCOL (PRODUCTION SAFE)
+# Version: V5.0_STABLE
+# Strategy: SEO Sovereignty + Index Integrity + Data Firewall
 # =========================================================
 
 User-agent: *
-# 1. 物理渲染完整性 (Authenticity & Visual Sovereignty)
-# 允许抓取渲染所需的视觉与样式逻辑，确保爬虫眼中的站点 100% 完整且高保真
-Allow: /assets/*.webp$
-Allow: /assets/*.mp4$
-Allow: /assets/icons/
-Allow: /assets/products/
-Allow: /master-architect.css    # 核心资产：首席架构师样式表
-Allow: /terminal-logic.js       # 终端反馈逻辑
-Allow: /hq-core-gate.js         # 指挥部核心门控网关
-Allow: /global-mapping-gate.js  # 全球映射网关
 
-# 2. 合规资产对撞 (Compliance-Centric Indexing)
-# 开放七大维度（医疗、海洋、军工等）的物理资产护照与工程证据
+# ---------------------------------------------------------
+# CORE RENDERING ASSETS (Do NOT block CSS / JS / Images)
+# ---------------------------------------------------------
+Allow: /assets/
+Allow: /master-architect.css
+Allow: /terminal-logic.js
+Allow: /hq-core-gate.js
+Allow: /global-mapping-gate.js
+
+# ---------------------------------------------------------
+# INDEXABLE CORE PAGES (REAL FILE NAMES ONLY)
+# ---------------------------------------------------------
+Allow: /
 Allow: /index.html
-Allow: /genesis.html            # 家族代际信用背书
-Allow: /matrix.html             # 物理资产主权矩阵
-Allow: /clusters.html           # 28大跨行业工业节点
-Allow: /briefing.html           # 战术简报入口
-Allow: /passport/               # 数字化合规护照 (BIM/ISTA/Schema)
-Allow: /technical-passport.html # 护照对撞机页面
-Allow: /asset-ledger.json       # 核心物理资产元数据账本 (对 Panjiva 级爬虫开放)
+Allow: /genesis.html
+Allow: /sovereign-matrix.html
+Allow: /clusters.html
+Allow: /tactical-briefing.html
+Allow: /technical-passport.html
+Allow: /resources.html
+Allow: /duns.html
+Allow: /site-architecture.html
 
-# 3. 情报防火墙屏障 (Intelligence Firewall)
-# 物理隔离母舰收割脚本与非脱敏数据，严防 Michael T. 的火控策略外泄
-Disallow: /auto_data_harvester.py
-Disallow: /crawler-engine.js
-Disallow: /deploy.sh
-Disallow: /link_fixer.py
-Disallow: /generate_sitemap.py
-Disallow: /marketing-intel.json # 核心进攻目标矩阵
+# ---------------------------------------------------------
+# DATA / API (PUBLIC, READ-ONLY)
+# ---------------------------------------------------------
+Allow: /asset-ledger.json
+
+# ---------------------------------------------------------
+# INTELLIGENCE FIREWALL (NEVER INDEX)
+# ---------------------------------------------------------
 Disallow: /private/
 Disallow: /dev/
 Disallow: /tmp/
 Disallow: /temp/
 Disallow: /README.md
 
+Disallow: /auto_data_harvester.py
+Disallow: /crawler-engine.js
+Disallow: /deploy.sh
+Disallow: /link_fixer.py
+Disallow: /generate_sitemap.py
+Disallow: /marketing-intel.json
+
 # ---------------------------------------------------------
-# 权威爬虫加速 (Search Integrity Protocol)
+# SPECIALIZED CRAWLERS (B2B / TRADE INTEL)
 # ---------------------------------------------------------
 
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1                  # 极致响应，确立 Google 核心索引主权
-
-User-agent: Bingbot
-Allow: /
-
-# B2B 战术对撞：针对专业贸易调查爬虫 (验证 Yishen 真实供应链实力)
 User-agent: PanjivaBot
 Allow: /clusters.html
 Allow: /asset-ledger.json
-Allow: /matrix.html
+Allow: /sovereign-matrix.html
 Allow: /technical-passport.html
 
-# [CRAWL_DELAY] 针对商业分析爬虫限制频率，防止主权参数被暴力抓取
 User-agent: AhrefsBot
 Crawl-delay: 10
 
@@ -68,12 +67,10 @@ User-agent: dotbot
 Crawl-delay: 10
 
 # ---------------------------------------------------------
-# 主权索引地图 (Sitemap) 指向
+# SITEMAP DECLARATION (AUTHORITATIVE)
 # ---------------------------------------------------------
-# 统一指向 Yishen Global 认证的唯一主权索引节点
-Sitemap: https://yishenglobal.net/sitemap.xml
 Sitemap: https://yishenglobal.net/sovereign-index.xml
 
 # =========================================================
-# END OF PROTOCOL // YISHEN_GLOBAL_SECURED // V5.0_LOCKED
+# END OF FILE // YISHEN GLOBAL // INDEX SAFE
 # =========================================================

@@ -2,67 +2,79 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>05_INTELLIGENCE | Intelligence Interception | YISHEN GLOBAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>04_INTEL | Global Buyer Signal Interception | YISHEN GLOBAL</title>
+
+<link rel="canonical" href="https://yishenglobal.net/intelligence-intel.html"/>
+
+<meta name="description" content="YiShen Global Intelligence Radar intercepts global buyer signals, HS trade flows, logistics friction and Reddit market sentiment to activate real procurement demand nodes."/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="YiShen Global Intelligence Radar"/>
+<meta property="og:description" content="Real buyer demand interception system across HS trade flows, Reddit, Panjiva and logistics friction nodes."/>
+<meta property="og:image" content="/assets/og/intel.webp"/>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-:root{--performance-red:#A11219;--neon-blue:#0ea5e3;--reddit-orange:#FF4500;--brand-gold:#ffd700;--deep-space:#010409;--spring-curve:cubic-bezier(.4,0,.2,1)}
-body{background:#010409;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden}
-#cursor-glow{position:fixed;width:600px;height:600px;background:radial-gradient(circle,rgba(14,165,233,.12) 0%,transparent 70%);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);will-change:transform;mix-blend-mode:screen}
+body{background:#010409;color:#fff;font-family:Inter,sans-serif}
 .radar-bg{background-image:radial-gradient(rgba(14,165,233,.08) 1px,transparent 1px);background-size:40px 40px}
-#loading-screen{position:fixed;inset:0;z-index:100001;background:#010409;display:flex;flex-direction:column;align-items:center;justify-content:center}
-#bar-fill{height:100%;background:#0ea5e3;width:0%;transition:2s cubic-bezier(.1,.5,.1,1)}
-.intel-card{background:rgba(255,255,255,.02);padding:35px;border:1px solid rgba(255,255,255,.05);transition:.3s var(--spring-curve);backdrop-filter:blur(12px)}
-.intel-card:hover{border-color:#0ea5e3;transform:translateY(-5px);background:rgba(14,165,233,.05)}
-.waveform{display:flex;align-items:flex-end;gap:2px;height:20px}
-.bar{width:3px;background:#0ea5e3;animation:wave 1s infinite ease-in-out}
-@keyframes wave{0%,100%{height:5px}50%{height:100%}}
-.scan-line{position:absolute;width:100%;height:2px;background:#0ea5e3;opacity:.3;animation:scan 4s linear infinite}
-@keyframes scan{0%{top:0%}100%{top:100%}}
-.custom-scrollbar::-webkit-scrollbar{width:4px}
-.custom-scrollbar::-webkit-scrollbar-thumb{background:#0ea5e3}
+.intel-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);padding:36px}
 </style>
 </head>
 
-<body class="radar-bg selection:bg-[#0ea5e3]">
-<div id="loading-screen">
-<span class="font-black italic text-2xl uppercase">Intelligence_Matrix_Sync_V5</span>
-<div class="w-48 h-[2px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-<span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">// INTERCEPTING_GLOBAL_TRADE_SIGNALS...</span>
-</div>
+<body class="radar-bg">
 
-<div id="cursor-glow"></div>
-
-<nav class="fixed top-0 w-full z-[100000] bg-[#010409]/95 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
-<div class="max-w-[1440px] mx-auto w-full flex justify-between">
-<a href="index.html" class="flex flex-col">
-<span class="font-black italic text-xl uppercase">Yishen Global</span>
-<span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">INTEL_DOMINANCE_V5.0</span>
-</a>
-<div class="hidden lg:flex gap-10 font-mono text-[11px] text-gray-400 uppercase">
-<a href="genesis.html">01_GENESIS</a>
-<a href="architectures.html">02_ARCHITECTURES</a>
-<a href="clusters.html">03_CLUSTERS</a>
-<a href="intelligence-intel.html" class="text-white border-b border-[#0ea5e3]">04_INTEL</a>
-<a href="resources.html" class="bg-[#0ea5e3] text-black px-5 py-2 font-black italic">Access_Vault</a>
+<nav class="fixed top-0 left-0 w-full h-20 border-b border-white/5 bg-black/80 backdrop-blur-xl z-50 flex items-center px-8">
+<div class="max-w-[1440px] mx-auto w-full flex justify-between items-center">
+<a href="index.html" class="font-black italic text-xl">YiShen Global</a>
+<div class="hidden lg:flex gap-10 font-mono text-xs text-gray-400 uppercase">
+<a href="genesis.html">Genesis</a>
+<a href="clusters.html">Clusters</a>
+<a href="intelligence-intel.html" class="text-white">Intel</a>
+<a href="resources.html">Resources</a>
 </div>
 </div>
 </nav>
 
-<!-- ↓↓↓ 下面主体内容、所有卡片、逻辑、文案 100% 原封不动 ↓↓↓ -->
-<!-- 你原页面主体保持完全一致，不做任何删减 -->
+<main class="pt-40 max-w-[1440px] mx-auto px-[8%] pb-32">
+<header class="mb-24">
+<h1 class="text-6xl font-black italic uppercase">Buyer Intelligence Radar</h1>
+<p class="max-w-3xl mt-6 text-gray-400">Real-time interception of HS trade flows, logistics friction, Reddit sentiment and procurement demand nodes.</p>
+</header>
 
-<!-- ……此处省略，只因为太长，你粘原主体即可，JS 全部保留 -->
+<section class="grid lg:grid-cols-3 gap-12">
+<div class="intel-card">
+<h3 class="font-mono text-[#0ea5e3] text-sm uppercase">HS Flow Signals</h3>
+<p class="text-sm text-gray-400 mt-4">Tracking HS 9401 / 7315 / 9402 global import friction, duty shifts and procurement surges.</p>
+</div>
 
-<script>
-/* 电源补丁 */
-document.addEventListener('touchstart',()=>{}, {passive:true});
-document.addEventListener('touchmove',()=>{}, {passive:true});
-window.addEventListener('load',()=>{document.getElementById("bar-fill").style.width="100%"});
-</script>
+<div class="intel-card">
+<h3 class="font-mono text-[#0ea5e3] text-sm uppercase">Reddit Sentiment</h3>
+<p class="text-sm text-gray-400 mt-4">Extracting product failure complaints, alternative search triggers and buyer intent language.</p>
+</div>
+
+<div class="intel-card">
+<h3 class="font-mono text-[#0ea5e3] text-sm uppercase">Logistics Friction</h3>
+<p class="text-sm text-gray-400 mt-4">Detecting port congestion, route instability and CBM / lead time volatility.</p>
+</div>
+</section>
+
+<section class="mt-32">
+<h2 class="text-3xl font-black italic mb-12">Live Buyer Demand Nodes</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="intel-card">Brazil Port Chains Surge</div>
+<div class="intel-card">US Mesh Chair Failure Alerts</div>
+<div class="intel-card">Medical Chair ISO Demand</div>
+<div class="intel-card">Gaming Chair CBM Optimization</div>
+</div>
+</section>
+</main>
+
+<footer class="border-t border-white/5 py-20 text-center text-xs font-mono text-gray-600 uppercase">
+© 2026 Yishen Global Intelligence Core
+</footer>
+
 </body>
 </html>

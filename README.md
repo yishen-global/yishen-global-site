@@ -1,7 +1,127 @@
-🚢 YiShen Global V5.0: AI-Driven Industrial Sovereignty版本: 5.0.2026.ULTIMATE_COMMAND核心理念: Furniture-First · AI-Driven · Predictability Engineered核心主权: 38年诚信基因 | 28战略集群 | 泛拉美获客引擎 | E-ZONE 负碳研究 | 升降系统主权🌍 Overview: Not Just a Website, But a SystemPredictability is engineered — not promised.YiShen Global V5.0 是一套将 AI 情报、物理制造、合规主权与全球交付集成于一体的可控工作流。我们不仅提供家具，我们通过**对撞机逻辑（Collision Logic）**消除全球买家的不确定性，将贸易摩擦转化为确定性交付。🏛️ 1. 项目架构 (Project Architecture)母舰系统分为六大指挥模块，已全量集成“防闪退”补丁与“赛博蓝”扫描加载逻辑：01_GENESIS (genesis.html): 三代家族诚信基因（杨昌彬、杨福燊、杨熠）的情感主权中心。02_ARCHITECTURES (architectures.html): 制造主权逻辑中枢，定义分层防御架构与合规防火墙。03_CLUSTERS (clusters.html): 28个战略集群，含 Maritime Hardware (HS 7315) 及 Medical Precision (ISO 13485)。04_RESOURCES (resources.html): 证据军火库，集成 Form E 避税补丁与 BIFMA/ISTA 验证报告。05_INTEL (intelligence-intel.html): 获客雷达，实时拦截 Reddit 舆情与海关提单轨迹。06_PASSPORT (technical-passport.html): 资产对撞机。根据 ?id= 参数动态调取物理证据。⚔️ 2. 进攻型产业维度 (Offensive Matrix)母舰目前已全量锁定以下战区的物理证据链：战区编号产业维度核心 HS Code主权补丁 (Key Patch)01家具主权9401.31BIFMA X5.1 审计 / ISTA-6A 包装对撞02海洋五金7315.82巴西 Santos 港反倾销豁免协议 (AD Exemption)03医疗精密9402.10ISO 13485 银离子抗菌验证 / 东盟 Form E04基建工具7616.99北美 AD/CVD 避税绕道路径 (ASEAN Node)05升降系统Actuator线性驱动器 IP54 防护等级 / 负载冗余监控06军工航天MIL-STD高强度合金拉力审计矩阵07碳中和CBAM竹木负碳材料路径 / 欧洲碳关税对冲🤖 3. AI 驱动逻辑 (Intelligence Logic)系统内置 AI 角色矩阵，将传统展示升级为技术对撞：Contact Page (AI Sales Consultant): 自动解析买家市场准入障碍，生成定制化清关方案。Resources (AI Market Translator): 将枯燥的工程参数（如 Tensile Strength）转化为买家能理解的财务利润。HS Intel Engine: 实时对撞全球海关数据，锁定休斯顿、桑托斯等核心港口买家画像。🏛️ 4. 补丁集成说明 (Patch Integration)4.1 路径对撞补丁 (Asset Alignment)针对“破图”与“404”问题完成物理级校准：根目录: assets/icons/ (勋章), assets/products/ (SKU), assets/docs/ (PDF)。标准: 全量啟用 .webp 格式，首屏响应速度提升 14ms。4.2 UI 稳定性主权 (Stability Sovereignty)GPU 加速: 所有微光特效（#cursor-glow）采用 will-change 优化，确保 60FPS 交互。碎图防御: 即使在跨国高延迟网络下，img-lazy-loader.js 也会显示数字化占位块。🚀 5. 部署与修复指令 (Operations)第一步：全量链路校准 (Python)在根目录下运行 link_fixer.py（补丁脚本见下文），确保跳转逻辑与 ID 100% 对位：Bashpython link_fixer.py
-第二步：搜索引擎主权通报每当资产账本更新时，必须重构站点地图并 Ping Google：Bashpython generate_sitemap.py
-curl https://www.google.com/ping?sitemap=https://yishenglobal.net/sitemap.xml
-第三步：战术分发推送到母舰专属服务器：Bashgit add .
-git commit -m "PATCH: Integration_V5_Sovereignty_Locked"
-git push origin master
-⚖️ 法律与信用主权 (Legal Sovereignty)DUNS: 545277884 (Verified by Dun & Bradstreet)Compliance: ISO 9001:2026 ReadyAudit: Strategic Architecture Group 24/7 Monitoring
+# YiShen Global V5.0  
+## Deterministic Industrial Sovereignty System  
+**Version:** 5.0.2026 · BOARD_RELEASE
+
+---
+
+## Executive Summary
+
+YiShen Global V5.0 is **not a website** and **not a catalog system**.
+
+It is a **deterministic industrial sovereignty architecture** designed to eliminate uncertainty in cross-border manufacturing, compliance, and delivery.
+
+Where most suppliers sell *products*, YiShen Global engineers **predictability**.
+
+---
+
+## Core Thesis
+
+> Predictability is engineered — not promised.
+
+Global trade failures are rarely caused by product defects.  
+They are caused by **systemic uncertainty**:
+
+- Tariff volatility  
+- Compliance ambiguity  
+- Logistics damage  
+- Regulatory escalation  
+- Buyer-side internal defensibility failure  
+
+YiShen Global V5.0 neutralizes these risks **by design**, not negotiation.
+
+---
+
+## What This System Is
+
+YiShen Global V5.0 is a **full-stack industrial operating system** integrating:
+
+- Physical manufacturing capability  
+- Compliance & duty-avoidance logic  
+- AI-driven buyer intelligence  
+- Evidence-based sales execution  
+- Deterministic delivery orchestration  
+
+into a **single controllable workflow**.
+
+This system is built to be understood and trusted by:
+
+- Procurement Directors  
+- Compliance & Legal Teams  
+- Customs Authorities  
+- Board-Level Decision Makers  
+
+---
+
+## Architectural Overview
+
+The system is structured as **six sovereign command modules**.  
+Each module is independently verifiable and collectively composable.
+
+### 01 · GENESIS  
+**Trust & Continuity Layer**
+
+Documents three generations of manufacturing credibility.  
+Purpose: eliminate supplier-origin risk at the *first decision layer*.
+
+---
+
+### 02 · ARCHITECTURES  
+**Manufacturing Sovereignty Core**
+
+Defines:
+- Capacity ownership logic  
+- Quality escalation protocols  
+- Compliance firewalls  
+- Failure responsibility attribution  
+
+This layer answers one question:  
+**“Who is accountable when something breaks?”**
+
+---
+
+### 03 · CLUSTERS  
+**Strategic Industrial Nodes (28 Clusters)**
+
+Each cluster is mapped by:
+- HS code  
+- Regulatory exposure  
+- Tariff sensitivity  
+- Substitution & rerouting capability  
+
+Examples:
+- Maritime Hardware (HS 7315)  
+- Medical Precision (ISO 13485)  
+- Furniture & Ergonomics (HS 9401)
+
+---
+
+### 04 · RESOURCES  
+**Evidence Arsenal**
+
+Not marketing documents — **defensive instruments**, including:
+- BIFMA / ISTA / ISO audit artifacts  
+- Form E & origin-shift pathways  
+- Packaging & damage-resistance validation  
+
+Used to defend decisions **inside buyer organizations**.
+
+---
+
+### 05 · INTELLIGENCE  
+**Buyer & Market Interception Layer**
+
+Continuously collides:
+- Customs bill-of-lading data  
+- Public sentiment (forums, platforms)  
+- Importer behavior patterns  
+
+Purpose: detect *active procurement windows*, not passive interest.
+
+---
+
+### 06 · PASSPORT  
+**Physical Evidence Collision Engine**
+
+Dynamic rendering of verifiable evidence based on context.
+
+Example:

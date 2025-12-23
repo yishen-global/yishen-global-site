@@ -3,16 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Yishen Global | Coordinated Industrial Architecture</title>
+
+<!-- SEO / Identity -->
+<meta name="description" content="Yishen Global builds coordinated industrial architectures where supply chains, logistics, and execution converge into deterministic systems.">
+<meta name="theme-color" content="#010409">
+
+<!-- Favicon -->
+<link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-<!-- Tailwind CDN -->
+<!-- Tailwind CDN (kept as-is) -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Core CSS -->
 <link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- Preload Hero Image (通电级优化) -->
+<link rel="preload" as="image" href="assets/images/hero-command.webp">
 
 <style>
 :root {
@@ -21,9 +32,12 @@
 }
 body { background:var(--bg); color:white; }
 #cursor-glow{
-  position:fixed;width:600px;height:600px;
+  position:fixed;
+  width:600px;height:600px;
   background:radial-gradient(circle,rgba(14,165,233,.12),transparent 70%);
-  border-radius:50%;pointer-events:none;z-index:999;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:999;
   transform:translate(-50%,-50%);
 }
 </style>
@@ -38,7 +52,9 @@ body { background:var(--bg); color:white; }
   <div class="max-w-[1440px] mx-auto px-6 h-full flex items-center justify-between">
     <a href="index.html" class="flex flex-col">
       <span class="font-black italic text-xl uppercase">Yishen Global</span>
-      <span class="font-mono text-[10px] tracking-widest text-[#0ea5e3]">ARCHITECTURE_VERIFIED</span>
+      <span class="font-mono text-[10px] tracking-widest text-[#0ea5e3]">
+        ARCHITECTURE_VERIFIED
+      </span>
     </a>
 
     <div class="hidden lg:flex gap-10 font-mono text-[11px] tracking-widest uppercase text-gray-400">
@@ -46,7 +62,9 @@ body { background:var(--bg); color:white; }
       <a href="solutions-matrix.html" class="hover:text-white">02_SOLUTIONS</a>
       <a href="industries.html" class="hover:text-white">03_INDUSTRIES</a>
       <a href="resources.html" class="hover:text-white">04_RESOURCES</a>
-      <a href="contact.html" class="px-4 py-2 bg-[#0ea5e3] text-black font-black italic">INITIATE</a>
+      <a href="contact.html" class="px-4 py-2 bg-[#0ea5e3] text-black font-black italic">
+        INITIATE
+      </a>
     </div>
   </div>
 </nav>
@@ -55,7 +73,7 @@ body { background:var(--bg); color:white; }
 <header class="min-h-screen flex items-center pt-32 px-[8%]"
 style="background:
 linear-gradient(90deg,#010409 35%,transparent),
-url('assets/images/hero.webp') right center / cover no-repeat;">
+url('assets/images/hero-command.webp') right center / cover no-repeat;">
   <div class="max-w-[900px]">
     <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase">
       Mission_Critical_Infrastructure
@@ -98,14 +116,16 @@ url('assets/images/hero.webp') right center / cover no-repeat;">
   </div>
 </footer>
 
-<script>
-document.onmousemove=e=>{
-  const g=document.getElementById('cursor-glow');
-  requestAnimationFrame(()=>{
-    g.style.left=e.clientX+'px';
-    g.style.top=e.clientY+'px';
+<!-- Cursor Glow Logic (isolated, safe) -->
+<script defer>
+document.addEventListener('mousemove', e => {
+  const g = document.getElementById('cursor-glow');
+  if (!g) return;
+  requestAnimationFrame(() => {
+    g.style.left = e.clientX + 'px';
+    g.style.top  = e.clientY + 'px';
   });
-};
+});
 </script>
 
 </body>

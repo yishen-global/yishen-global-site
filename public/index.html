@@ -1,132 +1,153 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- =========================================================
+       YISHEN GLOBAL | UNIVERSAL POWER TEMPLATE
+       Static Sovereignty · Production Lock
+       ========================================================= -->
 
-<title>Yishen Global | Coordinated Industrial Architecture</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!-- SEO / Identity -->
-<meta name="description" content="Yishen Global builds coordinated industrial architectures where supply chains, logistics, and execution converge into deterministic systems.">
-<meta name="theme-color" content="#010409">
+  <!-- ✅ 核心：路径主权（解决 90% 不通电问题） -->
+  <base href="/" />
 
-<!-- Favicon -->
-<link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#010409">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <title>PAGE_TITLE | Yishen Global</title>
+  <meta name="description" content="PAGE_DESCRIPTION">
 
-<!-- Tailwind CDN (kept as-is) -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canonical（每页记得改） -->
+  <link rel="canonical" href="https://www.yishenglobal.net/PAGE_SLUG.html">
 
-<!-- Core CSS -->
-<link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
 
-<!-- Preload Hero Image (通电级优化) -->
-<link rel="preload" as="image" href="assets/images/hero-command.webp">
+  <!-- =======================
+       Fonts
+       ======================= -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --neon-blue:#0ea5e3;
-  --bg:#010409;
-}
-body { background:var(--bg); color:white; }
-#cursor-glow{
-  position:fixed;
-  width:600px;height:600px;
-  background:radial-gradient(circle,rgba(14,165,233,.12),transparent 70%);
-  border-radius:50%;
-  pointer-events:none;
-  z-index:999;
-  transform:translate(-50%,-50%);
-}
-</style>
+  <!-- =======================
+       Tailwind (CDN OK for now)
+       ======================= -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- =======================
+       Global Styles (唯一来源)
+       ======================= -->
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2026.POWER.V1">
+
+  <!-- =======================
+       Page-level Safety Patch
+       ======================= -->
+  <style>
+    body {
+      background:#010409;
+      color:#e6edf3;
+      font-family:'Inter', sans-serif;
+      overflow-x:hidden;
+    }
+    .font-mono { font-family:'JetBrains Mono', monospace; }
+
+    /* 防止 logo / badge 在子页失效 */
+    img { max-width:100%; height:auto; display:block; }
+
+    ::selection { background:#0ea5e3; color:#fff; }
+  </style>
 </head>
 
 <body class="selection:bg-[#0ea5e3]">
 
-<div id="cursor-glow"></div>
+<!-- =========================================================
+     NAVIGATION (GLOBAL · DO NOT DUPLICATE LOGO)
+     ========================================================= -->
+<nav class="fixed top-0 left-0 w-full h-20 bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 z-50">
+  <div class="max-w-[1440px] mx-auto px-8 h-full flex items-center justify-between">
 
-<!-- NAV -->
-<nav class="fixed top-0 w-full h-20 z-50 bg-[#010409]/90 backdrop-blur border-b border-white/10">
-  <div class="max-w-[1440px] mx-auto px-6 h-full flex items-center justify-between">
-    <a href="index.html" class="flex flex-col">
-      <span class="font-black italic text-xl uppercase">Yishen Global</span>
-      <span class="font-mono text-[10px] tracking-widest text-[#0ea5e3]">
-        ARCHITECTURE_VERIFIED
+    <!-- LOGO (唯一主权源) -->
+    <a href="/" class="flex items-center gap-3">
+      <img src="/assets/icons/logo.svg" alt="Yishen Global" class="h-8">
+      <span class="font-black italic uppercase tracking-tight text-white text-lg">
+        Yishen Global
       </span>
     </a>
 
-    <div class="hidden lg:flex gap-10 font-mono text-[11px] tracking-widest uppercase text-gray-400">
-      <a href="yishen-genesis.html" class="hover:text-white">01_GENESIS</a>
-      <a href="solutions-matrix.html" class="hover:text-white">02_SOLUTIONS</a>
-      <a href="industries.html" class="hover:text-white">03_INDUSTRIES</a>
-      <a href="resources.html" class="hover:text-white">04_RESOURCES</a>
-      <a href="contact.html" class="px-4 py-2 bg-[#0ea5e3] text-black font-black italic">
-        INITIATE
+    <!-- NAV LINKS -->
+    <div class="hidden lg:flex gap-10 font-mono text-[11px] uppercase tracking-widest text-gray-400">
+      <a href="/genesis.html" class="hover:text-white">Genesis</a>
+      <a href="/sovereign-matrix.html" class="hover:text-white">Matrix</a>
+      <a href="/solutions.html" class="hover:text-white">Solutions</a>
+      <a href="/resources.html" class="hover:text-white">Resources</a>
+      <a href="/contact.html"
+         class="bg-[#0ea5e3] text-black px-5 py-2 font-black italic uppercase">
+        Initiate_Briefing
       </a>
     </div>
+
   </div>
 </nav>
 
-<!-- HERO -->
-<header class="min-h-screen flex items-center pt-32 px-[8%]"
-style="background:
-linear-gradient(90deg,#010409 35%,transparent),
-url('assets/images/hero-command.webp') right center / cover no-repeat;">
-  <div class="max-w-[900px]">
-    <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase">
-      Mission_Critical_Infrastructure
+<!-- =========================================================
+     MAIN CONTENT (👇 你以后只改这里)
+     ========================================================= -->
+<main class="pt-40 pb-32 px-8 max-w-[1440px] mx-auto">
+
+  <!-- PAGE HEADER -->
+  <header class="mb-24">
+    <span class="font-mono text-[#0ea5e3] text-xs tracking-[6px] uppercase">
+      [ PAGE_MODULE_ACTIVE ]
     </span>
 
-    <h1 class="mt-8 text-[clamp(3rem,8vw,5.5rem)] font-black italic uppercase leading-[1.05]">
-      Architecture<br>Over Sourcing.
+    <h1 class="mt-6 text-[clamp(3rem,8vw,6rem)] font-black italic uppercase leading-tight">
+      Page<br><span class="text-white/20">Title</span>
     </h1>
 
-    <p class="mt-8 text-gray-400 text-lg max-w-xl">
-      Integrated supply chain protocols where <b>Structural Integrity</b>
-      and <b>Logistics Density</b> converge into deterministic outcomes.
+    <p class="mt-8 max-w-3xl text-gray-400 text-lg leading-relaxed">
+      Replace this section with real content.
+      This template guarantees electrical stability, asset integrity, and SEO determinism.
     </p>
+  </header>
 
-    <div class="mt-14 flex gap-6">
-      <a href="yishen-genesis.html"
-         class="px-8 py-4 bg-white text-black font-black italic uppercase">
-        Enter_Genesis
-      </a>
-      <a href="solutions-matrix.html"
-         class="px-8 py-4 border border-white/20 font-mono uppercase text-xs">
-        View_Solutions
-      </a>
+  <!-- CONTENT BLOCK -->
+  <section class="grid md:grid-cols-3 gap-10">
+    <div class="p-10 bg-white/[0.03] border border-white/5">
+      <h3 class="font-black italic uppercase mb-4">Block One</h3>
+      <p class="text-gray-400 text-sm">
+        Safe static content zone.
+      </p>
     </div>
+    <div class="p-10 bg-white/[0.03] border border-white/5">
+      <h3 class="font-black italic uppercase mb-4">Block Two</h3>
+      <p class="text-gray-400 text-sm">
+        No JS dependency.
+      </p>
+    </div>
+    <div class="p-10 bg-white/[0.03] border border-white/5">
+      <h3 class="font-black italic uppercase mb-4">Block Three</h3>
+      <p class="text-gray-400 text-sm">
+        Vercel-friendly, crawler-safe.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER (GLOBAL)
+     ========================================================= -->
+<footer class="border-t border-white/5 py-16 text-center">
+  <div class="flex justify-center items-center gap-8 mb-8 opacity-40 grayscale hover:grayscale-0 transition">
+    <img src="/assets/icons/bifma.webp" alt="BIFMA" class="h-6">
+    <img src="/assets/icons/ista.webp" alt="ISTA" class="h-6">
+    <img src="/assets/icons/ul.webp" alt="UL" class="h-6">
   </div>
-</header>
 
-<!-- FOOTER -->
-<footer class="border-t border-white/10 py-20 bg-black">
-  <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
-    <div class="text-[10px] font-mono text-gray-600 uppercase tracking-[4px]">
-      © 2026 Yishen Global · Architecture Verified
-    </div>
-
-    <div class="flex items-center gap-8 opacity-40 grayscale">
-      <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
-      <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
-      <img src="assets/icons/iso9001.webp" class="h-7" alt="ISO9001">
-    </div>
-  </div>
+  <p class="font-mono text-[10px] tracking-[4px] uppercase text-gray-600">
+    © 2026 YISHEN GLOBAL // STATIC SOVEREIGNTY VERIFIED
+  </p>
 </footer>
-
-<!-- Cursor Glow Logic (isolated, safe) -->
-<script defer>
-document.addEventListener('mousemove', e => {
-  const g = document.getElementById('cursor-glow');
-  if (!g) return;
-  requestAnimationFrame(() => {
-    g.style.left = e.clientX + 'px';
-    g.style.top  = e.clientY + 'px';
-  });
-});
-</script>
 
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yishen Global | Coordinated Industrial Architecture</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Core CSS -->
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+:root {
+  --neon-blue:#0ea5e3;
+  --bg:#010409;
+}
+body { background:var(--bg); color:white; }
+#cursor-glow{
+  position:fixed;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(14,165,233,.12),transparent 70%);
+  border-radius:50%;pointer-events:none;z-index:999;
+  transform:translate(-50%,-50%);
+}
+</style>
+</head>
+
+<body class="selection:bg-[#0ea5e3]">
+
+<div id="cursor-glow"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full h-20 z-50 bg-[#010409]/90 backdrop-blur border-b border-white/10">
+  <div class="max-w-[1440px] mx-auto px-6 h-full flex items-center justify-between">
+    <a href="index.html" class="flex flex-col">
+      <span class="font-black italic text-xl uppercase">Yishen Global</span>
+      <span class="font-mono text-[10px] tracking-widest text-[#0ea5e3]">ARCHITECTURE_VERIFIED</span>
+    </a>
+
+    <div class="hidden lg:flex gap-10 font-mono text-[11px] tracking-widest uppercase text-gray-400">
+      <a href="yishen-genesis.html" class="hover:text-white">01_GENESIS</a>
+      <a href="solutions-matrix.html" class="hover:text-white">02_SOLUTIONS</a>
+      <a href="industries.html" class="hover:text-white">03_INDUSTRIES</a>
+      <a href="resources.html" class="hover:text-white">04_RESOURCES</a>
+      <a href="contact.html" class="px-4 py-2 bg-[#0ea5e3] text-black font-black italic">INITIATE</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="min-h-screen flex items-center pt-32 px-[8%]"
+style="background:
+linear-gradient(90deg,#010409 35%,transparent),
+url('assets/images/hero.webp') right center / cover no-repeat;">
+  <div class="max-w-[900px]">
+    <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase">
+      Mission_Critical_Infrastructure
+    </span>
+
+    <h1 class="mt-8 text-[clamp(3rem,8vw,5.5rem)] font-black italic uppercase leading-[1.05]">
+      Architecture<br>Over Sourcing.
+    </h1>
+
+    <p class="mt-8 text-gray-400 text-lg max-w-xl">
+      Integrated supply chain protocols where <b>Structural Integrity</b>
+      and <b>Logistics Density</b> converge into deterministic outcomes.
+    </p>
+
+    <div class="mt-14 flex gap-6">
+      <a href="yishen-genesis.html"
+         class="px-8 py-4 bg-white text-black font-black italic uppercase">
+        Enter_Genesis
+      </a>
+      <a href="solutions-matrix.html"
+         class="px-8 py-4 border border-white/20 font-mono uppercase text-xs">
+        View_Solutions
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/10 py-20 bg-black">
+  <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-12">
+    <div class="text-[10px] font-mono text-gray-600 uppercase tracking-[4px]">
+      © 2026 Yishen Global · Architecture Verified
+    </div>
+
+    <div class="flex items-center gap-8 opacity-40 grayscale">
+      <img src="assets/icons/bifma-badge.webp" class="h-6" alt="BIFMA">
+      <img src="assets/icons/ista-badge.webp" class="h-6" alt="ISTA">
+      <img src="assets/icons/iso9001.webp" class="h-7" alt="ISO9001">
+    </div>
+  </div>
+</footer>
+
+<script>
+document.onmousemove=e=>{
+  const g=document.getElementById('cursor-glow');
+  requestAnimationFrame(()=>{
+    g.style.left=e.clientX+'px';
+    g.style.top=e.clientY+'px';
+  });
+};
+</script>
+
+</body>
+</html>

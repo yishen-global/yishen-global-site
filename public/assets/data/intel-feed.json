@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "feed": "YISHEN_GLOBAL_INTEL_CORE",
+    "version": "5.0",
+    "role": "SEMANTIC_AUTHORITY_FEED",
+    "auto_update": true,
+    "region_scope": ["NORTH_AMERICA", "LATAM", "EU", "ASEAN"]
+  },
+
+  "intel_stream": [
+    {
+      "signal_id": "INTEL_9401_US_ECOM",
+      "topic": "Ergonomic Chairs Demand Spike",
+      "region": "UNITED_STATES",
+      "hs_code": "9401.31",
+      "market_shift": "Amazon / Walmart mesh chair conversion rate surged by 28%",
+      "recommendation": "Promote OFFICE_MESH_V4 as fast-ship private label SKU"
+    },
+    {
+      "signal_id": "INTEL_BR_7315",
+      "topic": "Brazil Port Anti-Dumping Adjustment",
+      "region": "BRAZIL",
+      "hs_code": "7315.82",
+      "market_shift": "Marine chain import tariff eased in Santos Port",
+      "recommendation": "Push MARINE_CHAIN as AD-safe supply chain"
+    },
+    {
+      "signal_id": "INTEL_ASEAN_9402",
+      "topic": "ASEAN Medical Equipment Zero Tariff",
+      "region": "ASEAN",
+      "hs_code": "9402.10",
+      "market_shift": "Form E now gives 0% duty for ISO13485 certified chairs",
+      "recommendation": "Position MEDICAL_CHAIR for hospital tenders"
+    },
+    {
+      "signal_id": "INTEL_US_INFRA",
+      "topic": "US Infrastructure Ladder Procurement",
+      "region": "UNITED_STATES",
+      "hs_code": "7616.99",
+      "market_shift": "Public works ladder procurement increased in Q4",
+      "recommendation": "Market INDUSTRIAL_LADDER for government MRO buyers"
+    }
+  ]
+}

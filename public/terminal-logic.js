@@ -1,7 +1,29 @@
 (function () {
+  "use strict";
+
   const $ = (id) => document.getElementById(id);
 
-  // ====== HS LOOKUP (REAL) ======
+  /* =========================================================
+   * GLOBAL FAIL-SAFE
+   * ========================================================= */
+  window.addEventListener("error", (e) => {
+    console.error("[TERMINAL_CORE]", e.message);
+  });
+  window.addEventListener("unhandledrejection", (e) => {
+    console.error("[TERMINAL_CORE_PROMISE]", e.reason);
+  });
+
+  const safeFetch = (url, opts = {}, timeout = 12000) =>
+    Promise.race([
+      fetch(url, opts),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("NETWORK_TIMEOUT")), timeout)
+      )
+    ]);
+
+  // =========================================================
+  // HS LOOKUP
+  // =========================================================
   const hsInput = $("hs-input");
   const hsBtn = $("hs-search-btn");
   const hsStatus = $("hs-status");
@@ -33,7 +55,7 @@
     if (!q) return;
     hsStatus.textContent = "FETCHING_INTEL...";
     try {
-      const r = await fetch(`/api/hs?q=${encodeURIComponent(q)}`, { method: "GET" });
+      const r = await safeFetch(`/api/hs?q=${encodeURIComponent(q)}`);
       const data = await r.json();
       if (!r.ok) throw new Error(data?.error || "HS_API_ERROR");
       renderHS(data.items || []);
@@ -47,7 +69,9 @@
   hsBtn?.addEventListener("click", hsSearch);
   hsInput?.addEventListener("keydown", (e) => { if (e.key === "Enter") hsSearch(); });
 
-  // ====== AGENT (REAL) ======
+  // =========================================================
+  // AGENT
+  // =========================================================
   const agentBtn = $("agent-run-btn");
   const taskInput = $("user-task");
   const agentOut = $("agent-output");
@@ -68,7 +92,7 @@
     logAgent(`> ROUTING_TO_AGENT_NODE...`);
 
     try {
-      const r = await fetch(`/api/agent`, {
+      const r = await safeFetch(`/api/agent`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ task })
@@ -86,15 +110,16 @@
   agentBtn?.addEventListener("click", runAgentReal);
   taskInput?.addEventListener("keydown", (e) => { if (e.key === "Enter") runAgentReal(); });
 
-  // ====== BRIEFING FORM (REAL INTAKE) ======
+  // =========================================================
+  // BRIEFING FORM
+  // =========================================================
   const form = $("briefing-form");
   const status = $("form-status");
   const btn = $("briefing-btn");
 
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const fd = new FormData(form);
-    const payload = Object.fromEntries(fd.entries());
+    const payload = Object.fromEntries(new FormData(form).entries());
 
     status.classList.remove("hidden");
     status.innerHTML = `<span class="text-[#0ea5e3]">> UPLOADING_ENCRYPTED_PACKET...</span>`;
@@ -102,7 +127,7 @@
     btn.style.opacity = "0.6";
 
     try {
-      const r = await fetch(`/api/briefing`, {
+      const r = await safeFetch(`/api/briefing`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -112,7 +137,6 @@
 
       status.innerHTML = `<span class="text-[#ffd700]">> SUCCESS: ${escapeHtml(data.message || "MISSION_RECEIVED")}</span>`;
 
-      // 你原本的跳转逻辑保留（可选）
       setTimeout(() => {
         const id = (payload.interest_sector === "MEDICAL_PRECISION") ? "HS_9402" : "OFFICE_MESH_V4";
         window.location.href = `technical-passport.html?id=${encodeURIComponent(id)}`;
@@ -125,7 +149,6 @@
     }
   });
 
-  // ====== HELPERS ======
   function escapeHtml(s) {
     return String(s)
       .replaceAll("&", "&amp;")

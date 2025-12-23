@@ -1,0 +1,14 @@
+name: Allow YiShen Sovereign Growth
+
+on:
+  push:
+    branches:
+      - v5-final
+      - main
+
+jobs:
+  allow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Growth Permission Granted
+        run: echo "YiShen Growth Engine Online"

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- CORE SYSTEM PAGES -->
+  <url>
+    <loc>https://yishenglobal.net/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/genesis.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/sovereign-matrix.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/clusters.html</loc>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/resources.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/tactical-briefing.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- DYNAMIC SKU PASSPORT ZONE -->
+  <!-- Auto-fed by sku-database.json -->
+  
+  <url>
+    <loc>https://yishenglobal.net/passport/OFFICE_MESH_V4</loc>
+    <priority>0.98</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/passport/MARINE_CHAIN</loc>
+    <priority>0.98</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/passport/MEDICAL_CHAIR</loc>
+    <priority>0.96</priority>
+  </url>
+
+  <url>
+    <loc>https://yishenglobal.net/passport/INDUSTRIAL_LADDER</loc>
+    <priority>0.96</priority>
+  </url>
+
+</urlset>

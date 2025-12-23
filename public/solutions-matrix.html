@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Solutions Matrix | Sector-Specific Execution Paths | Yishen Global</title>
+<title>Solutions Matrix | Sector-Specific Execution Paths | Yishen Global</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Select the execution path that matches your industry reality. Sector-specific solution architectures for global manufacturing, logistics, and compliance.">
-  <link rel="canonical" href="https://www.yishenglobal.net/solutions-matrix.html">
-  <meta name="robots" content="index,follow">
+<meta name="description" content="Select the execution path that matches your industry reality. Sector-specific solution architectures for global manufacturing, logistics, and compliance.">
+<link rel="canonical" href="https://www.yishenglobal.net/solutions-matrix.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#010409">
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
-
-  <!-- Core CSS -->
-  <link rel="stylesheet" href="/assets/css/styles.css?v=2026.MATRIX.V5.2">
-
-  <style>
-    body { background:#010409; color:#e6edf3; font-family:'Inter',sans-serif; }
-    .font-mono { font-family:'JetBrains Mono', monospace; }
-
-    .matrix-card {
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.06);
-      transition:all .4s cubic-bezier(.4,0,.2,1);
+<!-- Tailwind LOCK -->
+<script>
+  tailwind = {
+    theme: {
+      extend: {
+        colors: {
+          neon: '#0ea5e3',
+          deep: '#010409'
+        }
+      }
     }
-    .matrix-card:hover {
-      border-color:#0ea5e3;
-      transform:translateY(-6px);
-      box-shadow:0 30px 60px rgba(0,0,0,.6);
-    }
-  </style>
+  }
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+<!-- Core CSS -->
+<link rel="stylesheet" href="/assets/css/styles.css?v=2026.MATRIX.V5.2">
+
+<style>
+  html, body { width:100%; height:100%; }
+  body {
+    background:#010409;
+    color:#e6edf3;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  .font-mono { font-family:'JetBrains Mono', monospace; }
+
+  .matrix-card {
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    transition:all .4s cubic-bezier(.4,0,.2,1);
+  }
+  .matrix-card:hover {
+    border-color:#0ea5e3;
+    transform:translateY(-6px);
+    box-shadow:0 30px 60px rgba(0,0,0,.6);
+  }
+</style>
 </head>
 
 <body class="selection:bg-[#0ea5e3]">
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full h-20 bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 z-50">
+<nav class="fixed top-0 w-full h-20 bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 z-[9999]">
   <div class="max-w-[1440px] mx-auto px-8 h-full flex justify-between items-center">
     <a href="/" class="font-black italic text-xl uppercase">Yishen Global</a>
     <div class="hidden lg:flex gap-10 font-mono text-[11px] uppercase tracking-widest text-gray-400">
@@ -55,8 +73,11 @@
   </div>
 </nav>
 
+<!-- NAV SPACER (CRITICAL) -->
+<div class="h-20"></div>
+
 <!-- HERO -->
-<header class="pt-48 pb-24 px-[8%] max-w-[1440px] mx-auto">
+<header class="pt-28 pb-24 px-[8%] max-w-[1440px] mx-auto">
   <span class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase">
     [ SOLUTION_PATH_SELECTOR ]
   </span>
@@ -66,7 +87,7 @@
   </h1>
 
   <p class="max-w-3xl text-lg text-gray-400 leading-relaxed">
-    Every industry operates under different constraints.  
+    Every industry operates under different constraints.
     Select the execution path that aligns with your market, risk profile, and operational reality.
   </p>
 </header>
@@ -74,7 +95,6 @@
 <!-- MATRIX GRID -->
 <section class="px-[8%] max-w-[1440px] mx-auto grid gap-12 lg:grid-cols-3 pb-32">
 
-  <!-- FLOORING / SPC -->
   <div class="matrix-card p-10">
     <span class="font-mono text-[#0ea5e3] text-[10px] uppercase tracking-widest">SECTOR: FLOORING</span>
     <h3 class="text-2xl font-black italic uppercase mt-4 mb-4">
@@ -95,7 +115,6 @@
     </a>
   </div>
 
-  <!-- ERGONOMICS -->
   <div class="matrix-card p-10">
     <span class="font-mono text-[#0ea5e3] text-[10px] uppercase tracking-widest">SECTOR: ERGONOMICS</span>
     <h3 class="text-2xl font-black italic uppercase mt-4 mb-4">
@@ -116,7 +135,6 @@
     </a>
   </div>
 
-  <!-- QUALITY / CULTURE -->
   <div class="matrix-card p-10 border-[#0ea5e3]/40 bg-[#0ea5e3]/5">
     <span class="font-mono text-[#10b981] text-[10px] uppercase tracking-widest">STATUS: SELECTIVE</span>
     <h3 class="text-2xl font-black italic uppercase mt-4 mb-4 text-[#0ea5e3]">
@@ -139,7 +157,6 @@
 
 </section>
 
-<!-- RETURN CTA -->
 <section class="px-[8%] max-w-[1440px] mx-auto pb-32">
   <div class="border border-white/5 bg-white/[0.02] p-16 rounded-2xl flex flex-col lg:flex-row justify-between items-center gap-12">
     <div>
@@ -162,6 +179,16 @@
     © 2026 YISHEN GLOBAL // SOLUTION_PATHS_VERIFIED
   </p>
 </footer>
+
+<!-- HEARTBEAT / POWER ON -->
+<script>
+  window.addEventListener('load', () => {
+    document.body.style.opacity = '0.999';
+    requestAnimationFrame(() => {
+      document.body.style.opacity = '1';
+    });
+  });
+</script>
 
 </body>
 </html>

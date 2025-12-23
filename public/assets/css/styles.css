@@ -1,0 +1,277 @@
+/* =========================================================
+   YISHEN GLOBAL — MASTER STYLESHEET
+   Version: 2026.1
+   Scope: Full site (Index / Genesis / Solutions)
+========================================================= */
+
+/* ------------------------------
+   Root Variables
+------------------------------ */
+:root {
+    --bg-deep: #010409;
+    --bg-panel: rgba(255,255,255,0.02);
+    --border-soft: rgba(255,255,255,0.08);
+
+    --brand-blue: #0ea5e3;
+    --brand-red: #A11219;
+    --brand-gold: #ffd700;
+
+    --text-main: #ffffff;
+    --text-muted: #8b949e;
+    --text-dim: #6e7681;
+
+    --nav-height: 80px;
+    --ease-spring: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ------------------------------
+   Global Reset
+------------------------------ */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-deep);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ------------------------------
+   Selection
+------------------------------ */
+::selection {
+    background: var(--brand-blue);
+    color: #000;
+}
+
+/* ------------------------------
+   Cursor Glow (GPU Safe)
+------------------------------ */
+#cursor-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+    mix-blend-mode: screen;
+}
+
+/* ------------------------------
+   Master Navigation
+------------------------------ */
+#master-nav,
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--nav-height);
+    width: 100%;
+    z-index: 1000;
+    background: rgba(1,4,9,0.92);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+}
+
+.site-nav-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ------------------------------
+   Navigation Links
+------------------------------ */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    color: var(--text-dim);
+    transition: color 0.3s var(--ease-spring);
+}
+
+.nav-links a:hover {
+    color: var(--brand-blue);
+}
+
+.nav-cta {
+    padding: 10px 22px;
+    background: var(--brand-blue);
+    color: #000;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 11px;
+    border-radius: 2px;
+}
+
+/* ------------------------------
+   Hero Section
+------------------------------ */
+.hero {
+    min-height: 100vh;
+    padding-top: calc(var(--nav-height) + 60px);
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem, 8vw, 5.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    font-style: italic;
+    margin: 32px 0;
+}
+
+.hero p {
+    max-width: 720px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* ------------------------------
+   Glass Panels / Cards
+------------------------------ */
+.glass-panel,
+.agent-console,
+.story-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-soft);
+    backdrop-filter: blur(12px);
+}
+
+.story-card {
+    padding: 60px;
+    border-left: 2px solid var(--brand-blue);
+    transition: all 0.5s var(--ease-spring);
+}
+
+.story-card:hover {
+    border-left-color: var(--brand-gold);
+    transform: translateX(12px);
+    background: rgba(14,165,227,0.03);
+}
+
+/* ------------------------------
+   Solutions Matrix Cards
+------------------------------ */
+.solution-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(14,165,227,0.2);
+    padding: 36px;
+    transition: all 0.35s var(--ease-spring);
+}
+
+.solution-card:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 0 24px rgba(14,165,227,0.2);
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+footer {
+    background: #000;
+    border-top: 1px solid var(--border-soft);
+}
+
+.footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 80px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    color: #3d444d;
+    text-transform: uppercase;
+}
+
+/* ------------------------------
+   Badges / Certifications
+------------------------------ */
+.cert-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    opacity: 0.4;
+    filter: grayscale(100%);
+    transition: all 0.6s ease;
+}
+
+.cert-row:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* ------------------------------
+   Utility
+------------------------------ */
+.uppercase {
+    text-transform: uppercase;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ------------------------------
+   Mobile Adjustments
+------------------------------ */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 140px;
+        text-align: center;
+    }
+
+    .story-card {
+        padding: 36px;
+    }
+}

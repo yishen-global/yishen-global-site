@@ -1,127 +1,118 @@
-# YiShen Global V5.0  
-## Deterministic Industrial Sovereignty System  
-**Version:** 5.0.2026 · BOARD_RELEASE
+YISHEN GLOBAL
+Industrial Sovereignty Infrastructure V5.0
 
----
+Predictability Is Engineered — Not Promised.
 
-## Executive Summary
+🌍 What This Is
 
-YiShen Global V5.0 is **not a website** and **not a catalog system**.
+YiShen Global is not a website.
+It is a sovereign industrial execution system.
 
-It is a **deterministic industrial sovereignty architecture** designed to eliminate uncertainty in cross-border manufacturing, compliance, and delivery.
+This repository contains the full operational layer of YiShen Global V5.0 —
+an AI-driven, compliance-enforced, globally synchronized industrial delivery matrix.
 
-Where most suppliers sell *products*, YiShen Global engineers **predictability**.
+We do not sell products.
+We engineer certainty across borders.
 
----
+🧠 Core Philosophy
+Traditional Export	YiShen Global
+“Better price”	Engineered predictability
+Product-first	System-first
+Sales-driven	Execution-driven
+After-fix	Pre-validated
+Fragmented logistics	Sovereign delivery network
+🏗 System Architecture
+Layer	Function
+asset-ledger.json	Sovereign SKU ledger
+global-mapping-gate.js	Global SKU auto-mapping engine
+crawler-engine.js	Market intelligence harvesting
+intel-feed.json	Live market perception layer
+asset-distributor.js	Auto-distribution matrix
+generate_sitemap.py	Autonomous SKU growth engine
+hq-core-gate.js	Execution firewall & governance gate
+terminal-logic.js	Execution terminal & buyer gateway
+🔥 Capabilities
+Capability	Status
+Autonomous SKU growth	🟢 Live
+Global sitemap propagation	🟢 Live
+Market intelligence ingestion	🟢 Live
+Cluster auto-sync	🟢 Live
+Sovereign compliance routing	🟢 Live
+Vercel execution API layer	🟢 Live
+🧬 Industrial Clusters (28 Nodes)
 
-## Core Thesis
+YiShen Global controls 28 physical + compliance clusters including:
 
-> Predictability is engineered — not promised.
+Marine Chains & Rigging
 
-Global trade failures are rarely caused by product defects.  
-They are caused by **systemic uncertainty**:
+Medical Precision Systems
 
-- Tariff volatility  
-- Compliance ambiguity  
-- Logistics damage  
-- Regulatory escalation  
-- Buyer-side internal defensibility failure  
+Office & Gaming Furniture
 
-YiShen Global V5.0 neutralizes these risks **by design**, not negotiation.
+Aerospace & Military MRO
 
----
+Bio-material Infrastructure
 
-## What This System Is
+Carbon Neutral Manufacturing
 
-YiShen Global V5.0 is a **full-stack industrial operating system** integrating:
+Smart Actuation Systems
 
-- Physical manufacturing capability  
-- Compliance & duty-avoidance logic  
-- AI-driven buyer intelligence  
-- Evidence-based sales execution  
-- Deterministic delivery orchestration  
+Every cluster is governed by:
 
-into a **single controllable workflow**.
+HS routing
 
-This system is built to be understood and trusted by:
+Compliance firewall
 
-- Procurement Directors  
-- Compliance & Legal Teams  
-- Customs Authorities  
-- Board-Level Decision Makers  
+Sovereign documentation pipeline
 
----
+🛰 Autonomous Growth Engine
 
-## Architectural Overview
+New SKUs auto-propagate across:
 
-The system is structured as **six sovereign command modules**.  
-Each module is independently verifiable and collectively composable.
+Website matrix
 
-### 01 · GENESIS  
-**Trust & Continuity Layer**
+Sitemap
 
-Documents three generations of manufacturing credibility.  
-Purpose: eliminate supplier-origin risk at the *first decision layer*.
+Cluster maps
 
----
+Passport routing
 
-### 02 · ARCHITECTURES  
-**Manufacturing Sovereignty Core**
+Market crawlers
 
-Defines:
-- Capacity ownership logic  
-- Quality escalation protocols  
-- Compliance firewalls  
-- Failure responsibility attribution  
+Buyer gateways
 
-This layer answers one question:  
-**“Who is accountable when something breaks?”**
+Once entered into asset-ledger.json, a product becomes a sovereign asset.
 
----
+📡 Live Execution Status
+System	State
+Global Mapping Gate	ACTIVE
+Market Perception Engine	ACTIVE
+SKU Growth Engine	ACTIVE
+Cluster Sovereignty Layer	ACTIVE
+Vercel API Endpoints	ACTIVE
+📜 Compliance Backbone
 
-### 03 · CLUSTERS  
-**Strategic Industrial Nodes (28 Clusters)**
+All industrial outputs are governed by:
 
-Each cluster is mapped by:
-- HS code  
-- Regulatory exposure  
-- Tariff sensitivity  
-- Substitution & rerouting capability  
+ISO / BIFMA / ISTA / EN / ANSI
 
-Examples:
-- Maritime Hardware (HS 7315)  
-- Medical Precision (ISO 13485)  
-- Furniture & Ergonomics (HS 9401)
+HS Routing Architecture
 
----
+Form E / COO / Anti-dumping firewall
 
-### 04 · RESOURCES  
-**Evidence Arsenal**
+DUNS Verified Physical Nodes
 
-Not marketing documents — **defensive instruments**, including:
-- BIFMA / ISTA / ISO audit artifacts  
-- Form E & origin-shift pathways  
-- Packaging & damage-resistance validation  
+🧾 Legal / Governance
 
-Used to defend decisions **inside buyer organizations**.
+This repository constitutes digital sovereign infrastructure.
+Unauthorized replication or misrepresentation constitutes jurisdictional violation.
 
----
+🧠 Official Doctrine
 
-### 05 · INTELLIGENCE  
-**Buyer & Market Interception Layer**
+Predictability is not promised.
+It is engineered.
 
-Continuously collides:
-- Customs bill-of-lading data  
-- Public sentiment (forums, platforms)  
-- Importer behavior patterns  
+Maintained by
 
-Purpose: detect *active procurement windows*, not passive interest.
-
----
-
-### 06 · PASSPORT  
-**Physical Evidence Collision Engine**
-
-Dynamic rendering of verifiable evidence based on context.
-
-Example:
+YiShen Global Sovereign Systems Division
+Industrial Sovereignty Infrastructure V5.0

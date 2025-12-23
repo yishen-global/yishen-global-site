@@ -1,92 +1,96 @@
-import json
-import os
+import json, os, math
 from datetime import datetime
 
 # =========================================================
-# YISHEN GLOBAL — SEO SOVEREIGN INDEX GENERATOR (PATCHED)
+# YISHEN GLOBAL — SEO SOVEREIGN GENERATOR V5.ULTIMATE
+# 功能：
+# 1. 自动扫描静态页面
+# 2. 自动裂变 SKU 动态页
+# 3. 支持 10,000+ SKU sitemap 分片
 # =========================================================
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-os.chdir(BASE_DIR)
-
 DOMAIN = "https://yishenglobal.net/"
-OUTPUT_FILE = "data/sovereign-index.xml"
-LEDGER_FILES = ['sku-database.json', 'asset-ledger.json']
+OUTPUT_DIR = "public"
+MAX_URLS = 45000  # 每个 sitemap 分片最大容量
 
+LEDGER_FILES = ["sku-database.json", "asset-ledger.json"]
 
-class SitemapSovereignty:
+class SovereignSitemap:
     def __init__(self):
-        self.now = datetime.utcnow().strftime('%Y-%m-%d')
-        self.nodes = []
+        self.today = datetime.utcnow().strftime("%Y-%m-%d")
+        self.urls = []
 
     def boot(self):
-        print(">>> [SYSTEM_V5.1]: INITIATING_SEO_SOVEREIGNTY_SCAN")
+        print(">>> [SEO_CORE]: SOVEREIGN_SITEMAP_GENERATOR_ONLINE")
 
-        self.scan_static_assets()
-        self.harvest_dynamic_skus()
-        self.construct_xml()
+        self.scan_static()
+        self.harvest_skus()
+        self.split_and_write()
 
-    def scan_static_assets(self):
-        exclude = {'sku-template.html', 'sku-detail-template.html', '404.html'}
-        html_dir = BASE_DIR
+    def scan_static(self):
+        for f in os.listdir("public"):
+            if f.endswith(".html"):
+                self.urls.append({
+                    "loc": f"{DOMAIN}{f}",
+                    "priority": "1.0" if f == "index.html" else "0.8",
+                    "freq": "daily" if f == "index.html" else "weekly"
+                })
 
-        static_pages = [
-            f for f in os.listdir(html_dir)
-            if f.endswith('.html') and f not in exclude
-        ]
-
-        for page in static_pages:
-            self.nodes.append({
-                "loc": f"{DOMAIN}{page}",
-                "priority": "1.0" if page == "index.html" else "0.8",
-                "changefreq": "daily" if page == "index.html" else "weekly"
-            })
-
-        print(f"[SCAN] {len(static_pages)} static pages indexed.")
-
-    def harvest_dynamic_skus(self):
-        ledger_path = next((f for f in LEDGER_FILES if os.path.exists(os.path.join(BASE_DIR, f))), None)
-        if not ledger_path:
-            print("[WARNING] No asset ledger found.")
+    def harvest_skus(self):
+        ledger = next((f for f in LEDGER_FILES if os.path.exists(f)), None)
+        if not ledger:
+            print("! NO SKU LEDGER FOUND.")
             return
 
-        try:
-            with open(os.path.join(BASE_DIR, ledger_path), 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                skus = data.get('products', []) if isinstance(data, dict) else data.values()
+        with open(ledger, "r", encoding="utf-8") as f:
+            db = json.load(f)
 
-                for sku in skus:
-                    sku_id = sku.get('id') or sku.get('code_id')
-                    if sku_id:
-                        self.nodes.append({
-                            "loc": f"{DOMAIN}technical-passport.html?id={sku_id}",
-                            "priority": "0.7",
-                            "changefreq": "weekly"
-                        })
-        except Exception as e:
-            print(f"[ERROR] Ledger read failed: {e}")
+        skus = db.get("products", [])
+        for sku in skus:
+            sid = sku.get("id")
+            if sid:
+                self.urls.append({
+                    "loc": f"{DOMAIN}technical-passport.html?id={sid}",
+                    "priority": "0.7",
+                    "freq": "weekly"
+                })
 
-    def construct_xml(self):
-        xml = [
-            '<?xml version="1.0" encoding="UTF-8"?>',
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-        ]
+        print(f">>> [SKU_SYNC]: {len(skus)} DYNAMIC SKU URLS INJECTED")
 
-        for n in self.nodes:
-            xml.append('  <url>')
-            xml.append(f'    <loc>{n["loc"]}</loc>')
-            xml.append(f'    <lastmod>{self.now}</lastmod>')
-            xml.append(f'    <changefreq>{n["changefreq"]}</changefreq>')
-            xml.append(f'    <priority>{n["priority"]}</priority>')
-            xml.append('  </url>')
+    def split_and_write(self):
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        total = len(self.urls)
+        parts = math.ceil(total / MAX_URLS)
 
-        xml.append('</urlset>')
+        index_nodes = []
 
-        with open(os.path.join(BASE_DIR, OUTPUT_FILE), 'w', encoding='utf-8') as f:
-            f.write('\n'.join(xml))
+        for i in range(parts):
+            batch = self.urls[i * MAX_URLS:(i + 1) * MAX_URLS]
+            filename = f"sitemap-part-{i+1}.xml"
+            path = os.path.join(OUTPUT_DIR, filename)
+            index_nodes.append(f"{DOMAIN}{filename}")
 
-        print(f"[SUCCESS] Sovereign index manifested → {OUTPUT_FILE}")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+                f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+                for u in batch:
+                    f.write("  <url>\n")
+                    f.write(f"    <loc>{u['loc']}</loc>\n")
+                    f.write(f"    <lastmod>{self.today}</lastmod>\n")
+                    f.write(f"    <changefreq>{u['freq']}</changefreq>\n")
+                    f.write(f"    <priority>{u['priority']}</priority>\n")
+                    f.write("  </url>\n")
+                f.write("</urlset>")
 
+        # 写 sitemap-index.xml
+        with open(os.path.join(OUTPUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
+            f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+            f.write('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+            for loc in index_nodes:
+                f.write("  <sitemap>\n")
+                f.write(f"    <loc>{loc}</loc>\n")
+                f.write(f"    <lastmod>{self.today}</lastmod>\n")
+                f.write("  </sitemap>\n")
+            f.write("</sitemapindex>")
 
-if __name__ == "__main__":
-    SitemapSovereignty().boot()
+        print(f">>> [SEO_LOCKED]: {total}_]()

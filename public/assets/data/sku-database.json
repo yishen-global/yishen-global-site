@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "ledger": "YISHEN_SOVEREIGN_SKU_LEDGER",
+    "version": "5.0",
+    "last_sync": "2026-01-20",
+    "auto_growth": true,
+    "role": "MASTER_PRODUCT_SOURCE"
+  },
+
+  "products": [
+    {
+      "id": "OFFICE_MESH_V4",
+      "category": "OFFICE_ERGONOMICS",
+      "name": "Ergonomic Mesh Chair V4",
+      "tagline": "BIFMA X5.1 Deterministic Delivery Node",
+      "hs_code": "9401.31",
+      "image": "/assets/products/office-mesh-v4.webp",
+      "technical_data": {
+        "material": "Mesh + Reinforced Nylon",
+        "standard": "BIFMA X5.1",
+        "logistics": "97.2% CBM Efficiency",
+        "market_logic": "NORTH_AMERICA_ECOM"
+      }
+    },
+
+    {
+      "id": "MARINE_CHAIN",
+      "category": "MARITIME_HARDWARE",
+      "name": "G80 Marine Anchor Chain",
+      "tagline": "Brazil AD Exemption Chain Matrix",
+      "hs_code": "7315.82",
+      "image": "/assets/products/marine-chain.webp",
+      "technical_data": {
+        "material": "Alloy Steel G80",
+        "standard": "ABS / DNV",
+        "logistics": "99.2% Packing Density",
+        "market_logic": "LATAM_PORT_DEFENSE"
+      }
+    },
+
+    {
+      "id": "MEDICAL_CHAIR",
+      "category": "MEDICAL_PRECISION",
+      "name": "Sterile Clinical Chair",
+      "tagline": "ISO 13485 Zero Contamination Node",
+      "hs_code": "9402.10",
+      "image": "/assets/products/medical-chair.webp",
+      "technical_data": {
+        "material": "Silver-Ion Polymer",
+        "standard": "ISO 13485",
+        "logistics": "Medical Grade Sterile Packaging",
+        "market_logic": "ASEAN_DUTY_FREE"
+      }
+    },
+
+    {
+      "id": "INDUSTRIAL_LADDER",
+      "category": "INFRASTRUCTURE_MRO",
+      "name": "Industrial Aluminum Ladder",
+      "tagline": "Anti-Dumping Tariff Shield Node",
+      "hs_code": "7616.99",
+      "image": "/assets/products/industrial-ladder.webp",
+      "technical_data": {
+        "material": "Aluminum Alloy",
+        "standard": "ANSI / EN131",
+        "logistics": "ASEAN Re-export Shield",
+        "market_logic": "NORTH_AMERICA_INFRA"
+      }
+    }
+  ]
+}

@@ -1,205 +1,93 @@
 <!-- =========================================================
      YISHEN GLOBAL — FOOTER COMPONENT (V5.0)
      File: components/footer.html
-     Role: Unified Footer for all pages
+     Role: Unified Sovereign Certification Footer
 ========================================================= -->
 
-<footer class="yg-footer">
+<footer id="yg-footer">
   <div class="yg-footer-inner">
-    <!-- LEFT: meta -->
-    <div class="yg-footer-left">
-      <div class="yg-footer-meta">
-        © 2026 Yishen Global // Sovereign_Execution_Verified
-      </div>
 
-      <div class="yg-footer-links">
-        <a href="site-architecture.html">Blueprint_Map</a>
-        <span class="yg-footer-sep">/</span>
-        <a href="sitemap.xml" target="_blank" rel="noopener">XML_Index</a>
-        <span class="yg-footer-sep">/</span>
-        <a href="resources.html">Access_Vault</a>
-      </div>
-
-      <div class="yg-footer-sub">
-        Intelligence defines the path; Integrity forges the structure.
-      </div>
+    <!-- LEFT META -->
+    <div class="yg-footer-meta">
+      © 2026 YISHEN GLOBAL
+      <span class="yg-footer-sub">// INDUSTRIAL_SOVEREIGNTY_MATRIX</span>
     </div>
 
-    <!-- RIGHT: badges + quick links -->
-    <div class="yg-footer-right">
-      <div class="yg-footer-badges" aria-label="Certifications">
-        <img src="assets/icons/bifma-badge.webp" alt="BIFMA" loading="lazy">
-        <img src="assets/icons/iso9001.webp" alt="ISO9001" loading="lazy">
-        <img src="assets/icons/en131-badge.webp" alt="EN131" loading="lazy">
-        <img src="assets/icons/ista-badge.webp" alt="ISTA" loading="lazy">
-        <img src="assets/icons/logo-ul.webp" alt="UL" loading="lazy">
-      </div>
-
-      <div class="yg-footer-actions">
-        <a class="yg-action" href="tactical-briefing.html" title="Send briefing">
-          <i class="fa-solid fa-satellite-dish"></i>
-          <span>Briefing</span>
-        </a>
-        <a class="yg-action" href="mailto:ops@yishenglobal.net" title="Email">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email</span>
-        </a>
-        <a class="yg-action" href="https://github.com" target="_blank" rel="noopener" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-          <span>GitHub</span>
-        </a>
-        <a class="yg-action" href="https://vercel.com" target="_blank" rel="noopener" title="Vercel">
-          <i class="fa-solid fa-cloud"></i>
-          <span>Vercel</span>
-        </a>
-      </div>
+    <!-- CENTER CERTS -->
+    <div class="yg-footer-certs">
+      <img src="/assets/icons/bifma-badge.webp" alt="BIFMA">
+      <img src="/assets/icons/iso9001.webp" alt="ISO9001">
+      <img src="/assets/icons/ista-badge.webp" alt="ISTA">
+      <img src="/assets/icons/logo-ul.webp" alt="UL">
     </div>
+
+    <!-- RIGHT TRUST -->
+    <div class="yg-footer-trust">
+      DUNS: 545277884
+      <span>// VERIFIED_NODE_V5</span>
+    </div>
+
   </div>
 </footer>
 
-<!-- Component local styles (safe, non-invasive) -->
 <style>
-  :root{
-    --yg-bg-deep:#010409;
-    --yg-border-soft:rgba(255,255,255,0.08);
-    --yg-text-dim:#6e7681;
-    --yg-text-muted:#8b949e;
-    --yg-blue:#0ea5e3;
-  }
+:root{
+  --yg-bg:#000;
+  --yg-border:rgba(255,255,255,.08);
+  --yg-dim:#6e7681;
+  --yg-blue:#0ea5e3;
+}
 
-  .yg-footer{
-    background:#000;
-    border-top:1px solid var(--yg-border-soft);
-  }
+#yg-footer{
+  background:var(--yg-bg);
+  border-top:1px solid var(--yg-border);
+}
 
-  .yg-footer-inner{
-    max-width:1440px;
-    margin:0 auto;
-    padding:80px 32px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:40px;
-    flex-wrap:wrap;
-  }
+.yg-footer-inner{
+  max-width:1440px;
+  margin:0 auto;
+  padding:90px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:40px;
+}
 
-  .yg-footer-left{
-    min-width:280px;
-  }
+.yg-footer-meta{
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px;
+  letter-spacing:.4em;
+  color:var(--yg-dim);
+  text-transform:uppercase;
+}
 
-  .yg-footer-meta{
-    font-family:'JetBrains Mono', monospace;
-    font-size:9px;
-    letter-spacing:0.35em;
-    color:#3d444d;
-    text-transform:uppercase;
-  }
+.yg-footer-sub{
+  display:block;
+  margin-top:6px;
+  color:#3d444d;
+}
 
-  .yg-footer-links{
-    margin-top:14px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    align-items:center;
-    font-family:'JetBrains Mono', monospace;
-    font-size:9px;
-    letter-spacing:0.28em;
-    text-transform:uppercase;
-    color:var(--yg-text-dim);
-  }
+.yg-footer-certs{
+  display:flex;
+  gap:32px;
+  opacity:.4;
+  filter:grayscale(1);
+  transition:.6s;
+}
 
-  .yg-footer-links a{
-    color:var(--yg-text-dim);
-    transition:color .25s ease;
-  }
-  .yg-footer-links a:hover{
-    color:#fff;
-  }
-  .yg-footer-sep{
-    color:rgba(255,255,255,0.08);
-  }
+.yg-footer-certs:hover{
+  opacity:1;
+  filter:grayscale(0);
+}
 
-  .yg-footer-sub{
-    margin-top:16px;
-    font-size:12px;
-    color:rgba(255,255,255,0.22);
-    font-style:italic;
-    letter-spacing:0.03em;
-  }
+.yg-footer-certs img{height:26px}
 
-  .yg-footer-right{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    align-items:flex-end;
-  }
-
-  .yg-footer-badges{
-    display:flex;
-    gap:22px;
-    align-items:center;
-    opacity:.45;
-    filter:grayscale(1);
-    transition:all .7s ease;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-  }
-  .yg-footer-badges:hover{
-    opacity:1;
-    filter:grayscale(0);
-  }
-  .yg-footer-badges img{
-    height:22px;
-    width:auto;
-    display:block;
-  }
-
-  .yg-footer-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-    justify-content:flex-end;
-  }
-
-  .yg-action{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 14px;
-    border:1px solid rgba(255,255,255,0.06);
-    background:rgba(255,255,255,0.02);
-    border-radius:10px;
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:rgba(255,255,255,0.35);
-    transition:all .25s ease;
-  }
-  .yg-action i{
-    color:rgba(14,165,227,0.8);
-    font-size:12px;
-  }
-  .yg-action:hover{
-    border-color:rgba(14,165,227,0.35);
-    color:#fff;
-    transform:translateY(-2px);
-    background:rgba(14,165,227,0.06);
-  }
-
-  @media (max-width:768px){
-    .yg-footer-inner{
-      padding:60px 22px;
-    }
-    .yg-footer-right{
-      align-items:flex-start;
-      width:100%;
-    }
-    .yg-footer-actions{
-      justify-content:flex-start;
-    }
-    .yg-footer-badges{
-      justify-content:flex-start;
-    }
-  }
+.yg-footer-trust{
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px;
+  letter-spacing:.28em;
+  color:var(--yg-blue);
+  text-transform:uppercase;
+}
 </style>

@@ -1,78 +1,98 @@
-# YiShen Global V5.0  
-## Technical Due Diligence – Q&A Format
+🧾 CTO_DUE_DILIGENCE_QA.md
+YiShen Global V5.0
+Technical Due Diligence & Sovereignty Assurance
+Q1 — What exactly is YiShen Global?
 
----
+YiShen Global is not a trading company.
+It is a Physical Trade Operating System (P-TOS).
 
-### Q1: Is this a website or a system?
+It does not “sell products”.
+It engineers certainty in global physical trade.
 
-This is a system.
+Q2 — What problem does YiShen actually solve?
 
-The website is only the visible interface.
-Core value lies in:
-- evidence routing
-- compliance logic
-- predictability enforcement
+Traditional exporters fail because:
 
----
+• Delivery timelines collapse
+• Anti-dumping destroys margin
+• Compliance blocks customs
+• Buyers stall decisions
+• Warehousing kills cashflow
 
-### Q2: Why no traditional CMS or SPA framework?
+YiShen solves certainty, not price.
 
-Because:
-- CMS increases attack surface
-- SPA increases failure modes under weak networks
+Q3 — What is your core competitive moat?
+Layer	YiShen Capability
+Product	Replaceable
+Factory	Replaceable
+Freight	Replaceable
+Trade Path	Not replaceable
+Buyer Psychology	Not replaceable
+Delivery Certainty	Not replaceable
 
-Procurement environments favor:
-- static reliability
-- explainable rendering
-- zero build dependency
+YiShen owns the decision path.
 
----
+Q4 — How is this different from Alibaba / Global Sources?
 
-### Q3: How does the system scale?
+Those platforms expose products.
+YiShen controls trade execution reality.
 
-By **node expansion**, not page duplication.
+They list.
+We execute.
 
-New markets = new clusters  
-New products = new passports  
-New regulations = new patches
+Q5 — What is “SKU Sovereignty”?
 
-No core rewrite required.
+Every SKU has:
 
----
+• A legal identity
+• A trade path
+• A compliance passport
+• A tariff defense strategy
+• A buyer trust signature
 
-### Q4: How is compliance handled?
+That identity cannot be copied.
 
-Compliance is not documented.
-It is **embedded**.
+Q6 — How does YiShen reduce risk?
+Risk	Neutralization
+AD/CVD	ASEAN / Mexico routing
+Compliance	Pre-cert passport
+Delivery	CBM optimized packing
+Decision delay	Psychological lock
+Q7 — What markets is YiShen strongest in?
+Region	Edge
+USA / Canada	AD Defense + DDP
+EU	CBAM / EPR Shield
+Middle East	Project certainty
+LATAM	Port arbitrage
+Q8 — How do you scale?
 
-Each Technical Passport:
-- binds HS code
-- binds standard (ISO / BIFMA / CBAM)
-- binds logistics & tax logic
+YiShen scales by replicating trade logic, not factories.
 
----
+Each new SKU inherits:
 
-### Q5: Where is business logic stored?
+• Path logic
+• Defense logic
+• Buyer psychology logic
 
-- Frontend: presentation only
-- Backend (/api): intelligence + task execution
-- No duplication across layers
+Scaling is linear, not fragile.
 
----
+Q9 — What does YiShen monetize?
 
-### Q6: What is the technical moat?
+• Trade path engineering
+• Delivery certainty
+• Risk elimination
+• Buyer decision speed
 
-- Deterministic architecture
-- Evidence-driven routing
-- Audit-friendly structure
+Not just product margin.
 
-This system is easy to use,
-but expensive to replicate.
+Q10 — What is the long-term vision?
 
----
+YiShen is building:
 
-### CTO Verdict
+The world’s first
+Sovereign Physical Trade Infrastructure Layer.
 
-This is not a growth hack.
+Final Statement
 
-This is infrastructure.
+YiShen does not compete on price.
+YiShen competes on certainty.

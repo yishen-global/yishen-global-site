@@ -1,15 +1,19 @@
 # =========================================================
-# YISHEN GLOBAL - ROBOTS PROTOCOL (PRODUCTION SAFE)
-# Version: V5.0_STABLE
+# YISHEN GLOBAL - ROBOTS PROTOCOL (FINAL LOCKED)
+# Version: V5.0_FINAL_LOCKED
 # Strategy: SEO Sovereignty + Index Integrity + Data Firewall
 # =========================================================
 
 User-agent: *
 
 # ---------------------------------------------------------
-# CORE RENDERING ASSETS (Do NOT block CSS / JS / Images)
+# CORE RENDERING ASSETS (ALWAYS ALLOW)
 # ---------------------------------------------------------
 Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/icons/
+
 Allow: /master-architect.css
 Allow: /terminal-logic.js
 Allow: /hq-core-gate.js
@@ -23,19 +27,25 @@ Allow: /index.html
 Allow: /genesis.html
 Allow: /sovereign-matrix.html
 Allow: /clusters.html
+Allow: /solutions.html
+Allow: /industries.html
+Allow: /resources.html
+Allow: /operational-systems.html
 Allow: /tactical-briefing.html
 Allow: /technical-passport.html
-Allow: /resources.html
-Allow: /duns.html
 Allow: /site-architecture.html
+Allow: /duns.html
+Allow: /contact.html
+Allow: /why-us.html
 
 # ---------------------------------------------------------
-# DATA / API (PUBLIC, READ-ONLY)
+# PUBLIC READ-ONLY DATA (ALLOWED)
 # ---------------------------------------------------------
 Allow: /asset-ledger.json
+Allow: /marketing-intel.json
 
 # ---------------------------------------------------------
-# INTELLIGENCE FIREWALL (NEVER INDEX)
+# INTELLIGENCE FIREWALL (NEVER INDEX / NEVER CRAWL)
 # ---------------------------------------------------------
 Disallow: /private/
 Disallow: /dev/
@@ -44,11 +54,9 @@ Disallow: /temp/
 Disallow: /README.md
 
 Disallow: /auto_data_harvester.py
-Disallow: /crawler-engine.js
 Disallow: /deploy.sh
 Disallow: /link_fixer.py
 Disallow: /generate_sitemap.py
-Disallow: /marketing-intel.json
 
 # ---------------------------------------------------------
 # SPECIALIZED CRAWLERS (B2B / TRADE INTEL)
@@ -67,10 +75,11 @@ User-agent: dotbot
 Crawl-delay: 10
 
 # ---------------------------------------------------------
-# SITEMAP DECLARATION (AUTHORITATIVE)
+# AUTHORITATIVE SITEMAPS
 # ---------------------------------------------------------
+Sitemap: https://yishenglobal.net/sitemap.xml
 Sitemap: https://yishenglobal.net/sovereign-index.xml
 
 # =========================================================
-# END OF FILE // YISHEN GLOBAL // INDEX SAFE
+# END OF FILE // YISHEN GLOBAL // FINAL LOCKED
 # =========================================================

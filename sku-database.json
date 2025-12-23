@@ -1,62 +1,75 @@
 {
-  "version": "5.0",
-  "last_sync": "2026-01-01T00:00:00Z",
-  "authority": "YISHEN_GLOBAL_SOVEREIGN_ASSET_ENGINE",
+  "protocol": "YISHEN_GLOBAL_SKU_DATABASE_V5",
+  "last_sync": "AUTO",
   "products": [
     {
       "id": "OFFICE_MESH_V4",
-      "category": "OFFICE_ERGO",
-      "name": "Mesh & Gaming Matrix Chair System",
-      "tagline": "CBM Optimized · BIFMA Certified · North America Ready",
+      "name": "Ergonomic Mesh & Gaming Chair Matrix",
+      "category": "FURNITURE",
       "hs_code": "9401.31",
-      "image": "assets/products/office-mesh.webp",
+      "image": "assets/products/office_mesh_v4.webp",
+      "tagline": "North America Bulk Procurement Certainty Node",
       "technical_data": {
+        "material": "High-density mesh + steel base",
         "standard": "BIFMA X5.1",
         "logistics": "ISTA-6A / 0.24 CBM",
-        "market_logic": "US_WAREHOUSE_FAST_REPLENISH",
-        "certifications": ["BIFMA", "ISO9001", "ISTA"]
+        "market_logic": "HIGH_TURNOVER_FAST_REPLENISH"
       }
     },
     {
-      "id": "MARINE_CHAIN",
+      "id": "CHAIN_G80_MASTER",
+      "name": "Marine Alloy Lifting Chain G80/G100",
       "category": "MARITIME_HARDWARE",
-      "name": "G80 / G100 Alloy Marine Chain System",
-      "tagline": "Brazil Anti-Dumping Exempt Optimized",
       "hs_code": "7315.82",
-      "image": "assets/products/marine-chain.webp",
+      "image": "assets/products/chain_g80.webp",
+      "tagline": "Brazil AD Exempt Maritime Rigging Node",
       "technical_data": {
-        "standard": "ABS G80",
-        "logistics": "Bulk Cargo · Santos Port Route",
-        "market_logic": "LATAM_PORT_OPTIMIZED",
-        "certifications": ["ABS", "ISO9001"]
+        "material": "Alloy steel G80/G100",
+        "standard": "ABS / EN818",
+        "logistics": "ISTA-6A / 0.05 CBM",
+        "market_logic": "BRAZIL_FAST_LANE"
       }
     },
     {
-      "id": "MEDICAL_CHAIR",
-      "category": "MEDICAL_PRECISION",
+      "id": "MEDICAL_CHAIR_X9",
       "name": "Sterile Clinical Chair System",
-      "tagline": "ASEAN Form E · ISO13485 Medical Grade",
+      "category": "MEDICAL_PRECISION",
       "hs_code": "9402.10",
-      "image": "assets/products/medical-chair.webp",
+      "image": "assets/products/medical_chair_x9.webp",
+      "tagline": "ASEAN Zero Tariff Medical Entry Node",
       "technical_data": {
-        "standard": "ISO13485",
-        "logistics": "Clean Zone Shipping",
-        "market_logic": "ASEAN_ZERO_TARIFF",
-        "certifications": ["ISO13485", "CE", "SGS"]
+        "material": "Antibacterial coated steel + PU leather",
+        "standard": "ISO 13485",
+        "logistics": "ISTA-6A / 0.38 CBM",
+        "market_logic": "ASEAN_MEDICAL_FAST_ENTRY"
       }
     },
     {
-      "id": "INDUSTRIAL_LADDER",
-      "category": "INFRASTRUCTURE_MRO",
-      "name": "ANSI / EN131 Aluminum Ladder System",
-      "tagline": "Anti-Dumping Shielded Route",
+      "id": "INFRA_LADDER_PRO",
+      "name": "Industrial Aluminum Ladder System",
+      "category": "INFRA_TOOLS",
       "hs_code": "7616.99",
-      "image": "assets/products/industrial-ladder.webp",
+      "image": "assets/products/infra_ladder.webp",
+      "tagline": "North America Tariff Defense Node",
       "technical_data": {
-        "standard": "EN131",
-        "logistics": "ASEAN Reroute Channel",
-        "market_logic": "NORTH_AMERICA_TARIFF_SHIELD",
-        "certifications": ["EN131", "ISO9001"]
+        "material": "6061 Aluminum Alloy",
+        "standard": "ANSI / EN131",
+        "logistics": "ISTA-6A / 0.42 CBM",
+        "market_logic": "ASEAN_BYPASS_ROUTING"
+      }
+    },
+    {
+      "id": "CARBON_PANEL_BIOX",
+      "name": "Bio Carbon Neutral Composite Panel",
+      "category": "BIO_MATERIALS",
+      "hs_code": "6810.11",
+      "image": "assets/products/bio_panel.webp",
+      "tagline": "EU Green Construction Mandate Node",
+      "technical_data": {
+        "material": "Plant fiber composite",
+        "standard": "EPD / FSC",
+        "logistics": "ISTA-6A / 0.55 CBM",
+        "market_logic": "EU_CARBON_PRIORITY"
       }
     }
   ]

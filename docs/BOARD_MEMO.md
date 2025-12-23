@@ -1,73 +1,88 @@
-📎 BOARD_MEMO.md
+🧾 BOARD_MEMO.md
 YiShen Global V5.0
-Internal Sovereignty Architecture Memo
-(董事会内部主权架构备忘录 · 仅限核心成员)
-SECTION 1 — Why YiShen Global Exists
+Board-Level Strategic Memorandum
+1. Executive Summary
 
-YiShen Global 不是一家“出口公司”。
+YiShen Global is not a supplier.
+YiShen Global is a Sovereign Trade Operating System (STOS).
 
-YiShen Global 是一个全球物理主权工程系统。
+Our strategic objective is to replace unstable, price-driven global sourcing with predictable, engineered delivery sovereignty.
 
-我们不卖产品。
-我们输出确定性、可防御性、可复制的物理控制权架构。
+This transforms YiShen from a manufacturing exporter into a global infrastructure provider of physical trade certainty.
 
-任何无法提供 确定性交付权 的供应体系，都会在未来 36–72 个月内被淘汰。
+2. Why the Old Model Is Collapsing
+Legacy Trade Model	Failure Mode
+Price-driven sourcing	Margin erosion
+Multi-supplier arbitrage	Delivery unpredictability
+Broker dependency	Compliance failures
+FOB-only mentality	Risk transferred to buyer
+Lack of tariff defense	Sudden market exclusion
 
-YiShen Global 正在构建的不是“销售体系”，而是：
+Global buyers are not losing money on price.
+They are losing money on instability.
 
-Global Physical Sovereignty Infrastructure (GPSI)
-——全球工业主权基础设施。
+3. YiShen Strategic Repositioning
 
-SECTION 2 — What We Actually Control
-Layer	Control Right
-产品层	SKU 物理设计 + 包装 + CBM 结构
-工厂层	生产节奏 / 换线权 / 模具权限
-合规层	HS/FTA/AD/CVD 防御矩阵
-物流层	DDP / Bonded Warehouse / Reverse Clearance
-信息层	SKU Ledger / Asset Passport / Intel Feeds
-心智层	采购心理、信任阈值、决策路径
+YiShen is building:
 
-👉 YiShen 不是“供应商”。
-👉 YiShen 是“主权节点运营商”。
+A deterministic trade execution system that converts unstable manufacturing into guaranteed physical delivery capability.
 
-SECTION 3 — Sovereignty Architecture Stack
-模块	功能
-SKU Ledger	全物理资产账本（不可篡改）
-Asset Passport	SKU 的物理身份证
-Intel Feed	全球市场扰动与税务雷达
-Sovereign Router	路径/税务/合规自动重构引擎
-Buyer-Defense AI	买家心理防御系统
-Negotiation Engine	定价与让步路径控制器
-SECTION 4 — Why This Is Defensible
+Old Identity	New Identity
+Factory exporter	Sovereign trade OS
+Product vendor	Delivery infrastructure provider
+Sales-driven	Path-engineered
+Certification reactive	Compliance-shielded
+4. Revenue Logic Shift
 
-YiShen 构建的是 反竞争不可复制型护城河：
+YiShen’s future revenue is no longer product margin based.
 
-• 多国路径防御
-• 税务矩阵分流
-• 包装 CBM 再工程
-• HS 预重构
-• SKU 主权身份证体系
+It becomes:
 
-任何单点复制都无法获得系统闭环。
+• Delivery certainty premiums
+• Tariff defense routing fees
+• Compliance shield licensing
+• Cluster integration onboarding
+• Path-engineering subscriptions
 
-SECTION 5 — What We Are Building (2026–2030)
-年份	主权部署
-2026	SKU Sovereign Passport 全面上线
-2027	Buyer Defense AI 激活
-2028	Global Intel Radar 接管定价权
-2029	Physical Trade OS 上线
-2030	YiShen 作为“贸易基础设施”标准
-SECTION 6 — KPI That Actually Matter
-指标	目标
-Sovereign Delivery Certainty	> 97%
-Anti-Dumping Defense Coverage	100%
-CBM Efficiency Delta	+22%
-Buyer Lock-In Ratio	> 82%
-Path Arbitrage ROI	> 3.8x
-FINAL NOTE
+5. Sovereign SKU Framework
 
-YiShen Global 不在卖货。
+Each SKU is upgraded into a Sovereign SKU Node:
 
-YiShen Global 在建立：
+Layer	Function
+HS Core	Customs logic
+Compliance	Regulatory shield
+Packaging	Physical CBM control
+Routing	Tariff defense
+Psychology	Buyer lock-in
+Execution	Delivery certainty
+6. Competitive Barrier
 
-全球工业秩序的控制权层。
+YiShen will not compete on price.
+
+YiShen competes on:
+
+• Risk removal
+• Predictability
+• Compliance certainty
+• Tariff immunity
+• Buyer psychological safety
+
+Which are impossible to copy without system-level infrastructure.
+
+7. Strategic Moat
+
+Our moat is not manufacturing.
+
+It is path engineering + compliance engineering + buyer decision engineering.
+
+8. Expansion Roadmap
+Phase	Objective
+V5.0	Sovereign trade OS deployment
+V6.0	Industry cluster replication
+V7.0	Government & defense trade infrastructure
+V8.0	Global sovereign trade backbone
+9. Final Directive
+
+YiShen Global is no longer a participant in global trade.
+
+YiShen Global is the operating system that global trade will run on.

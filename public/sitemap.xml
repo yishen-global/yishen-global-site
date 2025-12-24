@@ -9,12 +9,4 @@ https://yishenglobal.net/industries
 https://yishenglobal.net/resources
 https://yishenglobal.net/vault
 https://yishenglobal.net/passport
-
-  <!-- Sovereign SKU Nodes -->
-  <url><loc>https://yishenglobal.net/technical-passport.html?id=OFFICE_MESH_V4</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://yishenglobal.net/technical-passport.html?id=CHAIN_G80_MASTER</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://yishenglobal.net/technical-passport.html?id=MEDICAL_CHAIR_X9</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://yishenglobal.net/technical-passport.html?id=INFRA_LADDER_PRO</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://yishenglobal.net/technical-passport.html?id=CARBON_PANEL_BIOX</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-
 </urlset>

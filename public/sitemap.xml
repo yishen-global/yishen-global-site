@@ -1,46 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://yishenglobal.net/</loc>
-    <priority>1.00</priority>
-    <changefreq>daily</changefreq>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/genesis</loc>
-    <priority>0.90</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/clusters</loc>
-    <priority>0.95</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/industries</loc>
-    <priority>0.95</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/resources</loc>
-    <priority>0.85</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/vault</loc>
-    <priority>0.80</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://yishenglobal.net/passport</loc>
-    <priority>0.90</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
+ <url><loc>https://yishenglobal.net/</loc></url>
+ <url><loc>https://yishenglobal.net/industries</loc></url>
+ <url><loc>https://yishenglobal.net/solutions</loc></url>
+ <url><loc>https://yishenglobal.net/why-us</loc></url>
+ <url><loc>https://yishenglobal.net/resources</loc></url>
+ <url><loc>https://yishenglobal.net/passport</loc></url>
+ <url><loc>https://yishenglobal.net/contact</loc></url>
 </urlset>

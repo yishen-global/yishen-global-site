@@ -1,7 +1,7 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "public": true,
+  "rootDirectory": "site",
   "routes": [
-    { "src": "/(.*)", "dest": "/public/$1" }
+    { "src": "/(.*)", "dest": "/site/$1" }
   ]
 }

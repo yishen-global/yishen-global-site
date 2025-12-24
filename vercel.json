@@ -1,12 +1,12 @@
 {
   "version": 2,
   "routes": [
+    { "src": "^/$", "dest": "/index.html" },
+    { "src": "^/genesis$", "dest": "/genesis.html" },
     { "src": "^/clusters$", "dest": "/clusters.html" },
     { "src": "^/industries$", "dest": "/industries.html" },
-    { "src": "^/genesis$", "dest": "/genesis.html" },
     { "src": "^/resources$", "dest": "/resources.html" },
     { "src": "^/passport$", "dest": "/technical-passport.html" },
     { "src": "^/vault$", "dest": "/tactical-briefing.html" }
   ]
 }
-

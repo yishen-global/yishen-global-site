@@ -1,18 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "**/*.html", "use": "@vercel/static" }
-  ],
   "routes": [
-    { "src": "^/$", "dest": "/index.html" },
-
-    { "src": "^/genesis/?$", "dest": "/genesis.html" },
-    { "src": "^/clusters/?$", "dest": "/clusters.html" },
-    { "src": "^/industries/?$", "dest": "/industries.html" },
-    { "src": "^/resources/?$", "dest": "/resources.html" },
-    { "src": "^/tactical-briefing/?$", "dest": "/tactical-briefing.html" },
-    { "src": "^/technical-passport/?$", "dest": "/technical-passport.html" },
-
-    { "src": "^(.*)$", "dest": "/index.html" }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/genesis", "dest": "/genesis.html" },
+    { "src": "/clusters", "dest": "/clusters.html" },
+    { "src": "/industries", "dest": "/industries.html" },
+    { "src": "/resources", "dest": "/resources.html" },
+    { "src": "/vault", "dest": "/tactical-briefing.html" },
+    { "src": "/passport", "dest": "/technical-passport.html" }
   ]
 }

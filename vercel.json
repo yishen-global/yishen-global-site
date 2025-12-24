@@ -1,12 +1,13 @@
 {
   "version": 2,
   "routes": [
-    { "src": "^/$", "dest": "/index.html" },
-    { "src": "^/genesis$", "dest": "/genesis.html" },
-    { "src": "^/clusters$", "dest": "/clusters.html" },
-    { "src": "^/industries$", "dest": "/industries.html" },
-    { "src": "^/resources$", "dest": "/resources.html" },
-    { "src": "^/passport$", "dest": "/technical-passport.html" },
-    { "src": "^/vault$", "dest": "/tactical-briefing.html" }
+    { "src": "/", "dest": "/index.html" },
+
+    { "src": "/industries", "dest": "/industries.html" },
+    { "src": "/solutions", "dest": "/solutions.html" },
+    { "src": "/why-us", "dest": "/why-us.html" },
+    { "src": "/resources", "dest": "/resources.html" },
+    { "src": "/contact", "dest": "/contact.html" },
+    { "src": "/passport", "dest": "/passport.html" }
   ]
 }

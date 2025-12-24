@@ -1,0 +1,36 @@
+{
+  "version": "YISHEN_LEDGER_V5.0",
+  "updated": "2026-01-01",
+  "products": [
+    {
+      "id": "OFFICE_MESH_V4",
+      "cluster": "NODE_01_OFFICE_ERGO",
+      "hs_code": "9401.31",
+      "name": "High Density Mesh Office Chair",
+      "certifications": ["BIFMA X5.1", "ISO9001", "ISTA6A"],
+      "sov_score": 98,
+      "markets": ["USA", "CANADA", "EU"],
+      "passport_url": "technical-passport.html?id=OFFICE_MESH_V4"
+    },
+    {
+      "id": "MEDICAL_CHAIR",
+      "cluster": "NODE_14_MEDICAL_PRECISION",
+      "hs_code": "9402.10",
+      "name": "Sterile Medical Reclining Chair",
+      "certifications": ["ISO13485", "CE", "FDA"],
+      "sov_score": 88,
+      "markets": ["ASEAN", "EU"],
+      "passport_url": "technical-passport.html?id=MEDICAL_CHAIR"
+    },
+    {
+      "id": "MARINE_CHAIN",
+      "cluster": "NODE_07_MARITIME_HARDWARE",
+      "hs_code": "7315.82",
+      "name": "G80/G100 Marine Alloy Chain",
+      "certifications": ["DNV", "BV", "SGS"],
+      "sov_score": 94,
+      "markets": ["BRAZIL", "LATAM", "MENA"],
+      "passport_url": "technical-passport.html?id=MARINE_CHAIN"
+    }
+  ]
+}

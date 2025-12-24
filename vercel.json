@@ -2,7 +2,6 @@
   "version": 2,
   "routes": [
     { "src": "/", "dest": "/index.html" },
-
     { "src": "/industries", "dest": "/industries.html" },
     { "src": "/solutions", "dest": "/solutions.html" },
     { "src": "/why-us", "dest": "/why-us.html" },

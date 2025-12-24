@@ -74,6 +74,10 @@ Crawl-delay: 10
 User-agent: dotbot
 Crawl-delay: 10
 
+User-agent: *
+Allow: /
+Sitemap: https://yishenglobal.net/sitemap.xml
+
 # ---------------------------------------------------------
 # AUTHORITATIVE SITEMAPS
 # ---------------------------------------------------------

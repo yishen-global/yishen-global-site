@@ -4,66 +4,85 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact YiShen Global | Sovereign Procurement Gate</title>
+
+<link rel="icon" href="/logo.webp">
+<link rel="stylesheet" href="/assets/styles.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-body{background:#010409;color:#e6edf3;font-family:sans-serif}
 .font-mono{font-family:'JetBrains Mono',monospace}
-.api-card{background:rgba(255,255,255,.02);border:1px solid rgba(14,165,227,.15);transition:.3s}
-.api-card:hover{border-color:#0ea5e3;background:rgba(14,165,227,.06);transform:translateY(-6px);box-shadow:0 0 30px rgba(14,165,227,.35)}
-.hotline-glow{box-shadow:0 0 25px rgba(255,215,0,.25);border:1px solid rgba(255,215,0,.3)}
+.api-card{background:rgba(255,255,255,.02);border:1px solid rgba(14,165,227,.15);transition:.35s}
+.api-card:hover{border-color:#0ea5e3;background:rgba(14,165,227,.08);transform:translateY(-8px);box-shadow:0 0 40px rgba(14,165,227,.45)}
+.hotline-glow{box-shadow:0 0 35px rgba(255,215,0,.28);border:1px solid rgba(255,215,0,.4)}
 .api-node{transition:.4s cubic-bezier(.175,.885,.32,1.275)}
-.api-node:hover{transform:scale(1.15);filter:brightness(1.2)}
+.api-node:hover{transform:scale(1.18);filter:brightness(1.25)}
 </style>
 </head>
 
-<body>
+<body class="bg-[#010409] text-[#e6edf3]">
 
-<main class="max-w-[1440px] mx-auto px-8 pt-32 pb-40">
+<header class="sovereign-top">
+<div class="brand">YISHEN GLOBAL</div>
+<nav class="nav">
+<a href="/index.html">Home</a>
+<a href="/solutions.html">Solutions</a>
+<a href="/industries.html">Industries</a>
+<a href="/why-us.html">Why Us</a>
+<a href="/resources.html">Resources</a>
+<a href="/contact.html" class="active">Contact</a>
+</nav>
+</header>
 
-<div class="mb-24 text-center">
-<h1 class="text-7xl font-black italic uppercase tracking-tighter mb-4">Direct <span class="text-[#0ea5e3]">Liaison</span></h1>
-<p class="font-mono text-xs tracking-[0.5em] text-gray-500">GLOBAL_COMMUNICATION_PROTOCOL_V5.8</p>
+<main class="max-w-[1440px] mx-auto px-8 pt-40 pb-40">
+
+<div class="mb-28 text-center">
+<h1 class="text-7xl font-black italic uppercase tracking-tighter mb-4">
+Direct <span class="text-[#0ea5e3]">Liaison</span>
+</h1>
+<p class="font-mono text-[10px] tracking-[0.6em] text-gray-500">GLOBAL_COMMUNICATION_PROTOCOL_V6.8</p>
 </div>
 
-<!-- Dual Hotline -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+<!-- HOTLINES -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-28">
 
-<div class="api-card hotline-glow p-10 rounded-3xl">
-<p class="font-mono text-[10px] text-[#ffd700] uppercase mb-4">HOTLINE_01 : SALES</p>
+<div class="api-card hotline-glow p-12 rounded-3xl">
+<p class="font-mono text-[10px] text-[#ffd700] uppercase mb-4">HOTLINE_01 : SALES COMMAND</p>
 <a href="tel:+8613XXXXXXXX1" class="block text-4xl font-bold tracking-tighter hover:text-[#ffd700]">+86 13XXXXXXXX1</a>
-<a target="_blank"
-href="https://wa.me/8613XXXXXXXX1?text=I%20am%20interested%20in%20YiShen%20solutions"
+<a target="_blank" href="https://wa.me/8613XXXXXXXX1?text=I%20am%20interested%20in%20YiShen%20Global%20industrial%20solutions"
 class="block mt-4 text-[#25D366] font-mono text-sm">WhatsApp_Sales_API →</a>
 </div>
 
-<div class="api-card hotline-glow p-10 rounded-3xl">
-<p class="font-mono text-[10px] text-[#ffd700] uppercase mb-4">HOTLINE_02 : LOGISTICS</p>
+<div class="api-card hotline-glow p-12 rounded-3xl">
+<p class="font-mono text-[10px] text-[#ffd700] uppercase mb-4">HOTLINE_02 : LOGISTICS COMMAND</p>
 <a href="tel:+8613XXXXXXXX2" class="block text-4xl font-bold tracking-tighter hover:text-[#ffd700]">+86 13XXXXXXXX2</a>
-<a target="_blank"
-href="https://wa.me/8613XXXXXXXX2?text=I%20need%20shipment%20status%20update"
+<a target="_blank" href="https://wa.me/8613XXXXXXXX2?text=I%20need%20logistics%20support%20from%20YiShen"
 class="block mt-4 text-[#25D366] font-mono text-sm">WhatsApp_Logistics_API →</a>
 </div>
 
 </div>
 
-<!-- Social API Matrix -->
-<div class="flex flex-wrap justify-center gap-10 mb-20">
+<!-- SOCIAL MATRIX -->
+<div class="flex flex-wrap justify-center gap-10 mb-24">
 <a href="https://wa.me/8613XXXXXXXX1" class="api-node bg-[#25D366] w-20 h-20 rounded-3xl flex items-center justify-center"><i class="fab fa-whatsapp text-4xl"></i></a>
 <a href="https://www.linkedin.com/company/yishen-global" class="api-node bg-[#0077b5] w-20 h-20 rounded-3xl flex items-center justify-center"><i class="fab fa-linkedin-in text-4xl"></i></a>
 <a href="https://instagram.com/yishenglobal" class="api-node bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] w-20 h-20 rounded-3xl flex items-center justify-center"><i class="fab fa-instagram text-4xl"></i></a>
 <a href="https://x.com/yishenglobal" class="api-node bg-black w-20 h-20 rounded-3xl flex items-center justify-center"><i class="fab fa-x-twitter text-4xl"></i></a>
 <button onclick="alert('WeChat ID: Yishen_Global')" class="api-node bg-[#07C160] w-20 h-20 rounded-3xl flex items-center justify-center"><i class="fab fa-weixin text-4xl"></i></button>
-<a href="mailto:support@yishenglobal.net" class="api-node bg-[#0ea5e3] w-20 h-20 rounded-3xl flex items-center justify-center"><i class="fas fa-envelope text-4xl"></i></a>
+<a href="mailto:alex.yang@yishenglobal.net" class="api-node bg-[#0ea5e3] w-20 h-20 rounded-3xl flex items-center justify-center"><i class="fas fa-envelope text-4xl"></i></a>
 </div>
 
 <div class="mt-20 pt-12 border-t border-white/10 grid md:grid-cols-2 gap-8 font-mono text-[10px] uppercase tracking-widest text-gray-500">
-<div><p class="text-white mb-2">Global Headquarters</p><p>No.XXX Industrial Zone, China</p></div>
+<div><p class="text-white mb-2">Global Headquarters</p><p>No. XXX Industrial Zone · China</p></div>
 <div class="md:text-right"><p class="text-white mb-2">Response SLA</p><p>Under 120 Minutes</p></div>
 </div>
 
 </main>
+
+<footer class="foot">
+© 2026 YiShen Global Sovereign Procurement Authority
+</footer>
 
 </body>
 </html>

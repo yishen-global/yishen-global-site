@@ -2,602 +2,618 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Yishen Global – Coordinated Industrial Architecture</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Yishen Global engineers sovereign-grade manufacturing, logistics, and global supply chain architecture." />
+  <title>Yishen Global – Coordinated Industrial Architecture</title>
+  <meta name="description" content="Yishen Global delivers Coordinated Industrial Architecture: smart manufacturing systems, compliance-first execution, global DDP logistics, and sovereign supply-chain control." />
 
-  <!-- Brand favicon system (matches your current /assets/branding structure) -->
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/branding/favicon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/branding/avicon-512.png" />
+  <!-- BRAND / FAVICON -->
+  <link rel="icon" href="/assets/branding/favicon-192.png" />
+  <meta name="theme-color" content="#010409" />
 
-  <!-- Keep your global stylesheet (do NOT remove) -->
+  <!-- GLOBAL CSS (your existing stable stylesheet) -->
   <link rel="stylesheet" href="/styles.css" />
 
-  <!-- Tailwind + Icons (kept for the cyber/portal modules) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-
+  <!-- ENTERPRISE PATCH LAYER (safe + non-destructive, works even if styles.css changes) -->
   <style>
     :root{
-      --yishen-blue:#0ea5e3;
-      --yishen-gold:#ffd700;
       --bg:#010409;
-      --fg:#e6edf3;
-      --panel:rgba(255,255,255,.03);
-      --line:rgba(255,255,255,.08);
+      --panel:rgba(255,255,255,.04);
+      --panel2:rgba(255,255,255,.02);
+      --border:rgba(255,255,255,.10);
+      --text:#e6edf3;
+      --muted:rgba(230,237,243,.72);
+      --muted2:rgba(230,237,243,.55);
+      --blue:#0ea5e3;
+      --gold:#ffd700;
+      --danger:#A11219;
+      --radius:18px;
+      --shadow: 0 24px 80px rgba(0,0,0,.55);
+      --shadow2: 0 12px 36px rgba(0,0,0,.45);
+      --max: 1240px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
-    body{background:var(--bg);color:var(--fg);overflow-x:hidden}
-    .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
-    .glass{
-      background:rgba(5,11,23,.82);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--line);
+    html,body{background:var(--bg); color:var(--text); margin:0; font-family:var(--sans); overflow-x:hidden;}
+    a{color:inherit; text-decoration:none;}
+    img{max-width:100%; display:block;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+    /* GLOBAL HEADER */
+    .global-header{
+      position:fixed; top:0; left:0; right:0; z-index:999;
+      background:rgba(1,4,9,.78);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .wrap{max-width:1440px}
-    .card{
-      background:var(--panel);
+    .global-header-inner{
+      height:78px; display:flex; align-items:center; justify-content:space-between;
+      max-width:var(--max); margin:0 auto; padding:0 24px;
+      gap:18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px; min-width:180px;
+    }
+    .brand picture{display:block;}
+    .brand img{height:34px; width:auto;}
+    .brand-meta{display:flex; flex-direction:column; line-height:1.05;}
+    .brand-name{font-weight:900; letter-spacing:.02em;}
+    .brand-tag{font-family:var(--mono); font-size:10px; letter-spacing:.42em; color:var(--blue); text-transform:uppercase; margin-top:4px;}
+    .nav{
+      display:flex; align-items:center; gap:22px;
+      font-family:var(--mono); font-size:11px; letter-spacing:.26em;
+      text-transform:uppercase;
+    }
+    .nav a{opacity:.78; transition:.25s;}
+    .nav a:hover{opacity:1; color:var(--blue);}
+    .nav .cta{
+      opacity:1;
+      background:linear-gradient(135deg, var(--gold), rgba(255,215,0,.72));
+      color:#000;
+      padding:10px 14px;
+      border-radius:12px;
+      letter-spacing:.18em;
+      box-shadow: 0 10px 28px rgba(255,215,0,.12);
+    }
+    .nav .cta:hover{filter:brightness(1.05); color:#000;}
+
+    /* MOBILE */
+    .hamburger{display:none; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); color:var(--text); border-radius:14px; height:44px; width:44px;}
+    .hamburger:active{transform:scale(.99);}
+    .mobile-drawer{
+      display:none;
+      position:fixed; inset:78px 0 auto 0;
+      background:rgba(1,4,9,.92);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      padding:18px 24px 22px;
+    }
+    .mobile-drawer a{
+      display:block; padding:14px 10px;
+      border-radius:14px;
       border:1px solid rgba(255,255,255,.06);
-      transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease,background .35s ease;
-    }
-    .card:hover{
-      transform:translateY(-8px);
-      border-color:rgba(14,165,227,.55);
-      box-shadow:0 0 30px rgba(14,165,227,.22);
-      background:rgba(14,165,227,.04);
-    }
-    .cyber{
-      border:1px solid rgba(14,165,227,.22);
       background:rgba(255,255,255,.02);
-      transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+      margin-bottom:10px;
+      font-family:var(--mono); font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+      opacity:.92;
     }
-    .cyber:hover{
-      border-color:rgba(14,165,227,.75);
-      box-shadow:0 0 26px rgba(14,165,227,.18);
-      transform:translateY(-6px);
+    .mobile-drawer a:hover{border-color:rgba(14,165,227,.35); color:var(--blue);}
+    .mobile-drawer a.cta{background:linear-gradient(135deg, var(--gold), rgba(255,215,0,.70)); color:#000; border-color:rgba(255,215,0,.35);}
+    .mobile-drawer a.cta:hover{color:#000;}
+
+    @media (max-width: 980px){
+      .nav{display:none;}
+      .hamburger{display:inline-flex; align-items:center; justify-content:center;}
     }
-    .tag{
+
+    /* HERO */
+    .hero{
+      padding-top:120px;
+      padding-bottom:64px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:34px;
+      align-items:stretch;
+      margin-top:18px;
+    }
+    .hero-kicker{
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.48em;
+      text-transform:uppercase;
+      color:var(--blue);
+      opacity:.9;
+      margin-bottom:16px;
+    }
+    .hero-title{
+      font-size: clamp(40px, 5vw, 76px);
+      font-weight:950;
+      letter-spacing:-.02em;
+      line-height:.95;
+      margin:0 0 18px 0;
+      text-transform:uppercase;
+      font-style:italic;
+    }
+    .hero-sub{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+      margin:0 0 26px 0;
+      max-width: 58ch;
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:14px;
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
       border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      transition:.25s;
+      cursor:pointer;
+      user-select:none;
     }
-    .cta{
-      border:1px solid rgba(14,165,227,.45);
-      background:rgba(14,165,227,.06);
+    .btn:hover{border-color:rgba(14,165,227,.35); background:rgba(14,165,227,.06); color:var(--blue);}
+    .btn-primary{
+      background: linear-gradient(135deg, var(--blue), rgba(14,165,227,.65));
+      border-color: rgba(14,165,227,.35);
+      color:#001018;
+      box-shadow: 0 18px 60px rgba(14,165,227,.18);
     }
-    .cta:hover{
-      background:rgba(14,165,227,.12);
-      border-color:rgba(14,165,227,.75);
+    .btn-primary:hover{filter:brightness(1.06); color:#001018;}
+    .btn-gold{
+      background: linear-gradient(135deg, var(--gold), rgba(255,215,0,.70));
+      border-color: rgba(255,215,0,.40);
+      color:#000;
     }
-    .scanline{
-      position:absolute;left:0;right:0;height:2px;
-      background:rgba(14,165,227,.12);
-      animation:scanline 8s linear infinite;
-      pointer-events:none;
+    .btn-gold:hover{filter:brightness(1.05); color:#000;}
+    .hero-note{
+      margin-top:18px;
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--muted2);
     }
-    @keyframes scanline{0%{top:-40px}100%{top:100%}}
-    .divider{border-top:1px solid rgba(255,255,255,.06)}
+
+    .hero-panel{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      background: radial-gradient(900px 300px at 20% 0%, rgba(14,165,227,.18), transparent 60%),
+                  radial-gradient(900px 300px at 90% 60%, rgba(255,215,0,.10), transparent 55%),
+                  rgba(255,255,255,.02);
+      box-shadow: var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-panel .label{
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.42em;
+      text-transform:uppercase;
+      color:rgba(230,237,243,.65);
+      margin-bottom:12px;
+    }
+    .hero-panel h3{
+      margin:0 0 10px 0;
+      font-size:22px;
+      letter-spacing:-.01em;
+      font-weight:900;
+      text-transform:uppercase;
+      font-style:italic;
+    }
+    .hero-panel p{
+      margin:0 0 14px 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+    .hero-panel .pill{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:16px;
+    }
+    .pill span{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      padding:10px 12px;
+      border-radius:999px;
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(230,237,243,.82);
+      white-space:nowrap;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; }
+    }
+
+    /* SECTIONS */
+    .section{padding:54px 0;}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
+      margin-bottom:18px;
+    }
+    .section-title{
+      font-size:30px;
+      margin:0;
+      font-weight:950;
+      letter-spacing:-.01em;
+      text-transform:uppercase;
+      font-style:italic;
+    }
+    .section-sub{
+      margin:0;
+      color:var(--muted);
+      max-width: 70ch;
+      line-height:1.6;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+    .grid-4{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.02);
+      padding:18px;
+      box-shadow: var(--shadow2);
+      transition:.25s;
+      height:100%;
+    }
+    .card:hover{border-color:rgba(14,165,227,.32); transform:translateY(-2px);}
+    .card .k{
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.42em;
+      text-transform:uppercase;
+      color:rgba(230,237,243,.60);
+      margin-bottom:10px;
+    }
+    .card h4{
+      margin:0 0 10px 0;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-.01em;
+      text-transform:uppercase;
+      font-style:italic;
+    }
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.6;}
+    .card .link{
+      display:inline-flex; gap:10px; align-items:center;
+      margin-top:14px;
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--gold);
+    }
+    .card .link:hover{text-decoration:underline;}
+
+    @media (max-width: 980px){
+      .grid-3{grid-template-columns: 1fr;}
+      .grid-4{grid-template-columns: 1fr;}
+    }
+
+    /* FINAL CTA */
+    .final-cta{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: calc(var(--radius) + 10px);
+      background: radial-gradient(900px 280px at 10% 0%, rgba(14,165,227,.22), transparent 65%),
+                  radial-gradient(900px 280px at 90% 80%, rgba(255,215,0,.12), transparent 60%),
+                  rgba(255,255,255,.02);
+      padding:28px;
+      box-shadow: var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .final-cta h3{
+      margin:0;
+      font-size:24px;
+      font-weight:950;
+      text-transform:uppercase;
+      font-style:italic;
+      letter-spacing:-.01em;
+    }
+    .final-cta p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      max-width: 70ch;
+      line-height:1.6;
+    }
+
+    /* FOOTER */
+    .footer{
+      margin-top:56px;
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:22px 0 34px;
+      color:rgba(230,237,243,.52);
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+    }
+    .footer-row{
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    }
+    .small-links{display:flex; gap:14px; flex-wrap:wrap;}
+    .small-links a{opacity:.7;}
+    .small-links a:hover{opacity:1; color:var(--blue);}
   </style>
 </head>
 
 <body>
 
-  <!-- GLOBAL NAVIGATION MASTER BAR (enterprise blueprint) -->
-  <header class="global-header glass fixed top-0 w-full z-[1000]">
-    <div class="global-header-inner wrap mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
-      <a href="/" class="global-brand flex items-center gap-3">
-        <picture>
-          <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
-          <img src="/assets/branding/logo-main.webp" alt="Yishen Global" style="height:42px; width:auto;" />
-        </picture>
-      </a>
+<!-- GLOBAL NAVIGATION MASTER BAR -->
+<header class="global-header" role="banner">
+  <div class="global-header-inner">
+    <a href="/" class="brand" aria-label="Yishen Global Home">
+      <picture>
+        <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
+        <img src="/assets/branding/logo-main.webp" alt="Yishen Global">
+      </picture>
+      <span class="brand-meta">
+        <span class="brand-name">Yishen Global</span>
+        <span class="brand-tag">Coordinated Industrial Architecture</span>
+      </span>
+    </a>
 
-      <nav class="global-nav hidden md:flex items-center gap-10 mono text-[11px] uppercase tracking-[0.22em]">
-        <a href="/solutions.html" class="hover:text-[var(--yishen-blue)] transition-colors">Solutions</a>
-        <a href="/industries.html" class="hover:text-[var(--yishen-blue)] transition-colors">Industries</a>
-        <a href="/why-us.html" class="hover:text-[var(--yishen-blue)] transition-colors">Why Us</a>
-        <a href="/resources.html" class="hover:text-[var(--yishen-blue)] transition-colors">Resources</a>
-        <a href="/contact.html" class="nav-cta px-5 py-2 rounded-full cta mono text-[11px] uppercase tracking-[0.22em]">Contact</a>
-      </nav>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/solutions.html">Solutions</a>
+      <a href="/industries.html">Industries</a>
+      <a href="/why-us.html">Why Us</a>
+      <a href="/resources.html">Resources</a>
+      <a class="cta" href="/contact.html">Contact</a>
+    </nav>
 
-      <!-- Mobile quick action -->
-      <a href="/contact.html" class="md:hidden px-4 py-2 rounded-full cta mono text-[10px] uppercase tracking-[0.22em]">
-        Contact
-      </a>
+    <button class="hamburger" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      ☰
+    </button>
+  </div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/solutions.html">Solutions</a>
+    <a href="/industries.html">Industries</a>
+    <a href="/why-us.html">Why Us</a>
+    <a href="/resources.html">Resources</a>
+    <a class="cta" href="/contact.html">Contact</a>
+  </div>
+</header>
+
+<main class="wrap" role="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-kicker">Global Command Layer</div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-title">Coordinated<br>Industrial Architecture</h1>
+        <p class="hero-sub">
+          We don’t sell products. We architect industrial systems—manufacturing, compliance, packaging, and global logistics—so buyers
+          can scale with stable ETAs, controlled risk, and procurement-grade execution.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/solutions.html">Explore Solutions →</a>
+          <a class="btn btn-gold" href="/contact.html">Enter Procurement Gate</a>
+          <a class="btn" href="/resources.html">Open Resources</a>
+        </div>
+
+        <div class="hero-note">
+          Predictability &gt; Price · Infrastructure &gt; Vendors · Systems &gt; Products · Quote SLA: 2 hours
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Sovereign Procurement OS">
+        <div class="label">Sovereign Procurement OS</div>
+        <h3>Enter the System</h3>
+        <p>
+          Instant WhatsApp sovereign quote gateway (2 hours SLA). Compliance-ready paperwork, drop-test packaging logic,
+          DDP route control, and bonded warehousing orchestration.
+        </p>
+
+        <div class="pill" aria-label="Capabilities">
+          <span>DDP Route Control</span>
+          <span>HS Code Discipline</span>
+          <span>Drop-Test Packaging</span>
+          <span>Compliance-Ready</span>
+          <span>Bonded Warehouse</span>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/contact.html">Start Collaboration</a>
+          <a class="btn" href="/solutions.html">Sovereign Solutions →</a>
+        </div>
+      </aside>
     </div>
-  </header>
+  </section>
 
-  <!-- MAIN -->
-  <main class="wrap mx-auto px-6 md:px-10 pt-32 pb-24">
-
-    <!-- HERO / AUTHORITY LAYER -->
-    <section class="relative pt-14 pb-16">
-      <div class="scanline"></div>
-
-      <div class="flex flex-col gap-8">
-        <div class="mono text-[11px] uppercase tracking-[0.55em] text-[var(--yishen-blue)]">
-          Industrial Sovereignty Portal
-        </div>
-
-        <h1 class="text-[44px] md:text-[86px] font-black italic uppercase tracking-tighter leading-[0.90]">
-          Coordinated
-          <span class="text-white/10">Industrial</span><br />
-          Architecture
-        </h1>
-
-        <p class="max-w-4xl text-gray-400 mono text-[12px] leading-relaxed uppercase tracking-[0.18em] border-l-2 border-[var(--yishen-blue)] pl-6">
-          Predictability engineered. Manufacturing execution, compliance firewall, bonded logistics, and AI decision layers —
-          built to protect buyer outcomes across global markets.
-        </p>
-
-        <div class="flex flex-wrap gap-3 pt-2">
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Lead-time Sovereignty</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Compliance Firewall</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Bonded Execution</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Packaging Engineering</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">AI Decision Layer</span>
-        </div>
-
-        <div class="flex flex-wrap gap-4 pt-4">
-          <a href="/solutions.html" class="px-6 py-3 rounded-xl cta mono text-[11px] uppercase tracking-[0.22em] inline-flex items-center gap-3">
-            Explore Solutions <i class="fa-solid fa-arrow-right"></i>
-          </a>
-          <a href="/contact.html" class="px-6 py-3 rounded-xl border border-white/10 bg-white/5 mono text-[11px] uppercase tracking-[0.22em] inline-flex items-center gap-3 hover:border-white/20 hover:bg-white/10 transition-all">
-            Request Cooperation <i class="fa-regular fa-paper-plane"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CORE PILLARS (kept + upgraded; no loss) -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pb-16">
-      <div class="cyber p-8 rounded-xl">
-        <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Pillar_01</div>
-        <h3 class="text-2xl font-bold italic uppercase mt-3 mb-3">Smart Manufacturing</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          Sovereign QC, modular production, predictable lead-time control — engineered to defend buyer conversion and returns.
-        </p>
-      </div>
-
-      <div class="cyber p-8 rounded-xl">
-        <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Pillar_02</div>
-        <h3 class="text-2xl font-bold italic uppercase mt-3 mb-3">Global Logistics</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          DDP routing, bonded warehousing, customs orchestration — execution designed for inventory velocity and ETA stability.
-        </p>
-      </div>
-
-      <div class="cyber p-8 rounded-xl">
-        <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Pillar_03</div>
-        <h3 class="text-2xl font-bold italic uppercase mt-3 mb-3">Supply Chain Architecture</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          Lifecycle governance, compliance-first escalation paths, and process defensibility when something goes wrong.
-        </p>
-      </div>
-    </section>
-
-    <div class="divider my-12"></div>
-
-    <!-- PORTAL: 12 SOVEREIGN LAYERS (expanded, no placeholders, no repeats) -->
-    <section class="pb-10">
-      <div class="mono text-[11px] uppercase tracking-[0.55em] text-[var(--yishen-blue)] mb-6">
-        Industrial Sovereignty Data Core
-      </div>
-      <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-4">
-        Operating System Layers
-      </h2>
-      <p class="text-gray-400 max-w-4xl mono text-[12px] uppercase tracking-[0.18em] leading-relaxed">
-        This homepage is not a brochure. It is a control panel: factory matrix, compliance firewall, logistics neural map, buyer-brain control,
-        product genome, and failure-prevention systems — integrated into one execution architecture.
+  <!-- CORE PILLARS -->
+  <section class="section" aria-label="Core pillars">
+    <div class="section-head">
+      <h2 class="section-title">Core Pillars</h2>
+      <p class="section-sub">
+        Built for procurement reality: stable lead times, defendable documentation, predictable quality, and escalation paths that buyers can trust.
       </p>
-    </section>
+    </div>
 
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 pb-16">
+    <div class="grid-3">
+      <div class="card">
+        <div class="k">Pillar 01</div>
+        <h4>Smart Manufacturing</h4>
+        <p>Integrated production systems with predictive control, disciplined QC gates, and stable output standards.</p>
+        <a class="link" href="/industries.html">View industries →</a>
+      </div>
+      <div class="card">
+        <div class="k">Pillar 02</div>
+        <h4>Global Logistics</h4>
+        <p>DDP execution, bonded warehousing, and customs pre-clearance—designed for procurement predictability.</p>
+        <a class="link" href="/solutions.html">Open solutions →</a>
+      </div>
+      <div class="card">
+        <div class="k">Pillar 03</div>
+        <h4>Supply Chain Architecture</h4>
+        <p>Compliance orchestration, packaging engineering, lifecycle governance, and escalation ownership—end to end.</p>
+        <a class="link" href="/why-us.html">Why us →</a>
+      </div>
+    </div>
+  </section>
 
-      <!-- 1 Global Factory Matrix -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_01</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Global Factory Matrix</h3>
-          </div>
-          <i class="fa-solid fa-diagram-project text-[var(--yishen-blue)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          A manufacturing network designed to control outcomes — conversion, return curves, complaint density, and SKU survival.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Chair Node</div>
-            <div class="text-gray-400 mt-2">Mesh · Gaming · Recliner · Ergonomic systems</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Sofa Node</div>
-            <div class="text-gray-400 mt-2">Functional sofa · Lift chair · Lounger execution</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Flooring Node</div>
-            <div class="text-gray-400 mt-2">WPC · SPC · Bamboo materials & climate stability</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Industrial Node</div>
-            <div class="text-gray-400 mt-2">Chain · Wire rope · Hardware load safety control</div>
-          </div>
-        </div>
+  <!-- SOLUTIONS MATRIX -->
+  <section class="section" aria-label="Solutions matrix">
+    <div class="section-head">
+      <h2 class="section-title">Sovereign Solutions Matrix</h2>
+      <p class="section-sub">
+        The operating layer that turns vendors into an engineered system—so buyers can scale without margin erosion or ETA chaos.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="k">Solution A</div>
+        <h4>Procurement Gate</h4>
+        <p>2-hour quote SLA, structured RFQ intake, spec lock, escalation path, and decision transparency.</p>
+        <a class="link" href="/contact.html">Enter gate →</a>
       </div>
 
-      <!-- 2 Compliance Firewall -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_02</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Compliance Firewall</h3>
-          </div>
-          <i class="fa-solid fa-shield-halved text-[var(--yishen-gold)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          Not “certificates on a wall” — a market survival firewall that prevents clearance failure, platform penalties, and regulatory shutdowns.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">EU Protocol</div>
-            <div class="text-gray-400 mt-2">EN1335 · REACH · EPR readiness</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">US Protocol</div>
-            <div class="text-gray-400 mt-2">BIFMA logic · ISTA 6A packaging defensibility</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">GCC Protocol</div>
-            <div class="text-gray-400 mt-2">SASO · SABER pathway control</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">LATAM / AU</div>
-            <div class="text-gray-400 mt-2">NOM · INMETRO · AS/NZS alignment</div>
-          </div>
-        </div>
+      <div class="card">
+        <div class="k">Solution B</div>
+        <h4>Compliance Command</h4>
+        <p>Compliance-ready paperwork, HS code discipline, audit-friendly artifacts, and risk-controlled shipping logic.</p>
+        <a class="link" href="/resources.html">Open resources →</a>
       </div>
 
-      <!-- 3 Logistics Neural Map -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_03</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Logistics Neural Map</h3>
-          </div>
-          <i class="fa-solid fa-route text-[var(--yishen-blue)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          DDP routing + bonded nodes designed to compress time variables and protect inventory velocity.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">CN → US</div>
-            <div class="text-gray-400 mt-2">DDP corridor · stable ETA execution</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">CN → EU</div>
-            <div class="text-gray-400 mt-2">Compliance-driven routing · risk reduction</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">CN → GCC</div>
-            <div class="text-gray-400 mt-2">Project delivery stability · clearance readiness</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Bonded Nodes</div>
-            <div class="text-gray-400 mt-2">Buffer inventory · returns shock absorber</div>
-          </div>
-        </div>
+      <div class="card">
+        <div class="k">Solution C</div>
+        <h4>Packaging Engineering</h4>
+        <p>Drop-test logic, carton optimization, damage-rate reduction, warehouse efficiency—built into the system.</p>
+        <a class="link" href="/resources.html">Packaging specs →</a>
       </div>
 
-      <!-- 4 Buyer Brain Control -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_04</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Buyer Brain Control</h3>
-          </div>
-          <i class="fa-solid fa-brain text-[var(--yishen-gold)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          We don’t “sell products”. We stabilize buyer decision variables: conversion, velocity, category dominance, and project defensibility.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Retail Buyer</div>
-            <div class="text-gray-400 mt-2">Conversion uplift · SKU timing · packaging efficiency</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Distributor</div>
-            <div class="text-gray-400 mt-2">Category-killer SKUs · simplified decision making</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Private Label</div>
-            <div class="text-gray-400 mt-2">Differentiation · storytelling · repeat purchase systems</div>
-          </div>
-          <div class="cyber p-4 rounded-xl">
-            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">E-commerce</div>
-            <div class="text-gray-400 mt-2">Inventory velocity · platform survival · fast iteration</div>
-          </div>
-        </div>
+      <div class="card">
+        <div class="k">Solution D</div>
+        <h4>DDP Execution</h4>
+        <p>Route control, timeline predictability, bonded warehousing, and delivery governance across trade lanes.</p>
+        <a class="link" href="/solutions.html">See details →</a>
       </div>
+    </div>
+  </section>
 
-      <!-- 5 Product Genome Map -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_05</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Product Genome Map</h3>
-          </div>
-          <i class="fa-solid fa-dna text-[var(--yishen-blue)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          A product is evaluated as a system: specification control, tolerance stability, documentation, escalation path, and responsibility ownership.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Function DNA</div><div class="text-gray-400 mt-2">Why buyers choose it</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Compliance DNA</div><div class="text-gray-400 mt-2">Whether it can be sold</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Packaging DNA</div><div class="text-gray-400 mt-2">Whether margin survives shipping</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Failure DNA</div><div class="text-gray-400 mt-2">How we prevent breakdowns</div></div>
-        </div>
+  <!-- WHY YISHEN -->
+  <section class="section" aria-label="Why Yishen Global">
+    <div class="section-head">
+      <h2 class="section-title">Why Yishen Global</h2>
+      <p class="section-sub">
+        Procurement doesn’t fail because products are “bad.” It fails because systems are unstable. We engineer stability.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="k">Value 01</div>
+        <h4>Lead-Time Sovereignty</h4>
+        <p>ETA stability by design: scheduling discipline, production visibility, and logistics execution control.</p>
       </div>
-
-      <!-- 6 Failure Prevention System -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_06</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Failure Prevention System</h3>
-          </div>
-          <i class="fa-solid fa-triangle-exclamation text-[var(--yishen-gold)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          A defensive system that prevents the common disasters: return spikes, clearance kills, margin collapse, listing death, and project loss.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Return Explosion</div><div class="text-gray-400 mt-2">Modular packaging logic</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Customs Failure</div><div class="text-gray-400 mt-2">Compliance firewall pathways</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Margin Collapse</div><div class="text-gray-400 mt-2">MOQ + freight model control</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Project Loss</div><div class="text-gray-400 mt-2">Documentation + escalation ownership</div></div>
-        </div>
+      <div class="card">
+        <div class="k">Value 02</div>
+        <h4>Compliance-First</h4>
+        <p>Paperwork built for customs, procurement, and internal approval—so orders are defendable.</p>
       </div>
-
-      <!-- 7 Supply Chain Sovereignty -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_07</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Supply Chain Sovereignty</h3>
-          </div>
-          <i class="fa-solid fa-crown text-[var(--yishen-blue)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          The product is not the center. The process is. We engineer predictable systems so buyers can defend decisions internally when pressure hits.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Spec Control</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Tolerance Stability</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Escalation Path</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Ownership</span>
-        </div>
+      <div class="card">
+        <div class="k">Value 03</div>
+        <h4>Governed Quality</h4>
+        <p>QC gating + packaging logic + escalation ownership—so issues are contained before they become losses.</p>
       </div>
+    </div>
+  </section>
 
-      <!-- 8 Packaging Engineering Core -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_08</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Packaging Engineering Core</h3>
-          </div>
-          <i class="fa-solid fa-boxes-stacked text-[var(--yishen-gold)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          Packaging is profit. Engineering focuses on drop-risk reduction, modular carton structure, and compliance with platform packaging logic.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Drop-Risk Logic</div><div class="text-gray-400 mt-2">Shock absorption & damage prevention</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Modular Carton</div><div class="text-gray-400 mt-2">Lower warehousing cost & returns stability</div></div>
-        </div>
-      </div>
-
-      <!-- 9 AI Decision Layer -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_09</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">AI Decision Layer</h3>
-          </div>
-          <i class="fa-solid fa-microchip text-[var(--yishen-blue)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          Predictive signals and process intelligence: detect purchasing cycles, identify risk patterns, and stabilize execution before failures happen.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Cycle Signals</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Risk Pre-Alert</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Escalation Routing</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Outcome Control</span>
-        </div>
-      </div>
-
-      <!-- 10 Category-Killer System -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_10</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Category-Killer System</h3>
-          </div>
-          <i class="fa-solid fa-bolt text-[var(--yishen-gold)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          Build standout SKUs that simplify decisions: differentiation, sell-through velocity, and repeat purchase mechanics.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Differentiation</div><div class="text-gray-400 mt-2">Story, structure, and proof systems</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Velocity</div><div class="text-gray-400 mt-2">Faster sell-through, lower dead stock risk</div></div>
-        </div>
-      </div>
-
-      <!-- 11 Client Lifecycle Governor -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_11</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Client Lifecycle Governor</h3>
-          </div>
-          <i class="fa-solid fa-chart-line text-[var(--yishen-blue)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          Governance from first SKU selection to scale: launch, stabilize, expand, and defend repeat purchasing through process ownership.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Selection</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Launch</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Scale</span>
-          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Defend</span>
-        </div>
-      </div>
-
-      <!-- 12 Industrial Operating System -->
-      <div class="card p-8 md:p-10">
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_12</div>
-            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Industrial Operating System</h3>
-          </div>
-          <i class="fa-solid fa-terminal text-[var(--yishen-gold)] text-2xl"></i>
-        </div>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          The final product is not a SKU. It is an operating system that prevents buyer failure:
-          clearance kills, inventory death, margin erosion, platform penalties, and execution breakdowns.
-        </p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Defensibility</div><div class="text-gray-400 mt-2">Docs · escalation · ownership</div></div>
-          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Stability</div><div class="text-gray-400 mt-2">ETA · QC · packaging · compliance</div></div>
-        </div>
-      </div>
-
-    </section>
-
-    <div class="divider my-12"></div>
-
-    <!-- DEEP TECH DIVISION (kept + refined; no placeholders) -->
-    <section class="pb-16">
-      <div class="mono text-[11px] uppercase tracking-[0.55em] text-[var(--yishen-blue)] mb-6">Sovereignty Matrix</div>
-      <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">
-        Deep Tech Division
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="cyber p-8 rounded-xl">
-          <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Flooring_Sovereignty</div>
-          <h3 class="text-2xl font-bold italic uppercase mt-3 mb-4">SPC Strategy</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Moisture-stability execution for monsoon climates. We don’t sell low price — we sell “no lost orders” protection.
-          </p>
-        </div>
-
-        <div class="cyber p-8 rounded-xl" style="border-color:rgba(14,165,227,.45); background:rgba(14,165,227,.04)">
-          <div class="mono text-[10px] uppercase tracking-[0.35em] text-green-400">Rejection_Logic</div>
-          <h3 class="text-2xl font-bold italic uppercase mt-3 mb-4 text-[var(--yishen-blue)]">QC Protocol</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Rejecting mediocre orders is execution discipline. Every batch passes sovereignty-grade filtration.
-          </p>
-        </div>
-
-        <div class="cyber p-8 rounded-xl">
-          <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Ergo_Infrastructure</div>
-          <h3 class="text-2xl font-bold italic uppercase mt-3 mb-4">Design Intel</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Corrects common ergonomic decision traps. VESA compatibility and lifecycle logic that protects procurement outcomes.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider my-12"></div>
-
-    <!-- GLOBAL LIAISON (kept + expanded; no placeholders) -->
-    <section class="pb-10">
-      <div class="flex flex-col items-start md:items-center gap-3 mb-10">
-        <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter">
-          Global <span class="text-[var(--yishen-blue)]">Liaison</span>
-        </h2>
-        <div class="h-1 w-24 bg-[var(--yishen-blue)]"></div>
-        <p class="text-gray-400 mono text-[12px] uppercase tracking-[0.18em] max-w-4xl md:text-center">
-          Direct lines for cooperation, execution, and escalation. No routing delays. No ambiguity.
+  <!-- FINAL CTA -->
+  <section class="section" aria-label="Final call to action">
+    <div class="final-cta">
+      <div>
+        <h3>Build Your Industrial System</h3>
+        <p>
+          If you want predictable ETAs, procurement-grade documentation, and execution that scales—
+          enter the procurement gate and we’ll architect the system with you.
         </p>
       </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-10">
-        <div class="card p-8 md:p-10 rounded-2xl">
-          <div class="flex justify-between items-start mb-8">
-            <div class="mono font-bold text-[10px] px-4 py-1 rounded-full uppercase" style="background:var(--yishen-gold);color:#000">
-              Hotline_01: Global_Sales
-            </div>
-            <i class="fas fa-phone-alt text-[var(--yishen-gold)] text-xl"></i>
-          </div>
-          <a href="tel:+8613858516813" class="text-3xl md:text-5xl font-black tracking-tighter hover:text-[var(--yishen-gold)] transition-colors">
-            +86 138 5851 6813
-          </a>
-          <div class="mt-8">
-            <a href="https://wa.me/8613858516813?text=I%20am%20interested%20in%20Yishen%20Global%20Solutions" target="_blank"
-              class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border mono text-[12px] uppercase tracking-[0.18em]"
-              style="border-color:rgba(37,211,102,.35);background:rgba(37,211,102,.08);color:#25D366">
-              <i class="fab fa-whatsapp text-lg"></i> WhatsApp_Direct_API →
-            </a>
-          </div>
-        </div>
-
-        <div class="card p-8 md:p-10 rounded-2xl">
-          <div class="flex justify-between items-start mb-8">
-            <div class="mono font-bold text-[10px] px-4 py-1 rounded-full uppercase" style="background:rgba(14,165,227,.95);color:#000">
-              Hotline_02: Operation_Dept
-            </div>
-            <i class="fas fa-ship text-[var(--yishen-blue)] text-xl"></i>
-          </div>
-          <a href="mailto:support@yishenglobal.net" class="text-2xl md:text-4xl font-black tracking-tighter hover:text-[var(--yishen-blue)] transition-colors">
-            support@yishenglobal.net
-          </a>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="mailto:support@yishenglobal.net?subject=Logistics%20Support%20Request%20-%20Yishen%20Global" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-white/10 bg-white/5 mono text-[12px] uppercase tracking-[0.18em] hover:bg-white/10 hover:border-white/20 transition-all">
-              <i class="fas fa-envelope text-lg text-[var(--yishen-blue)]"></i> Email_Operations →
-            </a>
-          </div>
-        </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="/contact.html">Start Collaboration</a>
+        <a class="btn btn-gold" href="/solutions.html">Sovereign Solutions →</a>
       </div>
+    </div>
+  </section>
 
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <a href="https://www.linkedin.com/company/yishen-global" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
-          <i class="fab fa-linkedin-in text-2xl text-[#0077b5]"></i>
-          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">LinkedIn</span>
-        </a>
-        <a href="https://instagram.com/yishen_global" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
-          <i class="fab fa-instagram text-2xl text-[#e1306c]"></i>
-          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">Instagram</span>
-        </a>
-        <a href="https://x.com/yishenglobal" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
-          <i class="fab fa-x-twitter text-2xl text-white"></i>
-          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">X</span>
-        </a>
-        <button type="button" onclick="alert('WeChat ID: Yishen_Global_HQ')" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
-          <i class="fab fa-weixin text-2xl text-[#07C160]"></i>
-          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">WeChat</span>
-        </button>
-        <a href="mailto:support@yishenglobal.net" class="card p-6 rounded-2xl flex flex-col items-center gap-4" style="border-color:rgba(14,165,227,.25)">
-          <i class="fas fa-envelope text-2xl text-[var(--yishen-blue)]"></i>
-          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">Email</span>
-        </a>
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-row">
+      <div>© 2026 Yishen Global · Coordinated Industrial Architecture</div>
+      <div class="small-links">
+        <a href="/solutions.html">Solutions</a>
+        <a href="/industries.html">Industries</a>
+        <a href="/why-us.html">Why Us</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/contact.html">Contact</a>
       </div>
-    </section>
-
-  </main>
-
-  <footer class="px-6 md:px-10 py-10 divider opacity-70">
-    <div class="wrap mx-auto flex flex-col md:flex-row gap-3 md:gap-0 md:items-center md:justify-between mono text-[10px] uppercase tracking-[0.22em] text-gray-500">
-      <span>© 2026 Yishen Global · Coordinated Industrial Architecture</span>
-      <span>Node: SOVEREIGN_ROOT · Portal: ISR-001_v2</span>
     </div>
   </footer>
+
+</main>
+
+<!-- NAV JS (minimal + reliable) -->
+<script>
+  (function(){
+    const btn = document.getElementById('navToggle');
+    const drawer = document.getElementById('mobileDrawer');
+    if(!btn || !drawer) return;
+
+    const setOpen = (open) => {
+      drawer.style.display = open ? 'block' : 'none';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    let open = false;
+    btn.addEventListener('click', () => {
+      open = !open;
+      setOpen(open);
+    });
+
+    // close drawer on navigation
+    drawer.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', ()=>{ open=false; setOpen(false); });
+    });
+
+    // close drawer on resize to desktop
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 980){ open=false; setOpen(false); }
+    });
+  })();
+</script>
 
 </body>
 </html>

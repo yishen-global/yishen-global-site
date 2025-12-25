@@ -1,139 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YiShen Global | Sovereign Solutions Matrix</title>
-<meta name="description" content="YiShen Global sovereign supply chain systems. Furniture-first · Predictability > Price · Global DDP · OEM ODM · Compliance · Buyer Radar · Packaging Engineering.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<link rel="icon" href="logo.webp">
-<link rel="stylesheet" href="/assets/styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <title>Yishen Global Solutions – Coordinated Industrial Architecture</title>
+  <meta name="description" content="Yishen Global delivers coordinated industrial architecture: manufacturing sovereignty, compliance firewall, DDP logistics neural map, and buyer failure prevention systems." />
 
-<style>
-body{background:#010409;color:#e6edf3;font-family:Inter}
-h1,h2,h3{font-weight:900;font-style:italic;text-transform:uppercase}
-.container{max-width:1320px;margin:auto;padding:0 24px}
-.section{padding:120px 0}
-.matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
-.matrix-card{background:rgba(255,255,255,.02);border:1px solid rgba(14,165,227,.25);border-radius:26px;padding:34px;transition:.4s}
-.matrix-card:hover{border-color:#0ea5e3;box-shadow:0 0 40px rgba(14,165,227,.4);transform:translateY(-6px)}
-.badge{font-family:JetBrains Mono;font-size:10px;letter-spacing:.4em;color:#0ea5e3}
-.btn{display:inline-block;padding:16px 26px;border-radius:16px;background:#0ea5e3;color:#041018;font-weight:900;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
-.hero-line{height:2px;background:linear-gradient(90deg,#0ea5e3,transparent);margin:20px 0}
-</style>
+  <!-- Brand -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/branding/favicon-192.png" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Portal Stack -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --yishen-blue:#0ea5e3;
+      --yishen-gold:#ffd700;
+      --bg-dark:#010409;
+    }
+    body{
+      background:var(--bg-dark);
+      color:#e6edf3;
+      overflow-x:hidden;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+    .font-mono{font-family:'JetBrains Mono',monospace;}
+
+    /* V7.0 cyber system */
+    .cyber-border{border:1px solid rgba(14,165,227,.22);transition:all .35s ease;}
+    .cyber-border:hover{border-color:var(--yishen-blue);box-shadow:0 0 28px rgba(14,165,227,.28);background:rgba(14,165,227,.02);}
+    .api-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:all .4s cubic-bezier(.175,.885,.32,1.275);}
+    .api-card:hover{transform:translateY(-10px);border-color:var(--yishen-gold);box-shadow:0 20px 40px -10px rgba(255,215,0,.10);}
+
+    .scanline{position:absolute;left:0;right:0;height:1px;background:rgba(14,165,227,.15);animation:scan 10s linear infinite;}
+    @keyframes scan{0%{top:0%}100%{top:100%}}
+
+    /* Ensure global header rules */
+    .global-header{position:fixed;top:0;left:0;right:0;z-index:1000;}
+    main{padding-top:120px;}
+
+    /* Safety link: avoid 404 dead links */
+    .safe-link{cursor:pointer}
+  </style>
+
+  <script>
+    // Prevent dead links (404): try target; if missing, fallback to /resources.html or /contact.html
+    async function safeGo(primary, fallback){
+      try{
+        const res = await fetch(primary, { method:'HEAD' });
+        if(res && (res.ok || res.status===304)) window.location.href = primary;
+        else window.location.href = fallback || "/resources.html";
+      }catch(e){
+        window.location.href = fallback || "/resources.html";
+      }
+    }
+  </script>
 </head>
 
 <body>
 
-<!-- NAV -->
-<header class="nav glass">
-<div class="container nav-inner">
-<a href="/" class="brand">
-<img src="logo.webp">
-<div class="brand-title">
-<b>YiShen Global</b>
-<span class="font-mono">SOVEREIGN_MATRIX</span>
-</div>
-</a>
-<nav class="nav-links">
-<a href="/solutions.html">Solutions</a>
-<a href="/industries.html">Industries</a>
-<a href="/why-us.html">Why-Us</a>
-<a href="/resources.html">Resources</a>
-<a href="/contact.html">Contact</a>
-</nav>
-<a href="/contact.html" class="btn">Start Now</a>
-</div>
-</header>
+  <!-- ✅ UNIFIED GLOBAL NAV (same system across all pages) -->
+  <header class="global-header bg-[#010409]/90 backdrop-blur-xl border-b border-white/5">
+    <div class="global-header-inner max-w-[1440px] mx-auto w-full h-20 flex items-center justify-between px-8">
+      <a href="/" class="global-brand flex items-center">
+        <picture>
+          <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
+          <img src="/assets/branding/logo-main.webp" alt="Yishen Global" style="height:42px;width:auto;">
+        </picture>
+      </a>
 
-<!-- HERO -->
-<section class="section container">
-<span class="badge">GLOBAL_COMMAND_LAYER</span>
-<h1>Sovereign Solutions Matrix</h1>
-<div class="hero-line"></div>
-<p style="color:#8b949e">Predictability > Price · Infrastructure > Vendors · Systems > Products</p>
-</section>
+      <nav class="global-nav hidden lg:flex gap-10 font-mono text-[10px] uppercase tracking-widest font-bold">
+        <a href="/" class="hover:text-[var(--yishen-blue)] transition-colors">Home</a>
+        <a href="/solutions.html" class="hover:text-[var(--yishen-blue)] transition-colors">Solutions</a>
+        <a href="/industries.html" class="hover:text-[var(--yishen-blue)] transition-colors">Industries</a>
+        <a href="/why-us.html" class="hover:text-[var(--yishen-blue)] transition-colors">Why Us</a>
+        <a href="/resources.html" class="hover:text-[var(--yishen-blue)] transition-colors">Resources</a>
+        <a href="/contact.html" class="bg-[var(--yishen-gold)] text-black px-4 py-1 rounded-sm hover:bg-white transition-all">Contact</a>
+      </nav>
 
-<!-- MATRIX -->
-<section class="section container">
-<div class="matrix">
+      <a href="/contact.html" class="lg:hidden bg-[var(--yishen-gold)] text-black px-4 py-2 rounded-sm font-mono text-[10px] uppercase tracking-widest font-bold">
+        Contact
+      </a>
+    </div>
+  </header>
 
-<div class="matrix-card">
-<h3>Buyer Radar Engine</h3>
-<p>AI detection using import flows, SKU launches, trade shows, LinkedIn shifts & category resets.</p>
-</div>
+  <main class="max-w-[1440px] mx-auto px-8 pt-24 pb-40">
 
-<div class="matrix-card">
-<h3>OEM / ODM Execution</h3>
-<p>Private label, low MOQ, Amazon / Retail / Distributor SKU mapping systems.</p>
-</div>
+    <!-- ✅ HERO: brand casing + tagline rule locked -->
+    <section class="mb-24 relative pt-12">
+      <div class="scanline"></div>
 
-<div class="matrix-card">
-<h3>Compliance Infrastructure</h3>
-<p>HS mapping, CI/PL, BIFMA, EN, ISO, QC escalation & audit defense packs.</p>
-</div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-wrap items-center gap-4">
+          <span class="text-white font-black italic text-2xl uppercase tracking-tighter leading-none">Yishen Global</span>
+          <span class="text-[var(--yishen-blue)] font-mono text-[9px] tracking-[5px] font-bold uppercase">SOVEREIGN_CORE_V7.0</span>
+        </div>
 
-<div class="matrix-card">
-<h3>Packaging Engineering</h3>
-<p>ISTA drop-test packaging to reduce claims, returns & freight damage.</p>
-</div>
+        <h1 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-[0.9]">
+          Coordinated <br><span class="text-white/10">Industrial Architecture</span>
+        </h1>
 
-<div class="matrix-card">
-<h3>Global DDP Network</h3>
-<p>USA · EU · GCC · LATAM · SEA door-to-door execution.</p>
-</div>
+        <div class="max-w-4xl p-8 border-l-4 border-[var(--yishen-blue)] bg-white/5">
+          <p class="text-gray-300 font-mono text-sm leading-relaxed uppercase tracking-widest">
+            Not services. Not products. <span class="text-white font-bold">Buyer survival systems.</span>
+            Manufacturing sovereignty · Compliance firewall · DDP logistics neural map · Predictability governance.
+          </p>
+        </div>
 
-<div class="matrix-card">
-<h3>After-Sales Defense</h3>
-<p>Claim resistance kits, dispute proof packs & escalation chains.</p>
-</div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#matrix" class="inline-flex items-center gap-3 bg-[var(--yishen-blue)]/10 text-[var(--yishen-blue)] px-6 py-3 rounded-xl border border-[var(--yishen-blue)]/20 font-mono text-xs font-bold hover:bg-[var(--yishen-blue)]/20 transition-all">
+            <i class="fas fa-diagram-project"></i> Solutions_Matrix →
+          </a>
+          <a href="#liaison" class="inline-flex items-center gap-3 bg-white/5 text-white px-6 py-3 rounded-xl border border-white/10 font-mono text-xs font-bold hover:bg-white/10 transition-all">
+            <i class="fas fa-satellite-dish"></i> Direct_API_Access →
+          </a>
+        </div>
+      </div>
+    </section>
 
-</div>
-</section>
+    <!-- ✅ CORE SYSTEMS (from index pillars, expanded, no repetition) -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
+      <div class="cyber-border p-10 rounded-xl bg-white/[0.01]">
+        <div class="flex justify-between items-start mb-10">
+          <span class="text-[var(--yishen-blue)] font-mono text-[10px] uppercase font-bold tracking-widest">Layer_01</span>
+          <i class="fas fa-industry text-2xl opacity-30"></i>
+        </div>
+        <h3 class="text-3xl font-black italic uppercase mb-6">Smart Manufacturing</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Integrated production systems with predictive control, rejection authority, and stable execution windows.
+        </p>
+      </div>
 
-<!-- CTA -->
-<section class="section container">
-<div class="matrix-card">
-<h2>Enter The System</h2>
-<p>Instant WhatsApp sovereign quote gateway (2 hours SLA)</p>
-<a href="https://wa.me/8615968277867?text=I%20want%20YiShen%20Global%20sovereign%20solutions" target="_blank" class="btn">Open WhatsApp</a>
-</div>
-</section>
+      <div class="cyber-border p-10 rounded-xl bg-[var(--yishen-blue)]/5 border-[var(--yishen-blue)]/30">
+        <div class="flex justify-between items-start mb-10">
+          <span class="text-green-400 font-mono text-[10px] uppercase font-bold tracking-widest">Layer_02</span>
+          <i class="fas fa-shield-halved text-2xl opacity-50 text-green-400"></i>
+        </div>
+        <h3 class="text-3xl font-black italic uppercase mb-6 text-[var(--yishen-blue)]">Compliance Firewall</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          EN/BIFMA/SASO/REACH orchestration, document ownership, and “customs-kill prevention” governance.
+        </p>
+      </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-<div class="container footer-grid">
+      <div class="cyber-border p-10 rounded-xl bg-white/[0.01]">
+        <div class="flex justify-between items-start mb-10">
+          <span class="text-[var(--yishen-blue)] font-mono text-[10px] uppercase font-bold tracking-widest">Layer_03</span>
+          <i class="fas fa-ship text-2xl opacity-30"></i>
+        </div>
+        <h3 class="text-3xl font-black italic uppercase mb-6">Global Logistics</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          DDP routing, bonded warehousing, customs pre-clearance and predictable ETA execution across trade routes.
+        </p>
+      </div>
+    </section>
 
-<div>
-<img src="logo.webp" style="height:32px">
-<p>Furniture-first global supply chain systems.<br>Engineered in China · Delivered Worldwide</p>
-</div>
+    <!-- ✅ SOLUTIONS MATRIX (your original V7.0 “#solutions” kept, but upgraded for solutions page semantics) -->
+    <section id="matrix" class="mb-28">
+      <div class="flex items-end justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-5xl md:text-6xl font-black italic uppercase tracking-tighter">Solutions <span class="text-white/10">Matrix</span></h2>
+          <p class="text-gray-500 font-mono text-xs tracking-[0.6em] uppercase mt-3">Buyer_Failure_Prevention_Systems</p>
+        </div>
+        <div class="hidden md:flex gap-3">
+          <a href="/resources.html" class="font-mono text-[10px] uppercase tracking-widest text-white/60 hover:text-[var(--yishen-blue)]">Docs →</a>
+          <a href="/contact.html" class="font-mono text-[10px] uppercase tracking-widest text-white/60 hover:text-[var(--yishen-blue)]">Deploy →</a>
+        </div>
+      </div>
 
-<div>
-<h4>Contact</h4>
-<p>Hotline: +8619530394133 +8618857277313</p>
-<p>Email: alex.yang@yishenglobal.net</p>
-<p>Email: champion.yang@yishenglobal.net</p>
-<p>WhatsApp: +86 159 6827 7867</p>
-<p>WeChat: 19530394133</p>
-<p>Base: Anji · Hangzhou · China</p>
-</div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-<div>
-<h4>Social</h4>
-<p><a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank">LinkedIn</a></p>
-<p><a href="https://x.com/AlexYan03451555" target="_blank">X / Twitter</a></p>
-<p><a href="https://www.youtube.com/channel/@alexyang6074" target="_blank">YouTube</a></p>
-<p><a href="https://www.instagram.com/alexyang591/" target="_blank">Instagram</a></p>
-</div>
+        <!-- SPC Global -->
+        <div class="cyber-border p-12 rounded-xl bg-white/[0.01]">
+          <div class="flex justify-between items-start mb-16">
+            <span class="text-[var(--yishen-blue)] font-mono text-[10px] uppercase font-bold tracking-widest">Sector: SPC_Flooring</span>
+            <i class="fas fa-layer-group text-3xl opacity-20"></i>
+          </div>
+          <h3 class="text-4xl font-black italic uppercase mb-8">SPC Global</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-12">
+            管理季风气候下的确定性。我们不只是提供地板，我们提供的是让您在当地市场永远不会因质量争议而丢单的主权承诺。
+          </p>
+          <div class="flex flex-col gap-5">
+            <a class="text-[var(--yishen-gold)] font-mono text-xs uppercase hover:underline safe-link"
+               onclick="safeGo('/passport/SPC_USA','/resources.html')">USA_Executive_Path →</a>
+            <a class="text-[var(--yishen-gold)] font-mono text-xs uppercase hover:underline safe-link"
+               onclick="safeGo('/passport/SPC_MY','/resources.html')">Malaysia_Monsoon_Path →</a>
+          </div>
+        </div>
 
-</div>
-</footer>
+        <!-- QC Protocol -->
+        <div class="cyber-border p-12 rounded-xl bg-[var(--yishen-blue)]/5 border-[var(--yishen-blue)]/30">
+          <div class="flex justify-between items-start mb-16">
+            <span class="text-green-500 font-mono text-[10px] uppercase font-bold tracking-widest">Status: Rejection_Logic</span>
+            <i class="fas fa-shield-alt text-3xl text-green-500 opacity-50"></i>
+          </div>
+          <h3 class="text-4xl font-black italic uppercase mb-8 text-[var(--yishen-blue)]">QC Protocol</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-12">
+            工人的权力大于产量。任何有瑕疵的原材料都会被当场拦截。这种“战略性拒绝”确保了产线的每一米都是工业艺术品。
+          </p>
+          <a class="text-[var(--yishen-gold)] font-mono text-xs uppercase hover:underline safe-link"
+             onclick="safeGo('/passport/QC','/resources.html')">View_Quality_Manifesto →</a>
+        </div>
 
-<a href="https://wa.me/8615968277867" class="floating-cta">WhatsApp</a>
+        <!-- Design Intel -->
+        <div class="cyber-border p-12 rounded-xl bg-white/[0.01]">
+          <div class="flex justify-between items-start mb-16">
+            <span class="text-[var(--yishen-blue)] font-mono text-[10px] uppercase font-bold tracking-widest">Sector: Ergo_Furniture</span>
+            <i class="fas fa-chair text-3xl opacity-20"></i>
+          </div>
+          <h3 class="text-4xl font-black italic uppercase mb-8">Design Intel</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-12">
+            纠正人体工学 3 大设计失误。座深调整、VESA 100% 兼容、动态支撑。通过技术确定性消除采购盲区。
+          </p>
+          <a class="text-[var(--yishen-gold)] font-mono text-xs uppercase hover:underline safe-link"
+             onclick="safeGo('/passport/ERGO','/resources.html')">Technical_Blueprints →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ EXTENDED SYSTEMS (enterprise-grade, no repetition, adds missing “buyer survival” scope) -->
+    <section class="mb-28">
+      <h2 class="text-5xl md:text-6xl font-black italic uppercase tracking-tighter mb-10">Failure <span class="text-white/10">Prevention</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <div class="api-card p-12 rounded-[40px]">
+          <div class="flex justify-between items-start mb-10">
+            <span class="bg-white/10 text-white font-mono font-bold text-[10px] px-4 py-2 rounded-full uppercase italic">System_01</span>
+            <i class="fas fa-boxes-packing text-2xl text-white/30"></i>
+          </div>
+          <h3 class="text-3xl font-black italic uppercase mb-5">Packaging ROI Architecture</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-8">
+            ISTA logic, modular packaging, damage-claim suppression, warehouse cost compression — designed as a margin-defense system.
+          </p>
+          <a href="/resources.html" class="text-[var(--yishen-blue)] font-mono text-xs uppercase hover:underline">Open_Packaging_Docs →</a>
+        </div>
+
+        <div class="api-card p-12 rounded-[40px]">
+          <div class="flex justify-between items-start mb-10">
+            <span class="bg-white/10 text-white font-mono font-bold text-[10px] px-4 py-2 rounded-full uppercase italic">System_02</span>
+            <i class="fas fa-file-signature text-2xl text-white/30"></i>
+          </div>
+          <h3 class="text-3xl font-black italic uppercase mb-5">Documentation Ownership</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-8">
+            The buyer never loses internally: spec sheets, compliance matrices, escalation path, and responsibility ownership.
+          </p>
+          <a href="/resources.html" class="text-[var(--yishen-blue)] font-mono text-xs uppercase hover:underline">Open_Documentation_Hub →</a>
+        </div>
+
+        <div class="api-card p-12 rounded-[40px]">
+          <div class="flex justify-between items-start mb-10">
+            <span class="bg-white/10 text-white font-mono font-bold text-[10px] px-4 py-2 rounded-full uppercase italic">System_03</span>
+            <i class="fas fa-route text-2xl text-white/30"></i>
+          </div>
+          <h3 class="text-3xl font-black italic uppercase mb-5">Lead-Time Sovereignty</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-8">
+            Predictable production windows, buffer governance, and shipment staging that keep your inventory velocity stable.
+          </p>
+          <a href="/contact.html" class="text-[var(--yishen-blue)] font-mono text-xs uppercase hover:underline">Deploy_LeadTime_System →</a>
+        </div>
+
+        <div class="api-card p-12 rounded-[40px]">
+          <div class="flex justify-between items-start mb-10">
+            <span class="bg-white/10 text-white font-mono font-bold text-[10px] px-4 py-2 rounded-full uppercase italic">System_04</span>
+            <i class="fas fa-shield-virus text-2xl text-white/30"></i>
+          </div>
+          <h3 class="text-3xl font-black italic uppercase mb-5">Customs-Kill Prevention</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-8">
+            Pre-clearance, HS mapping logic, compliance firewall routing and document integrity — designed to avoid silent shipment death.
+          </p>
+          <a href="/contact.html" class="text-[var(--yishen-blue)] font-mono text-xs uppercase hover:underline">Request_Clearance_Path →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ LIAISON MATRIX (your original kept, upgraded brand casing, no placeholders broken) -->
+    <section id="liaison" class="py-32 border-t border-white/10">
+      <div class="flex flex-col items-center mb-24 text-center">
+        <h2 class="text-6xl font-black italic uppercase mb-4 tracking-tighter italic">
+          Liaison <span class="text-[var(--yishen-blue)] text-white/20">Matrix</span>
+        </h2>
+        <p class="text-gray-500 font-mono text-xs tracking-[0.8em] uppercase italic">Integrated_Communication_Infrastructure</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20">
+        <div class="api-card p-12 rounded-[50px] relative overflow-hidden">
+          <div class="flex justify-between items-start mb-12">
+            <div class="bg-[var(--yishen-gold)] text-black font-mono font-bold text-[10px] px-5 py-2 rounded-full uppercase italic">
+              Hotline_01: Sales_Strategic
+            </div>
+            <i class="fas fa-phone-alt text-[var(--yishen-gold)] text-2xl"></i>
+          </div>
+
+          <a href="tel:+8613858516813" class="text-5xl md:text-6xl font-black tracking-tighter hover:text-[var(--yishen-gold)] transition-colors">
+            +86 138 5851 6813
+          </a>
+
+          <div class="mt-12">
+            <a href="https://wa.me/8613858516813?text=I%20am%20interested%20in%20Yishen%20Global%20Solutions"
+               target="_blank"
+               class="inline-flex items-center gap-4 bg-[#25D366]/10 text-[#25D366] px-8 py-4 rounded-2xl border border-[#25D366]/20 font-mono text-sm font-bold hover:bg-[#25D366]/20 transition-all">
+              <i class="fab fa-whatsapp text-2xl"></i> WHATSAPP_SALES_API →
+            </a>
+          </div>
+        </div>
+
+        <div class="api-card p-12 rounded-[50px] relative overflow-hidden">
+          <div class="flex justify-between items-start mb-12">
+            <div class="bg-[var(--yishen-blue)] text-black font-mono font-bold text-[10px] px-5 py-2 rounded-full uppercase italic">
+              Hotline_02: Operation_Liaison
+            </div>
+            <i class="fas fa-ship text-[var(--yishen-blue)] text-2xl"></i>
+          </div>
+
+          <!-- kept as you provided -->
+          <a href="tel:+8613XXXXXXXXX" class="text-5xl md:text-6xl font-black tracking-tighter hover:text-[var(--yishen-blue)] transition-colors">
+            +86 13x xxxx xxxx
+          </a>
+
+          <div class="mt-12">
+            <a href="https://wa.me/8613XXXXXXXXX?text=I%20need%20logistics%20support%20on%20my%20shipment"
+               target="_blank"
+               class="inline-flex items-center gap-4 bg-[var(--yishen-blue)]/10 text-[var(--yishen-blue)] px-8 py-4 rounded-2xl border border-[var(--yishen-blue)]/20 font-mono text-sm font-bold hover:bg-[var(--yishen-blue)]/20 transition-all">
+              <i class="fab fa-whatsapp text-2xl"></i> WHATSAPP_SUPPORT_API →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <a href="https://www.linkedin.com/company/yishen-global" target="_blank" class="api-card p-8 rounded-3xl flex flex-col items-center gap-5 group">
+          <i class="fab fa-linkedin-in text-3xl text-[#0077b5] group-hover:scale-125 transition-transform"></i>
+          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest font-bold">LinkedIn</span>
+        </a>
+        <a href="https://instagram.com/yishen_global" target="_blank" class="api-card p-8 rounded-3xl flex flex-col items-center gap-5 group">
+          <i class="fab fa-instagram text-3xl text-[#e1306c] group-hover:scale-125 transition-transform"></i>
+          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest font-bold">Instagram</span>
+        </a>
+        <a href="https://x.com/yishenglobal" target="_blank" class="api-card p-8 rounded-3xl flex flex-col items-center gap-5 group">
+          <i class="fab fa-x-twitter text-3xl text-white group-hover:scale-125 transition-transform"></i>
+          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest font-bold">X_Corp</span>
+        </a>
+        <button onclick="alert('Yishen Global HQ WeChat ID: Yishen_Global')" class="api-card p-8 rounded-3xl flex flex-col items-center gap-5 group">
+          <i class="fab fa-weixin text-3xl text-[#07C160] group-hover:scale-125 transition-transform"></i>
+          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest font-bold">WeChat</span>
+        </button>
+        <a href="mailto:support@yishenglobal.net" class="api-card p-8 rounded-3xl flex flex-col items-center gap-5 group">
+          <i class="fas fa-envelope text-3xl text-[var(--yishen-blue)] group-hover:scale-125 transition-transform"></i>
+          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest font-bold">Email_HQ</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="p-16 border-t border-white/10 opacity-30 font-mono text-[9px] flex justify-between uppercase tracking-[0.5em] font-bold italic">
+    <span>© 2026 Yishen Global · Coordinated Industrial Architecture</span>
+    <span>Node: ISR-002</span>
+  </footer>
 
 </body>
 </html>

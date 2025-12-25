@@ -1,964 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-  =========================================================
-  YiShen Global — SOLUTIONS (SOVEREIGN PROCUREMENT OS v1.0)
-  Status: FIRMWARE • EXECUTABLE • STATIC ROM
-  Policy: NO SEMANTIC LOSS • NO CORE REMOVAL • PATCH-INTEGRATED
-  =========================================================
-  -->
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#010409" />
-  <meta name="description" content="YiShen Global Solutions — Sovereign Procurement OS: Predictability > Price. Infrastructure > Vendors. Systems > Products." />
-  <title>Solutions | YiShen Global — Sovereign Procurement OS</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solutions | Yishen Global – Sovereign Procurement OS v1.0</title>
+  <meta name="description" content="Yishen Global Solutions: Sovereign Procurement OS. Buyer Radar, Lead-time sovereignty, Packaging matrix, Compliance engine, and country-level procurement gates." />
 
-  <!-- Fonts (keep your existing visual DNA) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Optional: if you already have a global stylesheet, keep it.
-       This page still works standalone even if /styles.css is missing. -->
+  <!-- BRANDING -->
+  <link rel="icon" href="/assets/branding/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/assets/branding/favicon-192.png" />
   <link rel="stylesheet" href="/styles.css" />
 
+  <!-- OPTIONAL ICONS (safe fallback if blocked) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- PAGE-LOCAL PATCH (does NOT break your global styles.css) -->
   <style>
     :root{
-      --bg:#010409;
-      --panel: rgba(255,255,255,0.03);
-      --panel2: rgba(255,255,255,0.02);
-      --line: rgba(255,255,255,0.08);
-      --line2: rgba(14,165,227,0.22);
+      --bg-deep:#010409;
+      --panel:rgba(255,255,255,.03);
+      --panel2:rgba(14,165,227,.06);
+      --border:rgba(255,255,255,.08);
+      --soft:rgba(255,255,255,.06);
       --blue:#0ea5e3;
-      --blue2: rgba(14,165,227,0.15);
-      --text:#e6edf3;
-      --muted:#9aa4b2;
-      --muted2:#7e8794;
       --gold:#ffd700;
-      --glow: 0 0 40px rgba(14,165,227,0.22);
-      --glow2: 0 18px 60px rgba(14,165,227,0.12);
-      --radius: 28px;
-      --radius2: 44px;
-      --max: 1180px;
+      --txt:#e6edf3;
+      --muted:rgba(230,237,243,.70);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      --radius: 18px;
+      --radius2: 28px;
+      --shadow: 0 16px 48px rgba(0,0,0,.45);
     }
+    body{ background:var(--bg-deep); color:var(--txt); }
+    .os-wrap{ max-width: 1240px; margin: 0 auto; padding: 120px 20px 90px; }
+    .kicker{ color:var(--blue); font-family:var(--mono); letter-spacing:.55em; font-size:12px; text-transform:uppercase; margin:0 0 14px; }
+    .h1{ font-size: clamp(42px, 6vw, 84px); line-height:.92; letter-spacing:-.04em; margin:0 0 18px; font-weight: 900; text-transform: uppercase; }
+    .h1 .ghost{ color: rgba(255,255,255,.10); }
+    .sub{ max-width: 920px; color: var(--muted); font-size: 14px; line-height: 1.8; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase; border-left: 3px solid rgba(14,165,227,.65); padding-left: 14px; margin: 0 0 28px; }
+    .os-topbar{
+      display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top: 22px;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px; border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      font-family:var(--mono); font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+    }
+    .chip b{ color:#fff; letter-spacing:.14em; }
+    .chip .dot{ width:8px; height:8px; border-radius:50%; background: var(--blue); box-shadow: 0 0 18px rgba(14,165,227,.55); }
+    .chip.gold .dot{ background: var(--gold); box-shadow: 0 0 18px rgba(255,215,0,.35); }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background: radial-gradient(1200px 700px at 35% -10%, rgba(14,165,227,0.18), transparent 55%),
-                  radial-gradient(900px 500px at 80% 10%, rgba(255,215,0,0.07), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      overflow-x:hidden;
-    }
-    a{color:inherit; text-decoration:none}
-    .mono{font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
-    .wrap{max-width: var(--max); margin:0 auto; padding: 0 22px;}
-    .topfade{
-      position:fixed; left:0; right:0; top:0;
-      height:86px;
-      background: linear-gradient(to bottom, rgba(1,4,9,0.92), rgba(1,4,9,0.52), transparent);
-      z-index:40;
-      pointer-events:none;
-    }
-
-    /* NAV */
-    .nav{
-      position:fixed; top:0; left:0; right:0;
-      z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(1,4,9,0.72);
-      border-bottom:1px solid rgba(255,255,255,0.06);
-    }
-    .navbar{
-      height:78px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 260px;
-    }
-    .brand img{
-      width:28px; height:28px; border-radius:8px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.02);
-      object-fit: cover;
-    }
-    .brand .title{
-      display:flex; flex-direction:column; line-height:1.1;
-    }
-    .brand .title .name{
-      font-weight:900;
-      letter-spacing:-0.02em;
-      font-size: 16px;
-      text-transform:none;
-    }
-    .brand .title .node{
-      color: rgba(14,165,227,0.92);
-      font-weight:800;
-      letter-spacing: 0.42em;
-      font-size: 10px;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-
-    .navlinks{
-      display:flex; align-items:center; gap:18px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .navlinks a{
-      font-size: 11px;
-      font-weight:800;
-      letter-spacing:0.24em;
-      text-transform: uppercase;
-      color: rgba(230,237,243,0.78);
-      padding: 10px 10px;
-      border-radius: 12px;
-      transition: all .2s ease;
-    }
-    .navlinks a:hover{
-      color: #fff;
-      background: rgba(255,255,255,0.04);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
-    }
-    .navcta{
-      display:flex; align-items:center; gap:10px;
-      margin-left: 8px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 14px 18px;
-      border-radius: 18px;
-      font-weight:900;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-size: 11px;
-      cursor:pointer;
-      transition: all .22s ease;
-      user-select:none;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color: rgba(230,237,243,0.90);
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(14,165,227,0.38);
-      box-shadow: var(--glow2);
-    }
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(14,165,227,0.95), rgba(14,165,227,0.70));
-      border-color: rgba(14,165,227,0.50);
-      color: #031019;
-      box-shadow: var(--glow);
-    }
-    .btn.primary:hover{
-      filter: brightness(1.05);
-      box-shadow: 0 22px 80px rgba(14,165,227,0.18);
-    }
-    .btn.ghost{
-      background: rgba(255,255,255,0.02);
-    }
-    .btn .arrow{
-      font-weight:900;
-      letter-spacing:0;
-      opacity:0.9;
-    }
-
-    /* HERO */
-    .spacer{height:78px}
-    .hero{
-      padding: 34px 0 26px;
-    }
-    .hero-grid{
+    .grid{
       display:grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap:22px;
-      align-items:stretch;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      margin-top: 26px;
     }
     @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr;}
-      .brand{min-width:unset}
+      .grid{ grid-template-columns: 1fr; }
+      .os-wrap{ padding-top: 110px; }
     }
 
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      box-shadow: 0 0 0 1px rgba(14,165,227,0.06) inset;
-      position:relative;
-      overflow:hidden;
-    }
-    .card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(600px 220px at 30% 0%, rgba(14,165,227,0.18), transparent 60%);
-      pointer-events:none;
-    }
-    .hero-left{
-      padding: 34px 30px 28px;
-      min-height: 360px;
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      border:1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.16);
-      padding: 10px 14px;
-      border-radius: 999px;
-      color: rgba(230,237,243,0.78);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing:0.28em;
-      text-transform: uppercase;
-    }
-    .kicker .dot{
-      width:8px;height:8px;border-radius:99px;
-      background: rgba(14,165,227,0.95);
-      box-shadow: 0 0 18px rgba(14,165,227,0.65);
-    }
-    .h1{
-      margin: 20px 0 14px;
-      font-size: 56px;
-      line-height: 0.95;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      font-style: italic;
-    }
-    .h1 span{
-      color: rgba(230,237,243,0.14);
-    }
-    .sub{
-      margin:0 0 18px;
-      color: rgba(230,237,243,0.76);
-      font-size: 14.5px;
-      line-height: 1.6;
-      max-width: 60ch;
-    }
-    .rule{
-      margin: 10px 0 18px;
-      color: rgba(230,237,243,0.52);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .rule b{color: rgba(255,255,255,0.92)}
-    .cta-row{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 18px;
-    }
-
-    /* Right micro panel */
-    .hero-right{
-      padding: 22px;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      min-height: 360px;
-    }
-    .micro{
-      background: rgba(255,255,255,0.02);
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius: 22px;
-      padding: 18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .micro::before{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(360px 120px at 20% 0%, rgba(255,215,0,0.08), transparent 65%);
-      pointer-events:none;
-    }
-    .micro .label{
-      font-size: 10px;
-      letter-spacing: 0.42em;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: rgba(14,165,227,0.92);
-    }
-    .micro .big{
-      margin-top: 10px;
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      font-style: italic;
-      line-height:1.1;
-    }
-    .micro .small{
-      margin-top: 8px;
-      color: rgba(230,237,243,0.62);
-      font-size: 12.5px;
-      line-height: 1.55;
-    }
-    .micro .pillrow{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-top: 12px;
-    }
-    .pill{
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.12);
-      color: rgba(230,237,243,0.72);
-    }
-
-    /* SECTION TITLES */
-    .section{
-      padding: 18px 0 8px;
-    }
-    .section-head{
-      margin: 26px 0 14px;
-      display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
-    }
-    .section-head .left{
-      display:flex; flex-direction:column; gap:8px;
-    }
-    .tag{
-      color: rgba(14,165,227,0.90);
-      font-size: 11px;
-      letter-spacing: 0.62em;
-      text-transform: uppercase;
-      font-weight: 900;
-    }
-    .title{
-      font-size: 40px;
-      line-height: 1.0;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing:-0.03em;
-      font-style: italic;
-      margin:0;
-    }
-    .title .ghost{
-      color: rgba(230,237,243,0.16);
-      font-style: italic;
-    }
-    .subtitle{
-      margin:0;
-      color: rgba(230,237,243,0.62);
-      font-size: 13px;
-      line-height: 1.6;
-      max-width: 70ch;
-    }
-
-    /* GATE */
-    .gate{
-      margin-top: 14px;
-      padding: 18px;
+      border: 1px solid var(--border);
+      background: var(--panel);
       border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(14,165,227,0.10), rgba(255,255,255,0.02));
-      border: 1px solid rgba(14,165,227,0.22);
-      position:relative;
+      box-shadow: var(--shadow);
       overflow:hidden;
-    }
-    .gate::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(900px 240px at 20% 0%, rgba(14,165,227,0.22), transparent 55%);
-      pointer-events:none;
-    }
-    .gate-inner{
       position:relative;
-      padding: 22px 18px 16px;
-      border-radius: 36px;
-      border:1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.18);
     }
-    .gate-h{
-      font-size: 34px;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-style: italic;
-      letter-spacing:-0.03em;
-      margin:0 0 8px;
+    .card .head{
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
     }
-    .gate-p{
+    .card .head h2{
       margin:0;
-      color: rgba(230,237,243,0.70);
-      font-size: 13px;
-      line-height: 1.65;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+      font-size: 18px;
     }
-    .gate-actions{
-      margin-top: 16px;
-      display:flex; flex-wrap:wrap; gap:12px;
+    .card .head p{
+      margin:8px 0 0;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+    .badge{
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(14,165,227,.35);
+      background: rgba(14,165,227,.08);
+      color: #bfefff;
+      white-space:nowrap;
+    }
+    .badge.gold{
+      border-color: rgba(255,215,0,.35);
+      background: rgba(255,215,0,.09);
+      color: #fff3b0;
     }
 
-    /* MATRIX GRID */
-    .grid{
-      margin-top: 16px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
+    .card .body{ padding: 18px; }
+    .row{
+      display:grid; grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
-    @media (max-width: 980px){ .grid{grid-template-columns: 1fr;} }
-
-    .tile{
-      background: rgba(255,255,255,0.02);
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius: 24px;
-      padding: 18px 18px 16px;
-      position:relative;
-      overflow:hidden;
-      transition: all .22s ease;
+    @media (max-width: 980px){
+      .row{ grid-template-columns: 1fr; }
     }
-    .tile:hover{
-      transform: translateY(-2px);
-      border-color: rgba(14,165,227,0.26);
-      box-shadow: 0 26px 80px rgba(14,165,227,0.08);
+    .mini{
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
     }
-    .tile .tlabel{
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing:0.44em;
-      text-transform: uppercase;
-      color: rgba(14,165,227,0.88);
-    }
-    .tile .tname{
-      margin: 10px 0 8px;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-style: italic;
-      letter-spacing:-0.02em;
-      font-size: 16px;
-      line-height:1.2;
-    }
-    .tile .ttext{
-      margin:0;
-      color: rgba(230,237,243,0.62);
-      font-size: 12.5px;
-      line-height: 1.6;
-    }
-    .tile .tlink{
-      margin-top: 12px;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing:0.22em;
-      text-transform: uppercase;
-      color: rgba(255,215,0,0.92);
-    }
-    .tile .tlink:hover{ text-decoration: underline; }
-    .tile .tlink .arrow{opacity:0.9}
-
-    /* FOOTER CONTACT (match your screenshot block) */
-    .footer{
-      margin-top: 26px;
-      padding: 26px 0 28px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      background: rgba(0,0,0,0.14);
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items:start;
-    }
-    @media (max-width: 980px){ .footer-grid{grid-template-columns:1fr;} }
-
-    .foot-left .logo-row{
-      display:flex; align-items:center; gap:10px;
+    .mini:hover{ transform: translateY(-6px); border-color: rgba(14,165,227,.55); box-shadow: 0 18px 46px rgba(14,165,227,.08); }
+    .mini .t{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
       margin-bottom: 10px;
     }
-    .foot-left .logo-row img{
-      width:22px;height:22px;border-radius:7px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.02);
-      object-fit:cover;
+    .mini h3{
+      margin:0;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: -.01em;
     }
-    .foot-left .blurb{
-      margin: 0;
-      color: rgba(230,237,243,0.68);
-      font-size: 12.5px;
-      line-height: 1.6;
+    .mini .tag{
+      font-family:var(--mono);
+      font-size:10px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color: rgba(255,255,255,.75);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
     }
-    .foot-right h4{
-      margin: 0 0 10px;
+    .mini p{
+      margin:0;
+      color: var(--muted);
       font-size: 12px;
-      letter-spacing: 0.28em;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.78);
-    }
-    .kv{
-      display:grid;
-      grid-template-columns: 108px 1fr;
-      gap: 8px 10px;
-      font-size: 12.5px;
-      line-height: 1.6;
-      color: rgba(230,237,243,0.72);
-    }
-    .kv .k{
-      color: rgba(230,237,243,0.50);
-      font-weight: 800;
-      text-transform: none;
-    }
-    .kv a{color: rgba(230,237,243,0.82)}
-    .kv a:hover{text-decoration: underline}
-    .credits{
-      margin-top: 18px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      color: rgba(230,237,243,0.38);
-      font-size: 10px;
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      font-weight: 900;
-      opacity:0.9;
+      line-height: 1.75;
     }
 
-    /* small helpers */
-    .sep{height:14px}
-    .hide-sm{display:inline}
-    @media (max-width: 720px){ .hide-sm{display:none} .h1{font-size:44px} .title{font-size:34px} }
+    .os-map{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .gate{
+      display:flex; align-items:center; justify-content:space-between; gap: 12px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .gate:hover{ transform: translateY(-6px); border-color: rgba(255,215,0,.45); box-shadow: 0 18px 46px rgba(255,215,0,.08); }
+    .gate .l{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .gate .name{
+      font-weight: 900; text-transform: uppercase; letter-spacing: -.01em;
+    }
+    .gate .meta{
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(230,237,243,.70);
+    }
+    .gate a{
+      display:inline-flex; align-items:center; gap:10px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,215,0,.35);
+      background: rgba(255,215,0,.10);
+      color: #fff;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .gate a:hover{ background: rgba(255,215,0,.16); }
+
+    .divider{
+      height: 1px;
+      background: rgba(255,255,255,.08);
+      margin: 14px 0 0;
+    }
+
+    .kernel{
+      margin-top: 18px;
+      border: 1px solid rgba(14,165,227,.22);
+      background: rgba(14,165,227,.05);
+      border-radius: var(--radius2);
+      padding: 18px;
+    }
+    .kernel h3{
+      margin:0 0 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+    }
+    .kernel ul{ margin:0; padding-left: 18px; color: var(--muted); }
+    .kernel li{ margin: 8px 0; line-height: 1.75; }
+
+    .cta{
+      margin-top: 18px;
+      display:flex; gap: 12px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color:#fff;
+      text-decoration:none;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .btn.primary{
+      border-color: rgba(14,165,227,.35);
+      background: rgba(14,165,227,.10);
+    }
+    .btn.primary:hover{ background: rgba(14,165,227,.16); }
+    .btn.gold{
+      border-color: rgba(255,215,0,.35);
+      background: rgba(255,215,0,.12);
+    }
+    .btn.gold:hover{ background: rgba(255,215,0,.18); }
+
+    .note{
+      margin-top: 18px;
+      color: rgba(230,237,243,.70);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      line-height: 1.8;
+      opacity: .9;
+    }
   </style>
 </head>
 
 <body>
-  <div class="nav">
-    <div class="wrap">
-      <div class="navbar">
-        <a class="brand" href="/index.html" aria-label="YiShen Global Home">
-          <!-- LOGO: primary path is /logo.webp (your stated single remaining file).
-               Fallback path supports assets/branding if you restore it later. -->
-          <img
-            src="/logo.webp"
-            alt="YiShen Global Logo"
-            onerror="this.onerror=null; this.src='/assets/branding/logo-main.webp';"
-          />
-          <div class="title">
-            <div class="name">YiShen Global <span class="hide-sm" style="opacity:.55;font-weight:900;">SOVEREIGN_MATRIX</span></div>
-            <div class="node mono">SOVEREIGN_NODE_V1</div>
-          </div>
-        </a>
 
-        <div class="navlinks mono" role="navigation" aria-label="Primary">
-          <a href="/solutions.html" style="color:#fff;background:rgba(255,255,255,0.04);box-shadow:0 0 0 1px rgba(255,255,255,0.06);">Solutions</a>
-          <a href="/industries.html">Industries</a>
-          <a href="/why-us.html">Why-Us</a>
-          <a href="/resources.html">Resources</a>
-          <a href="/contact.html">Contact</a>
-
-          <div class="navcta">
-            <a class="btn primary" href="#start">
-              Start Now <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="topfade"></div>
-  <div class="spacer"></div>
-
-  <!-- HERO -->
-  <header class="hero" id="top">
-    <div class="wrap">
-      <div class="hero-grid">
-        <section class="card hero-left">
-          <div class="kicker mono">
-            <span class="dot"></span>
-            GLOBAL_COMMAND_LAYER
-          </div>
-
-          <h1 class="h1">
-            SOVEREIGN <span>SOLUTIONS</span><br/>
-            MATRIX
-          </h1>
-
-          <p class="sub">
-            YiShen Global builds <b>furniture-first global supply chain systems</b> designed for
-            stable ETAs, compliance-ready paperwork, drop-test packaging logic, and
-            sovereign execution discipline. Engineered in China · Delivered Worldwide.
-          </p>
-
-          <div class="rule mono">
-            <b>Predictability</b> &gt; Price · <b>Infrastructure</b> &gt; Vendors · <b>Systems</b> &gt; Products
-          </div>
-
-          <div class="cta-row" id="start">
-            <a class="btn primary" href="#gate">
-              Enter The System <span class="arrow">→</span>
-            </a>
-            <button class="btn ghost" type="button" onclick="openContactGate()">
-              Open Contact Gate <span class="arrow">↗</span>
-            </button>
-            <a class="btn" href="#matrix">
-              Enter Solutions <span class="arrow">→</span>
-            </a>
-          </div>
-        </section>
-
-        <aside class="card hero-right">
-          <div class="micro">
-            <div class="label mono">GLOBAL PROCUREMENT GATE</div>
-            <div class="big">BUYER RADAR · DOCUMENTATION</div>
-            <div class="small">
-              This page is not “marketing”. It is a <b>procurement operating system</b>:
-              gates, paths, SLA, documentation logic, escalation routes.
-            </div>
-            <div class="pillrow">
-              <div class="pill mono">2H_QUOTE_SLA</div>
-              <div class="pill mono">COMPLIANCE_READY</div>
-              <div class="pill mono">PACKAGING_LOGIC</div>
-              <div class="pill mono">DDP_EXECUTION</div>
-            </div>
-          </div>
-
-          <div class="micro">
-            <div class="label mono">SOVEREIGN PRINCIPLE</div>
-            <div class="big">REJECTION LOGIC</div>
-            <div class="small">
-              We do not “chase volume”. We enforce: <b>spec stability</b>, <b>material discipline</b>,
-              <b>documentation sovereignty</b>, and <b>responsibility ownership</b>.
-            </div>
-          </div>
-
-          <div class="micro">
-            <div class="label mono">SYSTEM OUTPUT</div>
-            <div class="big">PREDICTABLE PIPELINE</div>
-            <div class="small">
-              If you are building procurement in <b>USA / EU / GCC / LATAM</b>, you need a
-              system that survives internal audits, claim pressure, and timeline volatility.
-            </div>
-          </div>
-        </aside>
-      </div>
+  <!-- GLOBAL NAVIGATION MASTER BAR (same as your index master) -->
+  <header class="global-header">
+    <div class="global-header-inner">
+      <a href="/" class="global-brand" aria-label="Yishen Global Home">
+        <picture>
+          <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
+          <img src="/assets/branding/logo-main.webp" alt="Yishen Global">
+        </picture>
+      </a>
+      <nav class="global-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/solutions.html" aria-current="page">Solutions</a>
+        <a href="/industries.html">Industries</a>
+        <a href="/why-us.html">Why Us</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/contact.html" class="nav-cta">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <!-- SECTION: GATE -->
-  <main>
-    <section class="section" id="gate">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="left">
-            <div class="tag mono">GLOBAL_PROCUREMENT_GATE</div>
-            <h2 class="title">START THE <span class="ghost">SYSTEM</span></h2>
-            <p class="subtitle">
-              Instant WhatsApp sovereign quote gateway (<b>2 hours SLA</b>).
-              Choose the path based on your procurement role. Zero fluff—only execution interfaces.
-            </p>
+  <main class="os-wrap">
+
+    <!-- OS HERO -->
+    <p class="kicker">Sovereign Procurement OS v1.0</p>
+    <h1 class="h1">Global Procurement <span class="ghost">Control Panel</span></h1>
+    <p class="sub">
+      Predictability is not a slogan — it is a system. Yishen Global orchestrates manufacturing, logistics, compliance,
+      and buyer execution into one coordinated industrial architecture. This page is the operating layer.
+    </p>
+
+    <div class="os-topbar" role="list" aria-label="System Status">
+      <div class="chip" role="listitem"><span class="dot"></span><b>Kernel</b> Coordinated_Industrial_Architecture</div>
+      <div class="chip" role="listitem"><span class="dot"></span><b>Lead-Time</b> Sovereignty_Bus_Enabled</div>
+      <div class="chip" role="listitem"><span class="dot"></span><b>Packaging</b> Modular_Matrix_Ready</div>
+      <div class="chip gold" role="listitem"><span class="dot"></span><b>Gate</b> USA_Node_Online</div>
+    </div>
+
+    <div class="grid">
+
+      <!-- LEFT: OS MODULES -->
+      <section class="card" aria-label="OS Modules">
+        <div class="head">
+          <div>
+            <h2>Solutions Matrix</h2>
+            <p>Do not buy products. Acquire a system that can be defended internally when something goes wrong.</p>
           </div>
+          <div class="badge">OS_LAYER: EXECUTION</div>
         </div>
 
-        <div class="gate">
-          <div class="gate-inner">
-            <h3 class="gate-h">ENTER THE SYSTEM</h3>
-            <p class="gate-p">
-              Instant WhatsApp sovereign quote gateway (<b>2 hours SLA</b>) ·
-              Documentation-ready routing · Packaging logic & escalation path included.
-            </p>
+        <div class="body">
+          <div class="row">
 
-            <div class="gate-actions">
-              <a class="btn primary" href="https://wa.me/8615968277867?text=YiShen%20Global%20—%20I%20need%20a%20sovereign%20quote%20(2%20hours%20SLA).%20Product:%20_____%20Qty:%20_____%20Destination:%20_____%20Timeline:%20_____%20Incoterms:%20_____%20" target="_blank" rel="noopener">
-                Open WhatsApp <span class="arrow">↗</span>
-              </a>
-              <a class="btn" href="#matrix">
-                Enter Solutions <span class="arrow">→</span>
-              </a>
-              <button class="btn ghost" type="button" onclick="openContactGate()">
-                Open Contact Gate <span class="arrow">↗</span>
-              </button>
+            <!-- Buyer Radar -->
+            <article class="mini">
+              <div class="t">
+                <h3>Buyer Radar</h3>
+                <span class="tag">Signal → Cycle</span>
+              </div>
+              <p>
+                Identify active procurement cycles using signals: category expansion, stock pressure, compliance updates,
+                listing velocity, shipment rhythm, and supplier-switch patterns.
+              </p>
+            </article>
+
+            <!-- Lead-time Sovereignty -->
+            <article class="mini">
+              <div class="t">
+                <h3>Lead-Time Sovereignty</h3>
+                <span class="tag">ETA Defense</span>
+              </div>
+              <p>
+                Stabilize production + booking + clearance. We engineer predictable delivery windows and reduce hidden costs
+                created by delay cascades (storage, missed seasons, platform penalties).
+              </p>
+            </article>
+
+            <!-- Packaging Matrix -->
+            <article class="mini">
+              <div class="t">
+                <h3>Packaging Matrix</h3>
+                <span class="tag">Drop-Test Logic</span>
+              </div>
+              <p>
+                Modular packaging reduces warehouse cost and claim risk. ISTA-style protection logic + dimensional-weight control
+                to keep margins intact while improving arrival condition.
+              </p>
+            </article>
+
+          </div>
+
+          <div class="row" style="margin-top:14px;">
+
+            <!-- Compliance Engine -->
+            <article class="mini">
+              <div class="t">
+                <h3>Compliance Engine</h3>
+                <span class="tag">No Surprise</span>
+              </div>
+              <p>
+                Compliance-first execution: documentation ownership, labeling governance, material disclosure, and audit-ready
+                evidence packs so buyers can defend decisions internally.
+              </p>
+            </article>
+
+            <!-- QC Protocol / Rejection Logic -->
+            <article class="mini">
+              <div class="t">
+                <h3>QC Protocol</h3>
+                <span class="tag">Rejection Logic</span>
+              </div>
+              <p>
+                Workers are authorized to reject nonconforming inputs. Strategic refusal protects long-term trust and prevents
+                “quiet defects” that destroy repeat orders.
+              </p>
+            </article>
+
+            <!-- Global Logistics -->
+            <article class="mini">
+              <div class="t">
+                <h3>Global Logistics</h3>
+                <span class="tag">DDP / Bonded</span>
+              </div>
+              <p>
+                DDP routing, bonded warehousing, and customs pre-clearance playbooks. We reduce volatility across trade routes
+                and keep execution in one accountable system.
+              </p>
+            </article>
+
+          </div>
+
+          <div class="kernel" aria-label="Sovereign Semantic Layer">
+            <h3>“Sovereign” Semantic Layer (Do Not Delete)</h3>
+            <ul>
+              <li><b>Predictability Engineered:</b> systems, not slogans — internal defendability is the real buyer constraint.</li>
+              <li><b>Procurement Ownership:</b> responsibility path + escalation path + documentation path are part of the product.</li>
+              <li><b>Strategic Refusal:</b> refusing bad orders protects long-term sovereignty and prevents hidden failure modes.</li>
+              <li><b>Modular Packaging:</b> lower warehouse cost, lower claim risk, higher sell-through velocity.</li>
+              <li><b>Compliance-First:</b> audit-ready evidence pack to remove internal friction for buyers.</li>
+            </ul>
+
+            <div class="cta" aria-label="Primary Actions">
+              <a class="btn primary" href="/contact.html"><i class="fa-solid fa-satellite-dish"></i> Start Collaboration</a>
+              <a class="btn" href="/resources.html"><i class="fa-solid fa-vault"></i> Open Resource Vault</a>
+              <a class="btn gold" href="/usa/procurement-gate.html"><i class="fa-solid fa-flag-usa"></i> USA Procurement Gate</a>
+            </div>
+
+            <div class="note">
+              SYSTEM NOTE: This Solutions page is the OS control panel. Country gates are nodes. Resources are the vault.
+              Why-Us is the doctrine. Do not convert this into a generic “services list”.
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="grid" aria-label="Procurement Entry Interfaces">
-          <div class="tile">
-            <div class="tlabel mono">PATH_01</div>
-            <div class="tname">RETAIL / E-COMMERCE GATE</div>
-            <p class="ttext">
-              Fast-moving SKUs, packaging ROI, returns risk control, seasonal inventory timing, platform readiness.
-            </p>
-            <a class="tlink mono" href="https://wa.me/8615968277867?text=PATH_01%20RETAIL%20GATE%20—%20Country:%20_____%20Channel:%20Amazon/Noon/Local%20Retail%20%20SKU:%20_____%20Qty:%20_____%20Target%20Price:%20_____%20Timeline:%20_____%20" target="_blank" rel="noopener">
-              Enter Retail Gate <span class="arrow">→</span>
-            </a>
+      <!-- RIGHT: GLOBAL MAP / GATES -->
+      <aside class="card" aria-label="Global Procurement Gates">
+        <div class="head">
+          <div>
+            <h2>Procurement Gates</h2>
+            <p>Country-level entry points. Each gate is a procurement briefing layer (buyer logic + execution path).</p>
           </div>
-
-          <div class="tile">
-            <div class="tlabel mono">PATH_02</div>
-            <div class="tname">DISTRIBUTOR / WHOLESALE GATE</div>
-            <p class="ttext">
-              Category-killer SKUs, simplified decision system, margin defense, co-marketing assets, repeat-purchase design.
-            </p>
-            <a class="tlink mono" href="https://wa.me/8615968277867?text=PATH_02%20DISTRIBUTOR%20GATE%20—%20Market:%20_____%20Channels:%20_____%20SKU%20Focus:%20Office%20Chair/Gaming/Standing%20Desk%20Qty:%20_____%20" target="_blank" rel="noopener">
-              Enter Distributor Gate <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="tile">
-            <div class="tlabel mono">PATH_03</div>
-            <div class="tname">PROCUREMENT / SOURCING GATE</div>
-            <p class="ttext">
-              Predictable lead times, compliance documents, escalation path, cost transparency, supplier governance.
-            </p>
-            <a class="tlink mono" href="https://wa.me/8615968277867?text=PATH_03%20PROCUREMENT%20GATE%20—%20Company:%20_____%20Role:%20_____%20Destination:%20_____%20Annual%20Volume:%20_____%20Required%20Docs:%20_____%20" target="_blank" rel="noopener">
-              Enter Procurement Gate <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: SOLUTIONS MATRIX -->
-    <section class="section" id="matrix">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="left">
-            <div class="tag mono">SOVEREIGN_SOLUTIONS_OS</div>
-            <h2 class="title">SOVEREIGN <span class="ghost">PROCUREMENT</span> OS</h2>
-            <p class="subtitle">
-              This is the system layer: infrastructure, rules, documents, packaging logic,
-              quality authority, escalation ownership—so your procurement can survive pressure.
-            </p>
-          </div>
+          <div class="badge gold">ROUTER: ACTIVE</div>
         </div>
 
-        <div class="grid" aria-label="Sovereign Solutions Matrix">
-          <div class="tile">
-            <div class="tlabel mono">MODULE_A</div>
-            <div class="tname">2H QUOTE SLA ENGINE</div>
-            <p class="ttext">
-              Spec intake → pricing guardrails → packaging impact → ETA commitment → risk notes.
-              Your team gets a quote that can be defended internally.
-            </p>
-            <a class="tlink mono" href="https://wa.me/8615968277867?text=MODULE_A%20—%202H%20QUOTE%20SLA%20Request:%20Product:%20_____%20Specs:%20_____%20Qty:%20_____%20Destination:%20_____%20" target="_blank" rel="noopener">
-              Activate SLA Engine <span class="arrow">→</span>
-            </a>
+        <div class="body">
+          <div class="os-map">
+
+            <!-- USA NODE -->
+            <div class="gate">
+              <div class="l">
+                <div class="name">United States Gate</div>
+                <div class="meta">NODE: USA / PROCUREMENT_OS / ONLINE</div>
+              </div>
+              <a href="/usa/procurement-gate.html">Enter →</a>
+            </div>
+
+            <!-- FUTURE NODES (placeholders but NOT broken) -->
+            <div class="gate" style="opacity:.82;">
+              <div class="l">
+                <div class="name">GCC Gate (Saudi / UAE)</div>
+                <div class="meta">NODE: GCC / STAGING</div>
+              </div>
+              <a href="/contact.html">Request →</a>
+            </div>
+
+            <div class="gate" style="opacity:.82;">
+              <div class="l">
+                <div class="name">EU Gate (Germany / France)</div>
+                <div class="meta">NODE: EU / STAGING</div>
+              </div>
+              <a href="/contact.html">Request →</a>
+            </div>
+
+            <div class="gate" style="opacity:.82;">
+              <div class="l">
+                <div class="name">APAC Gate (Japan / Korea)</div>
+                <div class="meta">NODE: APAC / STAGING</div>
+              </div>
+              <a href="/contact.html">Request →</a>
+            </div>
+
           </div>
 
-          <div class="tile">
-            <div class="tlabel mono">MODULE_B</div>
-            <div class="tname">PACKAGING LOGIC (DROP-TEST)</div>
-            <p class="ttext">
-              ISTA-style mindset: carton strength, corner protection, hardware packs,
-              unboxing logic, damage claim defense, warehouse efficiency.
-            </p>
-            <a class="tlink mono" href="/resources.html">
-              View Packaging Vault <span class="arrow">→</span>
-            </a>
-          </div>
+          <div class="divider"></div>
 
-          <div class="tile">
-            <div class="tlabel mono">MODULE_C</div>
-            <div class="tname">COMPLIANCE READY DOCUMENTATION</div>
-            <p class="ttext">
-              Documentation is a weapon: HS code mapping, spec sheets, test reports,
-              certificates, labeling logic, and audit-proof document packs.
-            </p>
-            <a class="tlink mono" href="/resources.html">
-              Open Documentation <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="tile">
-            <div class="tlabel mono">MODULE_D</div>
-            <div class="tname">QUALITY AUTHORITY (REJECTION LOGIC)</div>
-            <p class="ttext">
-              Workers’ authority &gt; output. Any defective incoming material is blocked at the gate.
-              “Strategic rejection” protects the brand and eliminates hidden cost.
-            </p>
-            <a class="tlink mono" href="/why-us.html">
-              View Quality Manifesto <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="tile">
-            <div class="tlabel mono">MODULE_E</div>
-            <div class="tname">DDP EXECUTION PIPELINE</div>
-            <p class="ttext">
-              Freight + customs + last mile: timeline discipline, clearance readiness,
-              exception handling, and predictable delivery for global buyers.
-            </p>
-            <a class="tlink mono" href="/contact.html">
-              Open DDP Liaison <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="tile">
-            <div class="tlabel mono">MODULE_F</div>
-            <div class="tname">BUYER RADAR (SIGNALS)</div>
-            <p class="ttext">
-              Identify active procurement cycles: assortment updates, seasonal windows,
-              compliance triggers, channel expansion signals, and supply disruption alerts.
-            </p>
-            <a class="tlink mono" href="/resources.html">
-              Enter Buyer Radar <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="tile">
-            <div class="tlabel mono">MODULE_G</div>
-            <div class="tname">PRIVATE LABEL / OEM OPERATING LAYER</div>
-            <p class="ttext">
-              Differentiation system: spec control, brand story packaging, co-branded assets,
-              repeat purchase mechanics, and series governance.
-            </p>
-            <a class="tlink mono" href="https://wa.me/8615968277867?text=MODULE_G%20—%20PRIVATE%20LABEL%20/OEM%20Request:%20Brand:%20_____%20Target%20Market:%20_____%20SKU%20Type:%20_____%20" target="_blank" rel="noopener">
-              Open OEM Gate <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="tile">
-            <div class="tlabel mono">MODULE_H</div>
-            <div class="tname">AFTER-SALES RISK DEFENSE</div>
-            <p class="ttext">
-              Most failures are process, not defects. We pre-wire claim defense:
-              spare parts logic, documentation, packaging, and responsibility ownership.
-            </p>
-            <a class="tlink mono" href="/why-us.html">
-              View Risk Architecture <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="tile">
-            <div class="tlabel mono">MODULE_I</div>
-            <div class="tname">FURNITURE-FIRST SYSTEMS</div>
-            <p class="ttext">
-              Office chair · gaming chair · standing desk · functional sofa.
-              Systems are tuned for furniture realities: hardware packs, assembly, and return constraints.
-            </p>
-            <a class="tlink mono" href="/industries.html">
-              Enter Furniture Systems <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="sep"></div>
-
-        <div class="gate" style="margin-top:16px;">
-          <div class="gate-inner">
-            <h3 class="gate-h">SYSTEM OUTPUT</h3>
-            <p class="gate-p">
-              You don’t “buy products”. You acquire a <b>defendable supply chain</b>:
-              stable ETAs, compliance-ready documentation, packaging discipline, and an escalation path with ownership.
-            </p>
-            <div class="gate-actions">
-              <a class="btn primary" href="https://wa.me/8615968277867?text=YiShen%20Global%20—%20I%20want%20to%20activate%20Sovereign%20Procurement%20OS.%20Country:%20_____%20Products:%20_____%20Qty:%20_____%20Timeline:%20_____%20" target="_blank" rel="noopener">
-                Activate Now <span class="arrow">↗</span>
+          <div class="kernel" style="margin-top:16px;">
+            <h3>Direct Liaison</h3>
+            <ul>
+              <li><b>Sales Strategic Hotline:</b> <a href="tel:+8613858516813" style="color:#fff; text-decoration:none;">+86 138 5851 6813</a> (WhatsApp-ready)</li>
+              <li><b>Email HQ:</b> <a href="mailto:support@yishenglobal.net" style="color:#fff; text-decoration:none;">support@yishenglobal.net</a></li>
+              <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/company/yishen-global" target="_blank" rel="noopener" style="color:#fff; text-decoration:none;">/company/yishen-global</a></li>
+            </ul>
+            <div class="cta">
+              <a class="btn primary" href="https://wa.me/8613858516813?text=I%20am%20interested%20in%20Yishen%20Global%20Solutions" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Sales API
               </a>
-              <a class="btn" href="/resources.html">Open Resources <span class="arrow">→</span></a>
-              <a class="btn ghost" href="/contact.html">Open Contact Page <span class="arrow">→</span></a>
+              <a class="btn" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact Console</a>
             </div>
           </div>
-        </div>
 
-      </div>
-    </section>
+        </div>
+      </aside>
+
+    </div>
   </main>
 
-  <!-- FOOTER CONTACT (exact block semantics from your screenshots) -->
-  <footer class="footer" id="contact">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="foot-left">
-          <div class="logo-row">
-            <img src="/logo.webp" alt="YiShen Global Logo" onerror="this.onerror=null; this.src='/assets/branding/logo-main.webp';" />
-            <div class="mono" style="font-weight:900;letter-spacing:.22em;text-transform:uppercase;font-size:12px;opacity:.85;">
-              YiShen Global
-            </div>
-          </div>
-          <p class="blurb">
-            Furniture-first global supply chain systems.<br/>
-            Engineered in China · Delivered Worldwide
-          </p>
-        </div>
-
-        <div class="foot-right">
-          <h4 class="mono">Contact</h4>
-          <div class="kv">
-            <div class="k">Hotline:</div>
-            <div>
-              <a href="tel:+8619530394133">+86 19530394133</a>
-              &nbsp;&nbsp;
-              <a href="tel:+8618857277313">+86 18857277313</a>
-            </div>
-
-            <div class="k">Email:</div>
-            <div><a href="mailto:alex.yang@yishenglobal.net">alex.yang@yishenglobal.net</a></div>
-
-            <div class="k">Email:</div>
-            <div><a href="mailto:champion.yang@yishenglobal.net">champion.yang@yishenglobal.net</a></div>
-
-            <div class="k">WhatsApp:</div>
-            <div><a href="https://wa.me/8615968277867" target="_blank" rel="noopener">+86 159 6827 7867</a></div>
-
-            <div class="k">WhatsApp:</div>
-            <div><a href="https://wa.me/8618857277313" target="_blank" rel="noopener">+86 188 5727 7313</a></div>
-
-            <div class="k">WeChat:</div>
-            <div><span style="opacity:.9">19530394133</span></div>
-
-            <div class="k">Base:</div>
-            <div><span style="opacity:.9">Anji · Hangzhou · China</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="credits mono">
-        <span>© 2026 YISHEN GLOBAL // SOVEREIGN PROCUREMENT OS</span>
-        <span>NODE: SOVEREIGN_NODE_V1</span>
-      </div>
-    </div>
+  <footer class="global-footer">
+    <p>© 2026 Yishen Global · Coordinated Industrial Architecture · Sovereign Procurement OS v1.0</p>
   </footer>
 
+  <!-- SAFE FIX: prevent anchor jump hiding behind fixed header (if your header is fixed in styles.css) -->
   <script>
-    // Contact Gate: minimal, deterministic, no refactor risk.
-    function openContactGate(){
-      // Prefer dedicated contact page; fallback to footer.
-      try{
-        window.location.href = "/contact.html";
-      }catch(e){
-        document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-      }
-    }
+    (function(){
+      // If your global header is fixed, this adds a safe scroll margin globally.
+      // Harmless if not fixed.
+      var style = document.createElement('style');
+      style.textContent = 'html{scroll-padding-top:90px}';
+      document.head.appendChild(style);
+    })();
   </script>
 
-  <!--
-  =========================================================
-  LOGO FIX (NO GUESSWORK — YOUR SINGLE SOURCE OF TRUTH)
-  =========================================================
-  This page loads logo from: /logo.webp
-  So you must ensure the file is at your site root.
-
-  ✅ REQUIRED FILE PLACEMENT (STATIC ROOT):
-    J:\YiShen-Mothership\site\logo.webp
-
-  If you later restore assets folder:
-    J:\YiShen-Mothership\site\assets\branding\logo-main.webp
-
-  QUICK CHECK (PowerShell):
-    cd J:\YiShen-Mothership\site
-    dir logo.webp
-    dir .\assets\branding\
-
-  If logo.webp is sitting elsewhere, move it:
-    move .\public\logo.webp .\logo.webp
-
-  Then refresh:
-    http://localhost:4173/solutions.html
-  =========================================================
-  -->
 </body>
 </html>

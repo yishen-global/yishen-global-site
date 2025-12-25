@@ -1,104 +1,31 @@
-<!-- =========================================================
-     YISHEN GLOBAL — NAVBAR COMPONENT (V5.0)
-     File: components/navbar.html
-     Role: Unified Sovereign Navigation Core
-========================================================= -->
+<nav class="sovereign-navbar">
+  <div class="nav-core">
 
-<nav id="yg-nav">
-  <div class="yg-nav-inner">
-
-    <!-- LOGO -->
-    <a href="/index.html" class="yg-logo">
-      <span class="yg-logo-main">Yishen Global</span>
-      <span class="yg-logo-sub">INDUSTRIAL_SOVEREIGNTY_V5</span>
-    </a>
-
-    <!-- LINKS -->
-    <div class="yg-nav-links">
-      <a href="/genesis.html">01_GENESIS</a>
-      <a href="/sovereign-matrix.html">02_MATRIX</a>
-      <a href="/clusters.html">03_CLUSTERS</a>
-      <a href="/resources.html">04_RESOURCES</a>
-      <a href="/tactical-briefing.html" class="nav-cta">ACCESS_VAULT</a>
+    <div class="brand">
+      <a href="/"><img src="/assets/brand/logo-master.webp" class="logo"></a>
+      <span class="brand-name">YiShen Global</span>
     </div>
+
+    <ul class="nav-matrix">
+      <li><a href="/genesis.html">Genesis</a></li>
+      <li class="mega">
+        <a href="/industries.html">Industries</a>
+        <div class="mega-panel">
+          <a href="/industries.html#office">Office & Commercial</a>
+          <a href="/industries.html#home">Civil & Residential</a>
+          <a href="/industries.html#education">Education</a>
+          <a href="/industries.html#medical">Medical</a>
+          <a href="/industries.html#military">Defense</a>
+          <a href="/industries.html#bamboo">Bamboo Industry</a>
+          <a href="/industries.html#chain">Chain & Rigging</a>
+        </div>
+      </li>
+      <li><a href="/clusters.html">Clusters</a></li>
+      <li><a href="/solutions.html">Solutions</a></li>
+      <li><a href="/resources.html">Vault</a></li>
+      <li><a href="/sovereign-matrix.html">Sovereign Matrix</a></li>
+      <li><a href="/contact.html" class="cta">Request Access</a></li>
+    </ul>
 
   </div>
 </nav>
-
-<style>
-:root{
-  --yg-bg:#010409;
-  --yg-border:rgba(255,255,255,.08);
-  --yg-dim:#6e7681;
-  --yg-blue:#0ea5e3;
-}
-
-#yg-nav{
-  position:fixed;
-  inset:0 0 auto 0;
-  height:80px;
-  background:rgba(1,4,9,.94);
-  backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--yg-border);
-  z-index:10000;
-  display:flex;
-  align-items:center;
-}
-
-.yg-nav-inner{
-  max-width:1440px;
-  width:100%;
-  margin:0 auto;
-  padding:0 32px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.yg-logo{
-  display:flex;
-  flex-direction:column;
-  line-height:1;
-}
-
-.yg-logo-main{
-  font-weight:900;
-  font-size:18px;
-  text-transform:uppercase;
-  letter-spacing:-.04em;
-}
-
-.yg-logo-sub{
-  font-family:'JetBrains Mono', monospace;
-  font-size:8px;
-  letter-spacing:.28em;
-  color:var(--yg-blue);
-}
-
-.yg-nav-links{
-  display:flex;
-  align-items:center;
-  gap:40px;
-  font-family:'JetBrains Mono', monospace;
-  font-size:11px;
-  letter-spacing:.18em;
-}
-
-.yg-nav-links a{
-  color:var(--yg-dim);
-  transition:.3s;
-}
-
-.yg-nav-links a:hover{
-  color:var(--yg-blue);
-}
-
-.nav-cta{
-  background:var(--yg-blue);
-  color:#000!important;
-  padding:10px 22px;
-  border-radius:2px;
-  font-weight:900;
-  font-style:italic;
-}
-</style>

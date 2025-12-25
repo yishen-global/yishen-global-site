@@ -1,420 +1,603 @@
-<!-- =========================
-     index.html — SOVEREIGN HOME NODE (V1.0 • FAST IGNITION)
-     One-paste full file. Dark-tech • CTA-first • Global Nav+Footer Unified
-     ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YiShen Global | Sovereign Supply Chain Node</title>
+  <title>Yishen Global – Coordinated Industrial Architecture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Yishen Global engineers sovereign-grade manufacturing, logistics, and global supply chain architecture." />
 
-  <!-- Primary SEO -->
-  <meta name="description" content="YiShen Global builds furniture-first global supply chain systems: predictable lead times, compliance-ready documentation, packaging engineering, and execution sovereignty. Engineered in China · Delivered Worldwide." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://yishenglobal.net/" />
+  <!-- Brand favicon system (matches your current /assets/branding structure) -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/branding/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/branding/avicon-512.png" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="YiShen Global | Sovereign Supply Chain Node" />
-  <meta property="og:description" content="Predictability > price. Furniture-first global supply chain systems with documentation, packaging, and execution sovereignty." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yishenglobal.net/" />
-  <meta property="og:image" content="/public/assets/brand/logo-master.webp" />
+  <!-- Keep your global stylesheet (do NOT remove) -->
+  <link rel="stylesheet" href="/styles.css" />
 
-  <!-- Favicons (keep these paths consistent with your actual repo) -->
-  <link rel="icon" type="image/png" sizes="192x192" href="/public/assets/brand/favicon-192.png" />
-  <meta name="theme-color" content="#010409" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Site CSS (you said: /assets/styles.css) -->
-  <link rel="stylesheet" href="/assets/styles.css" />
-
-  <!-- Icons (optional) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Tailwind + Icons (kept for the cyber/portal modules) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     :root{
+      --yishen-blue:#0ea5e3;
+      --yishen-gold:#ffd700;
       --bg:#010409;
+      --fg:#e6edf3;
       --panel:rgba(255,255,255,.03);
-      --border:rgba(255,255,255,.08);
-      --border2:rgba(14,165,227,.22);
-      --text:#e6edf3;
-      --muted:#8b949e;
-      --brand:#0ea5e3;
-      --gold:#ffd700;
-      --shadow: 0 12px 40px rgba(0,0,0,.45);
+      --line:rgba(255,255,255,.08);
     }
-    html,body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
-    .font-mono{font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
-    .container{max-width:1240px;margin:0 auto;padding:0 20px}
-    .glass{background:rgba(1,4,9,.68);backdrop-filter: blur(14px);-webkit-backdrop-filter: blur(14px)}
-    .soft-border{border:1px solid var(--border)}
-    .brand-border{border:1px solid rgba(14,165,227,.22)}
-    .chip{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:rgba(14,165,227,.08);border:1px solid rgba(14,165,227,.20)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12px;transition:.25s;user-select:none}
-    .btn-primary{background:var(--brand);color:#041018;box-shadow:0 0 0 0 rgba(14,165,227,.0)}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(14,165,227,.35)}
-    .btn-ghost{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10)}
-    .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(14,165,227,.35);box-shadow:0 0 24px rgba(14,165,227,.22)}
-    .grid{display:grid;gap:18px}
-    .hero{padding:130px 0 60px;position:relative}
-    .hero::before{
-      content:"";position:absolute;inset:-40% -20%;
-      background:
-        radial-gradient(circle at 25% 25%, rgba(14,165,227,.22), transparent 45%),
-        radial-gradient(circle at 75% 35%, rgba(255,215,0,.10), transparent 40%),
-        radial-gradient(circle at 50% 85%, rgba(14,165,227,.10), transparent 45%);
-      filter: blur(10px);
-      opacity:.95;
-      z-index:-2;
+    body{background:var(--bg);color:var(--fg);overflow-x:hidden}
+    .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    .glass{
+      background:rgba(5,11,23,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
     }
-    .hero::after{
-      content:"";position:absolute;inset:0;
-      background:
-        linear-gradient(to bottom, rgba(1,4,9,.0), rgba(1,4,9,.65), rgba(1,4,9,1));
-      z-index:-1;
+    .wrap{max-width:1440px}
+    .card{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.06);
+      transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease,background .35s ease;
     }
-    .nav{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{height:34px;width:auto}
-    .brand-title{display:flex;flex-direction:column;line-height:1}
-    .brand-title b{font-weight:900;font-style:italic;letter-spacing:-.02em;text-transform:uppercase}
-    .brand-title span{color:var(--brand);font-size:10px;letter-spacing:.44em;text-transform:uppercase}
-    .nav-links{display:flex;align-items:center;gap:18px}
-    .nav-links a{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding:10px 10px;border-radius:12px;transition:.2s}
-    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
-    .nav-cta{display:flex;align-items:center;gap:10px}
-    .kbd{font-size:10px;color:var(--muted);border:1px solid rgba(255,255,255,.12);border-bottom-color:rgba(255,255,255,.06);padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.02)}
-    .h1{font-size:54px;line-height:1.0;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.03em;margin:18px 0 12px}
-    .h1 .ghost{color:rgba(230,237,243,.18)}
-    .lead{color:var(--muted);font-size:15px;line-height:1.65;max-width:820px}
-    .kicker{color:var(--brand);font-size:12px;letter-spacing:.46em;text-transform:uppercase;font-weight:800}
-    .card{border-radius:22px;padding:22px;background:rgba(255,255,255,.03);border:1px solid rgba(14,165,227,.15);transition:.25s}
-    .card:hover{transform:translateY(-3px);border-color:rgba(14,165,227,.35);box-shadow:0 0 28px rgba(14,165,227,.20)}
-    .card h3{margin:8px 0 8px;font-size:18px;font-weight:900;text-transform:uppercase;font-style:italic}
-    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
-    .badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-    .badge i{color:var(--brand)}
-    .section{padding:44px 0}
-    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin:0 0 18px}
-    .section-title h2{margin:0;font-size:28px;font-weight:900;text-transform:uppercase;font-style:italic}
-    .section-title p{margin:0;color:var(--muted);font-size:12px;letter-spacing:.28em;text-transform:uppercase}
-    .split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
-    @media (max-width:980px){ .split{grid-template-columns:1fr} .h1{font-size:40px} .nav-links{display:none} }
-    .mini{font-size:11px;color:var(--muted);line-height:1.6}
-    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);font-size:11px;color:var(--muted)}
-    .pill b{color:var(--text);font-weight:800}
-    .spark{position:absolute;right:18px;top:18px;width:10px;height:10px;border-radius:999px;background:var(--brand);box-shadow:0 0 26px rgba(14,165,227,.8)}
-    .cta-strip{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px}
-    .cta-strip .btn{min-width:220px}
-    .subnav{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .subnav a{padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.02);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:.2s}
-    .subnav a:hover{color:var(--text);border-color:rgba(14,165,227,.35);box-shadow:0 0 18px rgba(14,165,227,.18)}
-    /* Floating WhatsApp CTA */
-    .floating-cta{
-      position:fixed;right:18px;bottom:18px;z-index:60;
-      padding:12px 14px;border-radius:999px;
-      background:#25D366;color:#07130b;font-weight:900;
-      letter-spacing:.14em;text-transform:uppercase;font-size:11px;
-      box-shadow:0 18px 40px rgba(0,0,0,.4);
-      border:1px solid rgba(255,255,255,.14);
-      transition:.2s;
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(14,165,227,.55);
+      box-shadow:0 0 30px rgba(14,165,227,.22);
+      background:rgba(14,165,227,.04);
     }
-    .floating-cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
-    /* Footer */
-    .footer{border-top:1px solid rgba(255,255,255,.06);padding:34px 0;background:rgba(255,255,255,.01)}
-    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px}
-    @media(max-width:980px){.footer-grid{grid-template-columns:1fr}}
-    .footer h4{margin:0 0 10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--text);opacity:.9}
-    .footer p{margin:8px 0;color:var(--muted);font-size:12px;line-height:1.6}
-    .footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(14,165,227,.0);transition:.2s}
-    .footer a:hover{color:var(--text);border-bottom-color:rgba(14,165,227,.5)}
+    .cyber{
+      border:1px solid rgba(14,165,227,.22);
+      background:rgba(255,255,255,.02);
+      transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+    .cyber:hover{
+      border-color:rgba(14,165,227,.75);
+      box-shadow:0 0 26px rgba(14,165,227,.18);
+      transform:translateY(-6px);
+    }
+    .tag{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+    }
+    .cta{
+      border:1px solid rgba(14,165,227,.45);
+      background:rgba(14,165,227,.06);
+    }
+    .cta:hover{
+      background:rgba(14,165,227,.12);
+      border-color:rgba(14,165,227,.75);
+    }
+    .scanline{
+      position:absolute;left:0;right:0;height:2px;
+      background:rgba(14,165,227,.12);
+      animation:scanline 8s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes scanline{0%{top:-40px}100%{top:100%}}
+    .divider{border-top:1px solid rgba(255,255,255,.06)}
   </style>
 </head>
 
 <body>
 
-  <!-- ================= NAVBAR (Global Unified) ================= -->
-  <header class="nav glass">
-    <div class="container nav-inner">
-      <a class="brand" href="/" aria-label="YiShen Global Home">
-        <!-- If your logo is at root, keep logo.webp; otherwise change to /public/assets/brand/logo-main.webp -->
-        <img src="logo.webp" alt="YiShen Global" />
-        <div class="brand-title">
-          <b>YiShen Global</b>
-          <span class="font-mono">SOVEREIGN_NODE_V1</span>
-        </div>
+  <!-- GLOBAL NAVIGATION MASTER BAR (enterprise blueprint) -->
+  <header class="global-header glass fixed top-0 w-full z-[1000]">
+    <div class="global-header-inner wrap mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
+      <a href="/" class="global-brand flex items-center gap-3">
+        <picture>
+          <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
+          <img src="/assets/branding/logo-main.webp" alt="Yishen Global" style="height:42px; width:auto;" />
+        </picture>
       </a>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a href="/solutions.html">Solutions</a>
-        <a href="/industries.html">Industries</a>
-        <a href="/why-us.html">Why-Us</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/contact.html">Contact</a>
+      <nav class="global-nav hidden md:flex items-center gap-10 mono text-[11px] uppercase tracking-[0.22em]">
+        <a href="/solutions.html" class="hover:text-[var(--yishen-blue)] transition-colors">Solutions</a>
+        <a href="/industries.html" class="hover:text-[var(--yishen-blue)] transition-colors">Industries</a>
+        <a href="/why-us.html" class="hover:text-[var(--yishen-blue)] transition-colors">Why Us</a>
+        <a href="/resources.html" class="hover:text-[var(--yishen-blue)] transition-colors">Resources</a>
+        <a href="/contact.html" class="nav-cta px-5 py-2 rounded-full cta mono text-[11px] uppercase tracking-[0.22em]">Contact</a>
       </nav>
 
-      <div class="nav-cta">
-        <span class="kbd font-mono">Predictability &gt; Price</span>
-        <a class="btn btn-primary" href="/solutions.html" title="Enter Solutions Matrix">
-          Enter Matrix <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
+      <!-- Mobile quick action -->
+      <a href="/contact.html" class="md:hidden px-4 py-2 rounded-full cta mono text-[10px] uppercase tracking-[0.22em]">
+        Contact
+      </a>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <main class="hero">
-    <div class="container">
-      <div class="chip">
-        <span class="kicker">Global Procurement Gate</span>
-        <span class="font-mono" style="color:var(--muted);font-size:11px;letter-spacing:.22em;text-transform:uppercase">
-          Buyer Radar • Documentation • Packaging • Execution
-        </span>
+  <!-- MAIN -->
+  <main class="wrap mx-auto px-6 md:px-10 pt-32 pb-24">
+
+    <!-- HERO / AUTHORITY LAYER -->
+    <section class="relative pt-14 pb-16">
+      <div class="scanline"></div>
+
+      <div class="flex flex-col gap-8">
+        <div class="mono text-[11px] uppercase tracking-[0.55em] text-[var(--yishen-blue)]">
+          Industrial Sovereignty Portal
+        </div>
+
+        <h1 class="text-[44px] md:text-[86px] font-black italic uppercase tracking-tighter leading-[0.90]">
+          Coordinated
+          <span class="text-white/10">Industrial</span><br />
+          Architecture
+        </h1>
+
+        <p class="max-w-4xl text-gray-400 mono text-[12px] leading-relaxed uppercase tracking-[0.18em] border-l-2 border-[var(--yishen-blue)] pl-6">
+          Predictability engineered. Manufacturing execution, compliance firewall, bonded logistics, and AI decision layers —
+          built to protect buyer outcomes across global markets.
+        </p>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Lead-time Sovereignty</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Compliance Firewall</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Bonded Execution</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Packaging Engineering</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">AI Decision Layer</span>
+        </div>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="/solutions.html" class="px-6 py-3 rounded-xl cta mono text-[11px] uppercase tracking-[0.22em] inline-flex items-center gap-3">
+            Explore Solutions <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="/contact.html" class="px-6 py-3 rounded-xl border border-white/10 bg-white/5 mono text-[11px] uppercase tracking-[0.22em] inline-flex items-center gap-3 hover:border-white/20 hover:bg-white/10 transition-all">
+            Request Cooperation <i class="fa-regular fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE PILLARS (kept + upgraded; no loss) -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pb-16">
+      <div class="cyber p-8 rounded-xl">
+        <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Pillar_01</div>
+        <h3 class="text-2xl font-bold italic uppercase mt-3 mb-3">Smart Manufacturing</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Sovereign QC, modular production, predictable lead-time control — engineered to defend buyer conversion and returns.
+        </p>
       </div>
 
-      <h1 class="h1">
-        Sovereign <span class="ghost">Supply Chain</span><br/>
-        For Furniture & Industrial Goods
-      </h1>
+      <div class="cyber p-8 rounded-xl">
+        <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Pillar_02</div>
+        <h3 class="text-2xl font-bold italic uppercase mt-3 mb-3">Global Logistics</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          DDP routing, bonded warehousing, customs orchestration — execution designed for inventory velocity and ETA stability.
+        </p>
+      </div>
 
-      <p class="lead">
-        YiShen Global builds <b>furniture-first</b> global supply chain systems designed for procurement managers who need
-        <b>stable ETAs</b>, <b>compliance-ready paperwork</b>, <b>drop-test packaging logic</b>, and <b>responsibility ownership</b>.
-        Engineered in China · Delivered Worldwide.
+      <div class="cyber p-8 rounded-xl">
+        <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Pillar_03</div>
+        <h3 class="text-2xl font-bold italic uppercase mt-3 mb-3">Supply Chain Architecture</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Lifecycle governance, compliance-first escalation paths, and process defensibility when something goes wrong.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider my-12"></div>
+
+    <!-- PORTAL: 12 SOVEREIGN LAYERS (expanded, no placeholders, no repeats) -->
+    <section class="pb-10">
+      <div class="mono text-[11px] uppercase tracking-[0.55em] text-[var(--yishen-blue)] mb-6">
+        Industrial Sovereignty Data Core
+      </div>
+      <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-4">
+        Operating System Layers
+      </h2>
+      <p class="text-gray-400 max-w-4xl mono text-[12px] uppercase tracking-[0.18em] leading-relaxed">
+        This homepage is not a brochure. It is a control panel: factory matrix, compliance firewall, logistics neural map, buyer-brain control,
+        product genome, and failure-prevention systems — integrated into one execution architecture.
       </p>
+    </section>
 
-      <div class="cta-strip">
-        <a class="btn btn-primary" href="/solutions.html">
-          View Solutions <i class="fa-solid fa-diagram-project"></i>
-        </a>
-        <a class="btn btn-ghost" href="/industries.html">
-          Explore Industries <i class="fa-solid fa-layer-group"></i>
-        </a>
-        <a class="btn btn-ghost" href="/contact.html">
-          Direct Liaison <i class="fa-solid fa-headset"></i>
-        </a>
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 pb-16">
+
+      <!-- 1 Global Factory Matrix -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_01</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Global Factory Matrix</h3>
+          </div>
+          <i class="fa-solid fa-diagram-project text-[var(--yishen-blue)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          A manufacturing network designed to control outcomes — conversion, return curves, complaint density, and SKU survival.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Chair Node</div>
+            <div class="text-gray-400 mt-2">Mesh · Gaming · Recliner · Ergonomic systems</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Sofa Node</div>
+            <div class="text-gray-400 mt-2">Functional sofa · Lift chair · Lounger execution</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Flooring Node</div>
+            <div class="text-gray-400 mt-2">WPC · SPC · Bamboo materials & climate stability</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Industrial Node</div>
+            <div class="text-gray-400 mt-2">Chain · Wire rope · Hardware load safety control</div>
+          </div>
+        </div>
       </div>
 
-      <div class="subnav" aria-label="Quick jumps">
-        <a href="#buyer-radar">Buyer Radar</a>
-        <a href="#capabilities">Core Capabilities</a>
-        <a href="#protocol">2-Hour Quote Protocol</a>
-        <a href="#cta">Start Now</a>
+      <!-- 2 Compliance Firewall -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_02</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Compliance Firewall</h3>
+          </div>
+          <i class="fa-solid fa-shield-halved text-[var(--yishen-gold)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          Not “certificates on a wall” — a market survival firewall that prevents clearance failure, platform penalties, and regulatory shutdowns.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">EU Protocol</div>
+            <div class="text-gray-400 mt-2">EN1335 · REACH · EPR readiness</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">US Protocol</div>
+            <div class="text-gray-400 mt-2">BIFMA logic · ISTA 6A packaging defensibility</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">GCC Protocol</div>
+            <div class="text-gray-400 mt-2">SASO · SABER pathway control</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">LATAM / AU</div>
+            <div class="text-gray-400 mt-2">NOM · INMETRO · AS/NZS alignment</div>
+          </div>
+        </div>
       </div>
 
-      <div class="pill-row">
-        <div class="pill"><b>Office Furniture</b> chairs · standing desks · recliners · sofas</div>
-        <div class="pill"><b>Flooring</b> WPC · SPC · bamboo</div>
-        <div class="pill"><b>Hardware</b> chains · wire rope · locks · hoists</div>
-        <div class="pill"><b>Markets</b> USA · Canada · EU · GCC · LATAM · SEA</div>
+      <!-- 3 Logistics Neural Map -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_03</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Logistics Neural Map</h3>
+          </div>
+          <i class="fa-solid fa-route text-[var(--yishen-blue)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          DDP routing + bonded nodes designed to compress time variables and protect inventory velocity.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">CN → US</div>
+            <div class="text-gray-400 mt-2">DDP corridor · stable ETA execution</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">CN → EU</div>
+            <div class="text-gray-400 mt-2">Compliance-driven routing · risk reduction</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">CN → GCC</div>
+            <div class="text-gray-400 mt-2">Project delivery stability · clearance readiness</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Bonded Nodes</div>
+            <div class="text-gray-400 mt-2">Buffer inventory · returns shock absorber</div>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <!-- 4 Buyer Brain Control -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_04</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Buyer Brain Control</h3>
+          </div>
+          <i class="fa-solid fa-brain text-[var(--yishen-gold)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          We don’t “sell products”. We stabilize buyer decision variables: conversion, velocity, category dominance, and project defensibility.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Retail Buyer</div>
+            <div class="text-gray-400 mt-2">Conversion uplift · SKU timing · packaging efficiency</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Distributor</div>
+            <div class="text-gray-400 mt-2">Category-killer SKUs · simplified decision making</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Private Label</div>
+            <div class="text-gray-400 mt-2">Differentiation · storytelling · repeat purchase systems</div>
+          </div>
+          <div class="cyber p-4 rounded-xl">
+            <div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">E-commerce</div>
+            <div class="text-gray-400 mt-2">Inventory velocity · platform survival · fast iteration</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Product Genome Map -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_05</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Product Genome Map</h3>
+          </div>
+          <i class="fa-solid fa-dna text-[var(--yishen-blue)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          A product is evaluated as a system: specification control, tolerance stability, documentation, escalation path, and responsibility ownership.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Function DNA</div><div class="text-gray-400 mt-2">Why buyers choose it</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Compliance DNA</div><div class="text-gray-400 mt-2">Whether it can be sold</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Packaging DNA</div><div class="text-gray-400 mt-2">Whether margin survives shipping</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Failure DNA</div><div class="text-gray-400 mt-2">How we prevent breakdowns</div></div>
+        </div>
+      </div>
+
+      <!-- 6 Failure Prevention System -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_06</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Failure Prevention System</h3>
+          </div>
+          <i class="fa-solid fa-triangle-exclamation text-[var(--yishen-gold)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          A defensive system that prevents the common disasters: return spikes, clearance kills, margin collapse, listing death, and project loss.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Return Explosion</div><div class="text-gray-400 mt-2">Modular packaging logic</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Customs Failure</div><div class="text-gray-400 mt-2">Compliance firewall pathways</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Margin Collapse</div><div class="text-gray-400 mt-2">MOQ + freight model control</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Project Loss</div><div class="text-gray-400 mt-2">Documentation + escalation ownership</div></div>
+        </div>
+      </div>
+
+      <!-- 7 Supply Chain Sovereignty -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_07</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Supply Chain Sovereignty</h3>
+          </div>
+          <i class="fa-solid fa-crown text-[var(--yishen-blue)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          The product is not the center. The process is. We engineer predictable systems so buyers can defend decisions internally when pressure hits.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Spec Control</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Tolerance Stability</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Escalation Path</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Ownership</span>
+        </div>
+      </div>
+
+      <!-- 8 Packaging Engineering Core -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_08</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Packaging Engineering Core</h3>
+          </div>
+          <i class="fa-solid fa-boxes-stacked text-[var(--yishen-gold)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          Packaging is profit. Engineering focuses on drop-risk reduction, modular carton structure, and compliance with platform packaging logic.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Drop-Risk Logic</div><div class="text-gray-400 mt-2">Shock absorption & damage prevention</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Modular Carton</div><div class="text-gray-400 mt-2">Lower warehousing cost & returns stability</div></div>
+        </div>
+      </div>
+
+      <!-- 9 AI Decision Layer -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_09</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">AI Decision Layer</h3>
+          </div>
+          <i class="fa-solid fa-microchip text-[var(--yishen-blue)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          Predictive signals and process intelligence: detect purchasing cycles, identify risk patterns, and stabilize execution before failures happen.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Cycle Signals</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Risk Pre-Alert</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Escalation Routing</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Outcome Control</span>
+        </div>
+      </div>
+
+      <!-- 10 Category-Killer System -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_10</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Category-Killer System</h3>
+          </div>
+          <i class="fa-solid fa-bolt text-[var(--yishen-gold)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          Build standout SKUs that simplify decisions: differentiation, sell-through velocity, and repeat purchase mechanics.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Differentiation</div><div class="text-gray-400 mt-2">Story, structure, and proof systems</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Velocity</div><div class="text-gray-400 mt-2">Faster sell-through, lower dead stock risk</div></div>
+        </div>
+      </div>
+
+      <!-- 11 Client Lifecycle Governor -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_11</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Client Lifecycle Governor</h3>
+          </div>
+          <i class="fa-solid fa-chart-line text-[var(--yishen-blue)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          Governance from first SKU selection to scale: launch, stabilize, expand, and defend repeat purchasing through process ownership.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Selection</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Launch</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Scale</span>
+          <span class="tag px-4 py-2 rounded-full mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Defend</span>
+        </div>
+      </div>
+
+      <!-- 12 Industrial Operating System -->
+      <div class="card p-8 md:p-10">
+        <div class="flex items-start justify-between gap-6">
+          <div>
+            <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Layer_12</div>
+            <h3 class="text-2xl md:text-3xl font-black italic uppercase mt-3">Industrial Operating System</h3>
+          </div>
+          <i class="fa-solid fa-terminal text-[var(--yishen-gold)] text-2xl"></i>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
+          The final product is not a SKU. It is an operating system that prevents buyer failure:
+          clearance kills, inventory death, margin erosion, platform penalties, and execution breakdowns.
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Defensibility</div><div class="text-gray-400 mt-2">Docs · escalation · ownership</div></div>
+          <div class="cyber p-4 rounded-xl"><div class="mono text-[10px] uppercase tracking-[0.22em] text-gray-300">Stability</div><div class="text-gray-400 mt-2">ETA · QC · packaging · compliance</div></div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="divider my-12"></div>
+
+    <!-- DEEP TECH DIVISION (kept + refined; no placeholders) -->
+    <section class="pb-16">
+      <div class="mono text-[11px] uppercase tracking-[0.55em] text-[var(--yishen-blue)] mb-6">Sovereignty Matrix</div>
+      <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-8">
+        Deep Tech Division
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="cyber p-8 rounded-xl">
+          <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Flooring_Sovereignty</div>
+          <h3 class="text-2xl font-bold italic uppercase mt-3 mb-4">SPC Strategy</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Moisture-stability execution for monsoon climates. We don’t sell low price — we sell “no lost orders” protection.
+          </p>
+        </div>
+
+        <div class="cyber p-8 rounded-xl" style="border-color:rgba(14,165,227,.45); background:rgba(14,165,227,.04)">
+          <div class="mono text-[10px] uppercase tracking-[0.35em] text-green-400">Rejection_Logic</div>
+          <h3 class="text-2xl font-bold italic uppercase mt-3 mb-4 text-[var(--yishen-blue)]">QC Protocol</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Rejecting mediocre orders is execution discipline. Every batch passes sovereignty-grade filtration.
+          </p>
+        </div>
+
+        <div class="cyber p-8 rounded-xl">
+          <div class="mono text-[10px] uppercase tracking-[0.35em] text-[var(--yishen-blue)]">Ergo_Infrastructure</div>
+          <h3 class="text-2xl font-bold italic uppercase mt-3 mb-4">Design Intel</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Corrects common ergonomic decision traps. VESA compatibility and lifecycle logic that protects procurement outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider my-12"></div>
+
+    <!-- GLOBAL LIAISON (kept + expanded; no placeholders) -->
+    <section class="pb-10">
+      <div class="flex flex-col items-start md:items-center gap-3 mb-10">
+        <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter">
+          Global <span class="text-[var(--yishen-blue)]">Liaison</span>
+        </h2>
+        <div class="h-1 w-24 bg-[var(--yishen-blue)]"></div>
+        <p class="text-gray-400 mono text-[12px] uppercase tracking-[0.18em] max-w-4xl md:text-center">
+          Direct lines for cooperation, execution, and escalation. No routing delays. No ambiguity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-10">
+        <div class="card p-8 md:p-10 rounded-2xl">
+          <div class="flex justify-between items-start mb-8">
+            <div class="mono font-bold text-[10px] px-4 py-1 rounded-full uppercase" style="background:var(--yishen-gold);color:#000">
+              Hotline_01: Global_Sales
+            </div>
+            <i class="fas fa-phone-alt text-[var(--yishen-gold)] text-xl"></i>
+          </div>
+          <a href="tel:+8613858516813" class="text-3xl md:text-5xl font-black tracking-tighter hover:text-[var(--yishen-gold)] transition-colors">
+            +86 138 5851 6813
+          </a>
+          <div class="mt-8">
+            <a href="https://wa.me/8613858516813?text=I%20am%20interested%20in%20Yishen%20Global%20Solutions" target="_blank"
+              class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border mono text-[12px] uppercase tracking-[0.18em]"
+              style="border-color:rgba(37,211,102,.35);background:rgba(37,211,102,.08);color:#25D366">
+              <i class="fab fa-whatsapp text-lg"></i> WhatsApp_Direct_API →
+            </a>
+          </div>
+        </div>
+
+        <div class="card p-8 md:p-10 rounded-2xl">
+          <div class="flex justify-between items-start mb-8">
+            <div class="mono font-bold text-[10px] px-4 py-1 rounded-full uppercase" style="background:rgba(14,165,227,.95);color:#000">
+              Hotline_02: Operation_Dept
+            </div>
+            <i class="fas fa-ship text-[var(--yishen-blue)] text-xl"></i>
+          </div>
+          <a href="mailto:support@yishenglobal.net" class="text-2xl md:text-4xl font-black tracking-tighter hover:text-[var(--yishen-blue)] transition-colors">
+            support@yishenglobal.net
+          </a>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:support@yishenglobal.net?subject=Logistics%20Support%20Request%20-%20Yishen%20Global" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-white/10 bg-white/5 mono text-[12px] uppercase tracking-[0.18em] hover:bg-white/10 hover:border-white/20 transition-all">
+              <i class="fas fa-envelope text-lg text-[var(--yishen-blue)]"></i> Email_Operations →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <a href="https://www.linkedin.com/company/yishen-global" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
+          <i class="fab fa-linkedin-in text-2xl text-[#0077b5]"></i>
+          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">LinkedIn</span>
+        </a>
+        <a href="https://instagram.com/yishen_global" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
+          <i class="fab fa-instagram text-2xl text-[#e1306c]"></i>
+          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">Instagram</span>
+        </a>
+        <a href="https://x.com/yishenglobal" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
+          <i class="fab fa-x-twitter text-2xl text-white"></i>
+          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">X</span>
+        </a>
+        <button type="button" onclick="alert('WeChat ID: Yishen_Global_HQ')" class="card p-6 rounded-2xl flex flex-col items-center gap-4">
+          <i class="fab fa-weixin text-2xl text-[#07C160]"></i>
+          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">WeChat</span>
+        </button>
+        <a href="mailto:support@yishenglobal.net" class="card p-6 rounded-2xl flex flex-col items-center gap-4" style="border-color:rgba(14,165,227,.25)">
+          <i class="fas fa-envelope text-2xl text-[var(--yishen-blue)]"></i>
+          <span class="mono text-[10px] uppercase tracking-[0.22em] text-gray-400">Email</span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ================= BUYER RADAR ================= -->
-  <section class="section" id="buyer-radar">
-    <div class="container">
-      <div class="section-title">
-        <h2>Buyer Radar</h2>
-        <p class="font-mono">Signals • Hooks • Boolean Filters</p>
-      </div>
-
-      <div class="split">
-        <div class="card">
-          <span class="spark"></span>
-          <div class="badge"><i class="fa-solid fa-satellite-dish"></i> Procurement Intelligence</div>
-          <h3>Find Silent Buyers Before They Speak</h3>
-          <p>
-            We map buyer intent through import patterns, job-title shifts, category resets, SKU launches, and
-            trade-show footprints — then convert into <b>fast, compliant, high-response outreach</b>.
-          </p>
-          <div style="margin-top:14px" class="mini font-mono">
-            Example Signals: “new warehouse lease” · “category manager hired” · “new chair listing” · “shipment spikes” · “RFP window”
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-bolt"></i> Conversion Infrastructure</div>
-          <h3>1-Click Liaison Path</h3>
-          <p>
-            Every page routes buyers into <b>WhatsApp</b>, <b>Email</b>, and <b>Call</b> with a pre-filled message,
-            reducing friction to near-zero — ideal for USA / EU / GCC mobile buyers.
-          </p>
-          <div style="margin-top:14px" class="mini font-mono">
-            CTA: “I’m interested in YiShen solutions” → opens WhatsApp with text prefilled.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CAPABILITIES ================= -->
-  <section class="section" id="capabilities">
-    <div class="container">
-      <div class="section-title">
-        <h2>Core Capabilities</h2>
-        <p class="font-mono">Predictable • Auditable • Scalable</p>
-      </div>
-
-      <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-clock"></i> SLA</div>
-          <h3>Lead Time Sovereignty</h3>
-          <p>Stabilize ETAs using process control, packaging engineering, and responsibility ownership.</p>
-        </div>
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-file-shield"></i> Compliance</div>
-          <h3>Documentation Ready</h3>
-          <p>Commercial invoices, packing lists, HS mapping, test reports, QC escalation, traceability packs.</p>
-        </div>
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-box"></i> Packaging</div>
-          <h3>Drop-Test Logic</h3>
-          <p>ISTA-oriented packaging structure to reduce damage, returns, and hidden after-sales costs.</p>
-        </div>
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-people-arrows"></i> OEM/ODM</div>
-          <h3>Customization</h3>
-          <p>Low MOQ pathways, private label execution, carton branding, and spec alignment for chains & retailers.</p>
-        </div>
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-earth-americas"></i> Global</div>
-          <h3>Multi-Market Execution</h3>
-          <p>USA/Canada/Mexico, EU, GCC, LATAM, SEA — built for cross-border procurement realities.</p>
-        </div>
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-shield-halved"></i> Risk</div>
-          <h3>After-Sales Defense</h3>
-          <p>We reduce disputes by making your internal defense easier: proof packs, photos, and escalation paths.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:14px" class="mini">
-        * Certification badges (ISO/BIFMA etc.) will be placed in <b>Resources</b> and mirrored site-wide once your icons are finalized in /public/assets/.
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 2-HOUR PROTOCOL ================= -->
-  <section class="section" id="protocol">
-    <div class="container">
-      <div class="section-title">
-        <h2>2-Hour Quote Protocol</h2>
-        <p class="font-mono">Fast Response • Clear Scope</p>
-      </div>
-
-      <div class="split">
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-stopwatch"></i> Speed</div>
-          <h3>What We Need From You</h3>
-          <p class="mini" style="margin-top:8px">
-            1) Target market + channel (Retail / Distributor / DTC / Project) <br/>
-            2) Product focus (Office chair / gaming chair / standing desk / flooring / chain etc.) <br/>
-            3) Volume + timeline + destination port <br/>
-            4) Required standards (BIFMA / EN / ISO / etc.) <br/>
-            5) Packaging requirements (drop test, carton size, labeling)
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="badge"><i class="fa-solid fa-arrow-right-to-bracket"></i> Start</div>
-          <h3>Instant Start Button</h3>
-          <p>Click and your phone opens WhatsApp with the correct prefilled message.</p>
-          <div class="cta-strip" style="margin-top:14px">
-            <a class="btn btn-primary" href="https://wa.me/8615968277867?text=Hi%20YiShen%20Global%2C%20I%20am%20interested%20in%20your%20solutions.%20Please%20send%20me%20a%202-hour%20quote%20template%20%2B%20required%20spec%20list." target="_blank" rel="noopener">
-              WhatsApp Quote <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a class="btn btn-ghost" href="mailto:alex.yang@yishenglobal.net?subject=YiShen%20Global%20%E2%80%94%202-Hour%20Quote%20Request&body=Market%3A%0AChannel%3A%0AProduct%3A%0AVolume%3A%0ADestination%3A%0AStandards%3A%0APackaging%3A%0A" >
-              Email Quote <i class="fa-solid fa-envelope"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= CTA ================= -->
-  <section class="section" id="cta">
-    <div class="container">
-      <div class="card" style="padding:28px">
-        <div class="section-title" style="margin-bottom:10px">
-          <h2>Start the System</h2>
-          <p class="font-mono">Home → Solutions → Contact</p>
-        </div>
-        <p class="lead" style="max-width:none">
-          If you are building a procurement pipeline in USA / EU / GCC / LATAM, you need a supply chain partner
-          that behaves like infrastructure — not a vendor.
-        </p>
-        <div class="cta-strip">
-          <a class="btn btn-primary" href="/solutions.html">Enter Solutions <i class="fa-solid fa-arrow-right"></i></a>
-          <a class="btn btn-ghost" href="/contact.html">Open Contact Gate <i class="fa-solid fa-headset"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER (Unified • Required by you) ================= -->
-  <footer class="footer">
-    <div class="container footer-grid">
-
-      <div>
-        <img src="logo.webp" alt="YiShen Global" style="height:32px;">
-        <p style="margin-top:12px;">
-          Furniture-first global supply chain systems.<br>
-          Engineered in China · Delivered Worldwide
-        </p>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <p>Hotline: +8619530394133 &nbsp; +8618857277313</p>
-        <p>Email: alex.yang@yishenglobal.net</p>
-        <p>Email: champion.yang@yishenglobal.net</p>
-        <p>WhatsApp: +86 159 6827 7867</p>
-        <p>WhatsApp: +86 188 5727 7313</p>
-        <p>WeChat: 19530394133</p>
-        <p>Base: Anji · Hangzhou · China</p>
-      </div>
-
-      <div>
-        <h4>Social</h4>
-        <p><a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener">LinkedIn</a></p>
-        <p><a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener">X / Twitter</a></p>
-        <p><a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener">YouTube</a></p>
-        <p><a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener">Facebook</a></p>
-        <p><a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener">Instagram</a></p>
-      </div>
-
+  <footer class="px-6 md:px-10 py-10 divider opacity-70">
+    <div class="wrap mx-auto flex flex-col md:flex-row gap-3 md:gap-0 md:items-center md:justify-between mono text-[10px] uppercase tracking-[0.22em] text-gray-500">
+      <span>© 2026 Yishen Global · Coordinated Industrial Architecture</span>
+      <span>Node: SOVEREIGN_ROOT · Portal: ISR-001_v2</span>
     </div>
   </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/8615968277867" class="floating-cta" aria-label="WhatsApp" target="_blank" rel="noopener">
-    WhatsApp
-  </a>
-
-  <!-- Optional: micro animation (safe, no framework) -->
-  <script>
-    // Smooth anchor scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        const el = document.querySelector(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
-  </script>
 
 </body>
 </html>

@@ -1,12 +1,8 @@
 {
-  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/industries", "dest": "/industries.html" },
-    { "src": "/solutions", "dest": "/solutions.html" },
-    { "src": "/why-us", "dest": "/why-us.html" },
-    { "src": "/resources", "dest": "/resources.html" },
-    { "src": "/passport", "dest": "/passport.html" },
-    { "src": "/contact", "dest": "/contact.html" }
+    { "src": "^/$", "dest": "/public/index.html" },
+    { "src": "^/(.*)$", "dest": "/public/$1" }
   ]
 }

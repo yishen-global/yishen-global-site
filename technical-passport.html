@@ -1,469 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>SOVEREIGN PASSPORT | YISHEN GLOBAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Global Sovereign Product Passport. Verified Industrial Nodes.">
+<link rel="canonical" href="https://yishenglobal.net/passport">
 
-<title>Technical Passport | Global Compliance Sovereignty | YISHEN GLOBAL</title>
-<meta name="description" content="Technical Passport for sovereign compliance, industrial verification, and global delivery systems.">
-<meta name="theme-color" content="#010409">
-<link rel="canonical" href="https://www.yishenglobal.net/technical-passport.html">
-
-<!-- Favicon -->
-<link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
-
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/public/assets/css/styles.css">
+<script src="/public/ui-hooks.js"></script>
+<script src="/public/img-lazy-loader.js"></script>
+<script src="/public/terminal-logic.js"></script>
 
 <style>
-:root { --neon-blue:#0ea5e3; --brand-gold:#ffd700; --deep-space:#010409; }
-body { background-color:var(--deep-space); color:#fff; font-family:'Inter',sans-serif; margin:0; overflow-x:hidden; }
-
-.topology-grid{
-  background-image:radial-gradient(rgba(14,165,223,.05) 1px,transparent 1px);
-  background-size:30px 30px;
-}
-
-#cursor-glow{
-  position:fixed;width:600px;height:600px;
-  background:radial-gradient(circle,rgba(14,165,223,.07),transparent 70%);
-  border-radius:50%;pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%);
-  will-change:transform;mix-blend-mode:screen;
-}
-
-/* Scanner */
-.main-scanner{position:relative;overflow:hidden;background:#000;
-border:1px solid rgba(255,255,255,.05);min-height:450px;
-display:flex;align-items:center;justify-content:center;}
-.main-scanner::after{
-content:"";position:absolute;top:0;left:0;width:100%;height:2px;
-background:var(--neon-blue);opacity:.6;box-shadow:0 0 20px var(--neon-blue);
-animation:scanLine 4s infinite linear;}
-@keyframes scanLine{0%{top:0}50%{top:100%}100%{top:0}}
-
-.passport-table{width:100%;border-collapse:collapse;}
-.passport-table td{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.label-mono{font-family:'JetBrains Mono';font-size:.65rem;color:#64748b;text-transform:uppercase;letter-spacing:2px;}
-.value-bold{color:#fff;font-weight:700;text-align:right;font-family:'JetBrains Mono';font-size:.9rem;}
-
-#loading-screen{position:fixed;inset:0;z-index:100001;background:#010409;
-display:flex;flex-direction:column;align-items:center;justify-content:center;
-transition:opacity .8s ease;}
-#bar-fill{height:100%;background:var(--neon-blue);width:0%;transition:2s cubic-bezier(.1,.5,.1,1);}
-
-.duty-shield{background:rgba(255,215,0,.03);border:1px solid rgba(255,215,0,.15);}
+body{background:#010409;color:white;font-family:Inter}
+#passport-core{max-width:1300px;margin:auto;padding:180px 8% 120px}
+h1{font-size:clamp(3rem,7vw,5rem);font-style:italic}
+.glass{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:50px}
 </style>
 </head>
 
-<body class="topology-grid selection:bg-[#0ea5e3]">
+<body>
 
-<div id="loading-screen">
-  <span class="text-white font-black italic text-2xl uppercase tracking-tighter">Technical_Passport_Sync</span>
-  <div class="w-64 h-[1px] bg-white/10 mt-6"><div id="bar-fill"></div></div>
-  <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[4px] animate-pulse">
-    // ACCESSING_ENCRYPTED_EVIDENCE...
-  </span>
-</div>
-
-<div id="cursor-glow"></div>
-
-<!-- NAV -->
-<nav class="fixed w-full z-[10000] bg-[#010409]/90 backdrop-blur-xl border-b border-white/5 h-20 flex items-center px-8">
-  <div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
-    <a href="index.html" class="flex flex-col group">
-      <span class="text-white font-black italic text-xl uppercase tracking-tighter group-hover:text-[#0ea5e3] transition-colors">
-        Yishen Global
-      </span>
-      <span class="text-[#0ea5e3] font-mono text-[8px] tracking-[3px]">
-        TECHNICAL_PASSPORT_V5.0
-      </span>
-    </a>
-    <div class="hidden lg:flex items-center space-x-10 font-mono text-[0.7rem] tracking-widest text-gray-400">
-      <a href="solutions.html" class="hover:text-white transition">← [ BACK_TO_MATRIX ]</a>
-      <span class="text-white/20">|</span>
-      <span id="node-status-tag" class="text-green-500">NODE_VERIFIED</span>
+<nav id="master-nav" class="site-nav">
+  <div class="site-nav-inner">
+    <a href="/" class="logo">YISHEN GLOBAL</a>
+    <div class="nav-links">
+      <a href="/genesis">GENESIS</a>
+      <a href="/clusters">CLUSTERS</a>
+      <a href="/resources">RESOURCES</a>
+      <a href="/passport" style="color:#0ea5e3">PASSPORT</a>
     </div>
+    <a class="nav-cta" href="/vault">ACCESS VAULT</a>
   </div>
 </nav>
 
-<!-- HEADER -->
-<header class="pt-48 pb-12 px-[8%] max-w-[1440px] mx-auto">
-  <div class="max-w-[1200px]">
-    <span id="sku-sector-tag" class="font-mono text-[#0ea5e3] tracking-[6px] text-xs uppercase">
-      [ LOADING_SECTOR ]
-    </span>
-    <h1 id="sku-main-title" class="text-[clamp(2.5rem,7vw,5rem)] font-black italic uppercase tracking-tighter my-8">
-      Initializing...
-    </h1>
-    <p id="sku-desc" class="text-gray-400 max-w-[800px] text-lg italic border-l-2 border-[#A11219] pl-10 font-light">
-      Decrypting sovereign data packet...
-    </p>
-  </div>
-</header>
+<section id="passport-core">
+<h1>Global <span style="color:#0ea5e3">Sovereign Passport</span></h1>
 
-<!-- MAIN -->
-<main class="py-12 px-[8%] max-w-[1440px] mx-auto">
-<div class="grid lg:grid-cols-2 gap-24">
-
-<div class="space-y-12">
-  <div class="main-scanner rounded-sm">
-    <div id="sku-id-display"
-      class="text-[clamp(1rem,5vw,2.5rem)] font-black text-white/10 font-mono uppercase tracking-[20px]">
-      SCANNING
-    </div>
-  </div>
-
-  <div class="p-8 bg-[#0ea5e3]/5 border-l-2 border-[#0ea5e3]">
-    <h4 class="font-mono text-white text-[10px] tracking-[4px] uppercase mb-4">>> Intelligence_Log</h4>
-    <div id="intel-log" class="space-y-3 font-mono text-[10px] text-gray-500">
-      <div class="flex gap-4">
-        <span class="text-[#0ea5e3]">[SYSTEM]</span>
-        <span id="intel-status">Calibration complete. Displaying evidence.</span>
-      </div>
-    </div>
-  </div>
+<div class="glass" id="passport-panel">
+  <div id="passport-data">Loading Sovereign Node...</div>
 </div>
 
-<div class="space-y-12">
-  <div class="p-10 bg-white/[0.01] border border-white/5 rounded-sm">
-    <h3 class="text-xl font-black mb-10 italic uppercase text-[#0ea5e3] tracking-widest">
-      Sovereign Specs
-    </h3>
-    <table id="sku-spec-table" class="passport-table"></table>
-  </div>
-
-  <div class="grid md:grid-cols-2 gap-8">
-    <div class="p-8 border border-white/5 bg-white/[0.01]">
-      <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">
-        Durability_Index
-      </span>
-      <div id="sku-fail" class="text-4xl font-black">--%</div>
-      <p class="text-[9px] text-gray-500 mt-4 font-mono uppercase">Full Cycle Integrity</p>
-    </div>
-
-    <div class="p-8 border border-white/5 bg-white/[0.01]">
-      <span class="font-mono text-gray-600 text-[9px] tracking-[3px] uppercase block mb-4">
-        Compliance_Node
-      </span>
-      <div id="sku-cbm" class="text-4xl font-black text-[#0ea5e3]">--</div>
-      <p class="text-[9px] text-gray-500 mt-4 font-mono uppercase">Global Standard Mapping</p>
-    </div>
-  </div>
-
-  <div class="flex flex-col gap-4">
-    <button id="download-btn"
-      class="w-full py-6 bg-white text-black font-black uppercase tracking-[8px]
-      hover:bg-[#0ea5e3] hover:text-white transition-all duration-500">
-      View_Full_Evidence
-    </button>
-
-    <div id="duty-shield" class="p-6 duty-shield hidden">
-      <h4 class="font-mono text-[#ffd700] text-[9px] tracking-[4px] uppercase mb-3">
-        // AD_EXEMPTION_PATH
-      </h4>
-      <p id="patch-msg" class="text-[10px] text-gray-500 font-mono italic"></p>
-    </div>
-  </div>
+<div class="glass" style="margin-top:60px">
+  <h3>Live Intelligence Terminal</h3>
+  <input id="hs-input" placeholder="HS CODE (7315 / 9401 / 9402)">
+  <button id="hs-search-btn">EXECUTE</button>
+  <div id="hs-status"></div>
+  <div id="hs-results"></div>
 </div>
 
+<div class="glass" style="margin-top:60px">
+<h3>Global Buyer Agent</h3>
+<input id="user-task" placeholder="Find buyers / routes / compliance">
+<button id="agent-run-btn">RUN AGENT</button>
+<div id="agent-output"></div>
 </div>
-</main>
+</section>
 
-<!-- SCRIPT (Isolated Execution) -->
-<script defer>
-(() => {
-  const PASSPORT_DB = Object.freeze({
-    ERGO:{
-      sector:'ERGO_FURNITURE',
-      title:'Ergo-Sovereignty Node',
-      desc:'BIFMA X5.1 认证。集成 ISTA-6A 包装主权，确保针对北美长线物流的 0% 破损率预期。',
-      specs:{HS_CODE:'9401.31',STD:'BIFMA X5.1',PKG:'ISTA-6A',DUTY:'MTN_EXEMPT'},
-      metrics:{fail:'99.9%',cbm:'ANSI'},
-      patch:'北美市场准入路径已校准。反倾销税避让逻辑已挂载至越南/泰国节点。',
-      doc:'assets/docs/ergo-compliance.pdf'
-    },
-    MED_HUB:{
-      sector:'MEDICAL_PRECISION',
-      title:'Medical Clinical Hub',
-      desc:'ISO 13485 医疗级线性驱动。集成银离子抗菌涂层与 IP66 密封主权。',
-      specs:{HS_CODE:'9402.10',ISO:'13485:2016',IP_RATING:'IP66',ANTIMIC:'Ag+ Ion'},
-      metrics:{fail:'100%',cbm:'ISO'},
-      patch:'医疗器械主权证书已挂载。支持全球 180+ 医疗采购节点。',
-      doc:'assets/docs/medical-iso.pdf'
-    },
-    CARBON_ZERO:{
-      sector:'E-ZONE_COMPOSITE',
-      title:'Carbon Neutral Node',
-      desc:'负碳竹塑材料。针对欧盟 CBAM 政策设计的 2026 避税路径。',
-      specs:{CBAM:'COMPLIANT',RECYCLED:'95%',LCA:'CERTIFIED',HS_CODE:'3918.90'},
-      metrics:{fail:'98.5%',cbm:'CBAM'},
-      patch:'欧盟 CBAM 碳足迹报告已集成，可抵消欧洲进口商 12% 以上碳关税。',
-      doc:'assets/docs/carbon-lca.pdf'
-    }
-  });
-
-  function render(){
-    const id=(new URLSearchParams(location.search).get('id')||'ERGO').toUpperCase();
-    <script>
-/* =========================================================
-   YISHEN GLOBAL — PASSPORT DATABASE (V5.0 FINAL)
-   Status: Production Ready / PDF Linked / Route-Safe
-   ========================================================= */
-
-const PASSPORT_DB = {
-
-  /* =========================
-     ERGONOMIC OFFICE CHAIR
-     ========================= */
-  ERGO: {
-    sector: "ERGO_FURNITURE",
-    title: "Ergo-Sovereignty Node",
-    desc: "BIFMA X5.1 certified ergonomic seating system. Integrated ISTA-6A packaging logic engineered to eliminate long-haul damage risk and procurement uncertainty.",
-    specs: {
-      HS_CODE: "9401.31",
-      STANDARD: "BIFMA X5.1",
-      PACKAGING: "ISTA-6A",
-      MARKETS: "US / EU / GCC",
-      OEM_ODM: "Supported"
-    },
-    metrics: {
-      fail: "99.9%",
-      cbm: "ANSI"
-    },
-    patch: "North America sourcing path calibrated. Packaging + documentation collision logic locked for predictable delivery.",
-    doc: "assets/docs/YISHEN_Ergo_Office_Chair_Technical_Passport.pdf"
-  },
-
-  /* =========================
-     SMART GAMING CHAIR
-     ========================= */
-  GAMING: {
-    sector: "SMART_GAMING_SEATING",
-    title: "Smart Gaming Chair Node",
-    desc: "Reinforced frame gaming chair architecture optimized for e-commerce conversion, modular packaging and low-damage fulfillment.",
-    specs: {
-      HS_CODE: "9401.31",
-      STANDARD: "BIFMA X5.1",
-      COMPLIANCE: "REACH / RoHS",
-      PACKAGING: "Modular Carton",
-      CHANNEL: "B2C / B2B"
-    },
-    metrics: {
-      fail: "99.5%",
-      cbm: "Retail"
-    },
-    patch: "Gaming SKU packaging + logistics stability logic enabled for Amazon / DTC channels.",
-    doc: "assets/docs/YISHEN_Smart_Gaming_Chair_Specs.pdf"
-  },
-
-  /* =========================
-     STANDING DESK
-     ========================= */
-  DESK: {
-    sector: "HEIGHT_ADJUSTABLE_DESK",
-    title: "Standing Desk Engineering Node",
-    desc: "Dual-motor height adjustable desk system with anti-collision logic, load redundancy and cycle-tested actuator control.",
-    specs: {
-      HS_CODE: "9403.20",
-      MOTOR: "Dual Motor",
-      NOISE: "<45dB",
-      CYCLES: "20,000+",
-      CERT: "CE / UL"
-    },
-    metrics: {
-      fail: "99.6%",
-      cbm: "Electrical"
-    },
-    patch: "Actuator sourcing + frame integration path stabilized for long-term lead-time control.",
-    doc: "assets/docs/YISHEN_Standing_Desk_Engineering_Whitepaper.pdf"
-  },
-
-  /* =========================
-     SMART SOFA
-     ========================= */
-  SOFA: {
-    sector: "SMART_FUNCTIONAL_SOFA",
-    title: "Smart Sofa System Node",
-    desc: "Functional sofa platform integrating recliner, lift and power modules with safety-first electrical architecture.",
-    specs: {
-      HS_CODE: "9401.61",
-      MODULES: "Recline / Lift / Power",
-      MOTOR_CERT: "CE / UL Ready",
-      OEM: "Yes"
-    },
-    metrics: {
-      fail: "99.4%",
-      cbm: "System"
-    },
-    patch: "Smart-home compatible SKU logic mapped for retailer onboarding.",
-    doc: "assets/docs/YISHEN_Smart_Sofa_System_Overview.pdf"
-  },
-
-  /* =========================
-     LOUNGER / LEISURE CHAIR
-     ========================= */
-  LOUNGER: {
-    sector: "LEISURE_LOUNGER",
-    title: "Lounger & Leisure Chair Node",
-    desc: "Leisure seating engineered for hospitality, resort and lifestyle markets with OEM/ODM flexibility.",
-    specs: {
-      HS_CODE: "9401.79",
-      USE: "Hotel / Resort / Residential",
-      MATERIAL: "Fabric / Leather / Mesh",
-      OEM: "Yes"
-    },
-    metrics: {
-      fail: "99.3%",
-      cbm: "Lifestyle"
-    },
-    patch: "Hospitality procurement narrative + packaging stability path aligned.",
-    doc: "assets/docs/YISHEN_Lounger_Leisure_Chair_Catalog.pdf"
-  },
-
-  /* =========================
-     SMART HOME SYSTEM
-     ========================= */
-  SMARTHOME: {
-    sector: "SMART_HOME_SYSTEM",
-    title: "Smart Home Modular System Node",
-    desc: "Furniture-as-a-system architecture combining seating, motion and power modules into scalable platforms.",
-    specs: {
-      SYSTEM: "Modular",
-      CHANNEL: "Integrator / Developer",
-      SKU_MODEL: "Scalable",
-      OEM: "Supported"
-    },
-    metrics: {
-      fail: "99.2%",
-      cbm: "Platform"
-    },
-    patch: "System-level packaging + documentation logic enabled for multi-SKU deployment.",
-    doc: "assets/docs/YISHEN_Smart_Home_Modular_System.pdf"
-  },
-
-  /* =========================
-     WPC FLOORING / CBAM
-     ========================= */
-  CARBON_ZERO: {
-    sector: "E_ZONE_COMPOSITE",
-    title: "Carbon Neutral WPC Flooring Node",
-    desc: "CBAM-aligned bamboo & WPC composite flooring with full LCA documentation for EU carbon cost hedging.",
-    specs: {
-      HS_CODE: "3918.90",
-      CBAM: "Compliant",
-      RECYCLED: "95%",
-      LCA: "Certified"
-    },
-    metrics: {
-      fail: "98.5%",
-      cbm: "CBAM"
-    },
-    patch: "EU CBAM evidence path integrated. Importer carbon tax exposure reduced.",
-    doc: "assets/docs/YISHEN_WPC_Flooring_CBAM_Report.pdf"
-  },
-
-  /* =========================
-     BAMBOO CRAFT
-     ========================= */
-  BAMBOO: {
-    sector: "BAMBOO_CRAFT",
-    title: "Bamboo Craft Sustainability Node",
-    desc: "Low-carbon bamboo craft products with documented sustainability narrative for global retail buyers.",
-    specs: {
-      MATERIAL: "Bamboo",
-      CARBON: "Low",
-      OEM: "Yes",
-      PACKAGING: "Retail Ready"
-    },
-    metrics: {
-      fail: "99.1%",
-      cbm: "Eco"
-    },
-    patch: "Sustainability evidence pack aligned for buyer storytelling.",
-    doc: "assets/docs/YISHEN_Bamboo_Craft_Sustainability_Whitepaper.pdf"
-  },
-
-  /* =========================
-     INDUSTRIAL ANCHOR CHAIN
-     ========================= */
-  ANCHOR: {
-    sector: "MARINE_ANCHOR_CHAIN",
-    title: "Industrial Anchor Chain Node",
-    desc: "Marine and offshore anchor chain with tensile-tested grades and material traceability.",
-    specs: {
-      HS_CODE: "7315.82",
-      GRADE: "G30 / G40 / G70",
-      FINISH: "Galvanized / Blackened",
-      TEST: "Tensile"
-    },
-    metrics: {
-      fail: "99.7%",
-      cbm: "Marine"
-    },
-    patch: "Marine procurement audit path aligned with full test evidence.",
-    doc: "assets/docs/YISHEN_Industrial_Anchor_Chain_Technical_Dossier.pdf"
-  },
-
-  /* =========================
-     WIRE ROPE
-     ========================= */
-  WIREROPE: {
-    sector: "WIRE_ROPE",
-    title: "Wire Rope Specification Node",
-    desc: "Industrial and marine wire rope specification with construction, fatigue and corrosion logic.",
-    specs: {
-      HS_CODE: "7312.10",
-      STRUCTURE: "6x19 / 6x36",
-      CORE: "IWRC / FC",
-      TEST: "Tensile / Fatigue"
-    },
-    metrics: {
-      fail: "99.6%",
-      cbm: "Industrial"
-    },
-    patch: "Port and buyer requirement mapping enabled.",
-    doc: "assets/docs/YISHEN_Wire_Rope_Marine_Specification.pdf"
-  }
-};
-
-/* =========================================================
-   PASSPORT RENDER ENGINE — DO NOT MODIFY
-   ========================================================= */
-
-function renderPassport() {
-  const params = new URLSearchParams(window.location.search);
-  const nodeID = (params.get("id") || "ERGO").toUpperCase();
-  const data = PASSPORT_DB[nodeID] || PASSPORT_DB.ERGO;
-
-  document.getElementById("sku-sector-tag").innerText = `[ SECTOR: ${data.sector} ]`;
-  document.getElementById("sku-main-title").innerText = data.title;
-  document.getElementById("sku-desc").innerText = data.desc;
-  document.getElementById("sku-id-display").innerText = nodeID;
-  document.getElementById("sku-fail").innerText = data.metrics.fail;
-  document.getElementById("sku-cbm").innerText = data.metrics.cbm;
-
-  document.getElementById("sku-spec-table").innerHTML =
-    Object.entries(data.specs)
-      .map(([k, v]) => `<tr><td class="label-mono">${k}</td><td class="value-bold">${v}</td></tr>`)
-      .join("");
-
-  if (data.patch) {
-    document.getElementById("duty-shield").classList.remove("hidden");
-    document.getElementById("patch-msg").innerText = data.patch;
-  }
-
-  document.getElementById("download-btn").onclick = () => {
-    if (!data.doc) return alert("No PDF mapped for this node.");
-    window.open(data.doc, "_blank");
-  };
-}
-
-window.addEventListener("load", renderPassport);
+<script>
+fetch("/sku-database.json").then(r=>r.json()).then(db=>{
+  const id=new URLSearchParams(location.search).get("id");
+  const sku=db.products.find(p=>p.id===id)||db.products[0];
+  document.getElementById("passport-data").innerHTML=`
+    <h2>${sku.name}</h2>
+    <p>${sku.tagline}</p>
+    <pre>${JSON.stringify(sku.technical_data,null,2)}</pre>
+  `;
+});
 </script>
+
+</body>
+</html>

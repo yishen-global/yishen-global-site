@@ -1,101 +1,83 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>YiShen Global — Industrial Sovereign Supply Network</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YiShen Global V5 — Industrial Sovereignty Engine</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="public/assets/css/styles.css">
-
-<style>
-body {background:#010409;color:#fff;}
-.hero-core{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:12%;}
-.hero-core h1{font-size:clamp(3rem,9vw,6rem);font-weight:900;font-style:italic;}
-.hero-core p{max-width:760px;color:#8b949e;font-size:1.1rem;line-height:1.7;}
-.matrix-btn{display:inline-block;margin-top:40px;padding:14px 34px;background:#0ea5e3;color:#000;font-weight:900;font-style:italic;letter-spacing:.2em;}
-.section{padding:120px 8%;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
-.card{border:1px solid rgba(255,255,255,.08);padding:50px;background:rgba(255,255,255,.02);}
-.card:hover{border-color:#0ea5e3;}
-</style>
+<meta name="description" content="YiShen Global operates a sovereign-grade industrial supply network covering Furniture, Bamboo, WPC, Chain, Rigging, Hoist & Logistics Systems.">
+<link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
 
-<nav id="master-nav" class="site-nav">
-<div class="site-nav-inner">
-<div class="mono uppercase">YISHEN GLOBAL V5</div>
-<div class="nav-links">
-<a href="genesis.html">Genesis</a>
-<a href="clusters.html">Clusters</a>
-<a href="resources.html">Resources</a>
-<a href="tactical-briefing.html" class="nav-cta">Access Vault</a>
-</div>
-</div>
-</nav>
+<!-- Include Sovereign Navbar -->
+<?php include '/components/navbar.html'; ?>
 
-<section class="hero-core">
-<h1>Industrial<br>Sovereignty Engine</h1>
-<p>
-YiShen Global is not a supplier.<br>
-We are a sovereign-grade industrial execution system that engineers certainty into global procurement.
-</p>
-<a class="matrix-btn" href="clusters.html">ENTER MATRIX</a>
+<section class="hero-node">
+  <div class="hero-overlay">
+    <h1>Where Predictability Becomes Infrastructure</h1>
+    <p>YiShen Global operates a sovereign-grade industrial supply network for governments, institutions, and system-level buyers.</p>
+    <a href="/contact.html" class="cta-main">Request System Access</a>
+  </div>
 </section>
 
-<section class="section">
-<div class="grid">
-<div class="card">
-<h3>OFFICE & GAMING</h3>
-<p>9401 mesh chairs, gaming chairs, recliners, ergonomic systems.</p>
-</div>
-<div class="card">
-<h3>MARINE & RIGGING</h3>
-<p>7315 alloy chains, wire rope, lifting hardware, offshore load control.</p>
-</div>
-<div class="card">
-<h3>MEDICAL & PRECISION</h3>
-<p>9402 sterile medical chair systems & clinical environments.</p>
-</div>
-</div>
+<section class="trust-grid">
+  <div>ISO9001 / ISO14001</div>
+  <div>BIFMA / EN1335</div>
+  <div>CE / SGS / REACH</div>
+  <div>Global Customs Ready</div>
 </section>
 
-<section class="section">
-<div class="card">
-<h2>Why YiShen Global Exists</h2>
-<p>
-Price does not build empires.  
-Certainty does.  
-We engineer lead-time stability, compliance sovereignty, and tariff-defense architectures into every shipment.
-</p>
-</div>
+<section class="core-systems">
+  <h2>Industrial Systems</h2>
+  <div class="system-cards">
+
+    <div class="system-card">
+      <img src="/assets/industries/office.webp">
+      <h3>Office & Commercial Systems</h3>
+      <p>Ergonomic chairs, standing desks, workspace systems.</p>
+    </div>
+
+    <div class="system-card">
+      <img src="/assets/industries/home.webp">
+      <h3>Civil & Residential Systems</h3>
+      <p>Smart sofas, recliners, lifestyle furniture.</p>
+    </div>
+
+    <div class="system-card">
+      <img src="/assets/industries/education.webp">
+      <h3>Education Systems</h3>
+      <p>Campus desks, ergonomic chairs, learning infrastructure.</p>
+    </div>
+
+    <div class="system-card">
+      <img src="/assets/industries/bamboo.webp">
+      <h3>Bamboo & WPC Sustainable Systems</h3>
+      <p>Bamboo crafts, WPC flooring, eco architecture.</p>
+    </div>
+
+    <div class="system-card">
+      <img src="/assets/industries/chain.webp">
+      <h3>Chain & Rigging Systems</h3>
+      <p>Steel chains, wire rope, hoist & load control.</p>
+    </div>
+
+  </div>
 </section>
 
-<footer>
-<div class="footer-inner">
-<div class="footer-meta">© 2026 YISHEN GLOBAL — SOVEREIGN ENGINE</div>
-<div class="cert-row">
-<img src="public/assets/icons/bifma-badge.webp" height="28">
-<img src="public/assets/icons/iso9001.webp" height="28">
-<img src="public/assets/icons/ista-badge.webp" height="28">
-<img src="public/assets/icons/logo-ul.webp" height="28">
-</div>
-</div>
-</footer>
+<section class="buyer-gate">
+  <h2>Open Buyer Gate</h2>
+  <p>Specify your procurement volume, compliance region and SKU to request sovereign access.</p>
+  <a href="/contact.html" class="cta-main">Open Industrial Access</a>
+</section>
 
-<div id="cursor-glow"></div>
-<script>
-const glow=document.getElementById('cursor-glow');
-document.addEventListener('mousemove',e=>{
-requestAnimationFrame(()=>{
-glow.style.left=e.clientX+'px';
-glow.style.top=e.clientY+'px';
-});
-});
-</script>
+<section class="intel-node">
+  <h2>Buyer Intelligence Engine</h2>
+  <p>Powered by Sovereign Radar · Silent Buyer Analyzer · Global Importer Hitlist</p>
+</section>
+
+<!-- Include Sovereign Footer -->
+<?php include '/components/footer.html'; ?>
 
 </body>
 </html>

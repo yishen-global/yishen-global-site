@@ -1,20 +1,12 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "routes": [
-    { "src": "^/$", "dest": "/index.html" },
+    { "src": "/contact", "dest": "/contact.html" },
 
-    { "src": "^/home/?$", "dest": "/index.html" },
+    { "src": "/call", "dest": "/contact.html" },
+    { "src": "/whatsapp", "dest": "/contact.html" },
+    { "src": "/api", "dest": "/contact.html" },
+    { "src": "/connect", "dest": "/contact.html" },
 
-    { "src": "^/solutions/?$", "dest": "/solutions.html" },
-    { "src": "^/industries/?$", "dest": "/industries.html" },
-    { "src": "^/resources/?$", "dest": "/resources.html" },
-    { "src": "^/why-us/?$", "dest": "/why-us.html" },
-
-    { "src": "^/contact/?$", "dest": "/contact.html" },
-
-    { "src": "^/passport/(.*)$", "dest": "/passport/$1.html" },
-
-    { "src": "^/assets/(.*)$", "dest": "/assets/$1" }
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }

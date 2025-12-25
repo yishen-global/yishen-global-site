@@ -1,202 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-    =========================================================
-    YISHEN GENESIS PAGE
-    Status: LOCKED (Authority Baseline)
-    Role: Brand Origin / Sovereignty Manifest
-    Policy: Patch-only (No refactor / No redesign)
-    =========================================================
-    -->
+  <!--
+  =========================================================
+  YISHEN GENESIS PAGE
+  Status: LOCKED (Authority Baseline)
+  Role: Brand Origin / Sovereignty Manifest
+  Policy: Patch-only (No refactor / No redesign)
+  =========================================================
+  -->
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>01_GENESIS | The Trinity of Sovereignty | YISHEN GLOBAL</title>
+  <title>01_GENESIS | The Trinity of Sovereignty | YiShen Global</title>
 
-    <!-- Authority Meta (Non-Marketing) -->
-    <meta name="description" content="Genesis document of Yishen Global. A sovereignty manifest forged from 38 years of industrial trust, manufacturing integrity, and system-level predictability." />
-    <meta name="author" content="Yishen Global" />
-    <meta name="robots" content="index,follow" />
+  <!-- Authority Meta (Non-Marketing) -->
+  <meta name="description" content="Genesis document of YiShen Global. A sovereignty manifest forged from 38 years of industrial trust, manufacturing integrity, and system-level predictability.">
+  <meta name="author" content="YiShen Global">
+  <meta name="robots" content="index,follow">
 
-    <!-- CDN Safe Dependencies -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Icons -->
+  <link rel="icon" href="logo.webp">
 
-    <style>
-        :root {
-            --brand-blue: #0ea5e3;
-            --brand-red: #A11219;
-            --brand-gold: #ffd700;
-            --bg-deep: #010409;
-        }
+  <!-- Fonts (FAST + STABLE) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-        body {
-            background-color: var(--bg-deep);
-            font-family: 'Inter', sans-serif;
-            color: #ffffff;
-            margin: 0;
-            overflow-x: hidden;
-        }
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
+  <!-- Mother CSS (Unified) -->
+  <link rel="stylesheet" href="/assets/styles.css">
 
-        /* Loading Ritual */
-        #loading-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            background: #010409;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+  <!-- Tailwind (kept for your baseline) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        .bar-container {
-            width: 240px;
-            height: 2px;
-            background: rgba(255,255,255,0.05);
-            margin-top: 25px;
-        }
+  <style>
+    :root{
+      --brand-blue:#0ea5e3;
+      --brand-red:#A11219;
+      --brand-gold:#ffd700;
+      --bg-deep:#010409;
+      --panel:rgba(255,255,255,.02);
+      --border:rgba(255,255,255,.06);
+    }
 
-        #bar-fill {
-            height: 100%;
-            background: var(--brand-blue);
-            width: 0%;
-            transition: 2.2s cubic-bezier(0.1, 0.5, 0.1, 1);
-        }
+    body{
+      background-color:var(--bg-deep);
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:#ffffff;
+      margin:0;
+      overflow-x:hidden;
+    }
+    .font-mono{font-family:'JetBrains Mono',monospace;}
 
-        /* Cursor Glow (Desktop Only) */
-        #cursor-glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(14,165,223,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: screen;
-        }
+    /* Loading Ritual */
+    #loading-screen{
+      position:fixed;
+      inset:0;
+      z-index:99999;
+      background:#010409;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      transition:opacity .55s ease;
+    }
+    .bar-container{
+      width:240px;
+      height:2px;
+      background:rgba(255,255,255,.05);
+      margin-top:25px;
+      overflow:hidden;
+      border-radius:999px;
+    }
+    #bar-fill{
+      height:100%;
+      background:var(--brand-blue);
+      width:0%;
+      transition:2.2s cubic-bezier(.1,.5,.1,1);
+    }
 
-        @media (hover: none) {
-            #cursor-glow { display: none; }
-        }
+    /* Cursor Glow (Desktop Only) */
+    #cursor-glow{
+      position:fixed;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle, rgba(14,165,223,.10) 0%, transparent 70%);
+      border-radius:50%;
+      pointer-events:none;
+      z-index:9999;
+      transform:translate(-50%,-50%);
+      mix-blend-mode:screen;
+      opacity:.9;
+    }
+    @media (hover:none){
+      #cursor-glow{display:none;}
+    }
 
-        .genesis-hero {
-            background: radial-gradient(circle at 10% 40%, rgba(14,165,233,0.05) 0%, transparent 50%);
-        }
+    .genesis-hero{
+      background:
+        radial-gradient(circle at 10% 40%, rgba(14,165,233,.06) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(255,215,0,.05) 0%, transparent 40%);
+    }
 
-        .hanzi-watermark {
-            position: absolute;
-            font-size: 18rem;
-            font-weight: 900;
-            color: white;
-            opacity: 0.02;
-            pointer-events: none;
-            z-index: 0;
-        }
+    .hanzi-watermark{
+      position:absolute;
+      font-size:18rem;
+      font-weight:900;
+      color:#fff;
+      opacity:.02;
+      pointer-events:none;
+      z-index:0;
+      user-select:none;
+    }
+    @media (max-width:768px){
+      .hanzi-watermark{opacity:.01;font-size:12rem;}
+    }
 
-        @media (max-width: 768px) {
-            .hanzi-watermark { opacity: 0.01; font-size: 12rem; }
-        }
+    .story-card{
+      background:rgba(255,255,255,.01);
+      border-left:2px solid var(--brand-blue);
+      padding:56px;
+      transition:.5s;
+      position:relative;
+      overflow:hidden;
+      z-index:10;
+      border-radius:22px;
+    }
+    .story-card:hover{
+      background:rgba(14,165,227,.03);
+      transform:translateX(12px);
+      border-left-color:var(--brand-gold);
+    }
 
-        .story-card {
-            background: rgba(255,255,255,0.01);
-            border-left: 2px solid var(--brand-blue);
-            padding: 60px;
-            transition: 0.5s;
-            position: relative;
-            overflow: hidden;
-            z-index: 10;
-        }
+    .glass-panel{
+      background:var(--panel);
+      border:1px solid var(--border);
+      backdrop-filter:blur(12px);
+      border-radius:22px;
+    }
 
-        .story-card:hover {
-            background: rgba(14,165,227,0.03);
-            transform: translateX(15px);
-            border-left-color: var(--brand-gold);
-        }
+    .scan-line{
+      position:absolute;
+      width:100%;
+      height:2px;
+      background:var(--brand-blue);
+      opacity:.30;
+      animation:scan 4s linear infinite;
+    }
+    @keyframes scan{
+      0%{top:0%;}
+      100%{top:100%;}
+    }
 
-        .glass-panel {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            backdrop-filter: blur(12px);
-        }
+    /* Page container */
+    .container-max{max-width:1440px;margin:0 auto;padding:0 32px;}
+    @media (max-width:640px){.container-max{padding:0 18px;}}
 
-        .scan-line {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: var(--brand-blue);
-            opacity: 0.3;
-            animation: scan 4s linear infinite;
-        }
-
-        @keyframes scan {
-            0% { top: 0%; }
-            100% { top: 100%; }
-        }
-    </style>
+    /* Quick CTA blocks */
+    .cta-row{
+      display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;align-items:center;
+    }
+    .cta-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      border:1px solid rgba(14,165,227,.25);
+      background:rgba(14,165,227,.06);
+      padding:10px 14px;border-radius:14px;
+      font-weight:800;text-transform:uppercase;letter-spacing:.12em;
+      font-size:11px;color:#e6edf3;
+      transition:.25s;
+    }
+    .cta-btn:hover{border-color:var(--brand-blue);box-shadow:0 0 22px rgba(14,165,227,.35);transform:translateY(-2px);}
+    .cta-btn.gold{
+      border-color:rgba(255,215,0,.28);
+      background:rgba(255,215,0,.06);
+    }
+    .cta-btn.gold:hover{border-color:var(--brand-gold);box-shadow:0 0 22px rgba(255,215,0,.25);}
+  </style>
 </head>
 
-<body class="genesis-hero selection:bg-[#0ea5e3]">
+<body class="genesis-hero selection:bg-[#0ea5e3] selection:text-black">
 
-<div id="loading-screen">
-    <span class="text-white font-black italic text-2xl uppercase tracking-tighter">
-        GENESIS_LEGACY_SYNC
-    </span>
-    <div class="bar-container"><div id="bar-fill"></div></div>
-    <span class="text-[#0ea5e3] font-mono text-[8px] mt-4 tracking-[5px] animate-pulse">
-        // RECONSTRUCTING_38_YEARS_OF_TRUST...
-    </span>
+<!-- Loading Screen -->
+<div id="loading-screen" aria-hidden="true">
+  <span class="text-white font-black italic text-2xl uppercase tracking-tighter">GENESIS_LEGACY_SYNC</span>
+  <div class="bar-container"><div id="bar-fill"></div></div>
+  <span class="text-[#0ea5e3] font-mono text-[10px] mt-4 tracking-[5px] animate-pulse">// RECONSTRUCTING_38_YEARS_OF_TRUST...</span>
 </div>
 
 <div id="cursor-glow"></div>
 
-<!-- 页面主体结构保持与你原版完全一致（未动语义） -->
-<!-- ↓↓↓ 此处继续使用你原始 main / section / footer 内容 ↓↓↓ -->
+<!-- ================= NAV (Mother) ================= -->
+<header class="nav glass">
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <img src="logo.webp" alt="YiShen Global">
+      <b>YiShen Global</b>
+    </a>
+
+    <nav class="nav-links">
+      <a href="/yishen-genesis.html" class="active">Genesis</a>
+      <a href="/solutions.html">Solutions</a>
+      <a href="/industries.html">Industries</a>
+      <a href="/why-us.html">Why Us</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <a href="/contact.html" class="btn">Start Now</a>
+  </div>
+</header>
+
+<!-- ================= MAIN (Genesis Authority Body) ================= -->
+<main class="pt-32 pb-24">
+  <section class="container-max">
+    <div class="glass-panel p-10 md:p-14 relative overflow-hidden">
+      <div class="scan-line"></div>
+
+      <div class="hanzi-watermark" style="top:-40px;left:-20px;">熠</div>
+      <div class="hanzi-watermark" style="bottom:-80px;right:-20px;">燊</div>
+
+      <p class="font-mono text-[10px] tracking-[0.45em] uppercase text-[#0ea5e3] mb-6">
+        01 / GENESIS · SOVEREIGNTY MANIFEST · AUTHORITY BASELINE
+      </p>
+
+      <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.95] mb-6">
+        The Trinity of Sovereignty
+      </h1>
+
+      <p class="text-[#8b949e] text-base md:text-lg leading-relaxed max-w-[980px]">
+        This page is not marketing. It is a system statement forged from industrial integrity:
+        manufacturing discipline, documentation ownership, and predictable execution.
+      </p>
+
+      <div class="mt-10 cta-row">
+        <a class="cta-btn" href="/solutions.html"><i class="fa-solid fa-layer-group"></i> Enter Solutions</a>
+        <a class="cta-btn" href="/industries.html"><i class="fa-solid fa-crosshairs"></i> Industries · ICP Gate</a>
+        <a class="cta-btn gold" href="https://wa.me/8615968277867?text=I%20am%20interested%20in%20YiShen%20solutions" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp · 2H Quote
+        </a>
+        <a class="cta-btn" href="mailto:alex.yang@yishenglobal.net"><i class="fa-solid fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-max mt-14">
+    <div class="grid gap-8">
+      <div class="story-card">
+        <p class="font-mono text-[10px] tracking-[0.45em] uppercase text-[#0ea5e3] mb-4">PILLAR_01 · Integrity</p>
+        <h2 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter mb-4">Integrity Forges the Structure</h2>
+        <p class="text-[#8b949e] leading-relaxed">
+          We refuse ambiguity: materials, tolerance, packaging logic, and accountability are owned end-to-end.
+        </p>
+      </div>
+
+      <div class="story-card">
+        <p class="font-mono text-[10px] tracking-[0.45em] uppercase text-[#0ea5e3] mb-4">PILLAR_02 · Predictability</p>
+        <h2 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter mb-4">Predictability Beats Price</h2>
+        <p class="text-[#8b949e] leading-relaxed">
+          Buyers lose more money from delay swings than from unit price. Our system is built to reduce uncertainty.
+        </p>
+      </div>
+
+      <div class="story-card">
+        <p class="font-mono text-[10px] tracking-[0.45em] uppercase text-[#0ea5e3] mb-4">PILLAR_03 · Ownership</p>
+        <h2 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter mb-4">Documentation Is Sovereignty</h2>
+        <p class="text-[#8b949e] leading-relaxed">
+          Specifications, escalation paths, compliance assets, and after-sales logic — all defensible inside your org.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-max mt-16">
+    <div class="glass-panel p-10 md:p-14">
+      <p class="font-mono text-[10px] tracking-[0.45em] uppercase text-[#0ea5e3] mb-4">DIRECT_GATE</p>
+      <h3 class="text-3xl md:text-4xl font-black italic uppercase tracking-tighter mb-4">
+        Activate a 2-Hour Quote Channel
+      </h3>
+      <p class="text-[#8b949e] leading-relaxed max-w-[980px]">
+        Click WhatsApp and your phone opens with the prefilled message. This is the fastest procurement ignition path.
+      </p>
+
+      <div class="mt-8 cta-row">
+        <a class="cta-btn gold" href="https://wa.me/8615968277867?text=I%20am%20interested%20in%20YiShen%20solutions" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Sales
+        </a>
+        <a class="cta-btn" href="tel:+8619530394133"><i class="fa-solid fa-phone"></i> Call Sales</a>
+        <a class="cta-btn" href="/contact.html"><i class="fa-solid fa-shield"></i> Procurement Gate</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER (Unified) ================= -->
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div>
+      <img src="logo.webp" alt="YiShen Global" style="height:32px;">
+      <p style="margin-top:12px;">
+        Furniture-first global supply chain systems.<br>
+        Engineered in China · Delivered Worldwide
+      </p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Hotline: +8619530394133  +8618857277313</p>
+      <p>Email: alex.yang@yishenglobal.net</p>
+      <p>Email: champion.yang@yishenglobal.net</p>
+      <p>WhatsApp: +86 159 6827 7867</p>
+      <p>WhatsApp: +86 188 5727 7313</p>
+      <p>WeChat: 19530394133</p>
+      <p>Base: Anji · Hangzhou · China</p>
+    </div>
+
+    <div>
+      <h4>Social</h4>
+      <p><a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p><a href="https://x.com/AlexYan03451555" target="_blank" rel="noopener">X / Twitter</a></p>
+      <p><a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" rel="noopener">YouTube</a></p>
+      <p><a href="https://www.facebook.com/alex.yang.427745" target="_blank" rel="noopener">Facebook</a></p>
+      <p><a href="https://www.instagram.com/alexyang591/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/8615968277867" class="floating-cta" aria-label="WhatsApp">WhatsApp</a>
 
 <script>
 /* =========================
    SAFE EXECUTION PATCHES
    ========================= */
 
+/* Loader */
 window.addEventListener('load', () => {
-    const bar = document.getElementById('bar-fill');
-    const loader = document.getElementById('loading-screen');
-
-    if (bar) bar.style.width = '100%';
-
-    if (loader) {
-        setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => loader.style.display = 'none', 700);
-        }, 2500);
-    }
+  const bar = document.getElementById('bar-fill');
+  const loader = document.getElementById('loading-screen');
+  if (bar) bar.style.width = '100%';
+  if (loader) {
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.style.display = 'none', 650);
+    }, 1300);
+  }
 });
 
+/* Cursor glow (desktop only) */
 const glow = document.getElementById('cursor-glow');
 if (glow && window.matchMedia('(hover: hover)').matches) {
-    document.addEventListener('mousemove', e => {
-        requestAnimationFrame(() => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
-        });
+  let raf = null;
+  document.addEventListener('mousemove', (e) => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+      raf = null;
     });
+  }, { passive: true });
 }
 
+/* Watermark parallax (safe) */
 document.addEventListener('scroll', () => {
-    const marks = document.querySelectorAll('.hanzi-watermark');
-    if (!marks.length) return;
-
-    const scrolled = window.pageYOffset;
-    marks.forEach((el, i) => {
-        el.style.transform = `translateY(${scrolled * 0.1 * (i + 1)}px)`;
-    });
-});
+  const marks = document.querySelectorAll('.hanzi-watermark');
+  if (!marks.length) return;
+  const scrolled = window.pageYOffset || 0;
+  marks.forEach((el, i) => {
+    el.style.transform = `translateY(${scrolled * 0.08 * (i + 1)}px)`;
+  });
+}, { passive: true });
 </script>
 
 </body>

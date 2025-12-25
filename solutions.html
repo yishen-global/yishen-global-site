@@ -1,108 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yishen Global – Sovereign Procurement OS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Yishen Global Sovereign Procurement OS – Global Furniture & Industrial Supply Chain Operating System">
-<link rel="icon" href="/assets/branding/favicon-192.png">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<meta name="description" content="Sovereign Procurement Operating System. Global Procurement Gate, Buyer Radar, Compliance Trust Layer, Logistics OS, Rejection Logic, Command Layer." />
+
+<link rel="icon" href="/assets/branding/favicon-192.png" />
+<link rel="stylesheet" href="/styles.css" />
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-:root{--blue:#0ea5e3;--gold:#ffd700;--bg:#010409;}
-body{background:var(--bg);color:#e6edf3;font-family:Inter,sans-serif;}
-.font-mono{font-family:'JetBrains Mono',monospace}
-.cyber{border:1px solid rgba(14,165,227,.2);transition:.4s}
-.cyber:hover{border-color:var(--blue);box-shadow:0 0 30px rgba(14,165,227,.3)}
-.card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);transition:.4s}
-.card:hover{transform:translateY(-10px);border-color:var(--gold)}
+:root{
+  --bg:#010409; --panel:rgba(255,255,255,.04); --panel2:rgba(255,255,255,.02);
+  --border:rgba(255,255,255,.10); --text:#e6edf3; --muted:rgba(230,237,243,.68);
+  --muted2:rgba(230,237,243,.52); --blue:#0ea5e3; --gold:#ffd700;
+  --shadow:0 24px 80px rgba(0,0,0,.55); --shadow2:0 12px 36px rgba(0,0,0,.45);
+  --radius:18px; --max:1240px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+hr{border:0;border-top:1px solid rgba(255,255,255,.08);margin:0;}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.52em;text-transform:uppercase;color:var(--blue);opacity:.95;}
+.mono{font-family:var(--mono);}
+.badge{display:inline-flex;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.02);
+  padding:10px 12px;border-radius:999px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(230,237,243,.82);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:14px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);color:var(--text);transition:.25s;cursor:pointer;user-select:none;}
+.btn:hover{border-color:rgba(14,165,227,.35);background:rgba(14,165,227,.06);color:var(--blue);}
+.btn-primary{background:linear-gradient(135deg,var(--blue),rgba(14,165,227,.65));border-color:rgba(14,165,227,.35);color:#001018;
+  box-shadow:0 18px 60px rgba(14,165,227,.18);}
+.btn-primary:hover{filter:brightness(1.06);color:#001018;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),rgba(255,215,0,.70));border-color:rgba(255,215,0,.40);color:#000;}
+.btn-gold:hover{filter:brightness(1.05);color:#000;}
+
+.global-header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(1,4,9,.78);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.06);}
+.global-header-inner{height:78px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:0 24px;gap:18px;}
+.brand{display:flex;align-items:center;gap:14px;min-width:180px;}
+.brand img{height:34px;width:auto;}
+.brand-meta{display:flex;flex-direction:column;line-height:1.05;}
+.brand-name{font-weight:900;letter-spacing:.02em;}
+.brand-tag{font-family:var(--mono);font-size:10px;letter-spacing:.42em;color:var(--blue);text-transform:uppercase;margin-top:4px;}
+.nav{display:flex;align-items:center;gap:22px;font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;}
+.nav a{opacity:.78;transition:.25s;}
+.nav a:hover{opacity:1;color:var(--blue);}
+.nav .cta{opacity:1;background:linear-gradient(135deg,var(--gold),rgba(255,215,0,.72));color:#000;padding:10px 14px;border-radius:12px;
+  letter-spacing:.18em;box-shadow:0 10px 28px rgba(255,215,0,.12);}
+.nav .cta:hover{filter:brightness(1.05);color:#000;}
+.hamburger{display:none;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);color:var(--text);border-radius:14px;height:44px;width:44px;}
+.mobile-drawer{display:none;position:fixed;inset:78px 0 auto 0;background:rgba(1,4,9,.92);border-bottom:1px solid rgba(255,255,255,.08);padding:18px 24px 22px;}
+.mobile-drawer a{display:block;padding:14px 10px;border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);margin-bottom:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.92;}
+.mobile-drawer a:hover{border-color:rgba(14,165,227,.35);color:var(--blue);}
+.mobile-drawer a.cta{background:linear-gradient(135deg,var(--gold),rgba(255,215,0,.70));color:#000;border-color:rgba(255,215,0,.35);}
+@media (max-width:980px){.nav{display:none}.hamburger{display:inline-flex;align-items:center;justify-content:center}}
+
+.hero{padding-top:120px;padding-bottom:56px;position:relative;}
+.hero-shell{border:1px solid rgba(255,255,255,.10);border-radius:calc(var(--radius) + 10px);
+  background:radial-gradient(900px 320px at 16% 0%, rgba(14,165,227,.22), transparent 60%),
+           radial-gradient(900px 320px at 90% 70%, rgba(255,215,0,.10), transparent 55%),
+           rgba(255,255,255,.02);
+  box-shadow:var(--shadow);padding:28px;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch;}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+.hero-title{margin:10px 0 12px 0;font-size:clamp(42px,5.2vw,86px);font-weight:950;letter-spacing:-.02em;line-height:.95;
+  text-transform:uppercase;font-style:italic;}
+.hero-sub{margin:0 0 18px 0;color:var(--muted);font-size:15px;line-height:1.65;max-width:70ch;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px;}
+.hero-right{border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);background:rgba(255,255,255,.02);padding:18px;box-shadow:var(--shadow2);}
+.hero-right h3{margin:0 0 10px 0;font-size:18px;font-weight:900;text-transform:uppercase;font-style:italic;letter-spacing:-.01em;}
+.hero-right p{margin:0 0 12px 0;color:var(--muted);font-size:13px;line-height:1.6;}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
+.meta-line{margin-top:14px;color:var(--muted2);font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;}
+
+.section{padding:54px 0;}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
+.section-title{margin:0;font-size:30px;font-weight:950;letter-spacing:-.01em;text-transform:uppercase;font-style:italic;}
+.section-sub{margin:0;color:var(--muted);max-width:80ch;line-height:1.6;}
+.grid{display:grid;gap:14px;margin-top:14px;}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+@media (max-width:980px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+
+.card{border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);background:rgba(255,255,255,.02);padding:18px;box-shadow:var(--shadow2);transition:.25s;}
+.card:hover{border-color:rgba(14,165,227,.32);transform:translateY(-2px);}
+.card .k{font-family:var(--mono);font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:rgba(230,237,243,.60);margin-bottom:10px;}
+.card h4{margin:0 0 10px 0;font-size:18px;font-weight:900;letter-spacing:-.01em;text-transform:uppercase;font-style:italic;}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6;}
+.card .link{display:inline-flex;gap:10px;align-items:center;margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.card .link:hover{text-decoration:underline;}
+
+.firmware{border:1px solid rgba(255,255,255,.10);border-radius:calc(var(--radius)+8px);background:rgba(255,255,255,.02);box-shadow:var(--shadow);overflow:hidden;}
+.fw-head{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);}
+.fw-title{font-family:var(--mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(230,237,243,.75);}
+.fw-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.fw-body{padding:16px;}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:11.5px;line-height:1.65;color:rgba(230,237,243,.88);}
+.copy-ok{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,215,0,.9);}
+
+.footer{margin-top:56px;border-top:1px solid rgba(255,255,255,.08);padding:22px 0 34px;color:rgba(230,237,243,.52);font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;}
+.footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.small-links{display:flex;gap:14px;flex-wrap:wrap;}
+.small-links a{opacity:.7;}
+.small-links a:hover{opacity:1;color:var(--blue);}
 </style>
 </head>
 
 <body>
 
-<header class="fixed w-full top-0 z-50 bg-[#010409]/90 backdrop-blur border-b border-white/5 h-20 flex items-center px-10">
-<div class="max-w-[1440px] mx-auto w-full flex justify-between items-center">
-<div>
-<div class="text-white font-black italic text-2xl uppercase tracking-tight">Yishen Global</div>
-<div class="text-[var(--blue)] font-mono text-[9px] tracking-[6px]">SOVEREIGN_PROCUREMENT_OS</div>
-</div>
-<nav class="hidden lg:flex gap-10 font-mono text-[10px] uppercase tracking-widest">
-<a href="/" class="hover:text-[var(--blue)]">Home</a>
-<a href="/industries.html" class="hover:text-[var(--blue)]">Industries</a>
-<a href="/why-us.html" class="hover:text-[var(--blue)]">Why Us</a>
-<a href="/resources.html" class="hover:text-[var(--blue)]">Resources</a>
-<a href="/contact.html" class="bg-[var(--gold)] text-black px-4 py-1">Direct Entry</a>
-</nav>
-</div>
+<!-- GLOBAL NAV (enterprise blueprint) -->
+<header class="global-header" role="banner">
+  <div class="global-header-inner">
+    <a href="/" class="brand" aria-label="Yishen Global Home">
+      <picture>
+        <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
+        <img src="/assets/branding/logo-main.webp" alt="Yishen Global">
+      </picture>
+      <span class="brand-meta">
+        <span class="brand-name">Yishen Global</span>
+        <span class="brand-tag">Coordinated Industrial Architecture</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/solutions.html" style="opacity:1;color:var(--blue);">Solutions</a>
+      <a href="/industries.html">Industries</a>
+      <a href="/why-us.html">Why Us</a>
+      <a href="/resources.html">Resources</a>
+      <a class="cta" href="/contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" id="navToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/solutions.html">Solutions</a>
+    <a href="/industries.html">Industries</a>
+    <a href="/why-us.html">Why Us</a>
+    <a href="/resources.html">Resources</a>
+    <a href="/contact.html" class="cta">Contact</a>
+  </div>
 </header>
 
-<main class="pt-48 max-w-[1440px] mx-auto px-10">
+<main class="wrap" role="main">
 
-<!-- 1. PROCUREMENT GATE -->
-<section class="mb-40">
-<h1 class="text-7xl md:text-9xl font-black italic uppercase mb-12">Global Procurement<br><span class="text-white/10">Command Gate</span></h1>
-<p class="max-w-4xl font-mono text-xs uppercase tracking-widest border-l-4 border-[var(--blue)] pl-6 text-gray-400">
-Predictability > Price · Infrastructure > Vendors · Systems > Products<br>
-SLA 2H Quote · Compliance-Ready · DDP Route Control · Bonded Warehouse
-</p>
-<a href="https://wa.me/8613858516813" class="inline-block mt-12 bg-[var(--blue)] text-black px-10 py-4 rounded-xl font-mono text-xs tracking-widest">ENTER PROCUREMENT OS</a>
-</section>
+  <!-- HERO: GLOBAL_PROCUREMENT_GATE -->
+  <section class="hero" aria-label="Sovereign Procurement Gate">
+    <div class="hero-shell">
+      <div class="kicker">GLOBAL_PROCUREMENT_GATE · PROCUREMENT_OS_ENTRY · BUYER_RADAR_ACTIVE</div>
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-title">Sovereign Procurement<br>Operating System</h1>
+          <p class="hero-sub">
+            <span class="mono">PREDICTABILITY &gt; PRICE</span> · <span class="mono">SYSTEMS &gt; PRODUCTS</span> · <span class="mono">DOCUMENTATION_FIRST</span><br>
+            This is not a catalog. This is a procurement operating system—built to make your supply chain defendable, auditable,
+            and predictable across trade lanes.
+          </p>
 
-<!-- 2. SOLUTIONS OS MATRIX -->
-<section class="grid md:grid-cols-3 gap-10 mb-40">
-<div class="cyber p-10 rounded-xl">
-<h3 class="text-3xl font-black italic uppercase mb-6">Furniture System</h3>
-<p class="text-gray-400 text-sm">Office / Gaming / Recliner / Standing Desk / Project Furniture</p>
-</div>
-<div class="cyber p-10 rounded-xl">
-<h3 class="text-3xl font-black italic uppercase mb-6">SPC & Flooring</h3>
-<p class="text-gray-400 text-sm">SPC / WPC / Bamboo / Drop-Test Packaging</p>
-</div>
-<div class="cyber p-10 rounded-xl">
-<h3 class="text-3xl font-black italic uppercase mb-6">Hardware & Chain</h3>
-<p class="text-gray-400 text-sm">Industrial Chains · Wire Rope · Rigging</p>
-</div>
-</section>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#MODULE_01_GATE">ENTER BUYER GATE →</a>
+            <a class="btn btn-gold" href="/contact.html">DIRECT_ENTRY</a>
+            <a class="btn" href="#FIRMWARE">VIEW FIRMWARE</a>
+          </div>
 
-<!-- 3. INDUSTRY TEMPLATES -->
-<section class="mb-40">
-<h2 class="text-5xl font-black italic uppercase mb-10">Industry Procurement Templates</h2>
-<div class="grid md:grid-cols-4 gap-8">
-<div class="card p-8 rounded-xl">Retail Chains</div>
-<div class="card p-8 rounded-xl">Distributors</div>
-<div class="card p-8 rounded-xl">Private Label Brands</div>
-<div class="card p-8 rounded-xl">Government & Projects</div>
-</div>
-</section>
+          <div class="meta-line">QUOTE_SLA: 2H · COMPLIANCE_READY · DDP_ROUTE_CONTROL · BONDED_WAREHOUSE · ESCALATION_OWNERSHIP</div>
+        </div>
 
-<!-- 4. COMPLIANCE & LOGISTICS -->
-<section class="mb-40">
-<h2 class="text-5xl font-black italic uppercase mb-10">Compliance & Logistics Sovereignty</h2>
-<div class="grid md:grid-cols-4 gap-8">
-<div class="card p-8 rounded-xl">CE · BIFMA · FSC · EPA</div>
-<div class="card p-8 rounded-xl">HS Code Control</div>
-<div class="card p-8 rounded-xl">Drop-Test & ISTA</div>
-<div class="card p-8 rounded-xl">DDP Route Control</div>
-</div>
-</section>
+        <aside class="hero-right" aria-label="OS runtime status">
+          <h3>COMMAND_LAYER_STATUS</h3>
+          <p class="mono" style="color:rgba(230,237,243,.85);font-size:11px;letter-spacing:.14em;text-transform:uppercase;">
+            SYSTEM_NODE: YISHEN_GLOBAL<br>
+            SOVEREIGN_NODE_ID: SOVEREIGN_NODE_V1<br>
+            LANGUAGE_MODE: SOVEREIGN_EN<br>
+            FIRMWARE_VERSION: PROCUREMENT_OS_1.0
+          </p>
+          <div class="pills" aria-label="Runtime tags">
+            <span class="badge">BUYER_RADAR</span>
+            <span class="badge">DOCUMENTATION_LAYER</span>
+            <span class="badge">COMPLIANCE_TRUST_LAYER</span>
+            <span class="badge">LOGISTICS_OS</span>
+            <span class="badge">REJECTION_LOGIC</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-<!-- 5. BUYER ENTRY GATE -->
-<section class="mb-32">
-<h2 class="text-5xl font-black italic uppercase mb-10">Buyer Entry Gate</h2>
-<div class="grid md:grid-cols-3 gap-8">
-<a href="https://wa.me/8613858516813" class="card p-10 rounded-xl text-center">WhatsApp Instant RFQ</a>
-<a href="/contact.html" class="card p-10 rounded-xl text-center">NDA & Contract Entry</a>
-<a href="/passport.html" class="card p-10 rounded-xl text-center">Passport System</a>
-</div>
-</section>
+  <!-- MODULE 01 -->
+  <section class="section" id="MODULE_01_GATE" aria-label="MODULE 01 GLOBAL_BUYER_GATE">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_01 · GLOBAL_BUYER_GATE</h2>
+      <p class="section-sub">
+        Instant SLA · Quote Sovereignty · Documentation First · Predictability Architecture.
+        You are not entering a website. You are entering a sovereign procurement system.
+      </p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="k">BUYER_GATE</div>
+        <h4>2_HOUR_SLA_QUOTE_CHANNEL</h4>
+        <p>WhatsApp sovereign quote gateway. Structured RFQ intake. Spec-lock. Escalation ownership.</p>
+        <a class="link" href="/contact.html">ENTER_RFQ →</a>
+      </div>
+      <div class="card">
+        <div class="k">SIGNAL</div>
+        <h4>PROCUREMENT_OS_ENTRY</h4>
+        <p>USA / EU / GCC / LATAM / SEA — you are not choosing a supplier. You are choosing a procurement system.</p>
+      </div>
+      <div class="card">
+        <div class="k">RULE</div>
+        <h4>DOCUMENTATION_FIRST_LOGIC</h4>
+        <p>Documentation is not “support.” It is the system. Orders become defendable when paperwork is sovereign.</p>
+      </div>
+      <div class="card">
+        <div class="k">FRAME</div>
+        <h4>PREDICTABILITY_ENGINEERED</h4>
+        <p>Procurement fails mostly from instability. We engineer stability: ETA, packaging, compliance, and execution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 02 -->
+  <section class="section" id="MODULE_02_IDENTITY" aria-label="MODULE 02 PROCUREMENT_IDENTITY_LAYER">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_02 · PROCUREMENT_IDENTITY_LAYER</h2>
+      <p class="section-sub">
+        Furniture-first global supply chain execution. Engineered in China. Delivered worldwide.
+        Systems &gt; Vendors. Vendors &gt; Products.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="k">IDENTITY</div>
+        <h4>FURNITURE_FIRST_GLOBAL_SUPPLY_CHAIN</h4>
+        <p>Office chairs · gaming chairs · recliners · standing desks · functional sofas — built for procurement reality.</p>
+      </div>
+      <div class="card">
+        <div class="k">DECLARATION</div>
+        <h4>ENGINEERED_SOVEREIGNTY</h4>
+        <p>We do not sell products. We architect procurement sovereignty: lead-time, documentation, compliance, logistics.</p>
+      </div>
+      <div class="card">
+        <div class="k">FRAME</div>
+        <h4>SYSTEMS_GREATER_THAN_PRODUCTS</h4>
+        <p>Products are outputs. Systems are guarantees. We sell guarantees that survive internal buyer scrutiny.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 03 -->
+  <section class="section" id="MODULE_03_COMPLIANCE" aria-label="MODULE 03 COMPLIANCE_TRUST_LAYER">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_03 · COMPLIANCE_TRUST_LAYER</h2>
+      <p class="section-sub">
+        Compliance is not a checkbox. It is the trust layer that makes procurement defendable: customs, audits, internal approvals.
+      </p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="k">CORE</div>
+        <h4>COMPLIANCE_READY_FILES</h4>
+        <p>CO · CI · PL · MSDS · test reports · declarations · traceable documentation pack.</p>
+      </div>
+      <div class="card">
+        <div class="k">STANDARDS</div>
+        <h4>CE · BIFMA · EN1335</h4>
+        <p>Procurement-ready compliance logic designed for global buyer environments and internal approval reality.</p>
+      </div>
+      <div class="card">
+        <div class="k">PACKAGING</div>
+        <h4>ISTA_6A · DROP_TEST</h4>
+        <p>Drop-test packaging engineering that reduces damage ratio and protects margin.</p>
+      </div>
+      <div class="card">
+        <div class="k">CUSTOMS</div>
+        <h4>HS_CODE_ARCHITECTURE</h4>
+        <p>HS mapping discipline · risk mitigation · pre-clearance logic · audit-friendly classification governance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 04 -->
+  <section class="section" id="MODULE_04_REJECTION" aria-label="MODULE 04 REJECTION_LOGIC_PROTOCOL">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_04 · REJECTION_LOGIC_PROTOCOL</h2>
+      <p class="section-sub">
+        REJECTION_LOGIC is not arrogance. It is procurement discipline. Strategic filtering protects quality sovereignty.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="k">PROTOCOL</div>
+        <h4>STRATEGIC_ORDER_FILTER</h4>
+        <p>We reject unstable orders. We reject low-discipline execution. We reject documentation violations.</p>
+      </div>
+      <div class="card">
+        <div class="k">QUALITY</div>
+        <h4>QUALITY_SOVEREIGNTY</h4>
+        <p>Workers are authorized to reject substandard materials. Output stability beats short-term volume.</p>
+      </div>
+      <div class="card">
+        <div class="k">ENVIRONMENT</div>
+        <h4>MONSOON_PROTOCOL</h4>
+        <p>Moisture-risk control, packaging logic, and lane governance for climates where suppliers typically fail.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:14px;">
+      <div class="card">
+        <div class="k">CLAIM_LOGIC</div>
+        <h4>WATER_DAMAGE_ZERO_CLAIM</h4>
+        <p>Zero ambiguity claim protocol: packaging engineering + route control + documented responsibility mapping.</p>
+      </div>
+      <div class="card">
+        <div class="k">PRINCIPLE</div>
+        <h4>DOCUMENTATION_OVER_SALES</h4>
+        <p>When something goes wrong, buyers need defensible paperwork and an escalation path—not slogans.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 05 -->
+  <section class="section" id="MODULE_05_LOGISTICS" aria-label="MODULE 05 GLOBAL_LOGISTICS_OS">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_05 · GLOBAL_LOGISTICS_OS</h2>
+      <p class="section-sub">
+        DDP execution layer · bonded warehouse network · ETA stability control · customs pre-clearance · reverse return OS.
+      </p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="k">LANES</div>
+        <h4>DDP_EXECUTION_LAYER</h4>
+        <p>Trade lane governance designed for predictable delivery outcomes.</p>
+      </div>
+      <div class="card">
+        <div class="k">WAREHOUSE</div>
+        <h4>BONDED_WAREHOUSE_NETWORK</h4>
+        <p>Bonded storage logic to compress lead time volatility and protect inventory velocity.</p>
+      </div>
+      <div class="card">
+        <div class="k">CUSTOMS</div>
+        <h4>CUSTOMS_PRE_CLEARANCE</h4>
+        <p>Pre-clearance discipline designed for fewer surprises, fewer holds, fewer hidden costs.</p>
+      </div>
+      <div class="card">
+        <div class="k">AFTERSALES</div>
+        <h4>REVERSE_RETURN_OS</h4>
+        <p>Replacement routing, returns governance, and claim discipline aligned with procurement reality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 06 -->
+  <section class="section" id="MODULE_06_POSITIONING" aria-label="MODULE 06 BUYER_PSYCHOLOGICAL_POSITIONING_LAYER">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_06 · BUYER_PSYCHOLOGICAL_POSITIONING_LAYER</h2>
+      <p class="section-sub">
+        These are not slogans. They are procurement decision anchors. They survive internal meetings.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="k">ANCHOR</div>
+        <h4>PREDICTABILITY &gt; PRICE</h4>
+        <p>Price wins a moment. Predictability wins procurement cycles.</p>
+      </div>
+      <div class="card">
+        <div class="k">ANCHOR</div>
+        <h4>SYSTEMS &gt; PRODUCTS</h4>
+        <p>Products are easy to copy. Systems are hard to replicate.</p>
+      </div>
+      <div class="card">
+        <div class="k">ANCHOR</div>
+        <h4>ENGINEERING &gt; PROMOTION</h4>
+        <p>Procurement respects defensible engineering, not marketing noise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 07 -->
+  <section class="section" id="MODULE_07_COMMS" aria-label="MODULE 07 SOVEREIGN_COMMUNICATION_GATE">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_07 · SOVEREIGN_COMMUNICATION_GATE</h2>
+      <p class="section-sub">
+        Direct channels for procurement execution. WhatsApp quote API. Liaison nodes. HQ email gate.
+      </p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="k">CHANNEL</div>
+        <h4>WHATSAPP_QUOTE_API</h4>
+        <p>Instant RFQ intake + procurement context. SLA designed for global buyers.</p>
+        <a class="link" href="https://wa.me/8613858516813" target="_blank" rel="noopener">OPEN_WHATSAPP →</a>
+      </div>
+      <div class="card">
+        <div class="k">NODE</div>
+        <h4>HOTLINE_NODE_01</h4>
+        <p class="mono" style="letter-spacing:.12em;text-transform:uppercase;color:rgba(230,237,243,.85);font-size:12px;margin:0;">
+          +86 138 5851 6813
+        </p>
+        <p>Global sales liaison node.</p>
+      </div>
+      <div class="card">
+        <div class="k">NODE</div>
+        <h4>WECHAT_HQ</h4>
+        <p>WeChat HQ gate for structured procurement communication.</p>
+      </div>
+      <div class="card">
+        <div class="k">EMAIL</div>
+        <h4>EMAIL_HQ</h4>
+        <p>support@yishenglobal.net — procurement-ready email entry.</p>
+        <a class="link" href="mailto:support@yishenglobal.net">OPEN_EMAIL →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 08 -->
+  <section class="section" id="MODULE_08_COMMAND" aria-label="MODULE 08 COMMAND_LAYER">
+    <div class="section-head">
+      <h2 class="section-title">MODULE_08 · COMMAND_LAYER</h2>
+      <p class="section-sub">
+        Global command layer. Procurement execution core. Buyer onboarding OS.
+        You are not choosing a supplier. You are choosing a procurement system.
+      </p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="k">COMMAND</div>
+        <h4>GLOBAL_COMMAND_LAYER</h4>
+        <p>Procurement OS orchestration across manufacturing, compliance, packaging, and trade lanes.</p>
+      </div>
+      <div class="card">
+        <div class="k">ONBOARDING</div>
+        <h4>BUYER_ONBOARDING_OS</h4>
+        <p>RFQ → spec-lock → compliance pack → packaging logic → lane control → delivery governance.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a class="btn btn-primary" href="/contact.html">START_COLLABORATION</a>
+      <a class="btn btn-gold" href="https://wa.me/8613858516813" target="_blank" rel="noopener">WHATSAPP_QUOTE_API</a>
+      <a class="btn" href="/resources.html">OPEN_RESOURCES</a>
+    </div>
+  </section>
+
+  <!-- FIRMWARE TEXT (SOVEREIGN SEMANTIC PRESERVED) -->
+  <section class="section" id="FIRMWARE" aria-label="Firmware Definition">
+    <div class="section-head">
+      <h2 class="section-title">FIRMWARE · SOVEREIGN_SEMANTIC_LAYER</h2>
+      <p class="section-sub">
+        This firmware block is a semantic contract. Naming is a sovereign interface. Not marketing copy.
+      </p>
+    </div>
+
+    <div class="firmware">
+      <div class="fw-head">
+        <div class="fw-title">SOVEREIGN_NODE_V1 · PROCUREMENT_OS_1.0 · LANGUAGE_MODE: SOVEREIGN_EN</div>
+        <div class="fw-actions">
+          <button class="btn" id="copyFw">COPY_FIRMWARE</button>
+          <span class="copy-ok" id="copyOk">COPIED ✓</span>
+        </div>
+      </div>
+      <div class="fw-body">
+<pre id="fwText">SYSTEM_NODE: YISHEN_GLOBAL
+SOVEREIGN_NODE_ID: SOVEREIGN_NODE_V1
+LANGUAGE_MODE: SOVEREIGN_EN
+FIRMWARE_VERSION: PROCUREMENT_OS_1.0
+
+PREDICTABILITY &gt; PRICE
+SYSTEMS &gt; PRODUCTS
+DOCUMENTATION_FIRST
+COMMAND_LAYER
+BUYER_RADAR_ACTIVE
+GLOBAL_PROCUREMENT_GATE
+PROCUREMENT_OS_ENTRY
+2_HOUR_SLA_QUOTE_CHANNEL
+COMPLIANCE_TRUST_LAYER
+HS_CODE_ARCHITECTURE
+ISTA_6A_DROP_TEST_PACKAGING_LOGIC
+DDP_EXECUTION_LAYER
+BONDED_WAREHOUSE_NETWORK
+ETA_STABILITY_CONTROL
+CUSTOMS_PRE_CLEARANCE
+REVERSE_RETURN_OS
+REJECTION_LOGIC_PROTOCOL
+MONSOON_PROTOCOL
+WATER_DAMAGE_ZERO_CLAIM
+DOCUMENTATION_OVER_SALES
+ENGINEERING_OVER_PROMOTION
+
+SIGNAL_STATEMENT:
+YOU ARE NOT CHOOSING A SUPPLIER.
+YOU ARE CHOOSING A PROCUREMENT SYSTEM.</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-row">
+      <div>© 2026 Yishen Global · Sovereign Procurement OS Kernel</div>
+      <div class="small-links">
+        <a href="/">Home</a>
+        <a href="/solutions.html">Solutions</a>
+        <a href="/industries.html">Industries</a>
+        <a href="/why-us.html">Why Us</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
 
 </main>
 
-<footer class="p-10 border-t border-white/5 font-mono text-[9px] uppercase tracking-[4px] opacity-40">
-© 2026 Yishen Global // Sovereign Procurement Operating System
-</footer>
+<script>
+(function(){
+  // mobile nav
+  const btn = document.getElementById('navToggle');
+  const drawer = document.getElementById('mobileDrawer');
+  if(btn && drawer){
+    const setOpen = (open) => {
+      drawer.style.display = open ? 'block' : 'none';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    let open = false;
+    btn.addEventListener('click', ()=>{ open=!open; setOpen(open); });
+    drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ open=false; setOpen(false); }));
+    window.addEventListener('resize', ()=>{ if(window.innerWidth>980){ open=false; setOpen(false);} });
+  }
+
+  // firmware copy
+  const copyBtn = document.getElementById('copyFw');
+  const fw = document.getElementById('fwText');
+  const ok = document.getElementById('copyOk');
+  if(copyBtn && fw){
+    copyBtn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(fw.innerText);
+        if(ok){ ok.style.display='inline-block'; setTimeout(()=>ok.style.display='none', 1200); }
+      }catch(e){
+        alert('Copy failed. Please select and copy manually.');
+      }
+    });
+  }
+})();
+</script>
 
 </body>
 </html>

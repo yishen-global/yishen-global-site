@@ -1,511 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Solutions | Yishen Global – Sovereign Procurement OS v1.0</title>
-  <meta name="description" content="Yishen Global Solutions: Sovereign Procurement OS. Buyer Radar, Lead-time sovereignty, Packaging matrix, Compliance engine, and country-level procurement gates." />
+  <meta name="theme-color" content="#050b17" />
+  <title>Solutions | YiShen Global — Predictable Industrial Execution</title>
+  <meta name="description" content="Lead-time governance, packaging engineering, and compliance-ready documentation. Solutions that make sourcing defensible." />
 
-  <!-- BRANDING -->
-  <link rel="icon" href="/assets/branding/favicon-192.png" />
-  <link rel="apple-touch-icon" href="/assets/branding/favicon-192.png" />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Solutions | YiShen Global" />
+  <meta property="og:description" content="Predictable execution: lead-time control, packaging engineering, compliance proof packs, and global delivery." />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Solutions | YiShen Global" />
+  <meta name="twitter:description" content="Defensible sourcing with lead-time control, packaging engineering, and compliance-ready documentation." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css" />
 
-  <!-- OPTIONAL ICONS (safe fallback if blocked) -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <!-- PAGE-LOCAL PATCH (does NOT break your global styles.css) -->
+  <!-- Page-safe fallback styles -->
   <style>
     :root{
-      --bg-deep:#010409;
-      --panel:rgba(255,255,255,.03);
-      --panel2:rgba(14,165,227,.06);
-      --border:rgba(255,255,255,.08);
-      --soft:rgba(255,255,255,.06);
-      --blue:#0ea5e3;
-      --gold:#ffd700;
-      --txt:#e6edf3;
-      --muted:rgba(230,237,243,.70);
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      --radius: 18px;
-      --radius2: 28px;
-      --shadow: 0 16px 48px rgba(0,0,0,.45);
+      --bg:#050b17;--panel:rgba(255,255,255,.03);--border:rgba(255,255,255,.10);
+      --text:#e7edf6;--muted:rgba(231,237,246,.72);--blue:#0ea5e3;--red:#E1061C;
+      --shadow:0 18px 60px rgba(0,0,0,.35);--radius:16px;--max:1200px;
     }
-    body{ background:var(--bg-deep); color:var(--txt); }
-    .os-wrap{ max-width: 1240px; margin: 0 auto; padding: 120px 20px 90px; }
-    .kicker{ color:var(--blue); font-family:var(--mono); letter-spacing:.55em; font-size:12px; text-transform:uppercase; margin:0 0 14px; }
-    .h1{ font-size: clamp(42px, 6vw, 84px); line-height:.92; letter-spacing:-.04em; margin:0 0 18px; font-weight: 900; text-transform: uppercase; }
-    .h1 .ghost{ color: rgba(255,255,255,.10); }
-    .sub{ max-width: 920px; color: var(--muted); font-size: 14px; line-height: 1.8; font-family:var(--mono); letter-spacing:.18em; text-transform:uppercase; border-left: 3px solid rgba(14,165,227,.65); padding-left: 14px; margin: 0 0 28px; }
-    .os-topbar{
-      display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top: 22px;
-    }
-    .chip{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 10px 14px; border-radius: 999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.02);
-      font-family:var(--mono); font-size:11px; letter-spacing:.22em; text-transform:uppercase;
-    }
-    .chip b{ color:#fff; letter-spacing:.14em; }
-    .chip .dot{ width:8px; height:8px; border-radius:50%; background: var(--blue); box-shadow: 0 0 18px rgba(14,165,227,.55); }
-    .chip.gold .dot{ background: var(--gold); box-shadow: 0 0 18px rgba(255,215,0,.35); }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      margin-top: 26px;
-    }
-    @media (max-width: 980px){
-      .grid{ grid-template-columns: 1fr; }
-      .os-wrap{ padding-top: 110px; }
-    }
-
-    .card{
-      border: 1px solid var(--border);
-      background: var(--panel);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .card .head{
-      padding: 18px 18px 14px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
-    }
-    .card .head h2{
-      margin:0;
-      font-weight: 900;
-      letter-spacing: -.02em;
-      text-transform: uppercase;
-      font-size: 18px;
-    }
-    .card .head p{
-      margin:8px 0 0;
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      line-height: 1.7;
-      max-width: 700px;
-    }
-    .badge{
-      font-family:var(--mono);
-      font-size:10px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(14,165,227,.35);
-      background: rgba(14,165,227,.08);
-      color: #bfefff;
-      white-space:nowrap;
-    }
-    .badge.gold{
-      border-color: rgba(255,215,0,.35);
-      background: rgba(255,215,0,.09);
-      color: #fff3b0;
-    }
-
-    .card .body{ padding: 18px; }
-    .row{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 980px){
-      .row{ grid-template-columns: 1fr; }
-    }
-    .mini{
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      border-radius: var(--radius);
-      padding: 16px;
-      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-    }
-    .mini:hover{ transform: translateY(-6px); border-color: rgba(14,165,227,.55); box-shadow: 0 18px 46px rgba(14,165,227,.08); }
-    .mini .t{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      margin-bottom: 10px;
-    }
-    .mini h3{
-      margin:0;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: 14px;
-      letter-spacing: -.01em;
-    }
-    .mini .tag{
-      font-family:var(--mono);
-      font-size:10px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color: rgba(255,255,255,.75);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.02);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space:nowrap;
-    }
-    .mini p{
-      margin:0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.75;
-    }
-
-    .os-map{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    .gate{
-      display:flex; align-items:center; justify-content:space-between; gap: 12px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      border-radius: var(--radius);
-      padding: 14px 14px;
-      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-    }
-    .gate:hover{ transform: translateY(-6px); border-color: rgba(255,215,0,.45); box-shadow: 0 18px 46px rgba(255,215,0,.08); }
-    .gate .l{
-      display:flex; flex-direction:column; gap:6px;
-    }
-    .gate .name{
-      font-weight: 900; text-transform: uppercase; letter-spacing: -.01em;
-    }
-    .gate .meta{
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(230,237,243,.70);
-    }
-    .gate a{
-      display:inline-flex; align-items:center; gap:10px;
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(255,215,0,.35);
-      background: rgba(255,215,0,.10);
-      color: #fff;
-      text-decoration:none;
-      white-space:nowrap;
-    }
-    .gate a:hover{ background: rgba(255,215,0,.16); }
-
-    .divider{
-      height: 1px;
-      background: rgba(255,255,255,.08);
-      margin: 14px 0 0;
-    }
-
-    .kernel{
-      margin-top: 18px;
-      border: 1px solid rgba(14,165,227,.22);
-      background: rgba(14,165,227,.05);
-      border-radius: var(--radius2);
-      padding: 18px;
-    }
-    .kernel h3{
-      margin:0 0 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -.01em;
-    }
-    .kernel ul{ margin:0; padding-left: 18px; color: var(--muted); }
-    .kernel li{ margin: 8px 0; line-height: 1.75; }
-
-    .cta{
-      margin-top: 18px;
-      display:flex; gap: 12px; flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      color:#fff;
-      text-decoration:none;
-      font-weight: 800;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-    .btn.primary{
-      border-color: rgba(14,165,227,.35);
-      background: rgba(14,165,227,.10);
-    }
-    .btn.primary:hover{ background: rgba(14,165,227,.16); }
-    .btn.gold{
-      border-color: rgba(255,215,0,.35);
-      background: rgba(255,215,0,.12);
-    }
-    .btn.gold:hover{ background: rgba(255,215,0,.18); }
-
-    .note{
-      margin-top: 18px;
-      color: rgba(230,237,243,.70);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      line-height: 1.8;
-      opacity: .9;
-    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui;background:linear-gradient(180deg,#040912,#050b17);color:var(--text)}
+    a{color:inherit}.container{max-width:var(--max);margin:0 auto;padding:0 22px}
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(5,11,23,.72);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav-container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-logo{height:44px}.brand-name{font-weight:800;letter-spacing:1.6px;font-size:14px}
+    .main-nav{display:flex;gap:26px}.main-nav a{font-size:13px;text-decoration:none;color:rgba(231,237,246,.78)}
+    .main-nav a:hover{color:var(--blue)} .main-nav a.active{color:var(--text)}
+    .nav-cta{padding:8px 14px;border:1px solid rgba(14,165,227,.55);border-radius:10px;color:var(--blue)}
+    .nav-toggle{display:none;background:transparent;border:1px solid var(--border);border-radius:12px;padding:10px}
+    .nav-toggle span{display:block;width:18px;height:2px;background:rgba(231,237,246,.78);margin:4px 0}
+    .mobile-nav{display:none;border-top:1px solid var(--border);padding:10px 0}
+    .mobile-nav a{display:block;padding:10px 0;text-decoration:none;color:rgba(231,237,246,.85)}
+    .hero{padding:46px 0 22px}
+    h1{font-size:40px;margin:0 0 10px}
+    .sub{color:var(--muted);max-width:70ch;line-height:1.6}
+    .section{padding:30px 0}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{border:1px solid var(--border);background:rgba(255,255,255,.02);border-radius:var(--radius);padding:16px}
+    .card h3{margin:10px 0 8px;font-size:16px}
+    .card p{margin:0;color:rgba(231,237,246,.72);line-height:1.55;font-size:13.5px}
+    .list{margin:12px 0 0;padding-left:18px;color:rgba(231,237,246,.75);font-size:13px;line-height:1.55}
+    .cta{padding:30px 0}.cta-box{border:1px solid rgba(14,165,227,.28);background:linear-gradient(135deg, rgba(14,165,227,.12), rgba(255,255,255,.02));border-radius:20px;padding:18px;display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:14px}
+    .btn.primary{background:linear-gradient(135deg, rgba(14,165,227,.95), rgba(14,165,227,.65));color:#06101a}
+    .btn.ghost{border:1px solid rgba(231,237,246,.18);background:rgba(255,255,255,.02);color:rgba(231,237,246,.92)}
+    .footer{border-top:1px solid var(--border);padding:22px 0 30px;color:rgba(231,237,246,.65)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:14px}
+    @media (max-width:980px){.grid3{grid-template-columns:1fr}}
+    @media (max-width:768px){.brand-logo{height:38px}.main-nav{display:none}.nav-toggle{display:block}.mobile-nav.open{display:block}}
   </style>
 </head>
 
 <body>
-
-  <!-- GLOBAL NAVIGATION MASTER BAR (same as your index master) -->
-  <header class="global-header">
-    <div class="global-header-inner">
-      <a href="/" class="global-brand" aria-label="Yishen Global Home">
-        <picture>
-          <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
-          <img src="/assets/branding/logo-main.webp" alt="Yishen Global">
-        </picture>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="/index.html">
+        <img src="/logo.webp" class="brand-logo" alt="YiShen Global" />
+        <span class="brand-name">YISHEN GLOBAL</span>
       </a>
-      <nav class="global-nav" aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/solutions.html" aria-current="page">Solutions</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a class="active" href="/solutions.html">Solutions</a>
         <a href="/industries.html">Industries</a>
         <a href="/why-us.html">Why Us</a>
         <a href="/resources.html">Resources</a>
-        <a href="/contact.html" class="nav-cta">Contact</a>
+        <a class="nav-cta" href="/contact.html">Contact</a>
       </nav>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="container mobile-nav" id="mobileNav">
+      <a href="/index.html">Home</a>
+      <a href="/solutions.html">Solutions</a>
+      <a href="/industries.html">Industries</a>
+      <a href="/why-us.html">Why Us</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/contact.html">Contact</a>
     </div>
   </header>
 
-  <main class="os-wrap">
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Execution Solutions</h1>
+        <p class="sub">We don’t sell slogans. We engineer predictability: lead-time governance, packaging risk engineering, and compliance-ready proof packs — so procurement can defend decisions internally.</p>
+      </div>
+    </section>
 
-    <!-- OS HERO -->
-    <p class="kicker">Sovereign Procurement OS v1.0</p>
-    <h1 class="h1">Global Procurement <span class="ghost">Control Panel</span></h1>
-    <p class="sub">
-      Predictability is not a slogan — it is a system. Yishen Global orchestrates manufacturing, logistics, compliance,
-      and buyer execution into one coordinated industrial architecture. This page is the operating layer.
-    </p>
+    <!-- SOLUTIONS -->
+    <section class="section">
+      <div class="container grid3">
+        <article class="card">
+          <h3>Lead-Time Governance</h3>
+          <p>Milestone-based production cadence, owner maps, and escalation ladders that stabilize ETA.</p>
+          <ul class="list">
+            <li>Owner map + escalation</li>
+            <li>Milestone checkpoints</li>
+            <li>Risk flags before delays</li>
+          </ul>
+        </article>
 
-    <div class="os-topbar" role="list" aria-label="System Status">
-      <div class="chip" role="listitem"><span class="dot"></span><b>Kernel</b> Coordinated_Industrial_Architecture</div>
-      <div class="chip" role="listitem"><span class="dot"></span><b>Lead-Time</b> Sovereignty_Bus_Enabled</div>
-      <div class="chip" role="listitem"><span class="dot"></span><b>Packaging</b> Modular_Matrix_Ready</div>
-      <div class="chip gold" role="listitem"><span class="dot"></span><b>Gate</b> USA_Node_Online</div>
-    </div>
+        <article class="card">
+          <h3>Packaging Engineering</h3>
+          <p>Damage prevention via carton optimization, protection points, and real shipping stress logic.</p>
+          <ul class="list">
+            <li>Drop-test mindset (ISTA)</li>
+            <li>DIM & strength optimization</li>
+            <li>Returns reduction</li>
+          </ul>
+        </article>
 
-    <div class="grid">
+        <article class="card">
+          <h3>Compliance Proof Packs</h3>
+          <p>Certificates, test reports, and version-controlled spec documentation prepared early.</p>
+          <ul class="list">
+            <li>Proof templates</li>
+            <li>Revision discipline</li>
+            <li>Customs-ready structure</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-      <!-- LEFT: OS MODULES -->
-      <section class="card" aria-label="OS Modules">
-        <div class="head">
-          <div>
-            <h2>Solutions Matrix</h2>
-            <p>Do not buy products. Acquire a system that can be defended internally when something goes wrong.</p>
-          </div>
-          <div class="badge">OS_LAYER: EXECUTION</div>
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-box">
+        <div>
+          <h2>Remove surprise costs</h2>
+          <p>Send SKUs, market, and volume. We’ll reply with a risk map, packaging logic, and proof pack structure your team will accept.</p>
         </div>
-
-        <div class="body">
-          <div class="row">
-
-            <!-- Buyer Radar -->
-            <article class="mini">
-              <div class="t">
-                <h3>Buyer Radar</h3>
-                <span class="tag">Signal → Cycle</span>
-              </div>
-              <p>
-                Identify active procurement cycles using signals: category expansion, stock pressure, compliance updates,
-                listing velocity, shipment rhythm, and supplier-switch patterns.
-              </p>
-            </article>
-
-            <!-- Lead-time Sovereignty -->
-            <article class="mini">
-              <div class="t">
-                <h3>Lead-Time Sovereignty</h3>
-                <span class="tag">ETA Defense</span>
-              </div>
-              <p>
-                Stabilize production + booking + clearance. We engineer predictable delivery windows and reduce hidden costs
-                created by delay cascades (storage, missed seasons, platform penalties).
-              </p>
-            </article>
-
-            <!-- Packaging Matrix -->
-            <article class="mini">
-              <div class="t">
-                <h3>Packaging Matrix</h3>
-                <span class="tag">Drop-Test Logic</span>
-              </div>
-              <p>
-                Modular packaging reduces warehouse cost and claim risk. ISTA-style protection logic + dimensional-weight control
-                to keep margins intact while improving arrival condition.
-              </p>
-            </article>
-
-          </div>
-
-          <div class="row" style="margin-top:14px;">
-
-            <!-- Compliance Engine -->
-            <article class="mini">
-              <div class="t">
-                <h3>Compliance Engine</h3>
-                <span class="tag">No Surprise</span>
-              </div>
-              <p>
-                Compliance-first execution: documentation ownership, labeling governance, material disclosure, and audit-ready
-                evidence packs so buyers can defend decisions internally.
-              </p>
-            </article>
-
-            <!-- QC Protocol / Rejection Logic -->
-            <article class="mini">
-              <div class="t">
-                <h3>QC Protocol</h3>
-                <span class="tag">Rejection Logic</span>
-              </div>
-              <p>
-                Workers are authorized to reject nonconforming inputs. Strategic refusal protects long-term trust and prevents
-                “quiet defects” that destroy repeat orders.
-              </p>
-            </article>
-
-            <!-- Global Logistics -->
-            <article class="mini">
-              <div class="t">
-                <h3>Global Logistics</h3>
-                <span class="tag">DDP / Bonded</span>
-              </div>
-              <p>
-                DDP routing, bonded warehousing, and customs pre-clearance playbooks. We reduce volatility across trade routes
-                and keep execution in one accountable system.
-              </p>
-            </article>
-
-          </div>
-
-          <div class="kernel" aria-label="Sovereign Semantic Layer">
-            <h3>“Sovereign” Semantic Layer (Do Not Delete)</h3>
-            <ul>
-              <li><b>Predictability Engineered:</b> systems, not slogans — internal defendability is the real buyer constraint.</li>
-              <li><b>Procurement Ownership:</b> responsibility path + escalation path + documentation path are part of the product.</li>
-              <li><b>Strategic Refusal:</b> refusing bad orders protects long-term sovereignty and prevents hidden failure modes.</li>
-              <li><b>Modular Packaging:</b> lower warehouse cost, lower claim risk, higher sell-through velocity.</li>
-              <li><b>Compliance-First:</b> audit-ready evidence pack to remove internal friction for buyers.</li>
-            </ul>
-
-            <div class="cta" aria-label="Primary Actions">
-              <a class="btn primary" href="/contact.html"><i class="fa-solid fa-satellite-dish"></i> Start Collaboration</a>
-              <a class="btn" href="/resources.html"><i class="fa-solid fa-vault"></i> Open Resource Vault</a>
-              <a class="btn gold" href="/usa/procurement-gate.html"><i class="fa-solid fa-flag-usa"></i> USA Procurement Gate</a>
-            </div>
-
-            <div class="note">
-              SYSTEM NOTE: This Solutions page is the OS control panel. Country gates are nodes. Resources are the vault.
-              Why-Us is the doctrine. Do not convert this into a generic “services list”.
-            </div>
-          </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn primary" href="/contact.html">Contact YiShen</a>
+          <a class="btn ghost" href="/why-us.html">Why This Works</a>
         </div>
-      </section>
-
-      <!-- RIGHT: GLOBAL MAP / GATES -->
-      <aside class="card" aria-label="Global Procurement Gates">
-        <div class="head">
-          <div>
-            <h2>Procurement Gates</h2>
-            <p>Country-level entry points. Each gate is a procurement briefing layer (buyer logic + execution path).</p>
-          </div>
-          <div class="badge gold">ROUTER: ACTIVE</div>
-        </div>
-
-        <div class="body">
-          <div class="os-map">
-
-            <!-- USA NODE -->
-            <div class="gate">
-              <div class="l">
-                <div class="name">United States Gate</div>
-                <div class="meta">NODE: USA / PROCUREMENT_OS / ONLINE</div>
-              </div>
-              <a href="/usa/procurement-gate.html">Enter →</a>
-            </div>
-
-            <!-- FUTURE NODES (placeholders but NOT broken) -->
-            <div class="gate" style="opacity:.82;">
-              <div class="l">
-                <div class="name">GCC Gate (Saudi / UAE)</div>
-                <div class="meta">NODE: GCC / STAGING</div>
-              </div>
-              <a href="/contact.html">Request →</a>
-            </div>
-
-            <div class="gate" style="opacity:.82;">
-              <div class="l">
-                <div class="name">EU Gate (Germany / France)</div>
-                <div class="meta">NODE: EU / STAGING</div>
-              </div>
-              <a href="/contact.html">Request →</a>
-            </div>
-
-            <div class="gate" style="opacity:.82;">
-              <div class="l">
-                <div class="name">APAC Gate (Japan / Korea)</div>
-                <div class="meta">NODE: APAC / STAGING</div>
-              </div>
-              <a href="/contact.html">Request →</a>
-            </div>
-
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="kernel" style="margin-top:16px;">
-            <h3>Direct Liaison</h3>
-            <ul>
-              <li><b>Sales Strategic Hotline:</b> <a href="tel:+8613858516813" style="color:#fff; text-decoration:none;">+86 138 5851 6813</a> (WhatsApp-ready)</li>
-              <li><b>Email HQ:</b> <a href="mailto:support@yishenglobal.net" style="color:#fff; text-decoration:none;">support@yishenglobal.net</a></li>
-              <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/company/yishen-global" target="_blank" rel="noopener" style="color:#fff; text-decoration:none;">/company/yishen-global</a></li>
-            </ul>
-            <div class="cta">
-              <a class="btn primary" href="https://wa.me/8613858516813?text=I%20am%20interested%20in%20Yishen%20Global%20Solutions" target="_blank" rel="noopener">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp Sales API
-              </a>
-              <a class="btn" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact Console</a>
-            </div>
-          </div>
-
-        </div>
-      </aside>
-
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="global-footer">
-    <p>© 2026 Yishen Global · Coordinated Industrial Architecture · Sovereign Procurement OS v1.0</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div style="font-weight:800;letter-spacing:1.4px">YISHEN GLOBAL</div>
+        <small>Furniture-first · AI-driven industrial execution</small>
+      </div>
+      <div>
+        <a href="/solutions.html">Solutions</a><br>
+        <a href="/industries.html">Industries</a><br>
+        <a href="/resources.html">Resources</a><br>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div>
+        <small>© <span id="year"></span> YiShen Global</small>
+      </div>
+    </div>
   </footer>
 
-  <!-- SAFE FIX: prevent anchor jump hiding behind fixed header (if your header is fixed in styles.css) -->
   <script>
-    (function(){
-      // If your global header is fixed, this adds a safe scroll margin globally.
-      // Harmless if not fixed.
-      var style = document.createElement('style');
-      style.textContent = 'html{scroll-padding-top:90px}';
-      document.head.appendChild(style);
-    })();
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const btn = document.querySelector(".nav-toggle");
+    const mobile = document.getElementById("mobileNav");
+    if (btn && mobile) btn.addEventListener("click",()=>mobile.classList.toggle("open"));
   </script>
-
 </body>
 </html>

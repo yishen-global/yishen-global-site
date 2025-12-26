@@ -1,308 +1,145 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#050b17" />
-  <title>Why Us | YiShen Global</title>
-  <meta name="description" content="Why YiShen Global: predictable lead times, compliance-ready documentation, packaging engineering, and global execution for furniture and industrial supply chains." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050b17">
+<title>Why YiShen | Predictability Is the Product</title>
+<meta name="description" content="Why YiShen Global: we build procurement-defense systems — not slogans. Predictability beats price.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/styles.css">
 
-  <!-- IMPORTANT: keep stylesheet at root or same folder -->
-  <link rel="stylesheet" href="/styles.css" />
+<style>
+:root{--bg:#050b17;--border:rgba(255,255,255,.1);--text:#e7edf6;--muted:rgba(231,237,246,.72);--blue:#0ea5e3;--radius:16px;--max:1200px}
+body{margin:0;font-family:Inter,system-ui;background:linear-gradient(180deg,#040912,#050b17);color:var(--text)}
+.container{max-width:var(--max);margin:0 auto;padding:0 22px}
+.site-header{position:sticky;top:0;background:rgba(5,11,23,.72);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-container{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:44px}.brand-name{font-weight:800;letter-spacing:1.6px;font-size:14px}
+.main-nav{display:flex;gap:26px}.main-nav a{font-size:13px;text-decoration:none;color:rgba(231,237,246,.78)}
+.main-nav a:hover{color:var(--blue)} .main-nav a.active{color:var(--text)}
+.nav-cta{padding:8px 14px;border:1px solid rgba(14,165,227,.55);border-radius:10px;color:var(--blue)}
+.nav-toggle{display:none;border:1px solid var(--border);border-radius:12px;padding:10px;background:transparent}
+.nav-toggle span{display:block;width:18px;height:2px;background:rgba(231,237,246,.78);margin:4px 0}
+.mobile-nav{display:none;border-top:1px solid var(--border);padding:10px 0}
+.mobile-nav a{display:block;padding:10px 0;text-decoration:none;color:rgba(231,237,246,.85)}
+.hero{padding:44px 0 20px} h1{margin:0 0 10px;font-size:40px}
+.section{padding:32px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:1px solid var(--border);background:rgba(255,255,255,.02);border-radius:var(--radius);padding:16px}
+.card h3{margin:10px 0 8px;font-size:16px}
+.card p{margin:0;color:rgba(231,237,246,.72);line-height:1.55;font-size:13.5px}
+.list{margin:12px 0 0;padding-left:18px;color:rgba(231,237,246,.75);font-size:13px;line-height:1.55}
+.footer{border-top:1px solid var(--border);padding:22px 0 30px;color:rgba(231,237,246,.65)}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:14px}
+@media (max-width:980px){.grid2{grid-template-columns:1fr}}
+@media (max-width:768px){.brand-logo{height:38px}.main-nav{display:none}.nav-toggle{display:block}.mobile-nav.open{display:block}}
+</style>
 </head>
 
 <body>
-  <!-- Top glow / background -->
-  <div class="bg-glow" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container nav-container">
+    <a class="brand" href="/index.html">
+      <img src="/logo.webp" class="brand-logo" alt="YiShen Global">
+      <span class="brand-name">YISHEN GLOBAL</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/solutions.html">Solutions</a>
+      <a href="/industries.html">Industries</a>
+      <a class="active" href="/why-us.html">Why Us</a>
+      <a href="/resources.html">Resources</a>
+      <a class="nav-cta" href="/contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="container mobile-nav" id="mobileNav">
+    <a href="/index.html">Home</a>
+    <a href="/solutions.html">Solutions</a>
+    <a href="/industries.html">Industries</a>
+    <a href="/why-us.html">Why Us</a>
+    <a href="/resources.html">Resources</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</header>
 
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="/index.html" aria-label="YiShen Global Home">
-        <!-- Logo: 3-level fallback to prevent broken logo.webp -->
-        <img
-          id="brandLogo"
-          class="brand-logo"
-          src="/logo.webp"
-          alt="YiShen Global"
-          loading="eager"
-          decoding="async"
-          onerror="window.__logoFallback && window.__logoFallback(this)"
-        />
-        <div class="brand-text">
-          <div class="brand-name">YISHEN GLOBAL</div>
-          <div class="brand-tag">AI-Driven Industrial Execution</div>
-        </div>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <a href="/solutions.html">Solutions</a>
-        <a href="/industries.html">Industries</a>
-        <a class="active" href="/why-us.html">Why Us</a>
-        <a href="/resources.html">Resources</a>
-        <a class="nav-cta" href="/contact.html">Contact</a>
-      </nav>
-
-      <button class="nav-toggle" type="button" aria-label="Open Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Why YiShen Global</h1>
+      <p class="sub">We don’t sell slogans. We build systems your procurement team can defend internally.</p>
     </div>
-  </header>
+  </section>
 
-  <!-- Hero -->
-  <main>
-    <section class="hero hero-compact">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <div class="kicker">WHY YISHEN</div>
-          <h1 class="hero-title">
-            Predictability is the Product.<br />
-            Execution is the Moat.
-          </h1>
-          <p class="hero-sub">
-            Many suppliers sell “quality”. We build a system you can defend internally:
-            stable specifications, packaging logic, compliance-ready documents, and an escalation path that closes risk.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="/contact.html">Get a Supply Chain Audit</a>
-            <a class="btn ghost" href="/resources.html">View Technical Resources</a>
-          </div>
-
-          <div class="hero-badges">
-            <div class="badge">Lead-Time Control</div>
-            <div class="badge">Compliance Packs</div>
-            <div class="badge">Packaging Engineering</div>
-            <div class="badge">Global Execution</div>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="hero-card">
-            <div class="hero-card-top">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <span class="hero-card-label">Trust Matrix</span>
-            </div>
-
-            <div class="trust-grid">
-              <div class="trust-item">
-                <div class="trust-title">Process Stability</div>
-                <div class="trust-desc">Controlled tolerances, spec governance, change logs.</div>
-              </div>
-              <div class="trust-item">
-                <div class="trust-title">Packaging Logic</div>
-                <div class="trust-desc">Drop-test mindset, carton optimization, damage prevention.</div>
-              </div>
-              <div class="trust-item">
-                <div class="trust-title">Documentation</div>
-                <div class="trust-desc">Certificates, test reports, compliance & customs readiness.</div>
-              </div>
-              <div class="trust-item">
-                <div class="trust-title">Execution Path</div>
-                <div class="trust-desc">Clear owners, escalation, fast resolution loops.</div>
-              </div>
-            </div>
-
-            <div class="hero-mini-metrics">
-              <div class="metric">
-                <div class="metric-num">4</div>
-                <div class="metric-label">Risk Layers Closed</div>
-              </div>
-              <div class="metric">
-                <div class="metric-num">3</div>
-                <div class="metric-label">Proof Artifacts per Claim</div>
-              </div>
-              <div class="metric">
-                <div class="metric-num">24/7</div>
-                <div class="metric-label">Operational Visibility</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="note">
-            <span class="note-strong">Principle:</span>
-            Intelligence defines the path; Integrity forges the structure.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why blocks -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>What You Actually Buy</h2>
-          <p>
-            Buyers don’t fail because “quality is low”. They fail because internal defense collapses when something goes wrong.
-            Our job is to make you defensible.
-          </p>
-        </div>
-
-        <div class="cards three">
-          <article class="card">
-            <div class="card-icon">01</div>
-            <h3>Predictable Lead Times</h3>
-            <p>
-              Not promises—controls. We structure timelines, milestones, and responsibility ownership so your ETA becomes
-              an asset instead of a gamble.
-            </p>
-            <ul class="list">
-              <li>Milestone-based production visibility</li>
-              <li>Change-control and escalation workflow</li>
-              <li>Risk flags before they become delays</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">02</div>
-            <h3>Packaging as Risk Engineering</h3>
-            <p>
-              Damage destroys margins. We treat packaging like a system—design, test logic, and carton efficiency with
-              real-world shipping stress in mind.
-            </p>
-            <ul class="list">
-              <li>Drop-test mindset & damage prevention</li>
-              <li>Carton optimization (DIM & strength)</li>
-              <li>Assembly protection & unboxing UX</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">03</div>
-            <h3>Compliance-Ready Proof</h3>
-            <p>
-              Certificates and reports should be “ready before asked”. We package your proof set so procurement,
-              QC, and customs all pass faster.
-            </p>
-            <ul class="list">
-              <li>Spec sheets & test reports library</li>
-              <li>HS mapping support (where applicable)</li>
-              <li>Document version control</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Proof / Differentiators -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="split">
-          <div>
-            <h2>Why Buyers Choose Us</h2>
-            <p>
-              We don’t compete on “cheap”. We compete on stability, clarity, and execution.
-              If your goal is long-term repeat purchase and zero surprise costs, we are aligned.
-            </p>
-
-            <div class="pill-row">
-              <span class="pill">Low MOQ (Flexible Starts)</span>
-              <span class="pill">Fast Delivery Options</span>
-              <span class="pill">OEM/ODM Customization</span>
-              <span class="pill">Sustainable Certifications</span>
-            </div>
-          </div>
-
-          <div class="stack">
-            <div class="stack-item">
-              <div class="stack-title">Buyer Defense Kit</div>
-              <div class="stack-desc">Everything a procurement manager needs to approve, defend, and scale.</div>
-            </div>
-            <div class="stack-item">
-              <div class="stack-title">Operational Transparency</div>
-              <div class="stack-desc">Clear timeline + owner map + escalation path, so nothing “disappears”.</div>
-            </div>
-            <div class="stack-item">
-              <div class="stack-title">Scale with Control</div>
-              <div class="stack-desc">When volume grows, variance grows—unless the system is engineered.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container cta-inner">
-        <div>
-          <h2>Want zero-surprise execution for your next order?</h2>
-          <p>
-            Send your target SKUs + market + expected volume. We’ll reply with a risk map, packaging logic, and the proof set
-            your buyer team will ask for.
-          </p>
-        </div>
-        <div class="cta-actions">
-          <a class="btn primary" href="/contact.html">Contact YiShen</a>
-          <a class="btn ghost" href="/solutions.html">See Solutions</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="footer-title">YISHEN GLOBAL</div>
-        <div class="footer-sub">Furniture-first · AI-driven industrial execution</div>
+  <section class="section">
+    <div class="container grid2">
+      <div class="card">
+        <h3>Predictability Beats Price</h3>
+        <p>Hidden costs come from variance: delays, damage, missing documentation, rework. We engineer variance down.</p>
+        <ul class="list">
+          <li>Lead-time governance</li>
+          <li>Packaging risk engineering</li>
+          <li>Compliance-ready proof packs</li>
+        </ul>
       </div>
 
-      <div class="footer-links">
-        <a href="/solutions.html">Solutions</a>
-        <a href="/industries.html">Industries</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/contact.html">Contact</a>
+      <div class="card">
+        <h3>Built for Internal Defense</h3>
+        <p>Procurement doesn’t fail because products are bad. It fails because internal defense collapses.</p>
+        <ul class="list">
+          <li>Specification governance</li>
+          <li>Escalation ladders</li>
+          <li>Responsibility ownership</li>
+        </ul>
       </div>
 
-      <div class="footer-meta">
-        <div>© <span id="year"></span> YiShen Global. All rights reserved.</div>
-        <div class="footer-small">Built for predictable sourcing, compliance, and global delivery.</div>
+      <div class="card">
+        <h3>Scale with Control</h3>
+        <p>As volume grows, instability grows. Our governance keeps repeat orders stable.</p>
+        <ul class="list">
+          <li>Milestone cadence</li>
+          <li>Risk flags</li>
+          <li>Escalation discipline</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Proof Before Asked</h3>
+        <p>Documentation is not a scramble. It’s a library with version control and standard structure.</p>
+        <ul class="list">
+          <li>Compliance documentation</li>
+          <li>Revision discipline</li>
+          <li>Customs-ready folders</li>
+        </ul>
       </div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <!-- Minimal JS (nav + logo fallback) -->
-  <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div style="font-weight:800;letter-spacing:1.4px">YISHEN GLOBAL</div>
+      <small>Furniture-first · AI-driven industrial execution</small>
+    </div>
+    <div>
+      <a href="/solutions.html">Solutions</a><br>
+      <a href="/resources.html">Resources</a><br>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>
+      <small>© <span id="year"></span> YiShen Global</small>
+    </div>
+  </div>
+</footer>
 
-    // Mobile nav
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-    if (toggle && nav) {
-      toggle.addEventListener("click", () => {
-        const open = nav.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-    }
-
-    // Logo fallback chain to end broken logo.webp forever
-    window.__logoFallback = function(imgEl) {
-      const tried = imgEl.getAttribute("data-tried") || "";
-      if (!tried.includes("root")) {
-        imgEl.setAttribute("data-tried", tried + "|root");
-        imgEl.src = "/logo.webp";
-        return;
-      }
-      if (!tried.includes("dot")) {
-        imgEl.setAttribute("data-tried", tried + "|dot");
-        imgEl.src = "./logo.webp";
-        return;
-      }
-      if (!tried.includes("assets")) {
-        imgEl.setAttribute("data-tried", tried + "|assets");
-        imgEl.src = "./assets/logo.webp";
-        return;
-      }
-      // final fallback: hide image, keep text brand
-      imgEl.style.display = "none";
-    };
-  </script>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const btn=document.querySelector(".nav-toggle"), mobile=document.getElementById("mobileNav");
+if(btn&&mobile) btn.addEventListener("click",()=>mobile.classList.toggle("open"));
+</script>
 </body>
 </html>

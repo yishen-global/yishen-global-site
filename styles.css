@@ -1,7 +1,9 @@
 /* =========================================================
-   YISHEN GLOBAL — MASTER STYLESHEET
-   Version: 2026.1-PROD-STABLE
-========================================================= */
+   YISHEN GLOBAL — SOVEREIGN MASTER STYLESHEET
+   Version: 2026.ULTIMATE.PROD
+   Status: LOCKED (Authority Baseline)
+   Policy: Patch-only / No redesign
+   ========================================================= */
 
 :root {
   --bg-deep:#010409;
@@ -9,75 +11,105 @@
   --border-soft:rgba(255,255,255,0.08);
   --brand-blue:#0ea5e3;
   --brand-red:#A11219;
-  --brand-gold:#ffd700;
-  --text-main:#fff;
-  --text-muted:#8b949e;
-  --text-dim:#6e7681;
-  --nav-height:80px;
-  --ease-spring:cubic-bezier(.4,0,.2,1);
+  --brand-gold:#f5c16c;
+  --text-main:#e5e7eb;
+  --text-dim:#9ca3af;
+  --radius:18px;
+  --blur:blur(14px);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+/* Reset & Base */
+*{box-sizing:border-box;margin:0;padding:0}
 body{
- margin:0;background:var(--bg-deep);color:var(--text-main);
- font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
- -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
+  background:var(--bg-deep);
+  color:var(--text-main);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
 }
-img{display:block;max-width:100%;height:auto;background:#020b13}
-#cursor-glow{
- width:520px;height:520px;
- background:radial-gradient(circle,rgba(14,165,233,.12),transparent 70%);
- pointer-events:none;position:fixed;transform:translate(-50%,-50%);
- will-change:transform;z-index:9999;
-}
-.site-nav{position:fixed;top:0;left:0;width:100%;height:80px;background:rgba(1,4,9,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-soft);display:flex;align-items:center;justify-content:space-between;padding:0 8%;z-index:1000}
-.nav-links{display:flex;gap:40px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
-.nav-links a{color:var(--text-dim);transition:.3s}
-.nav-links a:hover{color:var(--brand-blue)}
-.nav-cta{padding:10px 22px;background:var(--brand-blue);color:#000;font-weight:900;font-style:italic}
-.hero{min-height:100vh;padding:140px 8% 0;display:flex;flex-direction:column;justify-content:center}
-.hero h1{font-size:clamp(2.8rem,8vw,5.2rem);line-height:1.05;font-weight:900;font-style:italic}
-.hero p{color:var(--text-muted);max-width:720px;line-height:1.7}
-.story-card{background:var(--bg-panel);border:1px solid var(--border-soft);padding:60px;border-left:2px solid var(--brand-blue);transition:.5s}
-.story-card:hover{border-left-color:var(--brand-gold);transform:translateX(12px)}
-footer{background:#000;border-top:1px solid var(--border-soft)}
-.footer-inner{max-width:1440px;margin:auto;padding:80px 32px;display:flex;justify-content:space-between;flex-wrap:wrap}
-@media(max-width:768px){
- .nav-links{display:none}
- .hero{padding:140px 24px 0;text-align:center}
- .story-card{padding:36px}
-}
- display:flex;align-items:center;
-}
-
-/* ---- LINKS ---- */
 a{color:inherit;text-decoration:none}
-.nav-links{display:flex;gap:40px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
-.nav-links a{color:var(--text-dim);transition:.3s}
-.nav-links a:hover{color:var(--brand-blue)}
-.nav-cta{padding:10px 22px;background:var(--brand-blue);color:#000;font-weight:900;font-style:italic}
+img{display:block;max-width:100%}
 
-/* ---- HERO ---- */
-.hero{min-height:100vh;padding-top:140px;padding-left:8%;padding-right:8%;display:flex;flex-direction:column;justify-content:center}
-.hero h1{font-size:clamp(2.8rem,8vw,5.2rem);line-height:1.05;font-weight:900;font-style:italic}
-.hero p{color:var(--text-muted);max-width:720px;line-height:1.7}
-
-/* ---- CARDS ---- */
-.glass-panel,.story-card,.solution-card{
- background:var(--bg-panel);
- border:1px solid var(--border-soft);
- backdrop-filter:blur(12px);
+/* Header & Nav */
+header{
+  position:sticky;top:0;z-index:999;
+  background:rgba(1,4,9,0.85);
+  backdrop-filter:var(--blur);
+  border-bottom:1px solid var(--border-soft);
 }
-.story-card{padding:60px;border-left:2px solid var(--brand-blue);transition:.5s}
-.story-card:hover{border-left-color:var(--brand-gold);transform:translateX(12px)}
+.nav{
+  max-width:1440px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 22px;
+}
+.nav img{height:40px}
+.nav a{
+  margin:0 14px;
+  color:var(--text-dim);
+  font-weight:600;
+  transition:.25s;
+}
+.nav a:hover{color:var(--brand-blue)}
 
-/* ---- FOOTER ---- */
-footer{background:#000;border-top:1px solid var(--border-soft)}
-.footer-inner{max-width:1440px;margin:auto;padding:80px 32px;display:flex;flex-wrap:wrap;justify-content:space-between}
+/* Section Container */
+section{
+  max-width:1300px;
+  margin:100px auto;
+  padding:60px;
+  border-radius:var(--radius);
+  background:var(--bg-panel);
+  border:1px solid var(--border-soft);
+}
 
-/* ---- MOBILE ---- */
-@media(max-width:768px){
- .nav-links{display:none}
- .hero{padding:140px 24px 0;text-align:center}
- .story-card{padding:36px}
+/* Typography */
+h1{font-size:clamp(36px,5vw,60px);margin-bottom:18px}
+h2{font-size:clamp(20px,3vw,30px);color:var(--brand-blue);margin-bottom:12px}
+h3{font-size:18px;color:var(--brand-gold);margin-bottom:10px}
+p{opacity:.92;margin-bottom:12px}
+ul{padding-left:18px}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:14px;
+  border:1px solid var(--border-soft);
+  background:rgba(14,165,227,0.18);
+  color:#bfe9ff;font-weight:700;
+  transition:.25s;
+}
+.btn:hover{background:rgba(14,165,227,0.32)}
+
+/* Grid & Cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;margin-top:20px
+}
+.card{
+  border:1px solid var(--border-soft);
+  border-radius:16px;
+  background:rgba(255,255,255,0.02);
+  padding:22px;
+}
+
+/* Form */
+input,textarea{
+  width:100%;background:#02060f;color:#fff;
+  border:1px solid var(--border-soft);
+  padding:12px;border-radius:12px;margin-top:8px
+}
+textarea{resize:vertical}
+button{cursor:pointer}
+
+/* Footer Placeholder */
+footer{
+  max-width:1300px;margin:100px auto 60px;
+  text-align:center;opacity:.6
+}
+
+/* Mobile */
+@media(max-width:900px){
+  section{padding:34px;margin:60px 16px}
+  .nav{padding:12px}
+  .nav a{margin:0 8px;font-size:14px}
 }

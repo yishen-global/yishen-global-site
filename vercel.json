@@ -1,13 +1,6 @@
 {
-  "cleanUrls": true,
   "routes": [
     { "src": "/", "dest": "/index.html" },
-    { "src": "/home", "dest": "/index.html" },
-    { "src": "/solutions", "dest": "/solutions.html" },
-    { "src": "/industries", "dest": "/industries.html" },
-    { "src": "/products", "dest": "/products.html" },
-    { "src": "/resources", "dest": "/resources.html" },
-    { "src": "/contact", "dest": "/contact.html" },
-    { "src": "/join", "dest": "/join.html" }
+    { "src": "/(.*)", "dest": "/$1.html" }
   ]
 }

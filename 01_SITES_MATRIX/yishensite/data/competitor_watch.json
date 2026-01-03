@@ -1,0 +1,17 @@
+{
+  "US": {
+    "MESH-OFFICE-CHAIR-A": [
+      { "brand": "SIHOO", "weak": ["slowShip"] },
+      { "brand": "Hbada", "weak": ["lowRating"] }
+    ],
+    "PRO-GAMING-CHAIR-A": [
+      { "brand": "Secretlab", "weak": ["highPrice"] },
+      { "brand": "Dowinx", "weak": ["lowStock"] }
+    ]
+  },
+  "EU": {
+    "MESH-OFFICE-CHAIR-A": [
+      { "brand": "SONGMICS", "weak": ["slowShip"] }
+    ]
+  }
+}

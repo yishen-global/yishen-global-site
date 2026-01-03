@@ -1,0 +1,16 @@
+{
+  "countries": ["US", "CA", "SA", "AE", "BR"],
+  "roles": ["importer", "distributor", "wholesaler", "brand owner"],
+  "company_size": ["mid", "large"],
+  "channels": ["B2B", "Retail", "Ecommerce"],
+  "products": [
+    "bamboo decking",
+    "outdoor bamboo flooring",
+    "bamboo cladding",
+    "bamboo horse stable panel",
+    "gaming chair",
+    "mesh office chair",
+    "compressed sofa",
+    "vacuum packed sofa"
+  ]
+}

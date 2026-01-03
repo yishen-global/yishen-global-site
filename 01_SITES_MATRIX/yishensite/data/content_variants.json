@@ -1,0 +1,17 @@
+{
+  "MESH-OFFICE-CHAIR-A": {
+    "titles": [
+      "Ergonomic Mesh Office Chair with Lumbar Support",
+      "Breathable Mesh Office Chair – All Day Comfort",
+      "Adjustable Ergonomic Desk Chair for Home Office"
+    ],
+    "bullets": [
+      ["Breathable mesh back", "Adjustable armrests", "Heavy-duty base"],
+      ["Built-in lumbar support", "Smooth rolling casters", "Easy assembly"]
+    ],
+    "videos": [
+      "video_variant_a.mp4",
+      "video_variant_b.mp4"
+    ]
+  }
+}

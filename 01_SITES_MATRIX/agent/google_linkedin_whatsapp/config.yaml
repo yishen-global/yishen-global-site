@@ -1,0 +1,134 @@
+version: 2026.1
+
+global:
+  company: "YiShen Global / LEISA"
+  website: "https://www.yishenglobal.net"
+  contact_email: "alex.yang@yishenglobal.net"
+  whatsapp:
+    number: "wa.me/XXXXXXXXXX"
+    enabled: true
+
+# ===============================
+# PRODUCT MATRICES
+# ===============================
+
+products:
+  A_Compression_Sofa:
+    category: "Compression Sofa / Sofa in a Box"
+    priority: 1
+    keywords:
+      - "compression sofa"
+      - "sofa in a box"
+      - "boxed sofa"
+      - "vacuum packed sofa"
+      - "space saving sofa"
+      - "compact sofa"
+    hooks:
+      boxed: "Sofa-in-a-Box fast shipping & easy warehousing"
+      space_saving: "Urban apartment small-space best seller"
+      freight_saving: "Up to 60% CBM saving"
+      private_label: "Low MOQ private label & custom packaging"
+    buyer_titles:
+      - "Head of Procurement"
+      - "Sourcing Director"
+      - "Category Manager"
+      - "Product Manager"
+      - "Import Manager"
+      - "Supply Chain Director"
+    expos:
+      - "High Point Market"
+      - "Las Vegas Market"
+      - "ICFF"
+      - "NeoCon"
+
+  B_Bar_Chair:
+    category: "Bar Chair / Bar Stool"
+    priority: 2
+    keywords:
+      - "bar stool"
+      - "bar chair"
+      - "counter stool"
+    hooks:
+      boxed: "KD packed / boxed delivery"
+      space_saving: "Easy stock & showroom display"
+      freight_saving: "Optimized carton volume"
+      private_label: "Color & material private label"
+    buyer_titles:
+      - "Buyer"
+      - "Merchandising Manager"
+      - "Category Manager"
+    expos:
+      - "High Point Market"
+      - "Las Vegas Market"
+
+  C_Recliner_Lift:
+    category: "Recliner / Lift Chair"
+    priority: 3
+    keywords:
+      - "recliner chair"
+      - "lift chair"
+      - "power recliner"
+    hooks:
+      boxed: "Compact carton for oversized seating"
+      freight_saving: "Lower freight & damage rate"
+      private_label: "Function & fabric customization"
+    buyer_titles:
+      - "Procurement Manager"
+      - "Product Manager"
+      - "Healthcare Buyer"
+    expos:
+      - "High Point Market"
+      - "NeoCon"
+
+# ===============================
+# REGIONAL MATRICES
+# ===============================
+
+regions:
+  A_North_America:
+    countries: ["US", "CA", "MX"]
+    currency: "USD"
+    platforms: ["Amazon", "Wayfair", "Walmart", "TikTok Shop"]
+  B_Europe:
+    countries: ["DE", "FR", "IT", "ES", "UK"]
+    currency: "EUR"
+    platforms: ["Amazon EU", "Otto", "ManoMano"]
+  C_Middle_East:
+    countries: ["SA", "AE", "KW"]
+    currency: "USD"
+    platforms: ["Noon", "Jarir"]
+  D_Latin_America:
+    countries: ["BR", "CL", "MX"]
+    currency: "USD"
+    platforms: ["MercadoLibre"]
+  E_Japan:
+    countries: ["JP"]
+    currency: "JPY"
+    platforms: ["Amazon JP", "Rakuten"]
+
+# ===============================
+# COMMUNICATION SCRIPTS
+# ===============================
+
+scripts:
+  whatsapp:
+    opener: "Hi {name}, this is Alex from YiShen Global. We supply Sofa-in-a-Box and space-saving seating programs."
+    hook: "Our boxed sofa series saves up to 60% CBM and is ideal for Amazon/Wayfair private label."
+    cta: "Would you like to see 3 best selling SKUs or a freight-saving comparison?"
+
+  email:
+    subject: "Boxed Sofa program for 2026 – Freight Saving & Private Label"
+    body: |
+      Hi {name},
+
+      We help brands and importers launch Sofa-in-a-Box programs with lower freight cost and faster stock rotation.
+
+      Our boxed sofa series focuses on:
+      • Freight saving & carton optimization  
+      • Space-saving apartment best sellers  
+      • Low MOQ private label programs  
+
+      Would you like us to send you our best selling boxed sofa SKUs or a quick freight comparison?
+
+      Best regards,
+      Alex – YiShen Global

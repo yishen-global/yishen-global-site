@@ -1,0 +1,11 @@
+{
+  "country": "BR",
+  "sku": "ANDES",
+  "product": "gaming chair",
+  "role": "B2B",
+  "markets": ["BR"],
+  "vertical": "Furniture",
+  "run_interval_hours": 6,
+  "max_results_per_cycle": 300,
+  "output_prefix": "brazil_andes"
+}

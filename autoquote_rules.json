@@ -1,0 +1,37 @@
+﻿{
+    "us":  {
+               "MOQ":  100,
+               "Price":  "-",
+               "Lead":  "7-15 days"
+           },
+    "jp":  {
+               "MOQ":  60,
+               "Price":  "¥18,900-¥39,000",
+               "Lead":  "7-10 days"
+           },
+    "eu":  {
+               "MOQ":  80,
+               "Price":  "€159-€329",
+               "Lead":  "7-15 days"
+           },
+    "br":  {
+               "MOQ":  150,
+               "Price":  "-",
+               "Lead":  "10-25 days"
+           },
+    "mx":  {
+               "MOQ":  120,
+               "Price":  "-",
+               "Lead":  "7-20 days"
+           },
+    "ae":  {
+               "MOQ":  100,
+               "Price":  "-",
+               "Lead":  "7-12 days"
+           },
+    "sa":  {
+               "MOQ":  120,
+               "Price":  "-",
+               "Lead":  "7-15 days"
+           }
+}

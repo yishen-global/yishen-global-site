@@ -1,0 +1,6 @@
+universes:
+  U1: ["IKEA","Wayfair","JYSK","Nitori","XXXLutz"]
+  U2: ["Steelcase","Haworth","Nowy Styl","Kinnarps","Teknion"]
+  U3: ["Saint-Gobain","Knauf","CRH","Holcim","Mohawk"]
+  U4: ["Marriott","CBRE","JLL","Accor","Skanska"]
+  U5: ["ArcelorMittal","POSCO","Nucor","Baosteel","Tata Steel"]

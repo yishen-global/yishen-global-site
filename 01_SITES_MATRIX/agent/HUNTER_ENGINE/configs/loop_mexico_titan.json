@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "loop_id": "MEXICO_TITAN_SOVEREIGN",
+  "country": "Mexico",
+  "region": "LATAM",
+  "main_product": "gaming chair",
+  "lock_sku": "TITAN",
+  "target_role": "B2B",
+  "buyer_types": [
+    "distributor",
+    "importer",
+    "wholesaler",
+    "retailer",
+    "ecommerce seller",
+    "project buyer"
+  ],
+  "platforms": [
+    "MercadoLibre",
+    "Amazon MX",
+    "Linio",
+    "Coppel",
+    "Office Depot MX",
+    "Liverpool"
+  ],
+  "scan_keywords": [
+    "gaming chair distributor mexico",
+    "silla gamer mayoreo",
+    "importador silla gamer",
+    "gaming chair wholesale mexico"
+  ],
+  "output_prefix": "leads_mexico_titan",
+  "cycle_interval_min": 20
+}

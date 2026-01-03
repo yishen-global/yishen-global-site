@@ -1,0 +1,35 @@
+{
+  "MESH-OFFICE-CHAIR-A": {
+    "name": "Ergo Mesh Office Chair A",
+    "category": "office_chair",
+    "baseCost": 32,
+    "baseTierPrice": 59,
+    "moq": 100,
+    "weights": { "cbm": 0.12, "kg": 18 },
+    "us": { "ddp": 16, "lead": "12-18 days" },
+    "ca": { "ddp": 18, "lead": "14-20 days" },
+    "mx": { "ddp": 19, "lead": "15-22 days" }
+  },
+
+  "HIGH-END-LEATHER-CHAIR-X": {
+    "name": "Executive Leather Chair X",
+    "category": "office_chair",
+    "baseCost": 58,
+    "baseTierPrice": 109,
+    "moq": 50,
+    "weights": { "cbm": 0.22, "kg": 28 },
+    "us": { "ddp": 24, "lead": "15-22 days" },
+    "ca": { "ddp": 26, "lead": "18-25 days" }
+  },
+
+  "EXECUTIVE-CHAIR-PRO": {
+    "name": "Executive Office Chair Pro",
+    "category": "office_chair",
+    "baseCost": 46,
+    "baseTierPrice": 89,
+    "moq": 80,
+    "weights": { "cbm": 0.18, "kg": 24 },
+    "us": { "ddp": 22, "lead": "14-20 days" },
+    "eu": { "ddp": 28, "lead": "20-30 days" }
+  }
+}

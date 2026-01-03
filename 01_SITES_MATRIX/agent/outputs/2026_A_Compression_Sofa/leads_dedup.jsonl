@@ -1,0 +1,33 @@
+import os
+import json
+from urllib.parse import urlparse
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+RAW = os.path.join(BASE, "..", "outputs", "leads_raw.jsonl")
+DEDUP = os.path.join(BASE, "..", "outputs", "leads_dedup.jsonl")
+
+def domain(url):
+    try:
+        return urlparse(url).netloc.replace("www.","").lower()
+    except:
+        return ""
+
+def dedup():
+    seen = set()
+    cleaned = []
+
+    for line in open(RAW, encoding="utf-8"):
+        j = json.loads(line)
+        d = domain(j.get("website",""))
+        if d and d not in seen:
+            seen.add(d)
+            cleaned.append(j)
+
+    with open(DEDUP, "w", encoding="utf-8") as f:
+        for c in cleaned:
+            f.write(json.dumps(c, ensure_ascii=False) + "\n")
+
+    print("Deduplicated leads:", len(cleaned))
+
+if __name__ == "__main__":
+    dedup()

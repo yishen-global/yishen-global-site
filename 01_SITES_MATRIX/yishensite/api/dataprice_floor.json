@@ -1,0 +1,10 @@
+{
+  "GLOBAL": { "minDiscount": 0.92 },
+  "COUNTRY_FLOOR": {
+    "US": 0.94,
+    "EU": 0.93,
+    "AE": 0.95,
+    "JP": 0.96,
+    "BR": 0.90
+  }
+}

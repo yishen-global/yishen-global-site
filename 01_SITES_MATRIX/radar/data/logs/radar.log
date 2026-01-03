@@ -1,0 +1,19 @@
+[2025-12-28 01:59:58] SYSTEM :: Sovereign Radar Boot
+[2025-12-28 02:00:01] PANJIVA :: Ingest Started
+[2025-12-28 02:00:12] PANJIVA :: Loaded 842 shipment records
+[2025-12-28 02:00:14] PANJIVA :: panjiva_raw.csv updated
+[2025-12-28 02:00:17] ZOOMINFO :: Ingest Started
+[2025-12-28 02:00:31] ZOOMINFO :: Loaded 613 companies
+[2025-12-28 02:00:33] ZOOMINFO :: zoominfo_raw.csv updated
+[2025-12-28 02:00:36] APOLLO :: Ingest Started
+[2025-12-28 02:01:02] APOLLO :: Loaded 489 decision makers
+[2025-12-28 02:01:04] APOLLO :: apollo_raw.csv updated
+[2025-12-28 02:01:06] MERGE :: merge_all_sources.py started
+[2025-12-28 02:01:09] MERGE :: merged_all_sources.csv built (1227 records)
+[2025-12-28 02:01:12] ICP :: global_icp_master.csv built (1149 records)
+[2025-12-28 02:01:15] SIGNAL :: global_signal_scored.csv built
+[2025-12-28 02:01:18] HOTPOOL :: saudi_hot_pool.csv generated (158 buyers)
+[2025-12-28 02:01:18] HOTPOOL :: usa_hot_pool.csv generated (204 buyers)
+[2025-12-28 02:01:18] HOTPOOL :: uae_hot_pool.csv generated (173 buyers)
+[2025-12-28 02:01:20] HUB :: 243 A+/A buyers pushed to HubSpot
+[2025-12-28 02:01:21] SYSTEM :: Radar Cycle Completed

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YISHEN GLOBAL — Sovereign Trade Engine</title>
+
+<meta name="description" content="AI-driven sovereign DDP trade engine for global furniture & building material buyers.">
+<link rel="canonical" href="https://yishenglobal.net/">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"YISHEN GLOBAL",
+"url":"https://yishenglobal.net",
+"contactPoint":{"@type":"ContactPoint","telephone":"+8618857277313","contactType":"sales"}
+}
+</script>
+
+<style>
+:root{--b:#0ea5e9;--g:#10b981;--k:#010409}
+body{background:var(--k);color:#e6edf3;font-family:Inter,system-ui}
+.card{border:1px solid rgba(14,165,227,.12);background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
+.card:hover{border-color:var(--b);transform:translateY(-4px)}
+.btn{background:var(--b);color:#000;font-weight:900}
+.btn:hover{background:#fff}
+</style>
+</head>
+
+<body>
+
+<nav class="p-8 max-w-7xl mx-auto flex justify-between items-center">
+<div class="text-3xl font-black italic">YISHEN <span class="text-blue-500">GLOBAL</span></div>
+<div class="flex items-center space-x-6 text-[10px] font-bold uppercase tracking-widest">
+<a href="/confirm" class="text-green-400 border-b border-green-400">CONFIRM</a>
+<a href="contact.html" class="text-blue-400 border-b border-blue-400">Support</a>
+</div>
+</nav>
+
+<section class="py-24 text-center max-w-7xl mx-auto">
+<h1 class="text-6xl md:text-9xl font-black italic">TRADE<br><span class="text-blue-500">SOVEREIGNTY</span></h1>
+<p class="text-gray-500 mt-4">AI driven global DDP trading engine</p>
+
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-16">
+<a href="/ai/product-radar" class="card p-5 rounded-xl text-center">选品系统</a>
+<a href="/ai/traffic-engine" class="card p-5 rounded-xl text-center">流量系统</a>
+<a href="/ai/outreach-engine" class="card p-5 rounded-xl text-center">开发系统</a>
+<a href="/ai/close-engine" class="card p-5 rounded-xl text-center">成交系统</a>
+<a href="/ai/brand-engine" class="card p-5 rounded-xl text-center">营销系统</a>
+</div>
+</section>
+
+<section class="py-24 bg-white/5">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+<div>
+<h2 class="text-4xl font-black mb-6">DDP Quote Engine</h2>
+<select id="reg" class="w-full p-4 bg-black border border-white/10 rounded-xl">
+<option value="USA">USA West</option>
+<option value="EU">EU Core</option>
+<option value="GCC">GCC Dubai</option>
+</select>
+<div id="quote" class="grid grid-cols-3 gap-4 mt-4"></div>
+</div>
+
+<div class="space-y-6">
+<div class="card p-6 rounded-xl">
+<p class="text-green-400 text-[10px] uppercase">ESG Compliance</p>
+<h4 class="font-bold">CBAM · LEED · Estidama</h4>
+<p class="text-xs text-gray-500">Carbon & high temp ready</p>
+</div>
+
+<a href="https://wa.me/8618857277313?text=CONFIRM" class="btn block text-center py-5 rounded-xl">
+WhatsApp CONFIRM → Auto PDF
+</a>
+</div>
+</div>
+</section>
+
+<script>
+const M={USA:{v:4500,s:5200,f:7000},EU:{v:3500,s:4100,f:5500},GCC:{v:1900,s:2300,f:3400}}
+const R=document.getElementById("reg"),Q=document.getElementById("quote")
+function u(){const r=M[R.value];Q.innerHTML=`<div class='card p-4 text-center'>$${r.v}</div><div class='card p-4 text-center'>$${r.s}</div><div class='card p-4 text-center'>$${r.f}</div>`}
+R.onchange=u;u()
+</script>
+
+</body>
+</html>

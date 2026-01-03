@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sovereign Execution Node | YiShen Global</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YiShen Global Sovereign Execution Node – The industrial command system for AI-driven global supply chain sovereignty.">
+
+<link rel="stylesheet" href="/css/sovereign-core.css">
+<link rel="stylesheet" href="/css/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="top">
+<div class="logo">YISHEN<span>GLOBAL</span></div>
+<nav>
+<a href="/index.html">Home Node</a>
+<a href="/pages/solutions.html" class="active">Execution Node</a>
+<a href="/pages/industries.html">Industries</a>
+<a href="/pages/why-us.html">Why Us</a>
+<a href="/pages/resources.html">Resources</a>
+<a href="/pages/contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="sovereign-hero">
+<div class="sovereign-hero-inner">
+<h1>Sovereign Execution Node</h1>
+<p>AI Command System for Global Industrial Sovereignty</p>
+</div>
+</section>
+
+<section class="sovereign-grid">
+
+<div class="sovereign-card">
+<h2>Procurement Control Layer</h2>
+<p>AI-driven supplier orchestration, cost authority modeling, MOQ governance, and delivery sovereignty enforcement.</p>
+</div>
+
+<div class="sovereign-card">
+<h2>DDP Logistics Command</h2>
+<p>Integrated DDP routing, customs pre-clearance, bonded inventory governance, and last-mile risk suppression.</p>
+</div>
+
+<div class="sovereign-card">
+<h2>Factory Execution Matrix</h2>
+<p>Production scheduling intelligence, capacity locking, QC digital twins, and defect sovereignty modeling.</p>
+</div>
+
+<div class="sovereign-card">
+<h2>Financial Risk Firewall</h2>
+<p>Currency risk hedging, delayed settlement control, contract breach suppression, and cross-border trust automation.</p>
+</div>
+
+<div class="sovereign-card">
+<h2>Data Intelligence Spine</h2>
+<p>Supply chain neural graph, buyer behavior learning, market prediction, and AI negotiation agents.</p>
+</div>
+
+<div class="sovereign-card">
+<h2>Brand Sovereignty Layer</h2>
+<p>OEM/ODM identity firewall, private-label architecture, and global channel control systems.</p>
+</div>
+
+</section>
+
+<footer class="sovereign-footer">
+<p>YiShen Global · Industrial Sovereignty Infrastructure</p>
+</footer>
+
+</body>
+</html>

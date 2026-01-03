@@ -1,0 +1,5 @@
+$st = "$env:SystemRoot\System32\schtasks.exe"
+& $st /Delete /F /TN "YiShen_MEXICO_TITAN_24x7"
+& $st /Delete /F /TN "YiShen_LATAM_NOVA_24x7"
+& $st /Delete /F /TN "YiShen_LATAM_EXPORT_DAILY_0200"
+Write-Host "Removed"

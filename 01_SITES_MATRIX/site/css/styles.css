@@ -1,0 +1,157 @@
+/* =========================================================
+   YISHEN GLOBAL — MASTER STYLESHEET
+   Version: 131.0 — Sovereign Core (FULL)
+   Scope: All pages (index / solutions / why-us / resources /
+          contact / confirm / genesis / future pages)
+========================================================= */
+
+/* =============== ROOT DNA =============== */
+:root{
+  --yg-blue:#0ea5e9;
+  --yg-green:#10b981;
+  --yg-purple:#a855f7;
+  --yg-amber:#f59e0b;
+  --yg-red:#ef4444;
+  --yg-black:#010409;
+  --yg-white:#e6edf3;
+  --yg-panel:rgba(255,255,255,.03);
+  --yg-border:rgba(14,165,227,.14);
+  --yg-glow:0 0 30px rgba(14,165,227,.45);
+  --yg-soft:rgba(255,255,255,.06);
+  --yg-radius-xl:28px;
+  --yg-radius-lg:22px;
+  --yg-radius-md:16px;
+  --yg-radius-sm:12px;
+}
+
+/* =============== RESET =============== */
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;
+  background:var(--yg-black);
+  color:var(--yg-white);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont;
+  scroll-behavior:smooth;
+}
+img{max-width:100%;display:block}
+button,input,select,textarea{font-family:inherit}
+
+/* =============== TYPOGRAPHY =============== */
+.yg-title{font-weight:900;font-style:italic;text-transform:uppercase}
+.yg-hero{font-size:clamp(3rem,7vw,8rem);line-height:.9}
+.yg-h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900}
+.yg-h2{font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800}
+.yg-h3{font-size:1.2rem;font-weight:800}
+.yg-muted{color:#9ca3af}
+.yg-micro{font-size:10px;letter-spacing:.35em;text-transform:uppercase}
+
+/* =============== LAYOUT =============== */
+.yg-container{max-width:80rem;margin:auto;padding:0 1rem}
+.yg-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.yg-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.yg-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:768px){
+  .yg-grid-2,.yg-grid-3,.yg-grid-4{grid-template-columns:1fr}
+}
+
+/* =============== GLASS / CARDS =============== */
+.yg-card{
+  background:var(--yg-panel);
+  border:1px solid var(--yg-border);
+  backdrop-filter:blur(14px);
+  border-radius:var(--yg-radius-xl);
+  transition:.35s ease;
+}
+.yg-card:hover{
+  border-color:var(--yg-blue);
+  transform:translateY(-4px);
+  box-shadow:var(--yg-glow);
+}
+.yg-soft{background:var(--yg-soft);border:1px solid rgba(255,255,255,.1)}
+
+/* =============== BUTTONS =============== */
+.yg-btn{
+  display:inline-block;
+  background:var(--yg-blue);
+  color:#000;
+  font-weight:900;
+  padding:14px 28px;
+  border-radius:var(--yg-radius-lg);
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  transition:.25s;
+}
+.yg-btn:hover{background:#fff;box-shadow:0 0 25px rgba(255,255,255,.4)}
+.yg-btn-outline{
+  background:transparent;color:var(--yg-blue);
+  border:1px solid var(--yg-blue);
+}
+.yg-btn-outline:hover{background:var(--yg-blue);color:#000}
+
+/* =============== BADGES / TAGS =============== */
+.yg-badge{
+  border:1px solid rgba(16,185,129,.6);
+  color:var(--yg-green);
+  padding:4px 12px;
+  border-radius:999px;
+  font-size:10px;font-weight:800;letter-spacing:.3em;text-transform:uppercase
+}
+.yg-tag{border:1px solid rgba(255,255,255,.2);padding:6px 10px;border-radius:999px;font-size:11px}
+
+/* =============== LINKS / SOCIAL =============== */
+a{color:inherit;text-decoration:none;transition:.2s}
+a:hover{color:var(--yg-blue)}
+.yg-social a{
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:16px;
+  padding:10px 18px;
+  font-size:12px;letter-spacing:.2em;
+}
+.yg-social a:hover{border-color:var(--yg-blue);color:var(--yg-blue)}
+
+/* =============== FORMS =============== */
+.yg-input{
+  width:100%;padding:12px 14px;border-radius:var(--yg-radius-md);
+  background:#000;border:1px solid rgba(255,255,255,.12);color:var(--yg-white)
+}
+.yg-input:focus{outline:none;border-color:var(--yg-blue);box-shadow:0 0 0 3px rgba(14,165,227,.15)}
+
+/* =============== TABLES =============== */
+.yg-table{width:100%;border-collapse:collapse}
+.yg-table th,.yg-table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.yg-table th{color:#9ca3af;text-transform:uppercase;font-size:11px;letter-spacing:.2em}
+
+/* =============== NOTICES =============== */
+.yg-success{color:var(--yg-green)}
+.yg-warning{color:var(--yg-amber)}
+.yg-danger{color:var(--yg-red)}
+
+/* =============== FOOTER =============== */
+.yg-footer{
+  text-align:center;font-size:10px;color:#6b7280;
+  letter-spacing:.35em;padding:60px 0
+}
+
+/* =============== HERO GLOW / BACKDROP =============== */
+.yg-hero-glow{
+  position:relative;overflow:hidden
+}
+.yg-hero-glow::before{
+  content:"";position:absolute;inset:-30%;
+  background:radial-gradient(circle at 50% 50%, rgba(14,165,227,.15), transparent 60%);
+  pointer-events:none
+}
+
+/* =============== UTILITIES =============== */
+.yg-center{text-align:center}
+.yg-right{text-align:right}
+.yg-mt-1{margin-top:.25rem}
+.yg-mt-2{margin-top:.5rem}
+.yg-mt-4{margin-top:1rem}
+.yg-mt-8{margin-top:2rem}
+.yg-p-4{padding:1rem}
+.yg-p-8{padding:2rem}
+.yg-rounded-sm{border-radius:var(--yg-radius-sm)}
+.yg-rounded-md{border-radius:var(--yg-radius-md)}
+.yg-rounded-lg{border-radius:var(--yg-radius-lg)}
+.yg-rounded-xl{border-radius:var(--yg-radius-xl)}

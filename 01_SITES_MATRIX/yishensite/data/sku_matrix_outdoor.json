@@ -1,0 +1,12 @@
+{
+  "category":"outdoor",
+  "products":[
+    {
+      "sku":"OUTDOOR-LOUNGE-CHAIR-A",
+      "name":"Outdoor Lounge Chair A",
+      "basePrice":89,
+      "tiers":[50,200],
+      "channels":["AMAZON","DTC"]
+    }
+  ]
+}

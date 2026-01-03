@@ -1,0 +1,7 @@
+﻿{
+  "version": 2,
+  "routes": [
+    { "src": "^/world$", "dest": "/world/index.html" },
+    { "src": "^/world/(eu|usa|latam|gcc)/?$", "dest": "/world//index.html" }
+  ]
+}

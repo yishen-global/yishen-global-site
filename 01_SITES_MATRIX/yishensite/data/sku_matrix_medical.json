@@ -1,0 +1,12 @@
+{
+  "category":"medical",
+  "products":[
+    {
+      "sku":"MEDICAL-RECLINER-A",
+      "name":"Medical Recliner Chair",
+      "basePrice":399,
+      "tiers":[10,30],
+      "channels":["B2B"]
+    }
+  ]
+}

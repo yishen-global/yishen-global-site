@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YiShen Global</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<!-- GLOBAL HEADER (LOCKED) -->
+<header class="global-header">
+  <div class="header-inner">
+    <a href="/index.html" class="brand">
+      <img src="/logo.webp" class="brand-logo">
+      <span class="brand-name">YISHEN GLOBAL</span>
+    </a>
+    <nav class="main-nav">
+      <a href="/solutions.html">Solutions</a>
+      <a href="/industries.html">Industries</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/why-us.html">Why Us</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CONTENT ROOT -->
+<main id="page-root" class="page-root"></main>
+
+<footer class="global-footer">
+  <div class="footer-inner">
+    <span>Sovereign Industrial Infrastructure © YiShen Global</span>
+    <span>Global Manufacturing & Procurement Systems</span>
+  </div>
+</footer>
+
+<!-- CORE LOADER -->
+<script>
+const page = location.hash.replace("#","") || "index";
+fetch("/"+page+".body")
+.then(r=>r.text())
+.then(t=>document.getElementById("page-root").innerHTML=t)
+.catch(()=>document.getElementById("page-root").innerHTML="<h1 style='padding:60px'>MODULE LOST</h1>")
+</script>
+
+</body>
+</html>

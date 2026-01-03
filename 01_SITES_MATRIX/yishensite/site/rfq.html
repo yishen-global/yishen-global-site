@@ -1,0 +1,86 @@
+export default function handler(req, res) {
+
+  if (req.method !== "POST") {
+    return res.status(200).json({ ok: true });
+  }
+
+  const d = req.body || {};
+  const country = (d.country || "").toUpperCase().trim();
+  const product = d.product || "UNKNOWN PRODUCT";
+  const qty = parseInt(d.qty || "0");
+
+  /* ===============================
+     GLOBAL COUNTRY ROUTER MATRIX
+  ================================ */
+
+  const ROUTER = {
+    US: { wa: "+8618857277313", base: 500, ddp: true },
+    CA: { wa: "+8618857277313", base: 520, ddp: true },
+    MX: { wa: "+8615968277867", base: 450, ddp: true },
+    BR: { wa: "+8615968277867", base: 480, ddp: true },
+    CL: { wa: "+8615968277867", base: 470, ddp: true },
+    CO: { wa: "+8615968277867", base: 465, ddp: true },
+    PE: { wa: "+8615968277867", base: 460, ddp: true },
+    JP: { wa: "+8618857277313", base: 540, ddp: true },
+    KR: { wa: "+8618857277313", base: 530, ddp: true },
+    SG: { wa: "+8618857277313", base: 510, ddp: true },
+    TH: { wa: "+8618857277313", base: 495, ddp: true },
+    VN: { wa: "+8618857277313", base: 480, ddp: true },
+    MY: { wa: "+8618857277313", base: 485, ddp: true },
+    AE: { wa: "+8618857277313", base: 550, ddp: true },
+    SA: { wa: "+8618857277313", base: 545, ddp: true },
+    TR: { wa: "+8618857277313", base: 520, ddp: true },
+    KZ: { wa: "+8618857277313", base: 470, ddp: true },
+    UZ: { wa: "+8618857277313", base: 465, ddp: true },
+    RU: { wa: "+8615968277867", base: 490, ddp: true },
+    DE: { wa: "+8615968277867", base: 560, ddp: true },
+    FR: { wa: "+8615968277867", base: 560, ddp: true },
+    IT: { wa: "+8615968277867", base: 555, ddp: true },
+    ES: { wa: "+8615968277867", base: 550, ddp: true },
+    NL: { wa: "+8615968277867", base: 560, ddp: true },
+    AU: { wa: "+8618857277313", base: 580, ddp: true },
+    NZ: { wa: "+8618857277313", base: 570, ddp: true },
+    ZA: { wa: "+8618857277313", base: 460, ddp: true },
+    KE: { wa: "+8618857277313", base: 450, ddp: true },
+    NG: { wa: "+8618857277313", base: 440, ddp: true },
+    DEFAULT: { wa: "+8618857277313", base: 480, ddp: true }
+  };
+
+  const C = ROUTER[country.slice(0, 2)] || ROUTER.DEFAULT;
+
+  /* ===============================
+     AUTO PRICE ENGINE
+  ================================ */
+
+  let unit = C.base;
+
+  if (qty >= 500) unit *= 0.90;
+  else if (qty >= 200) unit *= 0.93;
+  else if (qty >= 100) unit *= 0.96;
+
+  const total = Math.round(unit * qty);
+
+  /* ===============================
+     AUTO WHATSAPP GENERATOR
+  ================================ */
+
+  const msg =
+`RFQ RECEIVED
+Country: ${country}
+Product: ${product}
+Qty: ${qty}
+DDP: ${C.ddp ? "YES" : "NO"}
+Unit Price: USD ${unit.toFixed(2)}
+Total: USD ${total}
+
+Please quote official PI.`;
+
+  const wa = `https://wa.me/${C.wa.replace("+","")}?text=${encodeURIComponent(msg)}`;
+
+  res.status(200).json({
+    ok: true,
+    unit,
+    total,
+    wa
+  });
+}

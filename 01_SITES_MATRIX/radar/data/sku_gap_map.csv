@@ -1,0 +1,13 @@
+country,sku,buyers,total_qty,is_gap
+AE,dual_motor_standing_desk,1,40,True
+AE,mesh_task_chair,1,200,True
+AE,recliner_sofa_chair,1,60,True
+SA,ergonomic_mesh_office_chair,1,240,True
+SA,executive_leather_chair,1,120,True
+SA,gaming_chair,1,180,True
+SA,height_adjustable_standing_desk,1,80,True
+US,adjustable_standing_desk,1,190,True
+US,ergonomic_mesh_office_chair,1,420,True
+US,executive_office_chair,1,300,True
+US,gaming_office_chair,1,260,True
+US,mesh_office_chair,1,380,True

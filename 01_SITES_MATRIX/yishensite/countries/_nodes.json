@@ -1,0 +1,136 @@
+[
+  {
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "flag": "🇦🇪",
+    "url": "/countries/ae.html",
+    "langs": [
+      "en",
+      "ar"
+    ],
+    "tags": [
+      "Distributor",
+      "E-commerce"
+    ]
+  },
+  {
+    "code": "AU",
+    "name": "Australia",
+    "flag": "🇦🇺",
+    "url": "/countries/au.html",
+    "langs": [
+      "en"
+    ],
+    "tags": [
+      "Retail"
+    ]
+  },
+  {
+    "code": "BR",
+    "name": "Brazil",
+    "flag": "🇧🇷",
+    "url": "/countries/br.html",
+    "langs": [
+      "en",
+      "pt"
+    ],
+    "tags": [
+      "Distributor",
+      "E-commerce"
+    ]
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "flag": "🇩🇪",
+    "url": "/countries/de.html",
+    "langs": [
+      "en",
+      "de"
+    ],
+    "tags": [
+      "Retail"
+    ]
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "flag": "🇫🇷",
+    "url": "/countries/fr.html",
+    "langs": [
+      "en",
+      "fr"
+    ],
+    "tags": [
+      "Retail"
+    ]
+  },
+  {
+    "code": "JP",
+    "name": "Japan",
+    "flag": "🇯🇵",
+    "url": "/countries/jp.html",
+    "langs": [
+      "en",
+      "ja"
+    ],
+    "tags": [
+      "Retail"
+    ]
+  },
+  {
+    "code": "KR",
+    "name": "Korea",
+    "flag": "🇰🇷",
+    "url": "/countries/kr.html",
+    "langs": [
+      "en",
+      "ko"
+    ],
+    "tags": [
+      "Retail"
+    ]
+  },
+  {
+    "code": "MX",
+    "name": "Mexico",
+    "flag": "🇲🇽",
+    "url": "/countries/mx.html",
+    "langs": [
+      "en",
+      "es"
+    ],
+    "tags": [
+      "Distributor"
+    ]
+  },
+  {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "flag": "🇸🇦",
+    "url": "/countries/sa.html",
+    "langs": [
+      "en",
+      "zh",
+      "ar"
+    ],
+    "tags": [
+      "Distributor",
+      "Projects"
+    ]
+  },
+  {
+    "code": "US",
+    "name": "United States",
+    "flag": "🇺🇸",
+    "url": "/countries/us.html",
+    "langs": [
+      "en",
+      "es"
+    ],
+    "tags": [
+      "Retail",
+      "Brand"
+    ]
+  }
+]

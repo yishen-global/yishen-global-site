@@ -1,0 +1,25 @@
+<section class="hero">
+  <h1>Resources Center</h1>
+  <p class="hero-sub">
+    Downloadable engineering documents, compliance whitepapers, and procurement intelligence.
+  </p>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h3>Certifications & Compliance</h3>
+    <p>BIFMA, EN1335, ISO, CE, SGS, and material conformity documentation.</p>
+  </div>
+  <div class="card">
+    <h3>Packaging & Drop-Test Standards</h3>
+    <p>ISTA-6A, carton optimization, damage rate control engineering.</p>
+  </div>
+  <div class="card">
+    <h3>Technical Datasheets</h3>
+    <p>Mechanical drawings, component tolerance maps, and assembly SOPs.</p>
+  </div>
+  <div class="card">
+    <h3>Logistics & DDP Whitepapers</h3>
+    <p>Global DDP routing, customs pre-clearance, and landed cost predictability systems.</p>
+  </div>
+</section>

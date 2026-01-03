@@ -1,0 +1,12 @@
+{
+  "category":"defense_civil_support",
+  "products":[
+    {
+      "sku":"DEFENSE-FIELD-CHAIR-A",
+      "name":"Field Tactical Folding Chair",
+      "basePrice":129,
+      "tiers":[50,200],
+      "channels":["B2B"]
+    }
+  ]
+}

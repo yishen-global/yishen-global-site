@@ -1,0 +1,16 @@
+<form onsubmit="event.preventDefault();goQuote();">
+<select id="country"><option>USA</option><option>UK</option><option>UAE</option><option>DE</option></select>
+<input id="sku" value="REPLACE_WITH_SKU">
+<input id="qty" value="300">
+<button>Get Factory Quote</button>
+</form>
+<pre id="out"></pre>
+<script>
+function goQuote(){
+ fetch(`/api/rfq?country=${country.value}&sku=${sku.value}&qty=${qty.value}`)
+ .then(r=>r.json()).then(d=>{
+   out.textContent = JSON.stringify(d,null,2);
+   if(d.whatsappLink) window.open(d.whatsappLink);
+ });
+}
+</script>

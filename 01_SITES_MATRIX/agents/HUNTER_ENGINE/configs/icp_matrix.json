@@ -1,0 +1,57 @@
+{
+  "version": "1.1",
+  "owner": "YiShen Global",
+  "markets": ["US", "SA", "AE"],
+
+  "verticals": [
+    {
+      "name": "Furniture",
+      "products": [
+        "gaming chair",
+        "ergonomic mesh chair",
+        "office chair",
+        "compressed sofa",
+        "vacuum packed sofa",
+        "standing desk"
+      ],
+      "roles": [
+        "importer",
+        "distributor",
+        "wholesaler",
+        "retailer",
+        "buyer"
+      ]
+    },
+    {
+      "name": "Building Materials",
+      "products": [
+        "bamboo decking",
+        "outdoor bamboo flooring",
+        "bamboo cladding",
+        "bamboo stable panel",
+        "wpc flooring",
+        "spc flooring"
+      ],
+      "roles": [
+        "importer",
+        "distributor",
+        "wholesaler",
+        "supplier",
+        "contractor"
+      ]
+    }
+  ],
+
+  "query_templates": [
+    "PRODUCT ROLE",
+    "PRODUCT ROLE company",
+    "PRODUCT ROLE email",
+    "PRODUCT ROLE contact",
+    "PRODUCT ROLE wholesale",
+    "PRODUCT ROLE distributor"
+  ],
+
+  "output": {
+    "max_results_per_query": 50
+  }
+}

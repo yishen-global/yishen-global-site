@@ -1,0 +1,19 @@
+{
+  "category":"office",
+  "products":[
+    {
+      "sku":"MESH-OFFICE-CHAIR-A",
+      "name":"Ergo Mesh Office Chair A",
+      "basePrice":59,
+      "tiers":[100,300,500,1000],
+      "channels":["B2B","DTC","AMAZON","WAYFAIR"]
+    },
+    {
+      "sku":"SWIVEL-OFFICE-CHAIR-B",
+      "name":"Executive Swivel Chair B",
+      "basePrice":79,
+      "tiers":[50,200,500],
+      "channels":["B2B","DTC"]
+    }
+  ]
+}

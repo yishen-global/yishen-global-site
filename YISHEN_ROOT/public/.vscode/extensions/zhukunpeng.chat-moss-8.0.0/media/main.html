@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <link rel="apple-touch-icon" href="/favicon.ico">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+  <title>ChatMoss</title>
+  <style>
+    iframe {
+      width: 0px;
+      height: 0px;
+    }
+
+    body {
+      /* pointer-events: none; */
+    }
+  </style>
+  <!-- css -->
+  <!-- js -->
+
+  <script>
+    document.documentElement.style = ''
+  </script>
+</head>
+
+<body class="dark:bg-black">
+  <iframe src="http://chatmoss-shuju.aihao123.cn/" frameborder="0"></iframe>
+  <div id="app">
+    <style>
+      .loading-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .balls {
+        width: 4em;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .balls div {
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 50%;
+        background-color: #0066FF;
+      }
+
+      .balls div:nth-of-type(1) {
+        transform: translateX(-100%);
+        animation: left-swing 0.5s ease-in alternate infinite;
+      }
+
+      .balls div:nth-of-type(3) {
+        transform: translateX(-95%);
+        animation: right-swing 0.5s ease-out alternate infinite;
+      }
+
+      @keyframes left-swing {
+
+        50%,
+        100% {
+          transform: translateX(95%);
+        }
+      }
+
+      @keyframes right-swing {
+        50% {
+          transform: translateX(-95%);
+        }
+
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      
+      }
+    </style>
+    <div class="loading-wrap">
+      <div class="balls">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div id="alert" style="position: absolute; width: 100%; z-index: 10000;">
+    <div id="my-popover" class="ant-popover my-popover" style="position: fixed;"></div>
+  </div>
+
+</body>
+
+</html>
+
+
+
+

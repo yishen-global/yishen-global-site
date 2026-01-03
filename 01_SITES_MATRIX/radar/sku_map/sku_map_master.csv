@@ -1,0 +1,4 @@
+country,industry,company_name,contact_name,contact_title,email,phone,
+top_imported_product,missing_sku_category,recommended_sku,
+market_gap_score,estimated_monthly_volume,estimated_margin,priority_level,
+sku,category,price_band,target_margin,priority,sku_map_score,mapped_at

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YiShen Global</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="/index.html" class="logo">
+      <img src="/logo.webp" alt="YiShen Global">
+    </a>
+
+    <nav class="main-nav">
+      <a href="/solutions.html">Solutions</a>
+      <a href="/industries.html">Industries</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/why-us.html">Why Us</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="APP_BODY"></main>
+
+<footer class="site-footer">
+  <p>© YiShen Global. All rights reserved.</p>
+</footer>
+
+<script>
+fetch('/body/' + document.body.dataset.page + '.body')
+.then(r => r.text())
+.then(t => document.getElementById("APP_BODY").innerHTML = t)
+</script>
+
+</body>
+</html>

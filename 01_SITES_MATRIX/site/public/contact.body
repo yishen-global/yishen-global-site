@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>联络熠燊 | YISHEN GLOBAL 社交主权中枢</title>
+<meta name="description" content="Official sovereign trade tower for DDP pricing, ESG compliance and instant CONFIRM order." />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Sovereign EEAT / Real Social Identity -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"YISHEN GLOBAL",
+  "url":"https://yishenglobal.net",
+  "sameAs":[
+    "https://www.linkedin.com/in/alex-yang-yishen/",
+    "https://x.com/AlexYan03451555",
+    "https://www.youtube.com/channel/@alexyang6074",
+    "https://www.facebook.com/alex.yang.427745",
+    "https://www.instagram.com/alexyang591/"
+  ],
+  "contactPoint":[
+    {"@type":"ContactPoint","telephone":"+8618857277313","contactType":"Global Strategy"},
+    {"@type":"ContactPoint","telephone":"+8619530394133","contactType":"China Operations"}
+  ]
+}
+</script>
+
+<style>
+body{background:#010409;color:#e6edf3;font-family:Inter,system-ui}
+.contact-card{border:1px solid rgba(14,165,227,.12);background:rgba(255,255,255,.03);backdrop-filter:blur(10px);transition:.35s}
+.contact-card:hover{border-color:#0ea5e9;transform:translateY(-4px)}
+.btn{background:#0ea5e9;color:#000;font-weight:900;transition:.25s}
+.btn:hover{background:#fff;transform:translateY(-1px)}
+.social-links a{border:1px solid rgba(255,255,255,.12);padding:10px 16px;border-radius:14px;display:inline-block;font-size:12px}
+.social-links a:hover{border-color:#0ea5e9;color:#0ea5e9}
+</style>
+</head>
+
+<body class="min-h-screen flex flex-col p-8">
+
+<header class="max-w-7xl mx-auto w-full flex justify-between items-center mb-16">
+<a href="index.html" class="text-2xl font-black italic uppercase">YISHEN <span class="text-blue-500">GLOBAL</span></a>
+<div class="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest">
+<a href="/confirm" class="text-green-400 border-b border-green-400 pb-1">CONFIRM</a>
+<a href="index.html" class="text-gray-500 hover:text-blue-400">返回母舰</a>
+</div>
+</header>
+
+<main class="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+
+<div class="contact-card p-12 rounded-[3rem]">
+<span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest border border-blue-500/30 px-3 py-1 rounded-full">Global Strategy</span>
+<h2 class="text-4xl font-black italic mt-6 mb-6">Alex Yang</h2>
+<p class="text-gray-400 text-sm mb-10 leading-relaxed">全球 DDP 方案设计、欧盟/中东绿色合规标准咨询、大型基建项目对接。</p>
+<div class="space-y-4">
+<a href="https://wa.me/8618857277313?text=CONFIRM" class="btn block text-center py-4 rounded-2xl">WhatsApp CONFIRM → Auto PDF</a>
+<a href="mailto:alex.yang@yishenglobal.net" class="block text-gray-500 hover:text-blue-400">alex.yang@yishenglobal.net</a>
+</div>
+</div>
+
+<div class="contact-card p-12 rounded-[3rem]">
+<span class="text-green-500 text-[10px] font-bold uppercase tracking-widest border border-green-500/30 px-3 py-1 rounded-full">China Operations</span>
+<h2 class="text-4xl font-black italic mt-6 mb-6">Champion</h2>
+<p class="text-gray-400 text-sm mb-10 leading-relaxed">中国供应链整合、生产品控 (QC)、样品寄送及中国区行政支持。</p>
+<div class="space-y-4">
+<a href="tel:+8619530394133" class="btn block text-center py-4 rounded-2xl">Call China Ops</a>
+<a href="mailto:champion@yishenglobal.net" class="block text-gray-500 hover:text-green-400">champion@yishenglobal.net</a>
+</div>
+</div>
+
+</main>
+
+<section class="max-w-5xl mx-auto w-full mt-16 contact-card p-10 rounded-[3rem] text-center">
+<p class="text-[10px] uppercase tracking-[0.35em] text-gray-500 font-bold mb-4">Social Sovereignty</p>
+<h3 class="text-xl font-black italic mb-6">Follow Verified Channels</h3>
+
+<div class="social-links flex flex-wrap justify-center gap-4">
+  <a href="https://www.linkedin.com/in/alex-yang-yishen/" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+  <a href="https://x.com/AlexYan03451555" target="_blank" aria-label="X / Twitter">X</a>
+  <a href="https://www.youtube.com/channel/@alexyang6074" target="_blank" aria-label="YouTube">YouTube</a>
+  <a href="https://www.facebook.com/alex.yang.427745" target="_blank" aria-label="Facebook">Facebook</a>
+  <a href="https://www.instagram.com/alexyang591/" target="_blank" aria-label="Instagram">Instagram</a>
+</div>
+</section>
+
+<footer class="mt-20 text-center border-t border-white/5 pt-10">
+<p class="text-[10px] text-gray-800 tracking-[0.4em] uppercase">YISHEN GLOBAL · Sovereign Contact Core · 2026</p>
+</footer>
+
+</body>
+</html>

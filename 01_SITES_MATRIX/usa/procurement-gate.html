@@ -1,0 +1,1027 @@
+<!-- =========================================================
+  FILE: /usa/procurement-gate.html
+  YISHEN GLOBAL — USA SOVEREIGN BUYER GATE (PHASE-1)
+  Interface: Sovereign DarkTech™ Procurement OS (Balanced D)
+  Brand: Yishen Global
+  Tagline: Coordinated Industrial Architecture
+  Notes:
+  - Pure static HTML (no build needed)
+  - Uses your global /styles.css + adds page-scoped styles safely
+  - Uses your branding assets:
+      /assets/branding/logo-main.webp
+      /assets/branding/logo-white.webp
+      /assets/branding/favicon-192.png
+      /assets/branding/favicon-512.png  (optional, recommended)
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>USA Procurement Gate | Yishen Global — Sovereign Procurement OS</title>
+  <meta name="description" content="USA Sovereign Procurement Gate by Yishen Global. Coordinated Industrial Architecture across manufacturing, compliance, packaging, lead-time control, and DDP execution." />
+
+  <link rel="icon" href="/assets/branding/favicon-192.png" />
+  <!-- Optional (recommended) -->
+  <link rel="apple-touch-icon" href="/assets/branding/favicon-192.png" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Page-scoped styles (Sovereign DarkTech™ balanced) -->
+  <style>
+    :root{
+      --bg0:#010409;
+      --bg1:#050b17;
+      --panel:rgba(255,255,255,.03);
+      --panel2:rgba(255,255,255,.02);
+      --border:rgba(255,255,255,.09);
+      --border2:rgba(14,165,227,.25);
+      --ink:#e6edf3;
+      --muted:rgba(230,237,243,.72);
+      --muted2:rgba(230,237,243,.55);
+      --brand:#0ea5e3;
+      --brand2:#7dd3fc;
+      --gold:#ffd700;
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+      --radius:18px;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --shadow2: 0 0 0 1px rgba(14,165,227,.14), 0 20px 70px rgba(0,0,0,.55);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    body{
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(14,165,227,.18), transparent 60%),
+        radial-gradient(800px 500px at 85% 15%, rgba(125,211,252,.10), transparent 55%),
+        radial-gradient(900px 700px at 40% 110%, rgba(255,215,0,.06), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color: var(--ink);
+      font-family: var(--sans);
+      overflow-x:hidden;
+    }
+
+    /* Global header (matches your site nav, but self-contained + safe) */
+    .global-header{
+      position:sticky; top:0; z-index:999;
+      background: rgba(1,4,9,.78);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .global-header-inner{
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .global-brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color: var(--ink);
+      min-width: 220px;
+    }
+    .global-brand picture img{
+      height: 34px;
+      width:auto;
+      display:block;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .brand-lockup{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      line-height:1.05;
+    }
+    .brand-name{
+      font-weight: 900;
+      letter-spacing: -.02em;
+      font-size: 15px;
+    }
+    .brand-tag{
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: rgba(14,165,227,.92);
+      font-weight: 700;
+    }
+    .global-nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .global-nav a{
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(230,237,243,.78);
+      text-decoration:none;
+      padding: 10px 10px;
+      border-radius: 12px;
+      transition: all .18s ease;
+      border:1px solid transparent;
+    }
+    .global-nav a:hover{
+      color: #fff;
+      border-color: rgba(14,165,227,.22);
+      background: rgba(14,165,227,.06);
+      box-shadow: 0 0 0 1px rgba(14,165,227,.10) inset;
+    }
+    .nav-cta{
+      color: rgba(255,255,255,.95) !important;
+      border-color: rgba(255,215,0,.25) !important;
+      background: rgba(255,215,0,.06);
+    }
+    .nav-cta:hover{
+      background: rgba(255,215,0,.11);
+      box-shadow: 0 0 0 1px rgba(255,215,0,.18) inset;
+    }
+
+    /* Layout */
+    .wrap{
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 28px 18px 96px;
+    }
+
+    /* Sovereign HUD lines */
+    .hud{
+      position:relative;
+      border: 1px solid rgba(255,255,255,.06);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .hud:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 260px at 30% 0%, rgba(14,165,227,.20), transparent 60%),
+        radial-gradient(700px 260px at 70% 0%, rgba(255,215,0,.10), transparent 70%);
+      pointer-events:none;
+      opacity:.75;
+    }
+    .scanline{
+      position:absolute;
+      left:0; right:0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(14,165,227,.22), transparent);
+      opacity:.6;
+      animation: scan 7.5s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes scan{
+      0%{ top:-10%; }
+      100%{ top:110%; }
+    }
+
+    /* Hero */
+    .hero{
+      padding: 34px 28px 26px;
+      position:relative;
+    }
+    .hero-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .kicker{
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .48em;
+      text-transform: uppercase;
+      color: rgba(14,165,227,.9);
+      font-weight: 800;
+    }
+    .title{
+      margin: 14px 0 8px;
+      font-size: clamp(34px, 4.6vw, 64px);
+      line-height: .95;
+      letter-spacing: -.04em;
+      font-weight: 950;
+    }
+    .title span{
+      color: rgba(230,237,243,.14);
+      display:block;
+    }
+    .sub{
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      border-radius: 14px;
+      padding: 12px 14px;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      color: rgba(255,255,255,.92);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      transition: all .18s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      border-color: rgba(14,165,227,.30);
+      background: rgba(14,165,227,.06);
+      box-shadow: 0 0 0 1px rgba(14,165,227,.10) inset, 0 14px 40px rgba(0,0,0,.35);
+    }
+    .btn-gold{
+      border-color: rgba(255,215,0,.28);
+      background: rgba(255,215,0,.06);
+    }
+    .btn-gold:hover{
+      border-color: rgba(255,215,0,.40);
+      background: rgba(255,215,0,.11);
+      box-shadow: 0 0 0 1px rgba(255,215,0,.16) inset, 0 14px 40px rgba(0,0,0,.35);
+    }
+
+    .meta-row{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+    }
+    .meta-card{
+      border:1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.018);
+      border-radius: 16px;
+      padding: 14px 14px;
+    }
+    .meta-card h4{
+      margin:0 0 8px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: rgba(230,237,243,.78);
+    }
+    .meta-card p{
+      margin:0;
+      color: rgba(230,237,243,.68);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 10px;
+    }
+    .chip{
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border:1px solid rgba(14,165,227,.18);
+      color: rgba(14,165,227,.92);
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(14,165,227,.05);
+    }
+    .chip.gold{
+      border-color: rgba(255,215,0,.24);
+      color: rgba(255,215,0,.92);
+      background: rgba(255,215,0,.06);
+    }
+
+    /* Section grid */
+    .section{
+      margin-top: 22px;
+      padding: 22px 22px 28px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      position:relative;
+    }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 14px;
+    }
+    .section h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -.02em;
+    }
+    .section-note{
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: rgba(230,237,243,.55);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 0 0 1px rgba(14,165,227,.10) inset;
+      padding: 16px 16px;
+      position:relative;
+      overflow:hidden;
+      min-height: 120px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(14,165,227,.24);
+      background: rgba(14,165,227,.03);
+    }
+    .card .tag{
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: rgba(14,165,227,.92);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size: 18px;
+      letter-spacing: -.02em;
+    }
+    .card p{
+      margin:0;
+      color: rgba(230,237,243,.68);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .card .list{
+      margin: 10px 0 0;
+      padding: 0 0 0 16px;
+      color: rgba(230,237,243,.66);
+      font-size: 12.5px;
+      line-height: 1.7;
+    }
+    .card .list li{ margin: 6px 0; }
+
+    /* Column spans */
+    .span-12{ grid-column: span 12; }
+    .span-8{ grid-column: span 8; }
+    .span-7{ grid-column: span 7; }
+    .span-6{ grid-column: span 6; }
+    .span-5{ grid-column: span 5; }
+    .span-4{ grid-column: span 4; }
+    .span-3{ grid-column: span 3; }
+
+    /* Matrix */
+    .matrix{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: rgba(255,255,255,.015);
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+    }
+    th, td{
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      vertical-align: top;
+    }
+    th{
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: rgba(230,237,243,.65);
+      background: rgba(255,255,255,.02);
+    }
+    td{
+      font-size: 13px;
+      color: rgba(230,237,243,.74);
+      line-height:1.55;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(230,237,243,.80);
+      background: rgba(255,255,255,.015);
+      white-space:nowrap;
+    }
+    .pill.ok{ border-color: rgba(34,197,94,.25); color: rgba(34,197,94,.95); background: rgba(34,197,94,.06); }
+    .pill.blue{ border-color: rgba(14,165,227,.22); color: rgba(14,165,227,.92); background: rgba(14,165,227,.06); }
+    .pill.gold{ border-color: rgba(255,215,0,.22); color: rgba(255,215,0,.92); background: rgba(255,215,0,.06); }
+
+    /* Intake form */
+    .form{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .field{
+      grid-column: span 6;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      padding: 12px 12px;
+    }
+    .field label{
+      display:block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(230,237,243,.60);
+      margin-bottom: 8px;
+    }
+    .field input, .field select, .field textarea{
+      width:100%;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(1,4,9,.6);
+      color: rgba(255,255,255,.92);
+      border-radius: 12px;
+      padding: 10px 10px;
+      outline:none;
+      font-size: 13px;
+    }
+    .field textarea{ min-height: 110px; resize: vertical; }
+    .field.full{ grid-column: span 12; }
+
+    .cta-bar{
+      margin-top: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 14px;
+    }
+    .small{
+      color: rgba(230,237,243,.55);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .mono{
+      font-family: var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    /* Footer */
+    .foot{
+      margin-top: 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+      opacity:.7;
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 18px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .meta-row{ grid-template-columns: 1fr; }
+      .span-8, .span-7, .span-6, .span-5, .span-4, .span-3{ grid-column: span 12; }
+      .field{ grid-column: span 12; }
+      .global-brand{ min-width: auto; }
+      .brand-lockup{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- GLOBAL NAVIGATION MASTER BAR -->
+  <header class="global-header">
+    <div class="global-header-inner">
+      <a href="/" class="global-brand" aria-label="Yishen Global Home">
+        <picture>
+          <source srcset="/assets/branding/logo-white.webp" media="(prefers-color-scheme: dark)">
+          <img src="/assets/branding/logo-main.webp" alt="Yishen Global">
+        </picture>
+        <div class="brand-lockup">
+          <div class="brand-name">Yishen Global</div>
+          <div class="brand-tag">Coordinated Industrial Architecture</div>
+        </div>
+      </a>
+
+      <nav class="global-nav" aria-label="Global Navigation">
+        <a href="/">Home</a>
+        <a href="/solutions.html">Solutions</a>
+        <a href="/industries.html">Industries</a>
+        <a href="/why-us.html">Why Us</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO HUD -->
+    <section class="hud" aria-label="USA Procurement Gate Hero">
+      <div class="scanline"></div>
+
+      <div class="hero">
+        <div class="hero-top">
+          <div>
+            <div class="kicker">USA · Sovereign Buyer Gate</div>
+            <h1 class="title">Global Procurement Gate<span>Sovereign Procurement OS</span></h1>
+            <p class="sub">
+              This page is not a product catalog. It is a decision interface designed for United States procurement.
+              Yishen Global delivers <b>coordinated industrial architecture</b> across manufacturing execution, compliance orchestration,
+              packaging defense, lead-time sovereignty, and DDP governance — engineered for buyers who cannot afford surprises.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#intake">Open Procurement Intake →</a>
+            <a class="btn" href="#radar">Buyer Radar</a>
+            <a class="btn" href="#matrix">Compliance Matrix</a>
+          </div>
+        </div>
+
+        <div class="meta-row">
+          <div class="meta-card">
+            <h4>Operating Principle</h4>
+            <p>
+              <span class="pill blue">Predictability</span>
+              <span class="pill gold">Integrity</span>
+              <span class="pill ok">Execution</span>
+              <br><br>
+              We do not “promise delivery.” We architect a system where delivery becomes the predictable outcome.
+              If a requirement cannot be defended under USA procurement scrutiny, the system rejects it.
+            </p>
+            <div class="chips" aria-label="Capabilities">
+              <span class="chip">Lead-Time Sovereignty</span>
+              <span class="chip">Packaging Defense</span>
+              <span class="chip gold">Compliance-Orchestrated</span>
+              <span class="chip">DDP / Bonded / Reverse</span>
+              <span class="chip">SKU Architecture</span>
+            </div>
+          </div>
+
+          <div class="meta-card">
+            <h4>USA Node Status</h4>
+            <p>
+              <span class="pill ok">Online</span>
+              <span class="pill blue">CDN Secured</span>
+              <span class="pill gold">HTTPS Active</span>
+              <br><br>
+              Route: Buyer → Procurement Gate → Compliance & Packaging Defense → Lead-Time Control → Execution Delivery.
+            </p>
+            <div class="chips">
+              <span class="chip">Node: USA</span>
+              <span class="chip">Interface: OS v1.0</span>
+              <span class="chip">Mode: Balanced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: BUYER RADAR -->
+      <section id="radar" class="section" aria-label="USA Buyer Radar">
+        <div class="section-head">
+          <h2>USA Buyer Radar</h2>
+          <div class="section-note">Signal → Qualification → Procurement Authority</div>
+        </div>
+
+        <div class="grid">
+          <div class="card span-4">
+            <div class="tag">Persona · Procurement Manager</div>
+            <h3>Unpredictability is the enemy</h3>
+            <p>They buy systems: lead-time stability, reduced hidden costs, documented escalation paths, and responsibility ownership.</p>
+            <ul class="list">
+              <li>Needs stable ETA windows and defensible documentation</li>
+              <li>Hates “surprises”: carton damage, missing parts, late containers</li>
+              <li>Wants a supplier that can be defended internally</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <div class="tag">Persona · Distributor</div>
+            <h3>Category-killer SKUs</h3>
+            <p>They win by stocking products that simplify choice and sell through consistently — supported by packaging + repeat purchase logic.</p>
+            <ul class="list">
+              <li>Needs standout SKUs with low decision friction</li>
+              <li>Wants scalable supply + low after-sales risk</li>
+              <li>Prefers packaging that reduces warehouse damage</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <div class="tag">Persona · Private Label / Brand</div>
+            <h3>Differentiation you can defend</h3>
+            <p>They need storytelling + engineering proof: spec control, certifications, and repeatable quality governance across batches.</p>
+            <ul class="list">
+              <li>Needs OEM/ODM + stable tolerances</li>
+              <li>Requires compliance readiness for USA retail</li>
+              <li>Wants co-branded unboxing + packaging ROI</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <div class="tag">Signals · Active Buying Cycle</div>
+            <h3>What the system monitors</h3>
+            <p>We look for operational signals that indicate a procurement cycle is active — and route you into the correct execution lane.</p>
+            <ul class="list">
+              <li>New product line launch, assortment refresh, or seasonal reset</li>
+              <li>Warehouse expansion / new distribution center / new retail channels</li>
+              <li>Packaging claims, returns spikes, Amazon listing volatility</li>
+              <li>Vendor consolidation initiatives / compliance audits</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <div class="tag">Boolean Gate · Fit or Reject</div>
+            <h3>Procurement qualification rules</h3>
+            <p>This is where “sales talk” dies. The system checks whether requirements can be executed — not merely promised.</p>
+            <ul class="list">
+              <li>Lead-time window must be engineered and measurable</li>
+              <li>Packaging must survive the actual distribution path</li>
+              <li>Compliance must be documentable with ownership</li>
+              <li>Escalation path must be real (not a generic email)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: PRODUCT AUTHORITY -->
+      <section class="section" aria-label="Product Authority Blocks">
+        <div class="section-head">
+          <h2>Product Authority Blocks</h2>
+          <div class="section-note">SKU Architecture → Sell-through → Risk Control</div>
+        </div>
+
+        <div class="grid">
+          <div class="card span-4">
+            <div class="tag">Cluster · Office Chair</div>
+            <h3>Ergonomic / Mesh / Leather</h3>
+            <p>Spec-controlled comfort with packaging defense and predictable replenishment cycles.</p>
+            <ul class="list">
+              <li>Lead-time engineered for repeatable restock</li>
+              <li>Drop-test packaging logic for parcel + pallet</li>
+              <li>Documentation-ready for internal approvals</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <div class="tag">Cluster · Gaming Chair</div>
+            <h3>Pro / Heavy Duty / OEM</h3>
+            <p>Category-killer SKUs designed for conversion and warranty-risk containment.</p>
+            <ul class="list">
+              <li>After-sales risk mitigation (parts logic)</li>
+              <li>Unboxing and brand narrative-ready</li>
+              <li>QC rejection logic to protect ratings</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <div class="tag">Cluster · Standing Desk</div>
+            <h3>Electric / OEM / Project</h3>
+            <p>Procurement-grade control over tolerances, packaging, and delivery stability.</p>
+            <ul class="list">
+              <li>Carton + foam architecture optimized for damage reduction</li>
+              <li>Specification governance to reduce returns</li>
+              <li>Lead-time sovereignty for program execution</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <div class="tag">Cluster · Recliner / Functional Sofa</div>
+            <h3>Modular · Lift · Functional</h3>
+            <p>Function-first comfort engineered for predictable assembly, reduced shipping damage, and higher repeat purchase.</p>
+            <ul class="list">
+              <li>Modular packaging reduces warehouse cost and damage</li>
+              <li>Lifecycle governance: parts, replacements, escalation</li>
+              <li>Distribution-friendly design constraints</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <div class="tag">Cluster · Materials / Hardware</div>
+            <h3>WPC Flooring · Chain / Wire Rope</h3>
+            <p>Industrial categories supported by documentation, packaging discipline, and execution sovereignty.</p>
+            <ul class="list">
+              <li>Compliance and labeling discipline for border clearance</li>
+              <li>Packaging logic to survive real handling cycles</li>
+              <li>Clear responsibility ownership in case of disputes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: COMPLIANCE MATRIX -->
+      <section id="matrix" class="section" aria-label="Compliance Control Matrix">
+        <div class="section-head">
+          <h2>Compliance Control Matrix</h2>
+          <div class="section-note">USA · Documentation → Ownership → Defensibility</div>
+        </div>
+
+        <div class="matrix" role="region" aria-label="Compliance Matrix Table">
+          <table>
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>What USA Buyers Require</th>
+                <th>System Response</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="pill blue">Furniture Standards</span></td>
+                <td>BIFMA-ready documentation, spec control, stability defensibility</td>
+                <td>Compliance-first build path + document pack governance</td>
+                <td><span class="pill ok">Orchestrated</span></td>
+              </tr>
+              <tr>
+                <td><span class="pill blue">Safety / Electrical</span></td>
+                <td>UL / safety expectations for powered products (where applicable)</td>
+                <td>Risk classification → test path → traceable ownership</td>
+                <td><span class="pill gold">By Program</span></td>
+              </tr>
+              <tr>
+                <td><span class="pill blue">Materials / Emissions</span></td>
+                <td>CARB / emissions readiness when relevant, materials traceability</td>
+                <td>Materials bill + supplier trace + batch governance</td>
+                <td><span class="pill ok">Documentable</span></td>
+              </tr>
+              <tr>
+                <td><span class="pill blue">Packaging / Transit</span></td>
+                <td>ISTA-aligned packaging logic, parcel/pallet survivability</td>
+                <td>Drop-test logic + carton architecture + claim prevention</td>
+                <td><span class="pill ok">Defense Mode</span></td>
+              </tr>
+              <tr>
+                <td><span class="pill blue">Labeling & Customs</span></td>
+                <td>HS clarity, labeling discipline, dispute-proof paperwork</td>
+                <td>Pre-clear document sets + responsibility ownership</td>
+                <td><span class="pill gold">Lane-Based</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:12px" class="small">
+          <span class="mono">Note:</span>
+          This matrix is a governance layer. Final compliance packages are executed per product/program and procurement lane.
+        </div>
+      </section>
+
+      <!-- SECTION: PACKAGING DEFENSE -->
+      <section class="section" aria-label="Packaging Drop-Test Control">
+        <div class="section-head">
+          <h2>Packaging Drop-Test Control</h2>
+          <div class="section-note">Damage Prevention → Claims Control → Brand Protection</div>
+        </div>
+
+        <div class="grid">
+          <div class="card span-6">
+            <div class="tag">Reality</div>
+            <h3>Most failures are not “product defects”</h3>
+            <p>
+              USA distribution punishes weak packaging. Ratings, returns, and chargebacks are usually caused by
+              <b>handling cycles</b>, not factory defects. Packaging is a procurement risk layer — not an afterthought.
+            </p>
+            <ul class="list">
+              <li>Parcel: drops, edge impacts, conveyor friction</li>
+              <li>Pallet: fork damage, stacking compression, container vibration</li>
+              <li>Returns: re-pack cycles that destroy margins</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <div class="tag">Defense Logic</div>
+            <h3>ISTA-style survivability architecture</h3>
+            <p>
+              We design packaging to survive the path you actually run: marketplace parcel, LTL, retail DC,
+              cross-dock, and returns.
+            </p>
+            <ul class="list">
+              <li>Carton architecture: corner strength + compression logic</li>
+              <li>Internal structure: foam density + void control + part isolation</li>
+              <li>Unboxing: brand narrative + damage reduction alignment</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: LEAD-TIME AUTHORITY -->
+      <section class="section" aria-label="Lead-Time Authority">
+        <div class="section-head">
+          <h2>Lead-Time Authority</h2>
+          <div class="section-note">ETA Stability → Inventory Velocity → Procurement Confidence</div>
+        </div>
+
+        <div class="grid">
+          <div class="card span-6">
+            <div class="tag">Procurement Truth</div>
+            <h3>Predictability &gt; Price</h3>
+            <p>
+              The USA market does not fail because buyers “paid too much”.
+              It fails because inventory timing collapses: late ETAs, partial shipments, and unstable replenishment windows.
+            </p>
+            <ul class="list">
+              <li>Lead-time sovereignty reduces hidden costs</li>
+              <li>Stable replenishment protects sell-through</li>
+              <li>Documentation prevents internal blame cycles</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <div class="tag">System Control</div>
+            <h3>Engineered execution lanes</h3>
+            <p>
+              We route programs through an execution lane designed for their risk profile — not “one timeline for all”.
+              Each lane has a measurable window, escalation ownership, and packaging defense level.
+            </p>
+            <ul class="list">
+              <li>Lane selection: marketplace / retail / project / distributor</li>
+              <li>Measurable windows: planned buffers, milestones, check gates</li>
+              <li>Escalation path: named ownership, documented decisions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: DDP / BONDED / REVERSE -->
+      <section class="section" aria-label="Logistics Governance">
+        <div class="section-head">
+          <h2>DDP / Bonded / Reverse Logistics</h2>
+          <div class="section-note">Customs → Storage → Returns = Governed</div>
+        </div>
+
+        <div class="grid">
+          <div class="card span-4">
+            <div class="tag">DDP Governance</div>
+            <h3>Border risk is engineered away</h3>
+            <p>We treat clearance as a system, not an event: documents, HS discipline, labeling, and responsibility ownership.</p>
+            <ul class="list">
+              <li>Pre-clear documentation</li>
+              <li>Dispute-proof paperwork</li>
+              <li>Lane-based cost stability</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <div class="tag">Bonded Structure</div>
+            <h3>Inventory can be staged</h3>
+            <p>Bonded warehousing enables program execution and reduces emergency freight decisions.</p>
+            <ul class="list">
+              <li>Staging for seasonal peaks</li>
+              <li>Batch governance and traceability</li>
+              <li>Reduced time-to-ship</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <div class="tag">Reverse Control</div>
+            <h3>Returns are a margin war</h3>
+            <p>We design a reverse path to protect ratings and reduce losses: parts logic, replacements, and escalation.</p>
+            <ul class="list">
+              <li>Replacement kits / parts governance</li>
+              <li>Damage classification & resolution</li>
+              <li>After-sales risk mitigation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: AI BUYER INTAKE -->
+      <section id="intake" class="section" aria-label="AI Buyer Intake Desk">
+        <div class="section-head">
+          <h2>USA Procurement Intake Desk</h2>
+          <div class="section-note">Signal Intake → Lane Assignment → Execution Packet</div>
+        </div>
+
+        <!-- Static form (mailto). You can later swap to Formspree/Netlify/Vercel forms -->
+        <form class="form" action="mailto:support@yishenglobal.net" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="company">Company</label>
+            <input id="company" name="Company" type="text" placeholder="Company name" required />
+          </div>
+
+          <div class="field">
+            <label for="role">Role / Title</label>
+            <input id="role" name="Role" type="text" placeholder="Procurement / Sourcing / Category / Owner" />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="field">
+            <label for="persona">Buyer Persona</label>
+            <select id="persona" name="Persona">
+              <option>Procurement Manager</option>
+              <option>Distributor</option>
+              <option>Retail Buyer</option>
+              <option>Private Label Brand</option>
+              <option>Amazon / E-commerce Seller</option>
+              <option>Project / Contract Buyer</option>
+              <option>Importer</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="category">Category Focus</label>
+            <select id="category" name="Category">
+              <option>Office Chair (Mesh / Ergonomic / Leather)</option>
+              <option>Gaming Chair (Pro / Heavy Duty / OEM)</option>
+              <option>Standing Desk (Electric / OEM / Project)</option>
+              <option>Recliner / Functional Sofa (Modular / Lift)</option>
+              <option>WPC Flooring / Materials</option>
+              <option>Industrial Hardware (Chain / Wire Rope)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="lane">Execution Lane</label>
+            <select id="lane" name="Lane">
+              <option>Marketplace (Parcel / D2C)</option>
+              <option>Retail DC (Pallet / LTL)</option>
+              <option>Distributor Restock</option>
+              <option>Project / Contract</option>
+              <option>Not sure (Assign for me)</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="needs">Requirements / Signals</label>
+            <textarea id="needs" name="Requirements" placeholder="Tell us: target ETA window, MOQ, packaging constraints, compliance needs, pain points, and your current risk (returns, damage, delays)."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="notes">Internal Approval Constraints</label>
+            <textarea id="notes" name="ApprovalConstraints" placeholder="What must you defend internally? (documentation, compliance, warranty risk, lead-time, chargebacks)"></textarea>
+          </div>
+
+          <div class="cta-bar span-12">
+            <div class="small">
+              <span class="mono">Routing:</span>
+              Your intake is evaluated through a boolean gate: lead-time window, packaging survivability, compliance defensibility, and escalation ownership.
+              If a requirement cannot be executed, the system rejects it — protecting both sides.
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-gold" type="submit">Submit Intake →</button>
+              <a class="btn" href="/contact.html">Direct Contact →</a>
+            </div>
+          </div>
+        </form>
+
+        <div class="foot">
+          <span>© 2026 Yishen Global</span>
+          <span>USA Node · Sovereign Procurement OS v1.0</span>
+          <span>Interface: Sovereign DarkTech™</span>
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

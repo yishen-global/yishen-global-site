@@ -1,0 +1,25 @@
+<section class="hero">
+  <h1>Why YiShen Global</h1>
+  <p class="hero-sub">
+    Predictability over price. Sovereign-grade manufacturing, compliance control, and stable delivery.
+  </p>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h3>Predictable Lead Time</h3>
+    <p>Stable production windows, buffer planning, and escalation ownership.</p>
+  </div>
+  <div class="card">
+    <h3>Compliance First</h3>
+    <p>EN1335, BIFMA, ISO, CE aligned documentation and audits.</p>
+  </div>
+  <div class="card">
+    <h3>Low MOQ & Customization</h3>
+    <p>Flexible MOQs, OEM/ODM, and private-label programs.</p>
+  </div>
+  <div class="card">
+    <h3>DDP & Landed Cost Control</h3>
+    <p>Predictable landed cost with customs pre-clearance routing.</p>
+  </div>
+</section>

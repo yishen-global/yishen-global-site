@@ -1,0 +1,7 @@
+{
+  "B2B": { "margin": 1.00, "platformFee": 0 },
+  "DTC": { "margin": 1.18, "platformFee": 0.03 },
+  "AMAZON": { "margin": 1.25, "platformFee": 0.15 },
+  "WAYFAIR": { "margin": 1.28, "platformFee": 0.18 },
+  "NOON": { "margin": 1.22, "platformFee": 0.12 }
+}

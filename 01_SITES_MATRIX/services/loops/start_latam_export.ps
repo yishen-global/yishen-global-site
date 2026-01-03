@@ -1,0 +1,5 @@
+$taskName = "YiShen_LATAM_DailyExport"
+$action = New-ScheduledTaskAction -Execute "python" -Argument "J:\YiShen-Mothership\agents\HUNTER_ENGINE\tools\export_leads.py"
+$trigger = New-ScheduledTaskTrigger -Daily -At 02:00
+Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -RunLevel Highest -Force
+Start-ScheduledTask -TaskName $taskName

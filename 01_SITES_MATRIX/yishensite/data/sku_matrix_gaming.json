@@ -1,0 +1,12 @@
+{
+  "category":"gaming",
+  "products":[
+    {
+      "sku":"PRO-GAMING-CHAIR-X",
+      "name":"Pro Racing Gaming Chair X",
+      "basePrice":69,
+      "tiers":[100,300,500,1000],
+      "channels":["B2C","AMAZON","NOON"]
+    }
+  ]
+}

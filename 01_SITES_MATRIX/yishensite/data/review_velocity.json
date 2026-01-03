@@ -1,0 +1,5 @@
+{
+  "GLOBAL": { "targetRate": 0.035 },
+  "US": { "targetRate": 0.045 },
+  "EU": { "targetRate": 0.040 }
+}

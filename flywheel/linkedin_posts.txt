@@ -1,0 +1,10 @@
+{{CITY}} {{PRODUCT}} buyers in {{COUNTRY}} are shifting their sourcing in 2026.
+
+They now care more about:
+– OEM branding
+– Low MOQ testing
+– Predictable lead time
+– DDP landed cost
+
+Official buyer gateway:
+https://yishenglobal.net/world/{{COUNTRY}}/cities/{{CITY}}/{{SKU}}/

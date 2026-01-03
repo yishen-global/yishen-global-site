@@ -1,0 +1,12 @@
+{
+  "category":"education",
+  "products":[
+    {
+      "sku":"EDU-STACK-CHAIR-A",
+      "name":"Stackable Classroom Chair",
+      "basePrice":29,
+      "tiers":[200,500,1000],
+      "channels":["B2B"]
+    }
+  ]
+}

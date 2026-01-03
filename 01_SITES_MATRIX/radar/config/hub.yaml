@@ -1,0 +1,7 @@
+hub:
+  db_type: postgres
+  host: localhost
+  port: 5432
+  db: master_trade_hub
+  user: radar
+  password: radar123

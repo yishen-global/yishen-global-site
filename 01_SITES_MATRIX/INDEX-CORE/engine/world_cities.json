@@ -1,0 +1,7 @@
+[
+  {"country":"Australia","cities":["Sydney","Melbourne","Brisbane","Perth","Adelaide"]},
+  {"country":"Japan","cities":["Tokyo","Osaka","Nagoya","Fukuoka","Sapporo"]},
+  {"country":"USA","cities":["New York","Los Angeles","Chicago","Houston","Dallas"]},
+  {"country":"Germany","cities":["Berlin","Munich","Hamburg","Frankfurt","Cologne"]},
+  {"country":"Saudi Arabia","cities":["Riyadh","Jeddah","Dammam","Mecca","Medina"]}
+]

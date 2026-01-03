@@ -1,0 +1,14 @@
+{
+  "office_chair": {
+    "pillar": ["Ultimate Ergonomic Chair Guide 2026"],
+    "use_cases": ["Home Office Setup", "Corporate Office Upgrade"],
+    "review": ["Top 10 Mesh Chairs Comparison"],
+    "tools": ["Chair Fit Calculator"],
+    "downloads": ["Office Buying Checklist PDF"]
+  },
+  "gaming_chair": {
+    "pillar": ["Pro Gaming Chair Buyer Guide"],
+    "review": ["Best Gaming Chairs for Long Sessions"],
+    "tools": ["Desk & Chair Height Calculator"]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "company":"MESH_CHAIR_FACTORY_CO",
+  "whatsapp":"+8529XXXXXXX",
+  "deal_status":"CONFIRMED",
+  "sku":"Compression Sofa Model X",
+  "cbm_saved":"68%",
+  "value_usd":82000,
+  "date":"2026-01-05"
+}

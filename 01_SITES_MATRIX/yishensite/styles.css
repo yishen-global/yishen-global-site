@@ -1,0 +1,7 @@
+
+.country-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px;}
+.country-card{border:1px solid #333;padding:14px;border-radius:14px;color:white;text-decoration:none;}
+.country-card:hover{border-color:#0ea5e3;}
+.cc-top{display:flex;gap:10px;align-items:center;}
+.cc-flag{font-size:28px;}
+.badge{font-size:12px;padding:4px 8px;border:1px solid #555;border-radius:20px;}

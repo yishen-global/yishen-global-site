@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YiShen Global | 5 Super AI Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #010409; color: #e6edf3; font-family: sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(14, 165, 227, 0.2); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="p-8">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center mb-16">
+        <h1 class="text-3xl font-bold italic uppercase tracking-tighter">YiShen <span class="text-sky-500">Global</span></h1>
+        <div class="text-xs uppercase tracking-widest text-sky-400 font-bold">Systems: Operational</div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto text-center">
+        <h2 class="text-5xl font-black mb-12 uppercase italic">5 Super <span class="text-sky-500">AI Systems</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-20 text-xs font-bold uppercase tracking-widest text-gray-400">
+            <div class="p-4 border border-white/10 rounded">Selection</div>
+            <div class="p-4 border border-white/10 rounded">Traffic</div>
+            <div class="p-4 border border-white/10 rounded text-sky-400">Lead</div>
+            <div class="p-4 border border-white/10 rounded">Closing</div>
+            <div class="p-4 border border-white/10 rounded">Marketing</div>
+        </div>
+
+        <div class="glass-card max-w-2xl mx-auto p-10 rounded-3xl text-left">
+            <h3 class="text-xl font-bold mb-6 text-sky-400 uppercase">DDP Logistics Engine</h3>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <select id="region" class="bg-black border border-white/20 p-4 rounded-xl text-sm outline-none">
+                    <option value="USA">USA (West)</option>
+                    <option value="EU">EU (Central)</option>
+                    <option value="GCC">GCC (Dubai)</option>
+                </select>
+                <select id="box" class="bg-black border border-white/20 p-4 rounded-xl text-sm outline-none">
+                    <option value="40">40' HQ Container</option>
+                    <option value="20">20' GP Container</option>
+                </select>
+            </div>
+            <div id="pricing" class="grid grid-cols-3 gap-2"></div>
+        </div>
+
+        <div class="mt-20 flex justify-center gap-8 text-[10px] uppercase font-bold text-gray-500 tracking-[0.3em]">
+            <a href="https://www.linkedin.com/in/alex-yang-yishen/" class="hover:text-white">LinkedIn</a>
+            <a href="https://x.com/AlexYan03451555" class="hover:text-white">X</a>
+            <a href="https://www.youtube.com/@alexyang6074" class="hover:text-white">YouTube</a>
+            <a href="https://www.instagram.com/alexyang591/" class="hover:text-white">Instagram</a>
+            <a href="https://wa.me/8618857277313" class="hover:text-sky-400">WhatsApp</a>
+        </div>
+    </main>
+
+    <script>
+        const calc = () => {
+            const margin = 1.25;
+            const rates = { USA: 4200, EU: 3500, GCC: 1800 };
+            const region = document.getElementById('region').value;
+            const multiplier = document.getElementById('box').value === '40' ? 1.0 : 0.75;
+            const price = Math.round(rates[region] * multiplier * margin);
+            
+            document.getElementById('pricing').innerHTML = `
+                <div class="p-3 bg-white/5 rounded text-center"><p class="text-[8px] opacity-50">VALUE</p><p>$${price}</p></div>
+                <div class="p-3 bg-sky-500/10 border border-sky-500 rounded text-center"><p class="text-[8px] text-sky-400">STD</p><p>$${Math.round(price*1.15)}</p></div>
+                <div class="p-3 bg-white/5 rounded text-center"><p class="text-[8px] opacity-50">FAST</p><p>$${Math.round(price*1.35)}</p></div>
+            `;
+        };
+        document.querySelectorAll('select').forEach(s => s.addEventListener('change', calc));
+        calc();
+    </script>
+</body>
+</html>

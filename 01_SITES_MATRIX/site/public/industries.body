@@ -1,0 +1,25 @@
+<section class="hero">
+  <h1>Industries We Serve</h1>
+  <p class="hero-sub">
+    Sector-specific manufacturing systems designed for regulated, bulk, and sovereign procurement.
+  </p>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h3>Office & Commercial Furniture</h3>
+    <p>Ergonomic chairs, workstations, and contract furniture for corporate, education, and government buyers.</p>
+  </div>
+  <div class="card">
+    <h3>Gaming & E-Sports</h3>
+    <p>High-performance gaming chairs, desks, and accessories for professional e-sports brands.</p>
+  </div>
+  <div class="card">
+    <h3>Healthcare & Medical Furniture</h3>
+    <p>Hospital beds, recliners, and medical seating with compliance-driven manufacturing control.</p>
+  </div>
+  <div class="card">
+    <h3>Logistics & Industrial Hardware</h3>
+    <p>Chains, wire ropes, rigging systems, and safety hardware for ports, mining, and heavy industry.</p>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chair Fit Test – Find Your Perfect Chair</title>
+<meta name="description" content="Test your body size, weight, usage and workspace. Get your best chair recommendation with factory direct price.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Arial;background:#050b17;color:#fff;margin:0}
+.box{max-width:900px;margin:auto;padding:40px}
+.q{margin:20px 0}
+button{padding:14px 30px;border-radius:10px;border:none;background:#0ea5e9;font-weight:bold}
+.result{background:#020617;padding:25px;border-radius:12px;margin-top:30px;display:none}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h1>🎯 Chair Fit Analyzer</h1>
+<p>Answer 5 questions – we calculate your best factory-fit chair.</p>
+
+<div class="q">Height (cm): <input id="h"></div>
+<div class="q">Weight (kg): <input id="w"></div>
+<div class="q">Daily Sitting Hours:
+<select id="t"><option>4–6</option><option>6–8</option><option>8+</option></select></div>
+<div class="q">Use Case:
+<select id="u"><option>Office</option><option>Gaming</option><option>Medical</option></select></div>
+<div class="q">Country: <input id="c" value="US"></div>
+
+<button onclick="calc()">Get My Best Chair</button>
+
+<div class="result" id="res"></div>
+</div>
+
+<script>
+function calc(){
+ let h=+h.value,w=+w.value,u=u.value,c=c.value;
+ let sku="MESH-OFFICE-CHAIR-A";
+
+ if(u==="Gaming") sku="PRO-GAMING-CHAIR-X";
+ if(u==="Medical") sku="MEDICAL-RECLINER-A";
+ if(h>180||w>110) sku="HEAVY-DUTY-CHAIR-Z";
+
+ fetch(`/api/rfq?sku=${sku}&qty=1&country=${c}&lang=en`)
+ .then(r=>r.json()).then(d=>{
+   res.style.display="block";
+   res.innerHTML=`
+   <h2>Best Fit: ${sku}</h2>
+   <p>Unit: ${d.currency} ${d.unit_price}</p>
+   <a href="${d.whatsappLink}">📲 WhatsApp Instant Order</a>
+   `;
+ });
+}
+</script>
+</body>
+</html>

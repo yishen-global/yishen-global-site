@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Wholesale Office Chair Deals – Factory Direct</title>
+</head>
+<body>
+<h1>Wholesale Office Chair Deals</h1>
+
+<p>Bulk office chair supply with instant factory quote.</p>
+
+<form onsubmit="event.preventDefault();goQuote();">
+<select id="country"><option>USA</option><option>UK</option><option>UAE</option></select>
+<input id="sku" value="MESH-OFFICE-CHAIR-A">
+<input id="qty" value="500">
+<button>Get Factory Quote</button>
+</form>
+
+<pre id="out"></pre>
+
+<script>
+function goQuote(){
+ fetch(`/api/rfq?country=${country.value}&sku=${sku.value}&qty=${qty.value}`)
+ .then(r=>r.json()).then(d=>{
+   out.textContent = JSON.stringify(d,null,2);
+   if(d.whatsappLink) window.open(d.whatsappLink);
+ });
+}
+</script>
+</body>
+</html>

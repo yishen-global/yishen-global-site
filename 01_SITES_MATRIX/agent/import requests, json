@@ -1,0 +1,15 @@
+import requests, json
+from config import KEYWORDS, TARGET_COUNTRY
+
+def scan():
+    buyers = []
+    for k in KEYWORDS:
+        buyers.append({
+            "company": f"{k} {TARGET_COUNTRY}",
+            "source": "google",
+            "status": "new"
+        })
+    open("db/buyers.json","w").write(json.dumps(buyers,indent=2))
+
+if __name__ == "__main__":
+    scan()

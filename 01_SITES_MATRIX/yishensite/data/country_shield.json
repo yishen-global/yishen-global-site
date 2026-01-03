@@ -1,0 +1,26 @@
+{
+  "US": {
+    "vat": 0,
+    "importTax": 0.025,
+    "risk": 1.04,
+    "currency": "USD"
+  },
+  "EU": {
+    "vat": 0.20,
+    "importTax": 0.04,
+    "risk": 1.06,
+    "currency": "EUR"
+  },
+  "AE": {
+    "vat": 0.05,
+    "importTax": 0.02,
+    "risk": 1.03,
+    "currency": "AED"
+  },
+  "JP": {
+    "vat": 0.10,
+    "importTax": 0.03,
+    "risk": 1.04,
+    "currency": "JPY"
+  }
+}

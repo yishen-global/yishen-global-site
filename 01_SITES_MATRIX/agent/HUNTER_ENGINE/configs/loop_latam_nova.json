@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "loop_id": "LATAM_NOVA_SOVEREIGN",
+  "region": "LATAM",
+  "countries": ["Chile", "Colombia", "Peru"],
+  "main_product": "gaming chair",
+  "lock_sku": "NOVA",
+  "target_role": "B2B",
+  "buyer_types": [
+    "distributor",
+    "importer",
+    "retailer",
+    "ecommerce seller"
+  ],
+  "platforms": [
+    "MercadoLibre",
+    "Falabella",
+    "Ripley",
+    "Paris",
+    "Linio"
+  ],
+  "scan_keywords": [
+    "gaming chair distributor",
+    "silla gamer mayoreo",
+    "gaming chair wholesale",
+    "importador silla gamer"
+  ],
+  "output_prefix": "leads_latam_nova",
+  "cycle_interval_min": 25
+}

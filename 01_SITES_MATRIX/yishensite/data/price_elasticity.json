@@ -1,0 +1,7 @@
+{
+  "GLOBAL": { "targetCR": 0.12, "safeBand": [0.97, 1.05] },
+  "US": {
+    "MESH-OFFICE-CHAIR-A": { "targetCR": 0.14, "safeBand": [0.98, 1.04] },
+    "COMPRESSION-SOFA-A": { "targetCR": 0.10, "safeBand": [0.96, 1.06] }
+  }
+}

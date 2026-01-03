@@ -1,0 +1,23 @@
+import pandas as pd
+from pathlib import Path
+
+SRC = Path("../data/sku_map/icp_sku_matrix.csv")
+OUT = Path("../data/sku_map/sku_gap_map.csv")
+
+ALL_SKU = ["Gaming Chair","Mesh Chair","Recliner","Accent Chair","Lounger"]
+
+def run():
+    df = pd.read_csv(SRC)
+    rows = []
+
+    for company in df["company"].unique():
+        owned = set(df[df["company"]==company]["sku"])
+        missing = set(ALL_SKU) - owned
+        for m in missing:
+            rows.append({"company":company,"missing_sku":m})
+
+    pd.DataFrame(rows).to_csv(OUT,index=False)
+    print("🕳 sku_gap_map.csv generated")
+
+if __name__ == "__main__":
+    run()

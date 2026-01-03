@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YiShen Global | Direct Factory Commerce Engine</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="YiShen Global is a direct factory supply engine for office chairs, gaming chairs, sofas, standing desks, outdoor & medical furniture.">
+<style>
+body{margin:0;font-family:Arial;background:#050b17;color:#fff}
+header{padding:80px;text-align:center;background:radial-gradient(circle,#0ea5e3,#020617)}
+h1{font-size:48px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:40px}
+.card{background:#020617;padding:25px;border-radius:12px;box-shadow:0 0 25px rgba(14,165,227,.25)}
+.card a{color:#0ea5e3;text-decoration:none;font-weight:bold}
+.rfq{background:#000;padding:40px;text-align:center}
+.rfq input,.rfq select{padding:12px;margin:8px;border-radius:6px;border:none}
+.rfq button{padding:14px 30px;border-radius:10px;background:#0ea5e3;color:#000;font-weight:bold}
+footer{text-align:center;padding:40px;font-size:14px;color:#888}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>⚡ YiShen Global Commerce Engine</h1>
+<p>Global Direct Factory Supply · RFQ Automation · Traffic Gravity System</p>
+</header>
+
+<section class="rfq">
+<h2>Instant Factory Quote</h2>
+<select id="country">
+<option>USA</option><option>UK</option><option>UAE</option><option>DE</option>
+</select>
+<input id="sku" value="OFFICE-CHAIR-X">
+<input id="qty" value="300">
+<button onclick="goQuote()">Get Auto Quote</button>
+<pre id="out"></pre>
+</section>
+
+<section class="grid">
+<div class="card"><h3>Office Chairs</h3><a href="/hub/office-chair/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Gaming Chairs</h3><a href="/hub/gaming-chair/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Standing Desks</h3><a href="/hub/standing-desk/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Sofas</h3><a href="/hub/sofa/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Accent Chairs</h3><a href="/hub/accent-chair/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Swivel Chairs</h3><a href="/hub/swivel-chair/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Outdoor Furniture</h3><a href="/hub/outdoor/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Medical Furniture</h3><a href="/hub/medical/pillar.html">Enter Hub →</a></div>
+<div class="card"><h3>Education Furniture</h3><a href="/hub/education/pillar.html">Enter Hub →</a></div>
+</section>
+
+<footer>
+© 2026 YiShen Global · Direct Factory Commerce Engine
+</footer>
+
+<script>
+function goQuote(){
+ fetch(`/api/rfq?country=${country.value}&sku=${sku.value}&qty=${qty.value}`)
+ .then(r=>r.json()).then(d=>{
+   out.textContent = JSON.stringify(d,null,2);
+   if(d.whatsappLink) window.open(d.whatsappLink);
+ });
+}
+</script>
+
+</body>
+</html>

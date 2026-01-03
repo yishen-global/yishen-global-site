@@ -1,0 +1,109 @@
+import PDFDocument from "pdfkit";
+import QRCode from "qrcode";
+import fs from "fs";
+import path from "path";
+
+function safe(v, d=""){const s=String(v??d);return s.length>800?s.slice(0,800):s;}
+function money(c,n){return `${c} ${safe(n,"0")}`;}
+function num(n){return Math.round((Number(n)+Number.EPSILON)*100)/100;}
+
+export default async function handler(req, res){
+  const currency = safe(req.query.currency,"USD");
+  const items = JSON.parse(safe(req.query.items,"[]")); 
+  // items: [{sku,qty,unit,subtotal,exw,risk,importtax,vat}]
+  const country = safe(req.query.country,"US");
+
+  const company="YISHEN GLOBAL";
+  const email=process.env.RFQ_EMAIL||"alex.yang@yishenglobal.net";
+  const wa1=process.env.WA_PRIMARY||"8618857277313";
+  const wa2=process.env.WA_SECONDARY||"8615968277867";
+
+  const invNo=safe(req.query.invno,`YS-${Date.now()}`);
+  const buyer=safe(req.query.buyer,"Buyer: TBD");
+  const shipTo=safe(req.query.shipto,`Ship To: ${country}`);
+  const cartons=safe(req.query.cartons,"TBD");
+  const nw=safe(req.query.nw,"TBD");
+  const gw=safe(req.query.gw,"TBD");
+  const cbm=safe(req.query.cbm,"TBD");
+  const dateStr=new Date().toISOString().slice(0,10);
+
+  res.setHeader("Content-Type","application/pdf");
+  res.setHeader("Content-Disposition",`inline; filename="CI_PL_${invNo}.pdf"`);
+
+  const doc=new PDFDocument({size:"A4",margin:40});
+  doc.pipe(res);
+
+  // ===== PAGE 1 : CI =====
+  doc.fontSize(16).text("COMMERCIAL INVOICE",{align:"center"});
+  doc.moveDown(.3);
+  doc.fontSize(9).fillColor("#444")
+    .text(`${company} | ${email} | WhatsApp: +${wa1} / +${wa2}`,{align:"center"});
+  doc.fillColor("black").moveDown(1);
+
+  doc.fontSize(10).text(`Invoice No: ${invNo}`);
+  doc.text(`Date: ${dateStr}`).moveDown(.6);
+  doc.text(buyer); doc.text(shipTo).moveDown(.8);
+
+  doc.fontSize(11).text("Items",{underline:true}).moveDown(.4);
+  doc.fontSize(9);
+
+  let total=0;
+  items.forEach((it,i)=>{
+    total+=num(it.subtotal||0);
+    doc.text(
+      `${i+1}. ${it.sku} | Qty:${it.qty} | Unit:${money(currency,it.unit)} | Subtotal:${money(currency,it.subtotal)}`
+    );
+  });
+  doc.moveDown(.6);
+
+  doc.fontSize(9).fillColor("#444").text("Tax & Cost Breakdown (Est.):",{underline:true});
+  items.forEach(it=>{
+    doc.text(
+      `${it.sku} EXW:${money(currency,it.exw)} Risk:+${money(currency,it.risk)} `+
+      `Import:+${money(currency,it.importtax)} VAT:+${money(currency,it.vat)}`
+    );
+  });
+  doc.fillColor("black").moveDown(.8);
+
+  doc.fontSize(11).text(`Grand Total: ${money(currency,total)}`).moveDown(.8);
+
+  // Terms
+  doc.fontSize(9).fillColor("#444").text(
+    "Terms:\n1) Auto-generated for quick confirmation.\n2) Final price depends on confirmed specs & address.\n3) DDP availability depends on destination.",
+    {lineGap:3}
+  );
+  doc.fillColor("black").moveDown(1);
+
+  // Signature + Seal images
+  const sealPath = path.join(process.cwd(),"public/assets/seal.png");
+  const signPath = path.join(process.cwd(),"public/assets/sign.png");
+  if(fs.existsSync(signPath)){
+    doc.image(signPath, {fit:[160,60], align:"right"});
+  }
+  if(fs.existsSync(sealPath)){
+    doc.image(sealPath, 380, doc.y+10, {fit:[160,160]});
+  }
+
+  // Anti-tamper QR
+  const qrPayload = JSON.stringify({invNo, total, currency, date:dateStr});
+  const qr = await QRCode.toDataURL(qrPayload);
+  doc.image(qr, 40, doc.y+10, {fit:[90,90]});
+
+  // ===== PAGE 2 : PL =====
+  doc.addPage();
+  doc.fontSize(16).text("PACKING LIST",{align:"center"}).moveDown(.6);
+  doc.fontSize(10).text(`Reference Invoice: ${invNo}`).text(`Date: ${dateStr}`).moveDown(.8);
+
+  doc.fontSize(11).text("Packing Details",{underline:true}).moveDown(.4);
+  doc.fontSize(9);
+  items.forEach((it,i)=>{
+    doc.text(`${i+1}. ${it.sku} | Qty:${it.qty}`);
+  });
+  doc.moveDown(.6);
+  doc.text(`Cartons: ${cartons}`);
+  doc.text(`NW: ${nw}`);
+  doc.text(`GW: ${gw}`);
+  doc.text(`CBM: ${cbm}`);
+
+  doc.end();
+}

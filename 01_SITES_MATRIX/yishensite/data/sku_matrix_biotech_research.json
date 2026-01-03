@@ -1,0 +1,12 @@
+{
+  "category":"biotech_research",
+  "products":[
+    {
+      "sku":"LAB-STOOL-A",
+      "name":"Laboratory Adjustable Stool",
+      "basePrice":149,
+      "tiers":[10,50],
+      "channels":["B2B"]
+    }
+  ]
+}

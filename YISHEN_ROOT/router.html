@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YiShen Global Sovereign Router</title>
+<script>
+const path = location.pathname.toLowerCase();
+
+const routes = {
+  "/solutions": "/public/solutions.html",
+  "/industries": "/public/industries.html",
+  "/resources": "/public/resources.html",
+  "/contact": "/public/contact.html",
+  "/sovereign": "/sovereign/index.html"
+};
+
+const match = Object.keys(routes).find(r => path.includes(r));
+location.replace(match ? routes[match] : "/fallback/index.html");
+</script>
+</head>
+<body></body>
+</html>

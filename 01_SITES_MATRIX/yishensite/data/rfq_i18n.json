@@ -1,0 +1,42 @@
+{
+  "en": {
+    "hello": "Hi! I can generate an instant factory quote. Please reply with: Product/SKU, Qty, Country.",
+    "need_sku": "What product or SKU? (e.g., MESH-OFFICE-CHAIR-A)",
+    "need_qty": "Quantity?",
+    "need_country": "Delivery country?",
+    "quote_title": "✅ Instant Factory Quote",
+    "cta_pay": "Reply 'CONFIRM' to reserve pricing & we will issue a PDF order draft.",
+    "pdf_ready": "📄 PDF Order Draft is ready:",
+    "disclaimer": "Note: This quote is indicative and subject to final SKU spec & shipping address."
+  },
+  "es": {
+    "hello": "Hola. Puedo generar una cotización inmediata. Responde: Producto/SKU, Cantidad, País.",
+    "need_sku": "¿Qué producto o SKU? (ej: MESH-OFFICE-CHAIR-A)",
+    "need_qty": "¿Cantidad?",
+    "need_country": "¿País de entrega?",
+    "quote_title": "✅ Cotización inmediata de fábrica",
+    "cta_pay": "Responde 'CONFIRMAR' para reservar precio y emitir borrador PDF.",
+    "pdf_ready": "📄 Borrador de pedido PDF listo:",
+    "disclaimer": "Nota: Cotización referencial, sujeta a especificación final y dirección."
+  },
+  "ar": {
+    "hello": "مرحباً! يمكنني إصدار عرض سعر فوري. الرجاء إرسال: SKU/المنتج، الكمية، الدولة.",
+    "need_sku": "ما هو SKU أو المنتج؟ (مثال: MESH-OFFICE-CHAIR-A)",
+    "need_qty": "الكمية؟",
+    "need_country": "دولة التسليم؟",
+    "quote_title": "✅ عرض سعر فوري من المصنع",
+    "cta_pay": "اكتب 'تأكيد' لحجز السعر وإصدار مسودة PDF.",
+    "pdf_ready": "📄 مسودة الطلب PDF جاهزة:",
+    "disclaimer": "ملاحظة: العرض مبدئي ويعتمد على المواصفات والعنوان النهائي."
+  },
+  "ru": {
+    "hello": "Здравствуйте! Могу выдать мгновенную заводскую цену. Ответьте: SKU/товар, количество, страна.",
+    "need_sku": "Какой товар или SKU? (например: MESH-OFFICE-CHAIR-A)",
+    "need_qty": "Количество?",
+    "need_country": "Страна доставки?",
+    "quote_title": "✅ Мгновенная цена от завода",
+    "cta_pay": "Ответьте 'ПОДТВЕРДИТЬ' чтобы зафиксировать цену и получить PDF черновик заказа.",
+    "pdf_ready": "📄 PDF черновик заказа готов:",
+    "disclaimer": "Примечание: цена предварительная и зависит от финальной спецификации и адреса."
+  }
+}

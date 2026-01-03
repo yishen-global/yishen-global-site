@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.1.2/dist/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/a11y-dark.min.css"> -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+    <script src="https://unpkg.com/vue@3.2.20/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../styles/highlight-vscode.min.css">
+    <link rel="stylesheet" href="../styles/vscode-simulation.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        p {
+            py-1;
+        }
+
+        ul,
+        ol {
+            list-disc;
+            ml-4;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-bold;
+        }
+
+        .prompt-container {
+            items-center;
+            pt-10;
+            pb-10;
+            pl-0;
+            pr-0;
+        }
+
+        .flex-container {
+            flex;
+            items-center;
+            p-0;
+        }
+
+        #responses {
+            pb-60;
+        }
+
+        .conversation {
+            flex;
+            flex-col;
+            h-screen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conversation" id="app">
+        <div class="messages-container">
+            <div id="responses" class="pt-4 text-sm scroll">
+                <div class="response">
+                    <p>Following content is a example of reponse. It will be deleted from the working page.</p>
+                    <div class="timestamp">Timestamp: [INSERT TIMESTAMP HERE]</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-between">
+            <div class="dropdown-menu">
+                <label for="dropdown-select" style="display: block; margin-bottom: 2px; display: none">Context</label>
+                <select id="dropdown-select" class="bg-stone-700" style="display: none">
+                    <option value="none" selected>None</option>
+                    <option value="selection">Selection</option>
+                </select>
+            </div>
+            <div class="stop-container flex items-center">
+                <div id="working-state" class="working-label mr-4 text-stone-300">ChatGPT AI</div>
+                <button id="stop-button"
+                    class="px-4 py-2 bg-gray-400 text-white font-semibold text-sm cursor-not-allowed">Stop</button>
+            </div>
+        </div>
+        <div class="prompt-container">
+            <textarea class="h-24 w-full text-white bg-stone-700 p-4 text-sm resize-none"
+                placeholder="Ask ChatGPT something...&#10;Press Ctrl-Enter to send." id="prompt-input"></textarea>
+            <div class="flex-container">
+                <div id="conversation-id" class="w-full text-gray-500 p-0 text-xs text-right">Conversation ID</div>
+                <button id="reset-button" class="px-0 py-0 text-white font-semibold text-sm"
+                    title="Reset conversation">ðŸ”„</button>
+            </div>
+            <button style="position: absolute; bottom: 65px; right:30px; transform: translate(50%, 50%);"
+                onclick="console.log('Button clicked!')">
+                ðŸ“¤
+            </button>
+        </div>
+
+    </div>
+    <script>
+
+        const markdown_examples = [
+            `
+## Example 1
+
+Here is a simple code snippet in JavaScript:
+
+\`\`\`js
+const greeting = "Hello, World!";
+console.log(greeting);
+\`\`\`
+`,
+            `
+## Example 2
+
+Here is a code example in Python:
+
+\`\`\`python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+print(factorial(5))  # Output: 120
+\`\`\`
+`
+        ];
+
+        marked.setOptions({
+            renderer: new marked.Renderer(),
+            highlight: function (code, lang) {
+                return hljs.highlightAuto(code).value;
+            },
+            langPrefix: 'hljs language-', // highlight.js css expects a top-level 'hljs' class.
+            pedantic: false,
+            gfm: true,
+            breaks: false,
+            sanitize: false,
+            smartypants: false,
+            xhtml: false
+        });
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    prompt: '',
+                    conversationId: 'Conversation ID'
+                }
+            },
+            methods: {
+                sendMessage() {
+                    console.log('Button clicked!');
+                },
+                resetConversation() {
+                    console.log('Conversation reset.');
+                }
+            },
+            mounted() {
+                for (let i = 0; i < markdown_examples.length; i++) {
+                    const newDiv = document.createElement('div');
+                    newDiv.classList.add('response', 'border', 'border-gray-700', 'rounded-lg', 'p-2', 'm-2');
+                    document.querySelector('#responses').appendChild(newDiv);
+                    // updatedResponseDiv = newDiv;
+
+                    const parsedBlock = marked.parse(markdown_examples[i]);
+                    const timestamp = new Date().toLocaleString();
+                    // html += `${parsedBlock}<small>${timestamp}</small><br><br>`;
+                    newDiv.innerHTML = `${parsedBlock}<small>${timestamp}</small><br><br>`;
+                }
+            }
+        });
+
+        app.mount('#app');
+
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+

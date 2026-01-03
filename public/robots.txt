@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://yishenglobal.net/sitemap.xml
+Sitemap: https://yishenglobal.net/sitemap-world.xml

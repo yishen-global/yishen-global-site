@@ -1,0 +1,12 @@
+{
+  "category":"aerospace_civil",
+  "products":[
+    {
+      "sku":"AERO-ERGONOMIC-SEAT-A",
+      "name":"Aerospace Ergonomic Seat",
+      "basePrice":899,
+      "tiers":[5,10],
+      "channels":["B2B"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "3.1",
+  "engine": "Sovereign Gravity Commerce Core",
+  "categories": [
+    "office","gaming","sofa","outdoor","medical","education",
+    "biotech_research","aerospace_civil","defense_civil_support"
+  ],
+  "routing": {
+    "office": "sku_matrix_office.json",
+    "gaming": "sku_matrix_gaming.json",
+    "sofa": "sku_matrix_sofa.json",
+    "outdoor": "sku_matrix_outdoor.json",
+    "medical": "sku_matrix_medical.json",
+    "education": "sku_matrix_education.json",
+    "biotech_research": "sku_matrix_biotech_research.json",
+    "aerospace_civil": "sku_matrix_aerospace_civil.json",
+    "defense_civil_support": "sku_matrix_defense_civil_support.json"
+  }
+}

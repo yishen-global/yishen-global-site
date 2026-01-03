@@ -1,0 +1,4 @@
+{"time":"2026-01-01 09:00:00","engine":"google_radar","action":"boot","status":"ok","message":"Radar engine started"}
+{"time":"2026-01-01 09:01:12","engine":"google_radar","action":"scan","status":"ok","query":"\"sofa in a box\" distributor","new_leads":12}
+{"time":"2026-01-01 09:03:44","engine":"google_radar","action":"save","status":"ok","file":"outputs/leads_raw.jsonl"}
+{"time":"2026-01-01 09:05:01","engine":"google_radar","action":"complete","status":"ok","total_leads":48}

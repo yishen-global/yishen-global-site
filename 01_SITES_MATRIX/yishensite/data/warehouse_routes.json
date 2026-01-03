@@ -1,0 +1,11 @@
+{
+  "US": [
+    { "warehouse": "LA", "avgDays": 2.1, "cost": 1.00 },
+    { "warehouse": "TX", "avgDays": 2.4, "cost": 0.96 },
+    { "warehouse": "NJ", "avgDays": 2.8, "cost": 0.92 }
+  ],
+  "EU": [
+    { "warehouse": "NL", "avgDays": 2.3, "cost": 1.00 },
+    { "warehouse": "DE", "avgDays": 2.5, "cost": 0.95 }
+  ]
+}

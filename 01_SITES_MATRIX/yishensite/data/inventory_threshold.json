@@ -1,0 +1,7 @@
+{
+  "GLOBAL": { "minDays": 21, "reorderLead": 14 },
+  "US": { "minDays": 30 },
+  "EU": { "minDays": 28 },
+  "AE": { "minDays": 25 },
+  "JP": { "minDays": 27 }
+}

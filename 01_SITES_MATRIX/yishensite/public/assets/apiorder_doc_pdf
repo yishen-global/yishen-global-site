@@ -1,0 +1,11 @@
+apiorder_doc_pdf
+currency=USD
+&country=US
+&items=[
+  {skuMESH-OFFICE-CHAIR-A,qty300,unit79.9,subtotal23970,exw59,risk4.2,importtax1.8,vat0},
+  {skuPRO-GAMING-CHAIR-X,qty200,unit89.9,subtotal17980,exw69,risk4.8,importtax2.1,vat0}
+]
+&cartons=50
+&nw=450
+&gw=500
+&cbm=12.6

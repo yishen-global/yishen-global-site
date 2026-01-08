@@ -1,66 +1,80 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="max-age=0, no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Order Confirm Center</title>
+    <title>Order Confirm Center | YISHEN GLOBAL</title>
     <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" href="/favicon.ico">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert for instant feedback -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f7f9;
             margin: 0;
             padding: 0;
             text-align: center;
-            padding-top: 50px;
         }
-
-        h1 {
-            color: #333;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007bff;
-            font-size: 18px;
-        }
-
+        /* 深度定制成功容器 */
         .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 800px;
+            margin: 80px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-
-        .success-message {
-            font-size: 20px;
-            color: green;
+        h1 { color: #001529; font-size: 36px; margin-bottom: 20px; }
+        .success-message { font-size: 22px; color: #28a745; font-weight: bold; margin: 20px 0; }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: #001529;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s;
         }
+        .back-btn:hover { background: #daa520; color: #001529; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Order Confirm Center</h1>
-        <div class="success-message">
-            <p>Your order has been successfully confirmed!</p>
+
+    <nav style="display:flex; justify-content:space-between; align-items:center; padding:15px 5%; background:#001529; color:white; border-bottom:3px solid #daa520; position:sticky; top:0; z-index:9999;">
+        <div style="display:flex; align-items:center;">
+            <img src="/assets/logo.png" style="height:45px;" alt="YISHEN LOGO">
+            <div style="margin-left:15px; text-align:left;">
+                <div style="font-weight:bold; font-size:1.2rem; letter-spacing:1px;">YISHEN GLOBAL</div>
+                <div style="font-size:0.7rem; color:#daa520;">SOVEREIGN GROWTH OS</div>
+            </div>
         </div>
-        <a href="/">Back to Home</a>
+        <div style="display:flex; gap:25px; align-items:center;">
+            <a href="/index.html" style="color:white; text-decoration:none;">HOME</a>
+            <a href="/Block_03.html" style="color:white; text-decoration:none;">SOLUTIONS</a>
+            <a href="/confirm.html" style="background:#daa520; color:#001529; padding:8px 20px; font-weight:bold; text-decoration:none; border-radius:2px;">GET DDP QUOTE</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="font-size: 80px; color: #28a745; margin-bottom: 20px;">✓</div>
+        <h1>Order Confirmed</h1>
+        <div class="success-message">
+            <p>Your DDP Sovereign Quote has been generated and locked.</p>
+        </div>
+        <p style="color: #666; line-height: 1.6;">Our global logistics node (EU/BRICS) has received your confirmation.<br>A formal Technical Passport and DDP invoice will be sent to your registered channel.</p>
+        <a href="/index.html" class="back-btn">Return to Control Center</a>
     </div>
 
-    <!-- Optional: Instant Success Notification on Page Load -->
     <script>
         window.onload = function() {
             Swal.fire({
-                title: 'Order Confirmed!',
-                text: 'Your order has been successfully confirmed.',
+                title: 'Transmission Success!',
+                text: 'Your order is now synchronized with YISHEN Global Hub.',
                 icon: 'success',
-                confirmButtonText: 'OK'
+                confirmButtonColor: '#001529',
+                confirmButtonText: 'ACKNOWLEDGE'
             });
         };
     </script>
